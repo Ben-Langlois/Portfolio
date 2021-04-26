@@ -1,18 +1,29 @@
+/* Fonts */
+@font-face {
+    font-family: Archivo-black;
+    src: url(ref/ArchivoBlack-Regular.ttf);
+}
+@font-face {
+    font-family: Patua;
+    src: url(ref/PatuaOne-Regular.ttf);
+}
+
 *{
     box-sizing: border-box;
 }
+
 /*(grouping so i can mash it all together with scss/sass)*/ 
 body{
     margin: 0px; 
-    background-color:rgb(34, 0, 126); 
-    height: 100vh;
+    background-color:#EFEFEF; 
     color: white;
 }
     /* Header */
     header{
         margin: 25px 0px 0px 15vw; 
-        color: white; 
+        color: #2A2D34; 
         display: flex;
+        font-family: patua;
     }
         .logo{
             padding: 5px; 
@@ -22,7 +33,7 @@ body{
         }
             .logoLink{
                 text-decoration: none; 
-                color: white;
+                color: #2A2D34;
             }
         /* NavBar */
         .NavLinks{
@@ -39,10 +50,25 @@ body{
             }
             .Link{
                 text-decoration: none;
-                color: white;
+                color: #2A2D34;
                 margin: 10px 2vw 0px 4vw;
                 padding: 10px 0px 0px 0px;
                 display: block;
+            }:hover{
+                color: #B0413E;
+            }
+    /* to keep form
+    .content{
+
+    }
+        .content{
+
+        } */
+            #portrait{
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                background-color: white;
             }
 
 
