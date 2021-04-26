@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+/*(grouping so i can mash it all together with scss/sass)*/ 
+body{
+    margin: 0px; 
+    background-color:rgb(34, 0, 126); 
+    height: 100vh;
+    color: white;
+}
+    /* Header */
+    header{
+        margin: 25px 0px 0px 15vw; 
+        color: white; 
+        display: flex;
+    }
+        .logo{
+            padding: 5px; 
+            margin: 0px; 
+            font-size: 50px; 
+            width: 3.5rem;
+        }
+            .logoLink{
+                text-decoration: none; 
+                color: white;
+            }
+        /* NavBar */
+        .NavLinks{
+            font-size: 20px; 
+            margin: 10px 25px 40px 35vw;  
+        }
+        .NavLinks ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+            .NavLinks li{
+                list-style: none;
+            }
+            .Link{
+                text-decoration: none;
+                color: white;
+                margin: 10px 2vw 0px 4vw;
+                padding: 10px 0px 0px 0px;
+                display: block;
+            }
+
+
+/* Media Queries */
+@media only screen and (max-width: 965px) {
+    .NavLinks{
+        display: none;
+    }
+    .logo{
+        float: center;
+    }
+    .logoLink{
+        float: center;
+    }
+}
