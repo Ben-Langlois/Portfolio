@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Ben langlois</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <!-- page content -->
-    <header>
-        <div class="logo">
-            <a class="logoLink" href="index.html">
-                BL
-            </a>
+    <head>
+        <meta charset="utf-8">
+        <title>Ben langlois</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">  
+    </head>
+    <body>
+        <!-- page content -->
+        <div class="landing">
+            <header>
+                <div class="logo">
+                    <a class="logo-link" href="index.html">
+                        BL
+                    </a>
+                </div>
+                <div class="nav-links">
+                <!--to be converted to <Links> when converted to gatsby -->    
+                    <ul>            
+                        <li><a class="link" href="#">About</a></li>
+                        <li><a class="link" href="#">Projects</a></li>
+                        <li><a class="link" href="#">Contact</a></li>
+                        <li><a class="link prompt" href="#">Need a Website?</a></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="content" style="margin: 5vh 15vw 0 15vw; padding: 0; display: flex;">
+                <span id="portrait"> </span>
+                <h1 style="color: #2A2D34; font-family: patua; font-size: 5em; margin: 20vh 0 0 5vw; float: right;">
+                    Hi! I'm <br/>Ben Langlois
+                </h1>
+            </div>
+            <div style='display: inline-block; margin: auto;'>
+                <p class="intro" style="font-family: roboto;">
+                    <strong> A Junior Web Dev/Designer with a passion for creating things. From product pages to photography portfolios, I'm excited to help!</strong> 
+                </p>
+            </div>
         </div>
-        <div class="NavLinks">
-        <!--to be converted to <Links> when converted to gatsby -->    
-            <ul>            
-                <li><a class="Link" href="#">About</a></li>
-                <li><a class="Link" href="#">Projects</a></li>
-                <li><a class="Link" href="#">Contact</a></li>
-            </ul>
-        </div>
-    </header>
-    <div class="landing">
-        <div class="content" style="margin: 0px 15vw; padding: 0; height: 100vh;">
-            <span id="portrait" > </span>
-            <h1 style="color: #2A2D34; font-family: patua; font-size: 5em; float: right; margin: 22vh 2.5vw 20vh 0;">
-                Hi! I'm <br/>Ben Langlois
-            </h1>
-        </div>
-    </div>
-  </body>
+    </body>
 </html>
