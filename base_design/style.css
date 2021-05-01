@@ -10,6 +10,8 @@
 
 *{
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 /*(grouping so i can mash it all together with scss/sass)*/ 
@@ -81,7 +83,7 @@ body{
                     min-height: 300px;
                     border-radius: 50%;
                     background-color: white;
-                    margin: 10vh 0 0 7vw;
+                    margin: 10vh 0 0 10vw;
                 }
                 /* Name and greeting */
             /*placeholder div*/
@@ -89,6 +91,7 @@ body{
                     font-family: 'Roboto', sans-serif;                   
                     text-align: center;
                     color: #2A2D34;
+                    margin: 5vh 0 0 0;
                 }
 
 
@@ -101,3 +104,7 @@ body{
         display: none;
     }
 }
+
+
+
+/* Expirementing with scroll prompt*/
