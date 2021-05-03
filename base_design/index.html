@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Ben langlois</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">  
@@ -29,18 +31,37 @@
             <div class="content" style="margin: 5vh 0 0 15vw; padding: 0; display: flex;">
                 <span id="portrait"> </span>
                 <!-- Put in div to divide the lines for (lang-wah) so people can know how to pronounce my name-->
-                <div>
-                    <h1 style="color: #2A2D34; font-family: patua; font-size: 5em; margin: 20vh 0 0 5vw; float: right;">
+                <div style="color: #2A2D34;  font:2.5em patua;padding: 20vh 0 0 5vw; float: right;">
+                    <!-- had to include font in both since bootstrap doesent care about my feelings-->
+                    <h1 style="margin: 0;font: 2.5em patua;  ">
                         Hi! I'm <br/>Ben Langlois
                     </h1>
+                    <!-- need to get positioning of it right, maybe seperate lines into seperate h1's and just stick inbetween
+                    <p style="color: #b0413b; position: relative; left: 250px; bottom: 170px; font: 2em; display: none; margin: 0;">
+                        (lang-wah)
+                    </p>-->
                 </div> 
             </div>
             <div style='display: flexbox;'>
                 <p class="intro" style="font:25px/50px roboto; color: #2A2D34; align-self: center;">
-                    <!-- *BUG* Only one of the links will do the animation -->
+                    <!-- *BUG* Only one of the links will do the animation, now with boostrap it underlines them on hover but only the one with text to the left (on the same line)
+                          basic underline on hover fixed by including text-dec in hover css but og problem remains  -->
                     <strong> A Junior Web Dev/Designer with a passion for creating things. From <a class="link" href="#" style="margin:0; display: inline;">product pages</a> 
-                     to <a class="link" href="#" style="margin:0; display: inline;">photography portfolios</a>, I'm excited to help!</strong> 
+                     to <a class="link" href="#" style="margin:0; display: inline;">photography portfolios</a>, I'm excited to help!</strong>
                 </p>
+
+                <!-- seeing if bootstrap grid stuff works (hint: it doesent)-->
+                <div class="container">
+                    <div class="row" style="color: black;">
+                        <div class="col">
+                            left
+                        </div>
+                        <div class="col">
+                            right
+                        </div>
+                    </div>
+                </div>  
+
             </div>
         </div>
     </body>

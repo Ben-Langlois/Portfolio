@@ -16,7 +16,6 @@
 
 /*(grouping so i can mash it all together with scss/sass)*/ 
 body{
-    margin: 0px; 
     background-color:#EFEFEF; 
     color: white;
 }
@@ -70,6 +69,7 @@ body{
                 }
                 .link:hover{
                     color: #B0413E;
+                    text-decoration: none;
                 }
                 /* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
                 .link::before {
