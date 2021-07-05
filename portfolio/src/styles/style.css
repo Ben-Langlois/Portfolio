@@ -1,0 +1,155 @@
+/* Fonts */
+@font-face {
+    font-family: archivo-black;
+    src: url(fonts/ArchivoBlack-Regular.ttf);
+}
+@font-face {
+    font-family: patua;
+    src: url(fonts/PatuaOne-Regular.ttf);
+}
+@font-face {
+    font-family: karla;
+    src: url(fonts/Karla-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+
+/*All encompassing*/
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* color: white !important; */
+}
+html {
+    scroll-behavior: smooth;
+}
+/*(grouping so i can mash it all together with scss/sass)*/ 
+body{
+    /*background-color:#fdfcfc;*/ 
+    margin: 0;
+    padding: 0;
+    font-family: karla;
+
+}
+    /*.landing{
+
+    }*/
+        /* Header */
+        header{
+            margin: 0 0 0 40vw; 
+            color: #F7F4F3 !important;
+            display: flex;
+        }
+            .logo{
+                padding: 5px; 
+                margin: 0; 
+                font-size: 50px; 
+            }
+                .logo-link{
+                    text-decoration: none; 
+                    /* color: #2A2D34; */
+                    color: #F7F4F3 !important;
+                }
+            /* NavBar */
+            .nav-links{
+                font-size: 25px; 
+                margin: 0 0 0 auto;
+            }
+            .nav-links ul{
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+                .nav-links li{
+                    list-style: none;
+                    white-space: pre;
+                    margin: 30px 0 30px 0;
+                }
+                /* Once I figure out the margins (so it isnt offset from the others) I'll implement it*/
+                /*.prompt{
+                    border: 3px solid #B0413E;
+                    border-radius: 8px;
+                    margin-bottom: 10px;
+                }*/
+                .link{
+                    text-decoration: none;
+                    color: #F7F4F3;
+                    margin: 0 2vw 0 2vw;
+                    padding: 0;
+                    display: block;
+                    position: relative;
+                }
+                .link:hover{
+                    color: #BA1B1D;
+                    text-decoration: none;
+                }
+                /* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
+                .link::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #BA1B1D;
+                    visibility: hidden;
+                    transform: scaleX(0);
+                    transition: all 0.3s ease-in-out 0s;
+                  }
+                .link:hover::before {
+                    visibility: visible;
+                    transform: scaleX(1);
+                }
+        #landing-container{
+            position: relative;  
+        }
+        #landing-container::after{
+            content: "";
+            content:"";
+            background: linear-gradient(rgba(34, 38, 41) 0%, /* rgb(133, 145, 153) 33%,*/ rgb(255, 255, 255) 100%);
+            display: block;
+            height: 50px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+        }
+            .content{
+                margin: 0 0 0 0; 
+                padding: 0; 
+                display: inline-block;
+                justify-content: center;
+                width: 100%;
+            } 
+                /* Name and greeting */
+            /*placeholder div*/
+                .intro{
+                    font-family: 'Roboto', sans-serif;                   
+                    text-align: center;
+                    margin: 5vh auto 0;
+                }
+
+/* basic formatting */
+.center-horizontal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Media Queries */
+@media only screen and (max-width: 965px) {
+    .nav-links{
+        display: none;
+    }
+    #portrait{
+        display: none;
+    }
+}
+
+
+
+/* Expirementing with scroll prompt*/
