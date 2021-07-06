@@ -92,14 +92,14 @@ const Landing = () => {
         <div  id="landing" className="content"> {/**/}
           <div style={intro}>
             <h1 /*className="center-horizontal"*/ style={{margin: "0 auto", textAlign: "center", display: "inline-block"  /*for centerposition: "absolute", left: "50%"*/}}>
-              Hi! My name<br/> is Ben Langlois
+              Hi! I'm<br/>Ben Langlois
             </h1><br/>
           </div>
           <div style={{display: "flex", alignContent: "center"}}>
             <p className="intro" style={{font: "25px/50px karla", alignSelf: "center", justifyContent: "center", /*margin: "0 auto", textAlign: "center"*/}}>
               {/* <strong>A Junior Web Dev/Designer with a passion for creating things. <br/>From <a className="link" href="#" style={{margin: "0", display: "inline"}}> product pages </a>  
               to <a className="link" href="#" style={{margin: "0", display: "inline"}}> photography portfolios</a>, I'm excited to help!</strong> */}
-              <strong>Web Dev <i class="far fa-circle"></i> Design <i class="far fa-circle"></i> Photography</strong>
+              Web Dev <i class="far fa-circle"></i> Design <i class="far fa-circle"></i> Photography
             </p>
           </div>
         </div>

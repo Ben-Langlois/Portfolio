@@ -107,13 +107,18 @@ body{
                 }
         #landing-container{
             position: relative;  
+            text-align: center;
         }
         #landing-container::after{
-            content: "";
-            content:"";
-            background: linear-gradient(rgba(34, 38, 41) 0%, /* rgb(133, 145, 153) 33%,*/ rgb(255, 255, 255) 100%);
+            content: "Scroll For More";
+            /* background: linear-gradient(rgba(34, 38, 41) 0%, rgb(133, 145, 153) 33%, rgb(255, 255, 255) 100%); */
             display: block;
-            height: 50px;
+            
+            /* color: #383E43; */
+            color: #4A5359;
+            
+            font-size: 3vmin;
+            height: 10vh;
             width: 100%;
             position: absolute;
             bottom: 0;
