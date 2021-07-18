@@ -123,6 +123,9 @@ body{
             position: absolute;
             bottom: 0;
             z-index: 1;
+
+            /* Shine animation */
+            animation: shine 5s infinite;
         }
             .content{
                 margin: 0 0 0 0; 
@@ -158,3 +161,19 @@ body{
 
 
 /* Expirementing with scroll prompt*/
+@keyframes shine{
+    10% {
+      opacity: 1;
+      top: -30%;
+      left: -30%;
+      transition-property: left, top, opacity;
+      transition-duration: 0.7s, 0.7s, 0.15s;
+      transition-timing-function: ease;
+    }
+    100% {
+      opacity: 0;
+      top: -30%;
+      left: -30%;
+      transition-property: left, top, opacity;
+    }
+  }
