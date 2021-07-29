@@ -68,7 +68,7 @@ const Landing = () => {
     fontSize: "2.5em",
 
     // might change this font
-    font: "2.8em/2em libre-bold !important",
+    font: "2.8em/2em libre-italic",
 
     padding: "25vh 0 0 0",
     justifyContent: "center",
@@ -134,41 +134,48 @@ const About = () => {
     // -o-background-size: cover;
     backgroundSize: "cover",
     position: "relative",
-    display: "flex"
+    display: "inline-flex"
   };
   //#endregion
 
   return (
-    <div id="about-container" style={aboutContainer}>
-      <div style={{width: "50vw", height: "70vh"}}>
-        <div style={{height: "80%", width: "400px", float: "right", backgroundColor: "white", margin: "10vh 2vw 0 0", borderRadius: "40px", boxShadow: "0px 8px 10px gray, -10px 8px 15px gray, 10px 8px 15px gray"}}>
-          
-        </div>
-      </div>
-      <div style={{ width: "50vw"}}>
-        <div style={{height: "200px", float: "left", margin: "8vh 0 0 2vw", color: "white"}}>
-          <div style={{font: " 1.7rem/2.5rem libre-reg"}}>
-            <b>I'm Ben, a GTA/Toronto based<br/>web developer/designer with<br/>an interest in photography and<br/>building random things.</b>
-          </div>
-          <div style={{margin: "3vh 0 0 0", font: "1.4rem/2.3rem roboto"}}>
-            <b>I attended Durham College in Oshawa,<br/>
-            Ontario for 2 years for computer<br/>
-            programming.<br/>
-            <br/>
-            I sometimes work freelance, building<br/>
-            websites for photographers and small<br/>
-            businesses.<br/>
-            <br/>
-            When I'm not working or creating you'll<br/> 
-            find me in the gym, in nature, or playing<br/> 
-            video games.<br/></b>
+    <>
+      <div id="about-container" style={aboutContainer}>
+        <div style={{width: "50vw", height: "70vh"}}>
+          <div style={{height: "80%", width: "400px", float: "right", backgroundColor: "white", margin: "10vh 2vw 0 0", borderRadius: "40px", boxShadow: "0px 8px 10px gray, -10px 8px 15px gray, 10px 8px 15px gray"}}>
+            
           </div>
         </div>
-      </div>
-        <div>
-          asd
+        <div style={{ width: "50vw"}}>
+          <div style={{height: "200px", margin: "8vh 0 0 2vw", color: "white"}}>
+            <div style={{font: " 1.7rem/2.5rem libre-reg"}}>
+              <b>I'm Ben, a GTA/Toronto based<br/>web developer/designer with<br/>an interest in photography and<br/>building random things.</b>
+            </div>
+            <div style={{margin: "3vh 0 0 0", font: "1.4rem/2.3rem roboto"}}>
+              <b>I attended Durham College in Oshawa,<br/>
+              Ontario for 2 years for computer<br/>
+              programming.<br/>
+              <br/>
+              I sometimes work freelance, building<br/>
+              websites for photographers and small<br/>
+              businesses.<br/>
+              <br/>
+              When I'm not working or creating you'll<br/> 
+              find me in the gym, in nature, or playing<br/> 
+              video games.<br/></b>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>      {/*gotta change circles to have individ margins to space so text is aligned underneath*/}
+      <div id="skill-ball" style={{margin: "10vh 30vw", display: "flex", justifyContent: "space-between"}}>
+        <div style={{display: "inline"}}>
+          <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}></div>
+          <div style={{textAlign: "center", margin: "20px 0 0 0", font: "1.4rem/1rem roboto"}}>React/Gatsby, JS, SCSS, SQL, C++</div>
+        </div>
+        <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}></div>
+        <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}></div>      
+      </div>
+    </>
   )
 }
 
