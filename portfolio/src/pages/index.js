@@ -2,6 +2,12 @@ import * as React from "react"
 //import { render } from "react-dom"
 import '../styles/style.css'
 
+// Logo Files
+import stack from '../images/stack.png';
+import exp from '../images/exp.png';
+import education from '../images/education.png';
+
+
 // CDNs
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin referrerpolicy="no-referrer" />
   <script crossOrigin src="https://cdn.jsdelivr.net/npm/britecharts@2/dist/bundled/britecharts.min.js"/>
@@ -141,24 +147,23 @@ const About = () => {
   return (
     <>
       <div id="about-container" style={aboutContainer}>
-        <div style={{width: "50vw", height: "70vh"}}>
-          <div style={{height: "80%", width: "400px", float: "right", backgroundColor: "white", margin: "10vh 2vw 0 0", borderRadius: "40px", boxShadow: "0px 8px 10px gray, -10px 8px 15px gray, 10px 8px 15px gray"}}>
+        <div id="portrait-container" style={{width: "50vw", height: "70vh"}}>
+          <div id="portrait" style={{height: "60vh", width: "400px", float: "right", backgroundColor: "white", margin: "10vh 2vw 0 0", borderRadius: "40px", boxShadow: "0px 8px 10px gray, -10px 8px 15px gray, 10px 8px 15px gray"}}>
             
           </div>
         </div>
-        <div style={{ width: "50vw"}}>
-          <div style={{height: "200px", margin: "8vh 0 0 2vw", color: "white"}}>
-            <div style={{font: " 1.7rem/2.5rem libre-reg"}}>
-              <b>I'm Ben, a GTA/Toronto based<br/>web developer/designer with<br/>an interest in photography and<br/>building random things.</b>
+        <div id="bio-container" style={{ width: "50vw"}}>
+          <div id="bio-text" style={{height: "70vh", margin: "8vh 0 0 2vw", color: "white", paddingBottom: "5vh"}}>
+            <div style={{font: "2vh/4.3vh libre-reg"}}>
+              <b>I'm Ben, a GTA/Toronto based web<br/>developer/designer withan interest<br/>in photography and building random<br/>things.</b>
             </div>
-            <div style={{margin: "3vh 0 0 0", font: "1.4rem/2.3rem roboto"}}>
+            <div style={{margin: "3vh 0 0 0", font: "2vh/4.3vh roboto"}}>
               <b>I attended Durham College in Oshawa,<br/>
               Ontario for 2 years for computer<br/>
               programming.<br/>
               <br/>
-              I sometimes work freelance, building<br/>
-              websites for photographers and small<br/>
-              businesses.<br/>
+              I work mostly in React/Gatsby, JS,<br/>
+              SCSS, MySQL, C++.
               <br/>
               When I'm not working or creating you'll<br/> 
               find me in the gym, in nature, or playing<br/> 
@@ -166,14 +171,23 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>      {/*gotta change circles to have individ margins to space so text is aligned underneath*/}
-      <div id="skill-ball" style={{margin: "10vh 30vw", display: "flex", justifyContent: "space-between"}}>
-        <div style={{display: "inline"}}>
-          <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}></div>
-          <div style={{textAlign: "center", margin: "20px 0 0 0", font: "1.4rem/1rem roboto"}}>React/Gatsby, JS, SCSS, SQL, C++</div>
+      </div>      {/*gotta change circles to have individ margins to space so text is aligned *CENTER* underneath*/}
+      <div id="skill-balls" style={{margin: "10vh 30vw", display: "flex", justifyContent: "space-between"}}>
+        <div id="" style={{display: "inline-block"}}>
+          <div id="ball" style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}><img src={stack} alt="stack" height="100%" width="100%"></img></div>
+          <div id="ball-text" style={{width: "100%", textAlign: "center", margin: "2vh 0 0 0", font: "1.7rem/2rem roboto"}}>React/Gatsby, JS,<br/>SCSS, SQL, C++</div> 
         </div>
-        <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}></div>
-        <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}></div>      
+        <div style={{display: "inline-block"}}>
+          <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%", position:"absolute"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}><img src={exp} alt="stack" height="80%" width="80%" position="relative"  right="30%"></img></div>
+          <div style={{width: "100%", textAlign: "center", margin: "2vh 0 0 0", font: "1.7rem/2rem roboto", position: "relative", right: "0%"}}>0 Professional<br/>3+ Personal</div> 
+        </div>
+        <div style={{display: "inline-block"}}>
+          <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%", display: "flex", justifyContent: "center", verticalAlign: "middle"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}><img src={education} alt="stack" height="80%" width="80%"></img></div>
+          <div style={{width: "100%", textAlign: "center", margin: "2vh 0 0 0", font: "1.7rem/2rem roboto", position: "relative", right: "0%"}}>Durham College<br/>Computer Prog.<br/>2018-2020</div> 
+        </div>
+      </div>
+      <div>
+
       </div>
     </>
   )
