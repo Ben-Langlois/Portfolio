@@ -2,11 +2,7 @@ import * as React from "react"
 //import { render } from "react-dom"
 import '../styles/style.css'
 
-// Logo Files
-import stack from '../images/stack.png';
-import exp from '../images/exp.png';
-import education from '../images/education.png';
-
+import portrait from '../images/portrait.jpg'
 
 // CDNs
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin referrerpolicy="no-referrer" />
@@ -86,12 +82,13 @@ const Landing = () => {
     margin: "0",
     padding: "0",
     height: "100vh",
-    width: "100%",
+    width: "100vw",
     color: "#F7F4F3",
     // -webkit-background-size: "cover";
     // -moz-background-size: cover;
     // -o-background-size: cover;
     backgroundSize: "cover",
+    backgroundColor: "#111111",
     position: "relative",
   };
 
@@ -110,6 +107,7 @@ const Landing = () => {
             </h1><br/>
           </div>
           <div style={{display: "flex", alignContent: "center"}}>
+            {/*Not sure what to call these*/}
             <p className="intro" style={{font: "25px/50px karla", alignSelf: "center", justifyContent: "center", /*margin: "0 auto", textAlign: "center"*/}}>
               {/* Web Dev <i class="far fa-circle"></i> Design <i class="far fa-circle"></i> Photography */}
               <span class="intro-snippet" style={introSnippet}>Web Dev</span>
@@ -148,44 +146,29 @@ const About = () => {
     <>
       <div id="about-container" style={aboutContainer}>
         <div id="portrait-container" style={{width: "50vw", height: "70vh"}}>
-          <div id="portrait" style={{height: "60vh", width: "400px", float: "right", backgroundColor: "white", margin: "10vh 2vw 0 0", borderRadius: "40px", boxShadow: "0px 8px 10px gray, -10px 8px 15px gray, 10px 8px 15px gray"}}>
-            
-          </div>
+            <img id="portrait" src={portrait} style={{minWidth: "500px", width:"60%", height: "85%", float: "right", margin: "10vh 0 0 0"}}></img>
         </div>
         <div id="bio-container" style={{ width: "50vw"}}>
-          <div id="bio-text" style={{height: "70vh", margin: "8vh 0 0 2vw", color: "white", paddingBottom: "5vh"}}>
-            <div style={{font: "2vh/4.3vh libre-reg"}}>
+          <div id="bio-text" style={{height: "70vh", margin: "8vh 0 0 2vw", paddingBottom: "5vh"}}>
+            <p style={{font: "2vh/4.3vh libre-reg"}}>
               <b>I'm Ben, a GTA/Toronto based web<br/>developer/designer withan interest<br/>in photography and building random<br/>things.</b>
-            </div>
-            <div style={{margin: "3vh 0 0 0", font: "2vh/4.3vh roboto"}}>
+            </p>
+            <p style={{margin: "3vh 0 0 0", font: "2vh/4vh roboto"}}> {/*figure out letter-spacing*/}
               <b>I attended Durham College in Oshawa,<br/>
               Ontario for 2 years for computer<br/>
               programming.<br/>
               <br/>
               I work mostly in React/Gatsby, JS,<br/>
-              SCSS, MySQL, C++.
+              SCSS, MySQL, C++ and I'm currently<br/>
+              expirementing with Python, C# and Arduino<br/>
               <br/>
               When I'm not working or creating you'll<br/> 
               find me in the gym, in nature, or playing<br/> 
               video games.<br/></b>
-            </div>
+            </p>
           </div>
         </div>
-      </div>      {/*gotta change circles to have individ margins to space so text is aligned *CENTER* underneath*/}
-      <div id="skill-balls" style={{margin: "10vh 30vw", display: "flex", justifyContent: "space-between"}}>
-        <div id="" style={{display: "inline-block"}}>
-          <div id="ball" style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}><img src={stack} alt="stack" height="100%" width="100%"></img></div>
-          <div id="ball-text" style={{width: "100%", textAlign: "center", margin: "2vh 0 0 0", font: "1.7rem/2rem roboto"}}>React/Gatsby, JS,<br/>SCSS, SQL, C++</div> 
-        </div>
-        <div style={{display: "inline-block"}}>
-          <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%", position:"absolute"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}><img src={exp} alt="stack" height="80%" width="80%" position="relative"  right="30%"></img></div>
-          <div style={{width: "100%", textAlign: "center", margin: "2vh 0 0 0", font: "1.7rem/2rem roboto", position: "relative", right: "0%"}}>0 Professional<br/>3+ Personal</div> 
-        </div>
-        <div style={{display: "inline-block"}}>
-          <div style={{backgroundColor: "rgb(255, 255, 255)", height: "15vh", width: "15vh", borderRadius: "50%", display: "flex", justifyContent: "center", verticalAlign: "middle"/*, boxShadow: "0px 3px 10px gray, -5px 5px 15px gray, 5px 5px 15px gray"*/}}><img src={education} alt="stack" height="80%" width="80%"></img></div>
-          <div style={{width: "100%", textAlign: "center", margin: "2vh 0 0 0", font: "1.7rem/2rem roboto", position: "relative", right: "0%"}}>Durham College<br/>Computer Prog.<br/>2018-2020</div> 
-        </div>
-      </div>
+      </div>  {/* Skill chart goes here*/}
       <div>
 
       </div>
