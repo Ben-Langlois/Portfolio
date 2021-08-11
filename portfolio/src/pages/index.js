@@ -146,7 +146,7 @@ const About = () => {
     <>
       <div id="about-container" style={aboutContainer}>
         <div id="portrait-container" style={{width: "50vw", height: "70vh"}}>
-            <img id="portrait" src={portrait} style={{minWidth: "500px", width:"60%", height: "85%", float: "right", margin: "10vh 0 0 0"}}></img>
+            <img id="portrait" src={portrait} alt=" " style={{minWidth: "500px", width:"60%", height: "85%", float: "right", margin: "10vh 0 0 0"}}></img>
         </div>
         <div id="bio-container" style={{ width: "50vw"}}>
           <div id="bio-text" style={{height: "70vh", margin: "8vh 0 0 2vw", paddingBottom: "5vh"}}>
@@ -187,8 +187,8 @@ const Projects = () => {
   
   const fullscreen = {
     margin: "0",
-    padding: "13vh 20vw",
-    height: "100vh",
+    padding: "13vh 20vw 0 20vw",
+    height: "90vh",
     width: "100%",
     // -webkit-background-size: "cover";
     // -moz-background-size: cover;
@@ -206,7 +206,8 @@ const Projects = () => {
       padding: "0 2vh 3vh 2vh ", 
       //borderBottom: "2px solid rgb(42, 45, 52)",
       display: "inline-flex",
-      fontStretch: "expanded"
+      fontStretch: "expanded",
+      font: "2.4em/2em libre-italic",
     };
 
   return (
@@ -226,9 +227,9 @@ const Projects = () => {
 */
 const ContactMe = () => {
   const fullscreen = {
-    margin: "0",
-    padding: "5vh 20vw 0 20vw",
-    height: "100vh",
+    margin: "0 0 10vh 0",
+    padding: "0 40vw",
+    // height: "100vh",
     width: "100%",
     //backgroundColor: "#fdfcfc", 
     // -webkit-background-size: "cover";
@@ -251,24 +252,20 @@ const ContactMe = () => {
       padding: "0 2vh 3vh 2vh ", 
       //borderBottom: "2px solid rgb(42, 45, 52)",
       display: "inline-flex",
-      fontStretch: "expanded"
+      fontStretch: "expanded",
+      font: "2.4em/2em libre-italic",
     };
 
-  const formContainer = {
-    padding: "0 10vw 10vh 10vw"
+  const linkContainer = {
+  //   padding: "0 10vw 10vh 10vw"
+    alignContent: "center"
   };
-
-  const label = {
-
-  };
-  const field = {
-    width: "100%",
-    marginBottom: "30px",
-    height: "40px",
-    resize: "none",
-    backgroundColor: "#F5F5F5",
-    borderRadius: "7px"
-  };
+    const linkBox = {
+      margin: "3vh 0 0 0",
+      height: "5vh",
+      width: "100%",
+      backgroundColor: "grey"
+    };
 
   return(
     <div id="contact-container" style={fullscreen}>
@@ -276,17 +273,11 @@ const ContactMe = () => {
         <div id="about-header" style={aboutHeader}>
           <h1 style={aboutHeaderText}><b>Contact Me</b></h1>
         </div>  
-        <div id="form-container" style={formContainer}>
-          <form>
-            <label for="name">Your Name</label><br/><br/>
-            <input style={field} type="text" id="" name="name" /><br/>
-            <label for="email">Your Email</label><br/><br/>
-            <input style={field} type="text" id="" name="email" /><br/>
-            <label for="subject">Subject (Optional)</label><br/><br/>
-            <input style={field} type="text" id="" name="subject" /><br/>
-            <label for="message">Message</label><br/><br/>
-            <textarea style={field} type="text" id="" name="message" col="40" rows="5"/><br/>
-          </form>
+        <div id="link-container" style={linkContainer}>
+          <div id="link-box" style={linkBox}>LinkedIn</div>
+          <div id="link-box" style={linkBox}>LinkedIn</div>
+          <div id="link-box" style={linkBox}>LinkedIn</div>
+          <div id="link-box" style={linkBox}>LinkedIn</div>
         </div>
       </div>
     </div>
