@@ -150,11 +150,11 @@ const About = () => {
         </div>
         <div id="bio-container" style={{ width: "50vw"}}>
           <div id="bio-text" style={{height: "70vh", margin: "8vh 0 0 2vw", paddingBottom: "5vh"}}>
-            <p style={{font: "2vh/4.3vh libre-reg"}}>
+            <p style={{font: "2.3vh/4.3vh libre-italic"}}>
               <b>I'm Ben, a GTA/Toronto based web<br/>developer/designer withan interest<br/>in photography and building random<br/>things.</b>
             </p>
-            <p style={{margin: "3vh 0 0 0", font: "2vh/4vh roboto"}}> {/*figure out letter-spacing*/}
-              <b>I attended Durham College in Oshawa,<br/>
+            <p style={{margin: "3vh 0 0 0", font: "2.2vh/4vh roboto"}}> {/*figure out letter-spacing*/}
+              I attended Durham College in Oshawa,<br/>
               Ontario for 2 years for computer<br/>
               programming.<br/>
               <br/>
@@ -164,7 +164,7 @@ const About = () => {
               <br/>
               When I'm not working or creating you'll<br/> 
               find me in the gym, in nature, or playing<br/> 
-              video games.<br/></b>
+              video games.<br/>
             </p>
           </div>
         </div>
@@ -227,8 +227,8 @@ const Projects = () => {
 */
 const ContactMe = () => {
   const fullscreen = {
-    margin: "0 0 10vh 0",
-    padding: "0 40vw",
+    margin: "0",
+    padding: "0 auto 10vh",
     // height: "100vh",
     width: "100%",
     //backgroundColor: "#fdfcfc", 
@@ -249,7 +249,7 @@ const ContactMe = () => {
     const aboutHeaderText = {
       textAlign: "center", 
       margin: "0 auto", 
-      padding: "0 2vh 3vh 2vh ", 
+      padding: "0 auto ", 
       //borderBottom: "2px solid rgb(42, 45, 52)",
       display: "inline-flex",
       fontStretch: "expanded",
@@ -257,14 +257,17 @@ const ContactMe = () => {
     };
 
   const linkContainer = {
-  //   padding: "0 10vw 10vh 10vw"
+    padding: "0 auto 10vh",
     alignContent: "center"
   };
     const linkBox = {
-      margin: "3vh 0 0 0",
+      margin: "3vh auto",
+      padding: "0 auto",
       height: "5vh",
-      width: "100%",
-      backgroundColor: "grey"
+      width: "15vw",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
     };
 
   return(
@@ -274,10 +277,10 @@ const ContactMe = () => {
           <h1 style={aboutHeaderText}><b>Contact Me</b></h1>
         </div>  
         <div id="link-container" style={linkContainer}>
-          <div id="link-box" style={linkBox}>LinkedIn</div>
-          <div id="link-box" style={linkBox}>LinkedIn</div>
-          <div id="link-box" style={linkBox}>LinkedIn</div>
-          <div id="link-box" style={linkBox}>LinkedIn</div>
+          <div class="btn" id="link-box" style={linkBox}>LinkedIn</div>
+          <div class="btn" id="link-box" style={linkBox}>Github</div>
+          <div class="btn" id="link-box" style={linkBox}>Instagram</div>
+          <div class="btn" id="link-box" style={linkBox}>Email</div>
         </div>
       </div>
     </div>
