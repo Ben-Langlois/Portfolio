@@ -88,7 +88,7 @@ body{
                 }
             /* NavBar */
             .nav-links{
-                font-size: 1.3rem; 
+                font-size: 1.2rem; 
                 margin: 0 0 0 auto;
             }
             .nav-links ul{
@@ -174,6 +174,9 @@ body{
                     margin: 5vh auto 0;
                 }
 
+
+/* Projects */
+
 /* Testing */
 .break {
     flex-basis: 100%;
@@ -255,6 +258,7 @@ body{
     height: 50px;
     min-width: 150px;
     min-height: 50px;
+    background-color: #fff;
     border: 1px solid #333;
     /* font-family: 'Cinzel', serif;
     font-size: 20px; */
@@ -266,23 +270,28 @@ body{
     position: relative;
     z-index: 0;
     transition: 1s;
+    /* flex: 50%;
+    margin: 0 15%; */
   }
 
 .btn::before, .btn::after {
     position: absolute;
-    background: #eee;
+    background: #fff;
     z-index: -1;
     transition: 1s;
     content: '';
   }
   
   .btn::before {
+    /* height: 50px; */
     height: 50px;
     width: 130px;
+    /* background-color: red; */
   }
   
   .btn::after {
-    width: 170px;
+    /* width: 180px; */
+    width: 100%;
     height: 30px;
   }
   

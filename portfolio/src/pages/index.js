@@ -140,6 +140,17 @@ const About = () => {
     position: "relative",
     display: "inline-flex"
   };
+  const skillChartContainer = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  };
+    const skillChart = {
+      backgroundColor: "#fff",
+      width: "40vw",
+      height: "40vh",
+      borderStyle: "none none solid solid"
+    };
   //#endregion
 
   return (
@@ -154,7 +165,7 @@ const About = () => {
               <b>I'm Ben, a GTA/Toronto based web<br/>developer/designer withan interest<br/>in photography and building random<br/>things.</b>
             </p>
             <p style={{margin: "3vh 0 0 0", font: "2.2vh/4vh roboto"}}> {/*figure out letter-spacing*/}
-              I attended Durham College in Oshawa,<br/>
+              <b>I attended Durham College in Oshawa,<br/>
               Ontario for 2 years for computer<br/>
               programming.<br/>
               <br/>
@@ -164,13 +175,18 @@ const About = () => {
               <br/>
               When I'm not working or creating you'll<br/> 
               find me in the gym, in nature, or playing<br/> 
-              video games.<br/>
+              video games.<br/></b>
             </p>
           </div>
         </div>
       </div>  {/* Skill chart goes here*/}
-      <div>
-
+      <div id="skill-chart-container" style={skillChartContainer}>
+        <div id="skill-chart" style={skillChart}>
+          <div style={{height: "15%", width: "100%", backgroundColor: "#000266", margin:"10px 0"}}></div>
+          <div style={{height: "15%", width: "80%", backgroundColor: "#383838", margin:"10px 0"}}></div>
+          <div style={{height: "15%", width: "40%", backgroundColor: "#383838", margin:"10px 0"}}></div>
+          <div style={{height: "15%", width: "60%", backgroundColor: "#383838", margin:"10px 0"}}></div>
+        </div>
       </div>
     </>
   )
@@ -187,8 +203,8 @@ const Projects = () => {
   
   const fullscreen = {
     margin: "0",
-    padding: "13vh 20vw 0 20vw",
-    height: "90vh",
+    padding: "13vh 20vw",
+    // height: "90vh",
     width: "100%",
     // -webkit-background-size: "cover";
     // -moz-background-size: cover;
@@ -209,15 +225,41 @@ const Projects = () => {
       fontStretch: "expanded",
       font: "2.4em/2em libre-italic",
     };
+  const projectContainer = {
+    padding: "0 auto",
+    
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly"
+  };
+    const projectBubble = {
+      backgroundColor: "#fff", 
+      margin: "2vh",
+      height: "20vh", 
+      width:"20vh", 
+      borderRadius: "20px", 
+      justifyContent: "center", 
+      display:"flex", 
+      alignItems:"center"
+    };
 
   return (
     <div id="project-container" style={fullscreen}>
       <div id="about-header" style={aboutHeader}>
         <h1 style={aboutHeaderText}><b>Projects</b></h1>
       </div>  
-      <div id="projects" style={{backgroundColor: "#F5F5F5", height: "60vh", borderRadius: "20px", justifyContent: "center", display:"flex", alignItems:"center" }}>
-        <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
-      </div>
+        <div style={projectContainer}>   
+          <div id="project-bubble" style={projectBubble}>
+            <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
+          </div>
+          <div id="project-bubble" style={projectBubble}>
+            <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
+          </div>
+          <div id="project-bubble" style={projectBubble}>
+            <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
+          </div>
+        </div> 
     </div>
   )
 }
@@ -257,8 +299,11 @@ const ContactMe = () => {
     };
 
   const linkContainer = {
-    padding: "0 auto 10vh",
-    alignContent: "center"
+    padding: "0 30vw 5vh",
+    alignContent: "center",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap"
   };
     const linkBox = {
       margin: "3vh auto",
@@ -274,13 +319,13 @@ const ContactMe = () => {
     <div id="contact-container" style={fullscreen}>
       <div id="contact" style={contactMe}>
         <div id="about-header" style={aboutHeader}>
-          <h1 style={aboutHeaderText}><b>Contact Me</b></h1>
+          <h1 style={aboutHeaderText}><b>Contact Me!</b></h1>
         </div>  
         <div id="link-container" style={linkContainer}>
-          <div class="btn" id="link-box" style={linkBox}>LinkedIn</div>
-          <div class="btn" id="link-box" style={linkBox}>Github</div>
-          <div class="btn" id="link-box" style={linkBox}>Instagram</div>
-          <div class="btn" id="link-box" style={linkBox}>Email</div>
+          <div class="btn" id="link-box" style={linkBox}><b>LinkedIn</b></div>
+          <div class="btn" id="link-box" style={linkBox}><b>Github</b></div>
+          <div class="btn" id="link-box" style={linkBox}><b>Instagram</b></div>
+          <div class="btn" id="link-box" style={linkBox}><b>Email</b></div>
         </div>
       </div>
     </div>
