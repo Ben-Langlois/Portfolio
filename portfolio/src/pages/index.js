@@ -2,6 +2,8 @@ import * as React from "react"
 //import { render } from "react-dom"
 import '../styles/style.css'
 
+import portrait from '../images/portrait.jpg'
+
 // CDNs
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin referrerpolicy="no-referrer" />
   <script crossOrigin src="https://cdn.jsdelivr.net/npm/britecharts@2/dist/bundled/britecharts.min.js"/>
@@ -43,9 +45,9 @@ const  Header = () => {
   return (
     <header style={div}>
       <div className="logo">
-        <a className="logo-link" href="#landing" >   
+        {/* <a className="logo-link" href="#landing" >   
           BL
-        </a>
+        </a> */}
       </div>
       <div className="nav-links">
         <ul>            
@@ -66,6 +68,10 @@ const Landing = () => {
   const intro = {
     color: "#F7F4F3",  
     fontSize: "2.5em",
+
+    // might change this font
+    font: "2.8em/2em libre-italic",
+
     padding: "25vh 0 0 0",
     justifyContent: "center",
     display: "flex"
@@ -76,14 +82,18 @@ const Landing = () => {
     margin: "0",
     padding: "0",
     height: "100vh",
-    width: "100%",
-    backgroundColor: "#222629", 
+    width: "100vw",
     color: "#F7F4F3",
     // -webkit-background-size: "cover";
     // -moz-background-size: cover;
     // -o-background-size: cover;
     backgroundSize: "cover",
+    backgroundColor: "#111111",
     position: "relative",
+  };
+
+  const introSnippet = {
+    margin: "0 1em"
   };
 
   return (
@@ -91,15 +101,18 @@ const Landing = () => {
         <Header />
         <div  id="landing" className="content"> {/**/}
           <div style={intro}>
-            <h1 /*className="center-horizontal"*/ style={{margin: "0 auto", textAlign: "center", display: "inline-block"  /*for centerposition: "absolute", left: "50%"*/}}>
-              Hi! I'm<br/>Ben Langlois
+            <h1 /*className="center-horizontal"*/ style={{margin: "0 auto", textAlign: "left", display: "inline-block", letterSpacing: ".2em"  /*for centerposition: "absolute", left: "50%"*/}}>
+              {/* Not in love with the font */}
+              Ben<br/>Langlois
             </h1><br/>
           </div>
           <div style={{display: "flex", alignContent: "center"}}>
+            {/*Not sure what to call these*/}
             <p className="intro" style={{font: "25px/50px karla", alignSelf: "center", justifyContent: "center", /*margin: "0 auto", textAlign: "center"*/}}>
-              {/* <strong>A Junior Web Dev/Designer with a passion for creating things. <br/>From <a className="link" href="#" style={{margin: "0", display: "inline"}}> product pages </a>  
-              to <a className="link" href="#" style={{margin: "0", display: "inline"}}> photography portfolios</a>, I'm excited to help!</strong> */}
-              Web Dev <i class="far fa-circle"></i> Design <i class="far fa-circle"></i> Photography
+              {/* Web Dev <i class="far fa-circle"></i> Design <i class="far fa-circle"></i> Photography */}
+              <span class="intro-snippet" style={introSnippet}>Web Dev</span>
+              <span class="intro-snippet" style={introSnippet}>Photography</span>
+              <span class="intro-snippet" style={introSnippet}>Design</span>
             </p>
           </div>
         </div>
@@ -115,161 +128,67 @@ const About = () => {
   const aboutContainer = {
     margin: "0 0 0 0",
     //padding: "10vh 15vw",
-    padding: "0 15vw 0 15vw",
+    //padding: "0 15vw 0 25vw",
     color: "rgb(42, 45, 52)",
     height: "auto",
     width: "100%",
-    backgroundColor: "#FFFFFF", 
+    //backgroundColor: "#FFFFFF", 
     // -webkit-background-size: "cover";        // these will work when added to actual css class
     // -moz-background-size: cover;
     // -o-background-size: cover;
     backgroundSize: "cover",
-    position: "relative"
+    position: "relative",
+    display: "inline-flex"
   };
-    const aboutHeader = {
-      textAlign: "center"
+  const skillChartContainer = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  };
+    const skillChart = {
+      backgroundColor: "#fff",
+      width: "40vw",
+      height: "40vh",
+      borderStyle: "none none solid solid"
     };
-      const aboutHeaderText = {
-        textAlign: "center", 
-        margin: "0 auto", 
-        padding: "2vh 2vh 3vh 2vh ", 
-        //borderBottom: "2px solid rgb(42, 45, 52)",
-        display: "inline-flex",
-        fontStretch: "expanded"
-      };
-    const innerContainer = {
-      margin: "0",
-      padding: "0",
-      height: "100%",
-      width: "100%",
-
-      // testing grid
-      // should be in media query, when res is low it messes w
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      //gridTemplateColumns: "repeat(auto-fill, minmax(1fr, 1fr))",
-      //gridTemplateRows: "1fr 1fr"
-    };
-      const infoBox = {
-        // height: "50%",
-        // minHeight: "200px",
-        // width: "50%",
-        //minWidth: "400px"
-        //border: "solid 2px black",
-        margin: "1vh",
-        height: "40vh",
-
-        backgroundColor: "#F5F5F5", 
-        //height: "100%", 
-        borderRadius: "20px"
-      };
-        const infoBoxHeadCont = {
-          textAlign: "center",
-        };
-          const infoBoxHead = {
-            margin: "1vh auto 1vh", 
-            display: "inline-flex", 
-            //borderBottom: "2px groove rgb(42, 45, 52)"
-          };
-        const infoBoxContent = {
-          fontFamily: "roboto",
-          padding: "5vh auto",
-          //height: "100%",
-          //justifyContent: "center",
-          textAlign: "center",
-          alignItems: "center",
-          //display: "inline",
-        };
-          const point = {
-            margin: "0 auto",
-            padding: "3vh 6vw 0"
-          };
   //#endregion
 
   return (
-    <div id="about-container" style={aboutContainer}>
-      <div id="about-header" style={aboutHeader}>
-        <h1 style={aboutHeaderText}><b>About Me</b></h1>
-      </div>      
-      <div id="about" style={{/*backgroundColor: "#F5F5F5", height: "100%", borderRadius: "20px",*/ display: "inline", width: "100%"}}> 
-        <div id="about-inner-container" style={innerContainer}>
-          <div id="info-box" style={infoBox}>
-            <div id="info-box-header-cont" style={infoBoxHeadCont}>
-              <h1 style={infoBoxHead}>Who Am I</h1>
-            </div>
-            <div class="info-box-content" style={infoBoxContent}>
-              <h2 class="point" style={point}>
-                <b>My name is Benjamin Langlois (most people just call me Ben)</b>
-              </h2>
-              <h2 class="point" style={point}>
-                <b>Based in Stouffville, Ontario located just north of Toronto</b>
-              </h2>
-              <h2 class="point" style={point}>
-                <b>I've grown up with computers and video games, pulling me towards the world of software/web development </b>
-              </h2>
-            </div>
+    <>
+      <div id="about-container" style={aboutContainer}>
+        <div id="portrait-container" style={{width: "50vw", height: "70vh"}}>
+            <img id="portrait" src={portrait} alt=" " style={{minWidth: "500px", width:"60%", height: "85%", float: "right", margin: "10vh 0 0 0"}}></img>
+        </div>
+        <div id="bio-container" style={{ width: "50vw"}}>
+          <div id="bio-text" style={{height: "70vh", margin: "8vh 0 0 2vw", paddingBottom: "5vh"}}>
+            <p style={{font: "2.3vh/4.3vh libre-italic"}}>
+              <b>I'm Ben, a GTA/Toronto based web<br/>developer/designer withan interest<br/>in photography and building random<br/>things.</b>
+            </p>
+            <p style={{margin: "3vh 0 0 0", font: "2.2vh/4vh roboto"}}> {/*figure out letter-spacing*/}
+              <b>I attended Durham College in Oshawa,<br/>
+              Ontario for 2 years for computer<br/>
+              programming.<br/>
+              <br/>
+              I work mostly in React/Gatsby, JS,<br/>
+              SCSS, MySQL, C++ and I'm currently<br/>
+              expirementing with Python, C# and Arduino<br/>
+              <br/>
+              When I'm not working or creating you'll<br/> 
+              find me in the gym, in nature, or playing<br/> 
+              video games.<br/></b>
+            </p>
           </div>
-          <div style={infoBox}>
-            <div id="info-box-header" style={{textAlign: "center"}}>
-              <h1 style={infoBoxHead}>What I do</h1>
-            </div>
-            <div class="info-box-content" style={infoBoxContent}>
-              <h2 class="point" style={point}>
-                <b>Build web solutions for small businesses and portfolios</b>
-              </h2>
-              <h2 class="point" style={point}>
-                <b>Create programs in C++ and C#</b>
-              </h2>
-              <h2 class="point" style={point}>
-                <b>Photograph nature and urban settings</b>
-              </h2>
-            </div>
-          </div>
-          <div style={infoBox}>
-            <div id="info-box-header" style={{textAlign: "center"}}>
-              <h1 style={infoBoxHead}>Where I study</h1>
-            </div>
-            <div class="info-box-content" style={infoBoxContent}>
-              <h2 class="point" style={point}>
-                <b>Durham College<br/>Computer Programming (2019-2020)</b>
-              </h2>
-              <h2 class="point" style={point}>
-                <b>Self-Taught through projects <br/>and freelance work</b>
-              </h2>
-              <h2 class="point" style={point}>
-                <b>Continually learning in all aspects of development</b>
-              </h2>
-            </div>
-          </div>
-          <div style={infoBox}>
-            <div id="info-box-header" style={{textAlign: "center"}}>
-              <h1 style={infoBoxHead}>What I know</h1>
-            </div>
-            <div class="info-box-content" style={infoBoxContent}>
-              {/* Skill graph goes here https://css-tricks.com/making-charts-with-css/ */}
-              <dl>
-                <dd class="percentage">
-                  <span class="text">
-                    HTML/CSS
-                  </span>
-                </dd>
-                <dd class="percentage">
-                  <span class="text">
-                    JS/React
-                  </span>
-                </dd>
-                <dd class="percentage">
-                  <span class="text">
-                    
-                  </span>
-                </dd>
-              </dl>
-            </div>
-
-          </div>
-        </div>        
+        </div>
+      </div>  {/* Skill chart goes here*/}
+      <div id="skill-chart-container" style={skillChartContainer}>
+        <div id="skill-chart" style={skillChart}>
+          <div style={{height: "15%", width: "100%", backgroundColor: "#000266", margin:"10px 0"}}></div>
+          <div style={{height: "15%", width: "80%", backgroundColor: "#383838", margin:"10px 0"}}></div>
+          <div style={{height: "15%", width: "40%", backgroundColor: "#383838", margin:"10px 0"}}></div>
+          <div style={{height: "15%", width: "60%", backgroundColor: "#383838", margin:"10px 0"}}></div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
@@ -285,9 +204,8 @@ const Projects = () => {
   const fullscreen = {
     margin: "0",
     padding: "13vh 20vw",
-    height: "100vh",
+    // height: "90vh",
     width: "100%",
-    backgroundColor: "#f5f5f5", 
     // -webkit-background-size: "cover";
     // -moz-background-size: cover;
     // -o-background-size: cover;
@@ -304,7 +222,26 @@ const Projects = () => {
       padding: "0 2vh 3vh 2vh ", 
       //borderBottom: "2px solid rgb(42, 45, 52)",
       display: "inline-flex",
-      fontStretch: "expanded"
+      fontStretch: "expanded",
+      font: "2.4em/2em libre-italic",
+    };
+  const projectContainer = {
+    padding: "0 auto",
+    
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly"
+  };
+    const projectBubble = {
+      backgroundColor: "#fff", 
+      margin: "2vh",
+      height: "20vh", 
+      width:"20vh", 
+      borderRadius: "20px", 
+      justifyContent: "center", 
+      display:"flex", 
+      alignItems:"center"
     };
 
   return (
@@ -312,9 +249,17 @@ const Projects = () => {
       <div id="about-header" style={aboutHeader}>
         <h1 style={aboutHeaderText}><b>Projects</b></h1>
       </div>  
-      <div id="projects" style={{backgroundColor: "#F5F5F5", height: "60vh", borderRadius: "20px", justifyContent: "center", display:"flex", alignItems:"center" }}>
-        <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
-      </div>
+        <div style={projectContainer}>   
+          <div id="project-bubble" style={projectBubble}>
+            <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
+          </div>
+          <div id="project-bubble" style={projectBubble}>
+            <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
+          </div>
+          <div id="project-bubble" style={projectBubble}>
+            <h1 style={{display:"inline", margin: "auto 0"}}>Adding Projects as they come</h1>
+          </div>
+        </div> 
     </div>
   )
 }
@@ -325,8 +270,8 @@ const Projects = () => {
 const ContactMe = () => {
   const fullscreen = {
     margin: "0",
-    padding: "5vh 20vw 0 20vw",
-    height: "100vh",
+    padding: "0 auto 10vh",
+    // height: "100vh",
     width: "100%",
     //backgroundColor: "#fdfcfc", 
     // -webkit-background-size: "cover";
@@ -346,45 +291,41 @@ const ContactMe = () => {
     const aboutHeaderText = {
       textAlign: "center", 
       margin: "0 auto", 
-      padding: "0 2vh 3vh 2vh ", 
+      padding: "0 auto ", 
       //borderBottom: "2px solid rgb(42, 45, 52)",
       display: "inline-flex",
-      fontStretch: "expanded"
+      fontStretch: "expanded",
+      font: "2.4em/2em libre-italic",
     };
 
-  const formContainer = {
-    padding: "0 10vw 10vh 10vw"
+  const linkContainer = {
+    padding: "0 30vw 5vh",
+    alignContent: "center",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap"
   };
-
-  const label = {
-
-  };
-  const field = {
-    width: "100%",
-    marginBottom: "30px",
-    height: "40px",
-    resize: "none",
-    backgroundColor: "#F5F5F5",
-    borderRadius: "7px"
-  };
+    const linkBox = {
+      margin: "3vh auto",
+      padding: "0 auto",
+      height: "5vh",
+      width: "15vw",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    };
 
   return(
     <div id="contact-container" style={fullscreen}>
       <div id="contact" style={contactMe}>
         <div id="about-header" style={aboutHeader}>
-          <h1 style={aboutHeaderText}><b>Contact Me</b></h1>
+          <h1 style={aboutHeaderText}><b>Contact Me!</b></h1>
         </div>  
-        <div id="form-container" style={formContainer}>
-          <form>
-            <label for="name">Your Name</label><br/><br/>
-            <input style={field} type="text" id="" name="name" /><br/>
-            <label for="email">Your Email</label><br/><br/>
-            <input style={field} type="text" id="" name="email" /><br/>
-            <label for="subject">Subject (Optional)</label><br/><br/>
-            <input style={field} type="text" id="" name="subject" /><br/>
-            <label for="message">Message</label><br/><br/>
-            <textarea style={field} type="text" id="" name="message" col="40" rows="5"/><br/>
-          </form>
+        <div id="link-container" style={linkContainer}>
+          <div class="btn" id="link-box" style={linkBox}><b>LinkedIn</b></div>
+          <div class="btn" id="link-box" style={linkBox}><b>Github</b></div>
+          <div class="btn" id="link-box" style={linkBox}><b>Instagram</b></div>
+          <div class="btn" id="link-box" style={linkBox}><b>Email</b></div>
         </div>
       </div>
     </div>
