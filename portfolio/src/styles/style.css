@@ -1,29 +1,11 @@
 /* Fonts */
 @font-face {
-    font-family: archivo-black;
-    src: url(fonts/ArchivoBlack-Regular.ttf);
-}
-@font-face {
-    font-family: patua;
-    src: url(fonts/PatuaOne-Regular.ttf);
-}
-@font-face {
     font-family: karla;
     src: url(fonts/Karla-VariableFont_wght.ttf);
 }
 @font-face {
     font-family: roboto;
     src: url(fonts/Roboto-Regular.ttf);
-}
-
-/*temp*/
-@font-face {
-    font-family: courgette;
-    src: url(fonts/Courgette-Regular.ttf);
-}
-@font-face {
-    font-family: kalam;
-    src: url(fonts/Kalam-Regular.ttf);
 }
 
 /* Libre Baskerville */
@@ -68,7 +50,7 @@ body{
     background: #eee;
 
 }
-
+/* ID */
         /* Header */
         header{
             color: #F7F4F3 !important;
@@ -90,7 +72,7 @@ body{
                 }
             /* NavBar */
             .nav-links{
-                font-size: 1.2rem; 
+                font-size: 1.4rem; 
                 margin: 0 0 0 auto;
             }
             .nav-links ul{
@@ -139,7 +121,7 @@ body{
         /* Landing */
         #landing-container{
             position: relative;  
-            text-align: center;
+            /* text-align: center; */
             
             margin: 0;
             padding: 0;
@@ -161,6 +143,7 @@ body{
             /* color: #383E43;  */
             /* color: #4A5359; */
             color: rgb(247, 244, 243);
+            text-align: center;
 
             font-size: 3vmin;
             height: 10vh;
@@ -182,21 +165,31 @@ body{
                 /* Name and greeting */
             /*placeholder div*/
 
-                #intro-main{
+                div#intro-main{
                     color: #F7F4F3;  
                     font-size: 2.5em;
                 
                     /* might change this font */
                     font: 2.8em/2em libre-italic;
                 
-                    padding: 25vh 0 0 0;
+                    padding: 20vh 0 0 0;
+                    margin: 0 auto;
+
                     justify-content: center;
                     display: flex; 
                 }
-                #intro-sub{
+                    h1#intro-main{
+                        text-align: left;
+                    }
+                div#intro-sub{
                     display: flex;
                     align-content: center;
                 }
+                    p#intro-sub{
+                        margin: 5vh auto 0;
+                        text-align: left;
+                    }
+
                     .intro-snippets{
                         /* font-family: 'Roboto', sans-serif;                    */
                         text-align: center;
@@ -264,7 +257,7 @@ body{
 /* Projects */
 #project-container{
     margin: 0;
-    padding: 13vh 20vw;
+    padding: 13vh 20vw 10vh;
     /* height: 90vh; */
     width: 100%;
     -webkit-background-size: cover;
@@ -308,6 +301,19 @@ body{
                 margin: auto 0;
             }
 
+/* Classes */
+.section-header{
+    text-align: center;
+}
+    .section-header-text{
+        text-align: center;
+        margin: 0 auto; 
+        padding: 0 2vh 3vh 2vh; 
+        /* border-bottom: 2px solid rgb(42, 45, 52); */
+        display: inline-flex;
+        font-stretch: expanded;
+        font: 2.4em/2em libre-italic;
+    }
 /* Testing */
 .break {
     flex-basis: 100%;

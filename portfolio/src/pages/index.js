@@ -10,12 +10,19 @@ import portrait from '../images/portrait.jpg'
 
 
 /* TODO
-  - figure out scss
-  - scroll prompt in landing
+   Important
   - intro text animation
-  - figure out media queries (to work with scss)
-  - (maybe) have header scroll with user, always have access to links 
-  - figure out fa icons
+    - maybe have other sections have an animation on scroll over
+  - find icons for socials (linkedin, email, github, codepen)
+    - put icons as links under landing #intro-main
+    - put icons in the contact section
+  - figure out skill chart
+  - figure out layout of projects
+    - have it so there are equal rows (when applicable) of projects
+
+   Not so important
+  - figure out scss
+    - figure out media queries (to work with scss)  
 */
 
 // components
@@ -35,7 +42,7 @@ const  Header = () => {
         <ul>            
           <li><a className="link" href="#about-container">About</a></li>
           <li><a className="link" href="#project-container">Projects</a></li>
-          <li><a className="link" href="#contact">Contact</a></li>
+          <li><a className="link" href="#contact-container">Contact</a></li>
         </ul>
       </div>    
     </header> 
@@ -51,20 +58,18 @@ const Landing = () => {
         <Header />
         <div  id="landing" className="content"> {/**/}
           <div id='intro-main'>
-            <h1>
+            <h1 id='intro-main'>
               {/* Not in love with the font */}
-              Ben<br/>Langlois
+              Hi! I'm<br/>Ben<br/>Langlois
             </h1><br/>
           </div>
-          <div id='intro-sub'>
-            {/*Not sure what to call these*/}
+          {/* <div id='intro-sub'>
             <p className="intro-snippets">
-              {/* Web Dev <i class="far fa-circle"></i> Design <i class="far fa-circle"></i> Photography */}
               <span className="intro-snippet">Web Dev</span>
               <span className="intro-snippet">Photography</span>
               <span className="intro-snippet">Design</span>
-            </p>
-          </div>
+            </p> 
+          </div> */}
         </div>
       </div>
   )
@@ -83,20 +88,22 @@ const About = () => {
         <div id="bio-container">
           <div id="bio-text">
             <p style={{font: "2.3vh/4.3vh libre-italic"}}>
-              <b>I'm Ben, a GTA/Toronto based web<br/>developer/designer withan interest<br/>in photography and building random<br/>things.</b>
+              <b>A Hamilton/Toronto based web<br/>
+              developer/designer with an interest in<br/>
+              photography and building random things.</b>
             </p>
             <p style={{margin: "3vh 0 0 0", font: "2.2vh/4vh roboto"}}> {/*figure out letter-spacing*/}
-              <b>I attended Durham College in Oshawa,<br/>
-              Ontario for 2 years for computer<br/>
+              <b>I attended Durham College for 2 years<br/>
+              in Oshawa, Ontario for computer<br/>
               programming.<br/>
               <br/>
-              I work mostly in React/Gatsby, JS,<br/>
-              SCSS, MySQL, C++ and I'm currently<br/>
-              expirementing with Python, C# and Arduino<br/>
+              I work mostly in React, JS, SCSS, MySQL,<br/>
+              and C++. I'm also currently expirementing<br/>
+              with Python, C# and Arduino.<br/>
               <br/>
-              When I'm not working or creating you'll<br/> 
-              find me in the gym, in nature, or playing<br/> 
-              video games.<br/></b>
+              Besides programming, I'm really interested in<br/> 
+              reading, going to the gym, being in nature, and<br/>
+              video games.</b>
             </p>
           </div>
         </div>
@@ -123,8 +130,8 @@ const About = () => {
 const Projects = () => {
   return (
     <div id="project-container">
-      <div id="project-header">
-        <h1 id='project-header-text'><b>Projects</b></h1>
+      <div class="section-header">
+        <h1 class='section-header-text'><b>Projects</b></h1>
       </div>  
       <div id='bubble-container'>   
         <div class="bubble">
@@ -147,8 +154,10 @@ const Projects = () => {
 */
 const ContactMe = () => {
   return(
-    <div>
-      
+    <div id='contact-container'>
+      <div class='section-header'>
+        <h1 class='section-header-text'><b>Interested? Cool! Lets talk!</b></h1>
+      </div>
     </div>
   );
 }
