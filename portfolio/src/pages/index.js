@@ -3,6 +3,8 @@ import * as React from "react"
 import '../styles/style.css'
 
 import portrait from '../images/portrait.jpg'
+import portrait2 from '../images/portrait2.jpg'
+// import { render } from "react-dom"
 
 // CDNs
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin referrerpolicy="no-referrer" />
@@ -20,6 +22,10 @@ import portrait from '../images/portrait.jpg'
   - figure out layout of projects
     - have it so there are equal rows (when applicable) of projects
 
+  - convert to React project
+    - maybe scss will work 
+    - 
+
    Not so important
   - figure out scss
     - figure out media queries (to work with scss)  
@@ -29,31 +35,36 @@ import portrait from '../images/portrait.jpg'
 /*Header
   - Contains logo, nav links
 */
-const  Header = () => {  
-  // *TODO* need to change <a> to <link>
-  return (
-    <header>
-      <div className="logo">
-        {/* <a className="logo-link" href="#landing" >   
-          BL
-        </a> */}
-      </div>
-      <div className="nav-links">
-        <ul>            
-          <li><a className="link" href="#about-container">About</a></li>
-          <li><a className="link" href="#project-container">Projects</a></li>
-          <li><a className="link" href="#contact-container">Contact</a></li>
-        </ul>
-      </div>    
-    </header> 
-  )
+
+class Header extends React.Component {
+  render() {
+    return (
+      <header>
+        <div className="logo">
+          {/* <a className="logo-link" href="#landing" >   
+            BL
+          </a> */}
+        </div>
+        <div className="nav-links">
+          <ul>            
+            <li><a className="link" href="#about-container">About</a></li>
+            <li><a className="link" href="#project-container">Projects</a></li>
+            <li><a className="link" href="#contact-container">Contact</a></li>
+          </ul>
+        </div>    
+      </header> 
+    )
+  }
 }
+
 
 /*Landing section
   - Contains initial content, "Hi my name...", scroll prompt 
 */
-const Landing = () => {
-  return (
+
+class Landing extends React.Component {
+  render(){
+    return (
       <div id="landing-container">
         <Header />
         <div  id="landing" className="content"> {/**/}
@@ -72,18 +83,20 @@ const Landing = () => {
           </div> */}
         </div>
       </div>
-  )
+    )
+  }
 }
 
 /*About
   - Contains bio sections, education, skills, soft-skills, yadayada
 */
-const About = () => {
-  return (
-    <>
-      <div id="about-container">
+class About extends React.Component {
+  render() {
+    return (
+      <>
+      <div id="about-container" class='tag'>
         <div id="portrait-container">
-            <img id="portrait" src={portrait} alt=" "></img>
+            <img id="portrait" src={portrait2} alt=" "></img>
         </div>
         <div id="bio-container">
           <div id="bio-text">
@@ -107,7 +120,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>  {/* Skill chart goes here*/}
+      </div>
       <div id="skill-chart-container">
         <div id="skill-chart">
           <div class='bar' style={{width: "100%"}}></div>
@@ -116,9 +129,11 @@ const About = () => {
           <div class='bar' style={{width: "60%"}}></div>
         </div>
       </div>
-    </>
-  )
+      </>
+    )
+  }
 }
+
 
 /*Projects
   - Contains projects, filterable through a slide bar type thing (divided by languages)
@@ -127,51 +142,77 @@ const About = () => {
   - change margins/padding to account for smaller section
   - add projects duh yuh get me
 */
-const Projects = () => {
-  return (
-    <div id="project-container">
-      <div class="section-header">
-        <h1 class='section-header-text'><b>Projects</b></h1>
-      </div>  
-      <div id='bubble-container'>   
-        <div class="bubble">
-          <h1 class='bubble-text'>Adding Projects as they come</h1>
-        </div>
-        <div class="bubble">
-          <h1 class='bubble-text'>Adding Projects as they come</h1>
-        </div>
-        <div class="bubble">
-          <h1 class='bubble-text'>Adding Projects as they come</h1>
-        </div>
-      </div> 
-    </div>
-  )
+class Projects extends React.Component {
+  render(){
+    return (
+      <div id="project-container" class='tag'>
+        <div class="section-header">
+          <h1 class='section-header'><b>Some of my Projects</b></h1>
+        </div>  
+        <div id='bubble-container'>   
+          <div class="bubble">
+            <h1 class='bubble-text'>Adding Projects as they come</h1>
+          </div>
+          <div class="bubble">
+            <h1 class='bubble-text'>Adding Projects as they come</h1>
+          </div>
+          <div class="bubble">
+            <h1 class='bubble-text'>Adding Projects as they come</h1>
+          </div>
+        </div> 
+      </div>
+    )
+  }
 }
 
 /*Contact
 *Gonna redo this section*
   - has contact info, form, links to github linkedIn etc
 */
-const ContactMe = () => {
-  return(
-    <div id='contact-container'>
-      <div class='section-header'>
-        <h1 class='section-header-text'><b>Interested? Cool! Lets talk!</b></h1>
+class ContactMe extends React.Component {
+  render(){
+    return(
+      <div id='contact-container' class='tag'>
+        <div class='section-header'>
+          <h1 class='section-header'><b>Interested? Cool! Lets talk!</b></h1>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 // markup
-const IndexPage = () => {
-  return (
-    <>
-      <Landing />
-      <About />
-      <Projects />
-      <ContactMe />
-    </>
-  )
+class Portfolio extends React.Component {
+  // trying to add 'fade in as you scroll animation'
+  // jquery doesent wanna work
+  componentDidMount(){
+    // $(document).on("scroll", function() {
+    //   var pageTop = $(document).scrollTop();
+    //   var pageBottom = pageTop + $(window).height();
+    //   var tags = $(".tag");
+    
+    //   for (var i = 0; i < tags.length; i++) {
+    //     var tag = tags[i];
+    
+    //     if ($(tag).position().top < pageBottom) {
+    //       $(tag).addClass("visible");
+    //     } else {
+    //       $(tag).removeClass("visible");
+    //     }
+    //   }
+    // });
+  }
+
+  render(){
+    return(
+      <>
+        <Landing />
+        <About />
+        <Projects />
+        <ContactMe />
+      </>
+    )
+  }
 }
 
-export default IndexPage
+export default Portfolio
