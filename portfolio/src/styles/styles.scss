@@ -325,16 +325,16 @@ div.section-header{
 
 
   /* For scroll fade animation*/
-  /* .tag {
+   .tag {
     opacity: 0;
-    transform: translate(0, 10vh);
+    // transform: translate(0, 10vh);
     transition: all 1s;
   }
   
   .tag.visible {
     opacity: 1;
-    transform: translate(0, 0);
-  } */
+    // transform: translate(0, 0);
+  } 
 
 /* basic formatting */
 .center-horizontal {

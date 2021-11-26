@@ -1,9 +1,10 @@
 import * as React from "react"
+import $ from 'jquery'
 //import { render } from "react-dom"
 import './styles/styles.scss'
 
 // import portrait from '../images/portrait.jpg'
-import portrait2 from './images/portrait2.jpg'
+import portrait from './images/portrait2.jpg'
 // import { render } from "react-dom"
 
 // CDNs
@@ -13,9 +14,9 @@ import portrait2 from './images/portrait2.jpg'
 
 /* TODO
    Important
-  - intro text animation
-    - maybe have other sections have an animation on scroll over
-  - find icons for socials (linkedin, email, github, codepen)
+  - intro text animation(DONE)
+    - maybe have other sections have an animation on scroll over 9(DONE but could be better)
+  - find icons for socials (linkedin, email, github, codepen) (DONE)
     - put icons as links under landing #intro-main
     - put icons in the contact section
   - figure out skill chart
@@ -23,8 +24,7 @@ import portrait2 from './images/portrait2.jpg'
     - have it so there are equal rows (when applicable) of projects
 
    Not so important
-  - figure out scss
-    - figure out media queries (to work with scss)  
+
 */
 
 // components
@@ -91,10 +91,10 @@ class About extends React.Component {
     return (
       <>
       <div id="about-container" class='tag'>
-        <div id="portrait-container">
-            <img id="portrait" src={portrait2} alt=" "></img>
+        <div id="portrait-container" class='tag'>
+            <img id="portrait" src={portrait} alt=" "></img>
         </div>
-        <div id="bio-container">
+        <div id="bio-container" class='tag'>
           <div id="bio-text">
             <p style={{font: "2.3vh/4.3vh libre-italic"}}>
               <b>A Hamilton/Toronto based web<br/>
@@ -117,7 +117,7 @@ class About extends React.Component {
           </div>
         </div>
       </div>
-      <div id="skill-chart-container">
+      <div id="skill-chart-container" class='tag'>
         <div id="skill-chart">
           <div class='bar' style={{width: "100%"}}></div>
           <div class='bar' style={{width: "80%"}}></div>
@@ -182,21 +182,22 @@ class Portfolio extends React.Component {
   // trying to add 'fade in as you scroll animation'
   // jquery doesent wanna work
   componentDidMount(){
-    // $(document).on("scroll", function() {
-    //   var pageTop = $(document).scrollTop();
-    //   var pageBottom = pageTop + $(window).height();
-    //   var tags = $(".tag");
+    $(document).on("scroll", function() {
+      var pageTop = $(document).scrollTop();
+      var pageBottom = pageTop + $(window).height();
+      var tags = $(".tag");
     
-    //   for (var i = 0; i < tags.length; i++) {
-    //     var tag = tags[i];
+      for (var i = 0; i < tags.length; i++) {
+        var tag = tags[i];
     
-    //     if ($(tag).position().top < pageBottom) {
-    //       $(tag).addClass("visible");
-    //     } else {
-    //       $(tag).removeClass("visible");
-    //     }
-    //   }
-    // });
+        if ($(tag).position().top < pageBottom) {
+          $(tag).addClass("visible");
+        } 
+        // else {
+        //   $(tag).removeClass("visible");
+        // }
+      }
+    });
   }
 
   render(){
