@@ -1,6 +1,6 @@
 import * as React from "react"
 //import { render } from "react-dom"
-import './styles/style.css'
+import './styles/styles.scss'
 
 // import portrait from '../images/portrait.jpg'
 import portrait2 from './images/portrait2.jpg'
@@ -21,10 +21,6 @@ import portrait2 from './images/portrait2.jpg'
   - figure out skill chart
   - figure out layout of projects
     - have it so there are equal rows (when applicable) of projects
-
-  - convert to React project (done)
-    - maybe scss will work 
-    - 
 
    Not so important
   - figure out scss

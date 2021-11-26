@@ -1,9 +1,5 @@
 /* Fonts */
 @font-face {
-    font-family: karla;
-    src: url(fonts/Karla-VariableFont_wght.ttf);
-}
-@font-face {
     font-family: roboto;
     src: url(fonts/Roboto-Regular.ttf);
 }
@@ -201,7 +197,7 @@ body{
                         /* font-family: 'Roboto', sans-serif;                    */
                         text-align: center;
                         margin: 5vh auto 0;
-                        font: 25px/50px karla;
+                        font: 25px/50px roboto;
                         align-self: center; 
                         justify-content: center;
                     }
