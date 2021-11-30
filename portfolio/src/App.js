@@ -1,24 +1,32 @@
+// #region imports
 import * as React from "react"
 import $ from 'jquery'
 //import { render } from "react-dom"
 import './styles/styles.scss'
+// #endregion 
 
-// import portrait from '../images/portrait.jpg'
+// #region images
 import portrait from './images/portrait2.jpg'
-// import { render } from "react-dom"
+import email from './images/socials/iconmonstr-email-2.svg'
+import github from './images/socials/iconmonstr-github-3.svg'
+import linkedIn from './images/socials/iconmonstr-linkedin-3.svg'
+import codePen from './images/socials/1298732_codepen_icon.png'
+// #endregion
 
-// CDNs
+// #region CDNs
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin referrerpolicy="no-referrer" />
   <script crossOrigin src="https://cdn.jsdelivr.net/npm/britecharts@2/dist/bundled/britecharts.min.js"/>
-
+// #endregion
 
 /* TODO
    Important
   - intro text animation(DONE)
     - maybe have other sections have an animation on scroll over 9(DONE but could be better)
   - find icons for socials (linkedin, email, github, codepen) (DONE)
-    - put icons as links under landing #intro-main
-    - put icons in the contact section
+    - put icons as links under landing #intro-main (uhhhhh maybe/maybe not)
+    - put icons in the contact section(DONE)
+    - have email button copy email to clipboard
+    - have links use some animation on hover & click
   - figure out skill chart
   - figure out layout of projects
     - have it so there are equal rows (when applicable) of projects
@@ -31,7 +39,6 @@ import portrait from './images/portrait2.jpg'
 /*Header
   - Contains logo, nav links
 */
-
 class Header extends React.Component {
   render() {
     return (
@@ -57,7 +64,6 @@ class Header extends React.Component {
 /*Landing section
   - Contains initial content, "Hi my name...", scroll prompt 
 */
-
 class Landing extends React.Component {
   render(){
     return (
@@ -156,13 +162,16 @@ class Projects extends React.Component {
             <h1 class='bubble-text'>Adding Projects as they come</h1>
           </div>
         </div> 
+        <div class='socials-container'>
+          <a href='https://github.com/Ben-Langlois'><img class='social-icon--left' src={github} alt='Github'/></a>
+          <a href='https://codepen.io/ben-langlois'><img class='social-icon--right' src={codePen} alt='CodePen'/></a>
+        </div>
       </div>
     )
   }
 }
 
 /*Contact
-*Gonna redo this section*
   - has contact info, form, links to github linkedIn etc
 */
 class ContactMe extends React.Component {
@@ -170,7 +179,11 @@ class ContactMe extends React.Component {
     return(
       <div id='contact-container' class='tag'>
         <div class='section-header'>
-          <h1 class='section-header'><b>Interested? Cool! Lets talk!</b></h1>
+          <h1 class='section-header'><b>Interested? Cool! Let's talk!</b></h1>
+        </div>
+        <div class='socials-container'>
+          <img class='social-icon--left' src={email} alt='Email' style={{height: '20vh !important'}}/>
+          <img class='social-icon--right' src={linkedIn} alt='LinkedIn'/>
         </div>
       </div>
     );
@@ -193,7 +206,7 @@ class Portfolio extends React.Component {
         if ($(tag).position().top < pageBottom) {
           $(tag).addClass("visible");
         } 
-        // else {
+        // else { // so it only appears once
         //   $(tag).removeClass("visible");
         // }
       }

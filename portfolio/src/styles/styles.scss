@@ -301,22 +301,72 @@ body{
             }
 
 #contact-container{
-    padding: 3vh 0 0 0;
+    padding: 3vh 0 5vh 0;
+    // display: inline-flex;
+    align-items: center;
+    margin: 0 auto;
+    
 }
 
 /* Classes */
 div.section-header{
     text-align: center;
-}
-    h1.section-header{
+
+    .section-header{
         text-align: center;
         margin: 0 auto; 
         padding: 0 2vh 3vh 2vh; 
         /* border-bottom: 2px solid rgb(42, 45, 52); */
         display: inline-flex;
         font-stretch: expanded;
-        font: 2.4em/2em libre-italic;
+        font: 2.4em/2em libre-italic; 
+        font-weight: bold;   
     }
+    // not in use anymore
+    h2{ 
+        @extend .section-header;
+        font-size: 2.3em/2em;
+        opacity: .8;
+    }
+}
+
+.socials-container{    
+    margin: 0 auto;
+    width: 40vw;
+    text-align: center;
+    
+    // h2.section-header{
+    //    font-family: libre-italic; 
+    //    text-align: center;
+    // }
+    
+    .social-icon{
+        display: inline-block;
+        height: 10vh;
+        width: 10vh;
+
+        margin: 0 2vw;
+
+        // to change the size of the email 
+        &--email{
+            @extend .social-icon;
+            // height: 12vh;
+        }
+
+        // ensuring that outer links dont mess up spacing with margins
+        &--left{
+            @extend .social-icon;
+            margin: 0 2vw 0 0;
+        }
+        &--right{
+            @extend .social-icon;
+            margin: 0 0 0 2vw;
+        }
+    }
+}
+    
+
+
 /* Testing */
 .break {
     flex-basis: 100%;
