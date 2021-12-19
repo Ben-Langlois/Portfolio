@@ -242,12 +242,17 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+
         padding: 0 0 6vh 0;
+        margin: 0 auto;
+        width: 50vw;
     }
         #skill-chart{
-            width: 40vw;
-            height: 40vh;
-            border-style: none none solid solid;
+            display: inline-block;
+            // margin: 0 auto;
+            // width: 50vw;
+            // height: 40vh;
+            // border-style: none none solid solid;
         }
             .bar{
                 height: 15%;
@@ -257,7 +262,7 @@ body{
 /* Projects */
 #project-container{
     margin: 0;
-    padding: 3vh 20vw 6vh;
+    padding: 3vh 20vw 3vh;
     /* height: 90vh; */
     width: 100%;
     -webkit-background-size: cover;
@@ -294,6 +299,14 @@ body{
             justify-content: center; 
             display: flex; 
             align-items: center;
+
+            background: #F7F4F3;
+            box-shadow: 5px 5px;
+        }
+        .bubble:hover{
+            transform: scaleY(1.1);
+            // transform: scaleX(1.1);
+            transform-origin: bottom;
         }
             .bubble-text{
                 display: inline;
@@ -322,6 +335,7 @@ div.section-header{
         font: 2.4em/2em libre-italic; 
         font-weight: bold;   
     }
+
     // not in use anymore
     h2{ 
         @extend .section-header;
@@ -335,32 +349,75 @@ div.section-header{
     width: 40vw;
     text-align: center;
     
-    // h2.section-header{
-    //    font-family: libre-italic; 
-    //    text-align: center;
-    // }
-    
-    .social-icon{
+    .social-link-container{
         display: inline-block;
-        height: 10vh;
-        width: 10vh;
+        // background-color: #0077B5;
+        color:#ffffff;
+        margin: 0 1vh;
+    
+        // font: 
+        font-weight: 700;
+        text-transform: uppercase;
+        
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
 
-        margin: 0 2vw;
+        // shadow
+        // filter: drop-shadow(5px 5px 10px black);     
+        // box-shadow: 5px 10px;
 
-        // to change the size of the email 
-        &--email{
-            @extend .social-icon;
-            // height: 12vh;
+        .social-link{
+            // display: block;
+            margin: 0 1vh 0 0;
+
+
+            .icon{
+                height: 5vh;
+                width: 5vh;
+    
+                margin: 1vh;
+    
+                display: inline-block;
+                vertical-align: middle;
+            }
         }
 
         // ensuring that outer links dont mess up spacing with margins
         &--left{
-            @extend .social-icon;
+            @extend .social-link-container;
             margin: 0 2vw 0 0;
         }
         &--right{
-            @extend .social-icon;
+            @extend .social-link-container;
             margin: 0 0 0 2vw;
+        }
+    }
+    .social-link-container:hover{
+        background-color: #016499;
+    }
+
+    // link specific classes to determine link color
+    .linkedIn{
+        background-color: #0077B5 !important;
+        &:hover{
+            background-color: #016499 !important;
+        }
+    }
+
+    .github{
+        background-color: #4f4f4f !important;
+        &:hover{
+            background-color: #3d3d3d !important;
+        }
+    }
+
+     
+    .email{
+        cursor: pointer;        // to mimic an anchor and avoid setting href
+        background-color: #EA4335 !important;
+        &:hover{
+            background-color: #BB001B !important;
         }
     }
 }
