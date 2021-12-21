@@ -255,7 +255,9 @@ body{
 
         padding: 0 0 6vh 0;
         margin: 0 auto;
-        width: 50vw;
+        // width: 50vw;
+        width: clamp(40vw, 100%, 60vw);
+
     }
         #skill-chart{
             display: inline-block;
@@ -272,7 +274,7 @@ body{
 /* Projects */
 #project-container{
     margin: 0;
-    padding: 3vh 20vw 3vh;
+    padding: 3vh auto;
     /* height: 90vh; */
     width: 100%;
     -webkit-background-size: cover;
@@ -281,15 +283,35 @@ body{
     background-size: cover;
     position: relative;
 
+    text-align: center;
+
     #card-container{
-        display: inline-block;
+        // flex
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+        // grid
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        // grid-template-rows: 35vh 35vh;
+
         margin: 0 auto;
-        width: clamp(20vw, 40vw, 60vw);
-        height: 100px;
+        width: clamp(40vw, 100%, 60vw);
+        // height: 100px;
 
         // border-width: 10px;
         // border-color: #111111;
         border: solid;
+
+        .card{
+            background: #111111;
+            margin: 5px 0;
+
+            display: inline-block;
+            height: 35vh;
+            width: clamp(300px, 45%, 40vw );
+        }
     }
 
     #bubble-container{

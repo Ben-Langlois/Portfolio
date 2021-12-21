@@ -253,10 +253,13 @@ class Projects extends React.Component {
         </div>  */}
 
         <div id='card-container'>
-a
+          <div class='card'>a</div>
+          <div class='card'>a</div>
+          <div class='card'>a</div>
+          <div class='card'>a</div>
         </div>
         <div class='socials-container'>
-        {/* Maybe move github and codepen link here*/}
+          {/* Maybe move github and codepen link here*/}
         </div>
       </div>
     )
