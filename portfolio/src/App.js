@@ -39,7 +39,7 @@ var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V2
     - have it so there are equal rows (when applicable) of projects
 
    Not so important
-
+  - rethink font (esp the librevill italics one, feel like subheaders could be cleaner)
 */
 
 // components
@@ -142,12 +142,16 @@ class About extends React.Component {
               callback: function(value){
                 // names for levels are still up for debate
                 // throws 'expected '===' it dont matter c'est la vie
+                // eslint-disable-next-line
                 if(this.getLabelForValue(value) == 1){
                   return 'Beginner';
+                  // eslint-disable-next-line
                 } else if (this.getLabelForValue(value) == 2){
                   return 'Amateur';
+                  // eslint-disable-next-line
                 } else if (this.getLabelForValue(value) == 3){
                   return 'Pro';
+                  // eslint-disable-next-line
                 } else if (this.getLabelForValue(value) == 4){
                   return 'Expert';
                 }
@@ -158,7 +162,7 @@ class About extends React.Component {
             }
           },
           y: {
-            display: false,
+            // display: false,
             ticks: {
               font: {
                 weight: 'bold'
@@ -233,7 +237,7 @@ class Projects extends React.Component {
         <div class="section-header">
           <h1 class='section-header'><b>Some of my Projects</b></h1>
         </div>  
-        <div id='bubble-container'>   
+        {/* <div id='bubble-container'>   
           <div class="bubble">
             <h1 class='bubble-text'>Adding Projects as they come</h1>
           </div>
@@ -246,7 +250,11 @@ class Projects extends React.Component {
           <div class="bubble">
             <h1 class='bubble-text'>Adding Projects as they come</h1>
           </div>
-        </div> 
+        </div>  */}
+
+        <div id='card-container'>
+a
+        </div>
         <div class='socials-container'>
         {/* Maybe move github and codepen link here*/}
         </div>

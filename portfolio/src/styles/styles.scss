@@ -52,7 +52,7 @@ body{
         /* Header */
         header{
             display: flex;
-            margin: 0 10vw 0;
+            margin: 0 5vw 0;
             padding: 5vh 0 0 0; 
             display: flex;
         }
@@ -131,8 +131,18 @@ body{
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            background-color: $landing;
+
+            // Once I implement the slideshow I'll probably need to get rid of this
+            // background: $landing url('../images/slideshow/CBS18481.JPG') repeat;
+            // background-color: $landing;
+            background-image:     linear-gradient(
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6)
+              ), url('../images/slideshow/CBS18481.JPG');
+
             position: relative;
+
+
         }
         #landing-container::after{
             content: "Scroll For More";
@@ -270,19 +280,18 @@ body{
     -o-background-size: cover;
     background-size: cover;
     position: relative;
-}
-    #project-header{
-        text-align: center;
+
+    #card-container{
+        display: inline-block;
+        margin: 0 auto;
+        width: clamp(20vw, 40vw, 60vw);
+        height: 100px;
+
+        // border-width: 10px;
+        // border-color: #111111;
+        border: solid;
     }
-        #project-header-text{
-            text-align: center;
-            margin: 0 auto; 
-            padding: 0 2vh 3vh 2vh; 
-            /* border-bottom: 2px solid rgb(42, 45, 52); */
-            display: inline-flex;
-            font-stretch: expanded;
-            font: 2.4em/2em libre-italic;
-        }
+
     #bubble-container{
         padding: 0 auto;
     
@@ -295,23 +304,34 @@ body{
             margin: 2vh;
             height: 20vh; 
             width: 20vh; 
-            border-radius: 20px; 
+            border-radius: 5px; 
             justify-content: center; 
             display: flex; 
             align-items: center;
 
             background: #F7F4F3;
-            box-shadow: 5px 5px;
+
+            // shadow
+            // box-shadow: 5px 5px;
+            // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+            transition: 0.2s ease-in-out;
+
         }
         .bubble:hover{
-            transform: scaleY(1.1);
+            transform: scale(1.1, 1.1);
             // transform: scaleX(1.1);
-            transform-origin: bottom;
+            // transform-origin: bottom;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
         }
             .bubble-text{
                 display: inline;
                 margin: auto 0;
             }
+
+}
 
 #contact-container{
     padding: 3vh 0 5vh 0;
@@ -319,7 +339,89 @@ body{
     align-items: center;
     margin: 0 auto;
     
+    .socials-container{    
+        margin: 0 auto;
+        width: 40vw;
+        text-align: center;
+        
+        .social-link-container{
+            display: inline-block;
+            // background-color: #0077B5;
+            color:#ffffff;
+            margin: 0 1vh;
+        
+            // font: 
+            font-weight: 700;
+            text-transform: uppercase;
+            
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+
+            // shadow
+            // filter: drop-shadow(5px 5px 10px black);     
+            // box-shadow: 5px 10px;
+
+            transition: 0.2s ease-in-out;
+
+
+            .social-link{
+                // display: block;
+                margin: 0 1vh 0 0;
+
+
+                .icon{
+                    height: 5vh;
+                    width: 5vh;
+        
+                    margin: 1vh;
+        
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+
+            // ensuring that outer links dont mess up spacing with margins
+            &--left{
+                @extend .social-link-container;
+                margin: 0 2vw 0 0;
+            }
+            &--right{
+                @extend .social-link-container;
+                margin: 0 0 0 2vw;
+            }
+        }
+        .social-link-container:hover{
+            background-color: #016499;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transform: scale(1.1, 1.1);
+        }
+
+        // link specific classes to determine link color
+        .linkedIn{
+            background-color: #0077B5 !important;
+            &:hover{
+                background-color: #016499 !important;
+            }
+        }
+
+        .github{
+            background-color: #4f4f4f !important;
+            &:hover{
+                background-color: #3d3d3d !important;
+            }
+        }
+        
+        .email{
+            cursor: pointer;        // to mimic an anchor and avoid setting href
+            background-color: #EA4335 !important;
+            &:hover{
+                background-color: #BB001B !important;
+            }
+        }
+    }
 }
+
 
 /* Classes */
 div.section-header{
@@ -344,83 +446,7 @@ div.section-header{
     }
 }
 
-.socials-container{    
-    margin: 0 auto;
-    width: 40vw;
-    text-align: center;
-    
-    .social-link-container{
-        display: inline-block;
-        // background-color: #0077B5;
-        color:#ffffff;
-        margin: 0 1vh;
-    
-        // font: 
-        font-weight: 700;
-        text-transform: uppercase;
-        
-        border-radius: 5px;
-        overflow: hidden;
-        text-align: center;
 
-        // shadow
-        // filter: drop-shadow(5px 5px 10px black);     
-        // box-shadow: 5px 10px;
-
-        .social-link{
-            // display: block;
-            margin: 0 1vh 0 0;
-
-
-            .icon{
-                height: 5vh;
-                width: 5vh;
-    
-                margin: 1vh;
-    
-                display: inline-block;
-                vertical-align: middle;
-            }
-        }
-
-        // ensuring that outer links dont mess up spacing with margins
-        &--left{
-            @extend .social-link-container;
-            margin: 0 2vw 0 0;
-        }
-        &--right{
-            @extend .social-link-container;
-            margin: 0 0 0 2vw;
-        }
-    }
-    .social-link-container:hover{
-        background-color: #016499;
-    }
-
-    // link specific classes to determine link color
-    .linkedIn{
-        background-color: #0077B5 !important;
-        &:hover{
-            background-color: #016499 !important;
-        }
-    }
-
-    .github{
-        background-color: #4f4f4f !important;
-        &:hover{
-            background-color: #3d3d3d !important;
-        }
-    }
-
-     
-    .email{
-        cursor: pointer;        // to mimic an anchor and avoid setting href
-        background-color: #EA4335 !important;
-        &:hover{
-            background-color: #BB001B !important;
-        }
-    }
-}
     
 
 
