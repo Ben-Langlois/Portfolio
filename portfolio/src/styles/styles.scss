@@ -42,176 +42,111 @@ html, body {
 html {
     scroll-behavior: smooth;
 }
-/*(grouping so i can mash it all together with scss/sass)*/ 
+
 body{
     margin: 0;
     padding: 0;
     font-family: roboto;
 }
-/* ID */
-        /* Header */
-        header{
-            display: flex;
-            margin: 0 5vw 0;
-            padding: 5vh 0 0 0; 
-            display: flex;
-        }
-            .logo{
-                padding: 5px; 
-                margin: 0; 
-                font-size: 50px; 
-            }
-                .logo-link{
-                    text-decoration: none; 
-                    /* color: #2A2D34; */
-                }
-            /* NavBar */
-            .nav-links{
-                font-size: 1.4rem; 
-                margin: 0 0 0 auto;
-            }
-            .nav-links ul{
-                display: flex;
-                margin: 0;
-                padding: 0;
-            }
-                .nav-links li{
-                    list-style: none;
-                    white-space: pre;
-                    margin: 30px 0 30px 0;
-                }
-                .link{
-                    text-decoration: none;
-                    color: $white;
-                    opacity: 0.6; 
-                    margin: 0 2vw 0 2vw;
-                    padding: 0;
-                    display: block;
-                    position: relative;
 
-                    transition: opacity 0.5s;
-                }
-                    .link-edge {
-                        margin: 0 0 0 2vw;
-                    }
-                .link:hover{
-                    opacity: 1;
-                    text-decoration: none;
-                    /* animation-duration: 0.5s;
-                    animation-name: opacity-fade-in; */
-                }
-                /* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
-                .link::before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    bottom: 0;
-                    left: 0;
-                    background-color: $white;
-                    visibility: hidden;
-                    transform: scaleX(0);
-                    transition: all 0.3s ease-in-out 0s;
-                  }
-                .link:hover::before {
-                    visibility: visible;
-                    transform: scaleX(1);
-                }
+/* Header */
+header{
+    display: flex;
+    margin: 0 5vw 0;
+    padding: 5vh 0 0 0; 
+    display: flex;
 
-        /* Landing */
-        #landing-container{
-            position: relative;  
-            /* text-align: center; */
-            
+    /* NavBar */
+    .nav-links{
+        font-size: 1.4rem; 
+        margin: 0 0 0 auto;
+    
+        ul{
+            display: flex;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            width: 100vw;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-
-            // Once I implement the slideshow I'll probably need to get rid of this
-            // background: $landing url('../images/slideshow/CBS18481.JPG') repeat;
-            // background-color: $landing;
-            background-image:     linear-gradient(
-                rgba(0, 0, 0, 0.6),
-                rgba(0, 0, 0, 0.6)
-              ), url('../images/slideshow/CBS18481.JPG');
-
-            position: relative;
-
-
         }
-        #landing-container::after{
-            content: "Scroll For More";
-            /* background: linear-gradient(rgba(34, 38, 41) 0%, rgb(133, 145, 153) 33%, rgb(255, 255, 255) 100%); */
-            display: block;
-            
-            /* color: #383E43;  */
-            /* color: #4A5359; */
-            color: rgb(247, 244, 243);
-            text-align: center;
-
-            font-size: 3vmin;
-            height: 10vh;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            z-index: 1;
-
-            /* Shine animation */
-            animation: shine 5s infinite;
+        li{
+            list-style: none;
+            white-space: pre;
+            margin: 30px 0 30px 0;
         }
-            .content{
-                margin: 0 0 0 0; 
-                padding: 0; 
-                display: inline-block;
-                justify-content: center;
-                width: 100%;
-            } 
-                /* Name and greeting */
-            /*placeholder div*/
+    }
+}
 
-                div#intro-main{
-                    color: #F7F4F3;  
-                    font-size: 2.5em;
-                
-                    /* might change this font */
-                    font: 2.8em/2em libre-italic;
-                
-                    padding: 20vh 0 0 0;
-                    margin: 0 auto;
+/* Landing */
+#landing-container{
+    position: relative;  
+    /* text-align: center; */
+    
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
-                    justify-content: center;
-                    display: flex; 
-                }
-                    h1#intro-main{
-                        text-align: left;
-                        animation: fadeIn linear 3s;
-                    }
-                div#intro-sub{
-                    display: flex;
-                    align-content: center;
-                }
-                    p#intro-sub{
-                        margin: 5vh auto 0;
-                        text-align: left;
-                    }
+    // Once I implement the slideshow I'll probably need to get rid of this
+    // background: $landing url('../images/slideshow/CBS18481.JPG') repeat;
+    // background-color: $landing;
+    background-image:     linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.45)
+        ), url('../images/slideshow/CBS18481.JPG');
+    // background-image: url('../images/slideshow/CBS18481.JPG');
+    position: relative;
 
-                    .intro-snippets{
-                        /* font-family: 'Roboto', sans-serif;                    */
-                        text-align: center;
-                        margin: 5vh auto 0;
-                        font: 25px/50px roboto;
-                        align-self: center; 
-                        justify-content: center;
-                    }
-                        .intro-snippet{
-                            margin: 0 1em;
-                        }
-            
+    &::after{
+        content: "Scroll For More";
+        /* background: linear-gradient(rgba(34, 38, 41) 0%, rgb(133, 145, 153) 33%, rgb(255, 255, 255) 100%); */
+        display: block;
+        
+        /* color: #383E43;  */
+        /* color: #4A5359; */
+        color: rgb(247, 244, 243);
+        text-align: center;
+    
+        font-size: 3vmin;
+        height: 10vh;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+    
+        /* Shine animation */
+        animation: shine 5s infinite;
+    }
+
+    .content{
+        margin: 0 0 0 0; 
+        padding: 0; 
+        display: inline-block;
+        justify-content: center;
+        width: 100%;
+    
+        /* Name and greeting */
+        #intro-main{
+            color: #F7F4F3;  
+            font-size: 2.5em;
+        
+            /* might change this font */
+            font: 2.8em/2em libre-italic;
+        
+            padding: 20vh 0 0 0;
+            margin: 0 auto;
+    
+            justify-content: center;
+            display: flex; 
+    
+            h1{
+                animation: fadeIn linear 3s;
+            }
+        }  
+    } 
+}
+        
 
 /* About */
 #about-container{
@@ -228,11 +163,11 @@ body{
     background-size: cover;
     position: relative;
     display: inline-flex;
-}
+
     #portrait-container{
         width: 50vw;
         height: 70vh;
-    }
+    
         #portrait{
             min-width: 500px;
             width: 60%;
@@ -240,37 +175,37 @@ body{
             float: right;
             margin: 10vh 0 0 0;
         }
+    }
+
     #bio-container{
         width: 50vw;
-    }
+    
         #bio-text{
             height: 70vh;
             margin: 8vh 0 0 2vw; 
             padding: "0 0 5vh 0"; 
         }
-    #skill-chart-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        padding: 0 0 6vh 0;
-        margin: 0 auto;
-        // width: 50vw;
-        width: clamp(40vw, 100%, 60vw);
-
     }
-        #skill-chart{
-            display: inline-block;
-            // margin: 0 auto;
-            // width: 50vw;
-            // height: 40vh;
-            // border-style: none none solid solid;
-        }
-            .bar{
-                height: 15%;
-                background-color: #383838;
-                margin: 10px 0;
-            }
+}
+#skill-chart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 0 6vh 0;
+    margin: 0 auto;
+    // width: 50vw;
+    width: clamp(40vw, 100%, 60vw);
+
+    canvas{
+        display: inline-block;
+        // margin: 0 auto;
+        // width: 50vw;
+        // height: 40vh;
+        // border-style: none none solid solid;
+    }
+}
+
 /* Projects */
 #project-container{
     margin: 0;
@@ -311,48 +246,12 @@ body{
             display: inline-block;
             height: 35vh;
             width: clamp(300px, 45%, 40vw );
+
+            // &:hover{
+                
+            // }
         }
     }
-
-    #bubble-container{
-        padding: 0 auto;
-    
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-        .bubble{
-            margin: 2vh;
-            height: 20vh; 
-            width: 20vh; 
-            border-radius: 5px; 
-            justify-content: center; 
-            display: flex; 
-            align-items: center;
-
-            background: #F7F4F3;
-
-            // shadow
-            // box-shadow: 5px 5px;
-            // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
-            transition: 0.2s ease-in-out;
-
-        }
-        .bubble:hover{
-            transform: scale(1.1, 1.1);
-            // transform: scaleX(1.1);
-            // transform-origin: bottom;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-        }
-            .bubble-text{
-                display: inline;
-                margin: auto 0;
-            }
-
 }
 
 #contact-container{
@@ -386,7 +285,6 @@ body{
 
             transition: 0.2s ease-in-out;
 
-
             .social-link{
                 // display: block;
                 margin: 0 1vh 0 0;
@@ -412,13 +310,14 @@ body{
                 @extend .social-link-container;
                 margin: 0 0 0 2vw;
             }
+        
+            &:hover{
+                // background-color: #016499;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                transform: scale(1.1, 1.1);
+            }
+        
         }
-        .social-link-container:hover{
-            background-color: #016499;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            transform: scale(1.1, 1.1);
-        }
-
         // link specific classes to determine link color
         .linkedIn{
             background-color: #0077B5 !important;
@@ -446,10 +345,10 @@ body{
 
 
 /* Classes */
-div.section-header{
+.section-header{
     text-align: center;
 
-    .section-header{
+    h1{
         text-align: center;
         margin: 0 auto; 
         padding: 0 2vh 3vh 2vh; 
@@ -468,9 +367,43 @@ div.section-header{
     }
 }
 
+// fancy link (used in header )
+.link{
+    text-decoration: none;
+    color: $white;
+    opacity: 0.6; 
+    margin: 0 2vw 0 2vw;
+    padding: 0;
+    display: block;
+    position: relative;
 
-    
+    transition: opacity 0.5s;
 
+    &:hover{
+        opacity: 1;
+        text-decoration: none;
+        /* animation-duration: 0.5s;
+        animation-name: opacity-fade-in; */
+    }
+/* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $white;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    &:hover::before{
+        visibility: visible;
+        transform: scaleX(1);
+    }
+}
 
 /* Testing */
 .break {
@@ -479,24 +412,18 @@ div.section-header{
   }
 
 
-  /* For scroll fade animation*/
-   .tag {
+/* For scroll fade animation*/
+.tag {
     opacity: 0;
     // transform: translate(0, 10vh);
     transition: all 1s;
-  }
+}
   
-  .tag.visible {
+.tag.visible {
     opacity: 1;
     // transform: translate(0, 0);
-  } 
+} 
 
-/* basic formatting */
-.center-horizontal {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
 /* Media Queries */
 @media only screen and (max-width: 965px) {
     .nav-links{
@@ -549,21 +476,7 @@ div.section-header{
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
-  }
-
-//#region Old linkboxes 
-// For old link boxes
-// @keyframes link-box-hover{
-//     0% {
-//         border-radius: 5pxpx;
-//         background-color: #eee;
-//     }
-//     100% {
-//         /* border-radius: --25px; */
-//         /* background-color: rgb(247, 247, 247); */
-//         background-color: #ffff;
-//     }
-// }
+}
 
 
 
@@ -590,7 +503,9 @@ div.section-header{
     transition: 1s;
     /* flex: 50%;
     margin: 0 15%; */
-  }
+
+    
+}
 
 .btn::before, .btn::after {
     position: absolute;

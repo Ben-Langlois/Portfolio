@@ -39,7 +39,7 @@ var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V2
     - have it so there are equal rows (when applicable) of projects
 
    Not so important
-  - rethink font (esp the librevill italics one, feel like subheaders could be cleaner)
+  - rethink font (esp the libreville italics one, feel like subheaders could be cleaner)
 */
 
 // components
@@ -50,11 +50,6 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <div className="logo">
-          {/* <a className="logo-link" href="#landing" >   
-            BL
-          </a> */}
-        </div>
         <div className="nav-links">
           <ul>            
             <li><a className="link" href="#about-container">About</a></li>
@@ -78,18 +73,11 @@ class Landing extends React.Component {
         <Header />
         <div  id="landing" className="content"> {/**/}
           <div id='intro-main'>
-            <h1 id='intro-main'>
+            <h1>
               {/* Not in love with the font */}
               Hi! I'm<br/>Ben<br/>Langlois
             </h1><br/>
           </div>
-          {/* <div id='intro-sub'>
-            <p className="intro-snippets">
-              <span className="intro-snippet">Web Dev</span>
-              <span className="intro-snippet">Photography</span>
-              <span className="intro-snippet">Design</span>
-            </p> 
-          </div> */}
         </div>
       </div>
     )
@@ -235,7 +223,7 @@ class Projects extends React.Component {
       // maybe turn it into styled components
       <div id="project-container" class='tag'>
         <div class="section-header">
-          <h1 class='section-header'><b>Some of my Projects</b></h1>
+          <h1><b>Some of my Projects</b></h1>
         </div>  
         {/* <div id='bubble-container'>   
           <div class="bubble">
@@ -297,7 +285,7 @@ class ContactMe extends React.Component {
     return(
       <div id='contact-container' class='tag'>
         <div class='section-header'>
-          <h1 class='section-header'><b>Interested? Cool! Let's talk!</b></h1>
+          <h1><b>Interested? Cool! Let's talk!</b></h1>
         </div>
         <div class='socials-container'>
           {/* Could add Instagram one later if i make a photography IG*/}
