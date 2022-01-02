@@ -9,10 +9,6 @@ import './styles/styles.scss'
 
 // #region images
 import portrait from './images/portrait2.jpg'
-// import email from './images/socials/iconmonstr-email-2.svg'
-// import github from './images/socials/iconmonstr-github-3.svg'
-// import linkedIn from './images/socials/iconmonstr-linkedin-3.svg'
-// import codePen from './images/socials/1298732_codepen_icon.png'
 // #endregion
 
 // #region CDNs
@@ -31,12 +27,13 @@ var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V2
     - maybe have other sections have an animation on scroll over 9(DONE but could be better)
   - find icons for socials (linkedin, email, github, codepen) (DONE)
     - put icons as links under landing #intro-main (uhhhhh maybe/maybe not)
-    - put icons in the contact section(DONE)
     - have email button copy email to clipboard (DONE)
+      - make it tell user it copied
     - have links use some animation on hover & click (ALMOST)
   - figure out skill chart(ALMOST)
   - figure out layout of projects
     - have it so there are equal rows (when applicable) of projects
+  - Make about section all in one container (instead of portrait and bio)
 
    Not so important
   - rethink font (esp the libreville italics one, feel like subheaders could be cleaner)
@@ -65,13 +62,13 @@ class Header extends React.Component {
 
 /*Landing section
   - Contains initial content, "Hi my name...", scroll prompt 
-*/
+*/  // eslint-disable-next-line
 class Landing extends React.Component {
   render(){
     return (
       <div id="landing-container">
         <Header />
-        <div  id="landing" className="content"> {/**/}
+        <div id="landing" className="content"> {/**/}
           <div id='intro-main'>
             <h1>
               {/* Not in love with the font */}
@@ -103,7 +100,7 @@ class About extends React.Component {
           'Arduino'
         ],
         datasets: [{
-          data: [4, 3, 4, 3, 2, 1],
+          data: [4, 3, 3, 2, 2, 1],
           backgroundColor: [
             'rgba(227, 79, 38, 1)',
             'rgba(204, 102, 153, 1)',
@@ -121,7 +118,10 @@ class About extends React.Component {
             // enabled: false
           },
           legend: {    
-            display: false
+            display: false,
+            labels: {
+              fontColor: '#FFF'
+            }
           }
         },
         scales: {
@@ -172,35 +172,37 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <div id="about-container" class='tag'>
-          <div id="portrait-container" class='tag'>
-              <img id="portrait" src={portrait} alt=" "></img>
-          </div>
-          <div id="bio-container" class='tag'>
-            <div id="bio-text">
-              <p style={{font: "2.3vh/4.3vh libre-italic"}}>
-                <b>A Hamilton/Toronto based web<br/>
-                developer/designer with an interest in<br/>
-                photography and building random things.</b>
-              </p>
-              <p style={{margin: "3vh 0 0 0", font: "2.2vh/4vh roboto"}}> {/*figure out letter-spacing*/}
-                <b>I attended Durham College for 2 years<br/>
-                in Oshawa, Ontario for computer<br/>
-                programming.<br/>
-                <br/>
-                I work mostly in React, JS, SCSS, MySQL,<br/>
-                and C++. I'm also currently expirementing<br/>
-                with Python, C# and Arduino.<br/>
-                <br/>
-                Besides programming, I'm really interested in<br/> 
-                reading, going to the gym, being in nature, and<br/>
-                video games.</b>
-              </p>
+        <Header />
+        {/* Make it one container and center */}
+        <div id="about-container">
+          <div id='about'>
+            <div id="portrait-container">
+                <img id="portrait" src={portrait} alt=" "></img>
+            </div>
+            <div id="bio-container">
+              <div id="bio-text">
+                <p style={{font: "italic 1000 4vh/5vh lato"}}>
+                  Hi! I'm <u style={{color: '#BB0A21'}}>Ben Langlois</u>. A GTA/Toronto<br/>
+                  based web developer looking for an<br/>
+                  entry level position in Front end<br/>
+                  Web Development!
+                </p>
+                <p style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
+                  I attended Durham College for 2 years in<br/>
+                  Oshawa, Ontario for computer programming.<br/>
+                  Since graduating I've been learning what I<br/>
+                  didnt experience in college.<br/>
+                </p>
+                <p style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
+                  I work mostly in React, JS, SCSS, MySQL,<br/>
+                  and C++. I'm also currently expirementing<br/>
+                  with Python, C# and Arduino.<br/>
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div id="skill-chart-container" class='tag'>
-          {/* Uses some random dataset */}
           <canvas id='skill-chart'></canvas>
         </div>
       </>
@@ -225,26 +227,11 @@ class Projects extends React.Component {
         <div class="section-header">
           <h1><b>Some of my Projects</b></h1>
         </div>  
-        {/* <div id='bubble-container'>   
-          <div class="bubble">
-            <h1 class='bubble-text'>Adding Projects as they come</h1>
-          </div>
-          <div class="bubble">
-            <h1 class='bubble-text'>Adding Projects as they come</h1>
-          </div>
-          <div class="bubble">
-            <h1 class='bubble-text'>Adding Projects as they come</h1>
-          </div>
-          <div class="bubble">
-            <h1 class='bubble-text'>Adding Projects as they come</h1>
-          </div>
-        </div>  */}
-
         <div id='card-container'>
-          <div class='card'>a</div>
-          <div class='card'>a</div>
-          <div class='card'>a</div>
-          <div class='card'>a</div>
+          <div class='card'><img class='card-thumbnail' src="" alt=''></img></div>
+          <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
+          <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
+          <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
         </div>
         <div class='socials-container'>
           {/* Maybe move github and codepen link here*/}
@@ -348,7 +335,7 @@ class Portfolio extends React.Component {
   render(){
     return(
       <>
-        <Landing />
+        {/* <Landing /> */}
         <About />
         <Projects />
         <ContactMe />
