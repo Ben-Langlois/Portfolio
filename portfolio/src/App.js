@@ -46,7 +46,7 @@ var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V2
 class Header extends React.Component {
   render() {
     return (
-      <header>
+      <header id='header'>
         <div className="nav-links">
           <ul>            
             <li><a className="link" href="#about-container">About</a></li>
@@ -58,7 +58,6 @@ class Header extends React.Component {
     )
   }
 }
-
 
 /*Landing section
   - Contains initial content, "Hi my name...", scroll prompt 
@@ -169,6 +168,7 @@ class About extends React.Component {
       config
     );
   }
+  
   render() {
     return (
       <>
@@ -181,22 +181,22 @@ class About extends React.Component {
             </div>
             <div id="bio-container">
               <div id="bio-text">
-                <p style={{font: "italic 1000 4vh/5vh lato"}}>
-                  Hi! I'm <u style={{color: '#BB0A21'}}>Ben Langlois</u>. A GTA/Toronto<br/>
-                  based web developer looking for an<br/>
-                  entry level position in Front end<br/>
+                <p id='bio-main' style={{font: "italic 1000 4vh/5vh lato"}}>
+                  Hi! I'm <u style={{color: '#BB0A21'}}>Ben Langlois</u>. A GTA/Toronto
+                  based web developer looking for an
+                  entry level position in Front end
                   Web Development!
                 </p>
-                <p style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
-                  I attended Durham College for 2 years in<br/>
-                  Oshawa, Ontario for computer programming.<br/>
-                  Since graduating I've been learning what I<br/>
-                  didnt experience in college.<br/>
+                <p  id='bio-secondary' style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
+                  I attended Durham College for 2 years in
+                  Oshawa, Ontario for computer programming.
+                  Since graduating I've been learning what I
+                  didnt experience in college.
                 </p>
-                <p style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
-                  I work mostly in React, JS, SCSS, MySQL,<br/>
-                  and C++. I'm also currently expirementing<br/>
-                  with Python, C# and Arduino.<br/>
+                <p id='bio-secondary' style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
+                  I work mostly in React, JS, SCSS, MySQL,
+                  and C++. While expirementing with Python,
+                  C# and Arduino.
                 </p>
               </div>
             </div>
@@ -209,7 +209,6 @@ class About extends React.Component {
     )
   }
 }
-
 
 /*Projects
   - Contains projects, filterable through a slide bar type thing (divided by languages)

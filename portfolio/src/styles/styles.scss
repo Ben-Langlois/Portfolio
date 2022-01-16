@@ -25,6 +25,10 @@
 $white: #ffffff;
 $landing: #111111;
 
+$secondary: #f5f5f5;
+$accent: #BB0A21;
+$dark: rgb(0, 0, 0);
+
 // #endregion
 
 /*All encompassing*/
@@ -38,10 +42,7 @@ $landing: #111111;
 
 /*fixing extra width*/
 html, body {
-    overflow-x: hidden;
-}
-
-html {
+    // overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -57,10 +58,15 @@ body{
 /* Header */
 header{
     display: flex;
-    margin: 0 5vw 0;
-    padding: 3vh 0 0 0; 
-    display: flex;
+    // margin: 0 5vw 0;
+    padding: 0 5vw 0; 
 
+    position: -webkit-sticky; /* for safari */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    background-color: $dark;
     /* NavBar */
     .nav-links{
         font-size: 3vh; 
@@ -74,7 +80,49 @@ header{
         li{
             list-style: none;
             white-space: pre;
-            margin: 5vh 0 5vh 0;
+            margin: 3vh 0;
+
+            .link{
+                text-decoration: none;
+                color: $white;
+                font-weight: 900;
+                
+                opacity: 0.7; 
+                margin: 0 2vw 0 2vw;
+                padding: 0;
+                display: block;
+                position: relative;
+            
+                transition: opacity 0.5s;
+            
+                &:hover{
+                    opacity: 1;
+                    text-decoration: none;
+            
+                    /* animation-duration: 0.5s;
+                    animation-name: opacity-fade-in; */
+                }
+                /* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+            
+                    background-color: $white;
+            
+                    visibility: hidden;
+                    transform: scaleX(0);
+                    transition: all 0.3s ease-in-out 0s;
+                }
+            
+                &:hover::before{
+                    visibility: visible;
+                    transform: scaleX(1);
+                }
+            }
         }
     }
 }
@@ -159,8 +207,7 @@ header{
             z-index: -1;
         }
     } 
-}
-        
+}      
 
 /* About */
 #about-container{
@@ -177,17 +224,14 @@ header{
     
     &::after{
         content: "Scroll For More";
-        /* background: linear-gradient(rgba(34, 38, 41) 0%, rgb(133, 145, 153) 33%, rgb(255, 255, 255) 100%); */
         display: block;
         
-        /* color: #383E43;  */
-        /* color: #4A5359; */
         color: rgb(0, 0, 0);
         opacity: 0.7;
         text-align: center;
     
         font-size: 3vmin;
-        height: 10vh;
+        height: 5vh;
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -199,13 +243,16 @@ header{
 
     #about{
         display: inline-block;
-        margin: 5vh auto auto;
+        margin: 10vh auto;
+        padding: 0 0 5vh 0;
         // background-color: #f5f5f5;
+
+        position: relative;
 
         #portrait-container{
             display: inline-block;
             animation: fadeIn linear 3s;
-
+            float: left;
 
             #portrait{
                 width: clamp(30vw, 40vw, 500px);
@@ -221,10 +268,13 @@ header{
         }
 
         #bio-container{
-            height: 100%;
             display: inline-block;
             padding: 1vw; 
-            background-color: #f5f5f5;
+            background-color: $secondary;
+            // width: clamp(30vw, 40vw, 500px);
+            width: 40vw;
+            height:100%;
+            float: right;
 
             animation: fadeIn linear 1.5s;
             opacity: .8;
@@ -237,8 +287,6 @@ header{
             }
         }        
     }
-
-
 }
 #skill-chart-container{
     display: flex;
@@ -250,7 +298,6 @@ header{
     // width: 50vw;
     width: clamp(40vw, 100%, 60vw);
     background-color: #f5f5f5;
-
 
     canvas{
         display: inline-block;
@@ -282,7 +329,7 @@ header{
         justify-content: space-evenly;
 
         margin: 0 auto;
-        width: clamp(40vw, 100%, 60vw);
+        width: clamp(40vw, 100%, 70vw);
         // height: 100px;
 
         // border-width: 10px;
@@ -291,11 +338,11 @@ header{
 
         .card{
             // background: #6e6e6e;
-            margin: 5px;
+            margin: 2vh;
 
             display: inline-block;
-            height: 35vh;
-            width: clamp(400px, 45%, 40vw );
+            // height: 35vh;
+            width: clamp(300px, 40%, 30vw);
 
             // &:hover{
             //     // background-color: #016499;
@@ -307,14 +354,14 @@ header{
             position: relative;
 
             // background-color: rgb(255, 255, 255);
-            background-color: #BB0A21;
+            background-color: $accent;
 
             .card-thumbnail{
                 display: block;
                 transform: translate(0, 0);
                 transition: all .15s ease;
                 position: relative;
-                z-index: 10;
+                z-index: 1;
                 height: 100%;
                 width: 100%;
 
@@ -323,11 +370,10 @@ header{
                 }
             }
 
-
             &:before{
                 content: '';
                 display: block;
-                background-color: #BB0A21;
+                background-color: $accent;
                 width: 8px;
                 height: 8px;
                 position: absolute;
@@ -342,7 +388,7 @@ header{
             &:after{
                 content: '';
                 display: block;
-                background-color: #BB0A21;
+                background-color: $accent;
                 width: 8px;
                 height: 8px;
                 position: absolute;
@@ -400,7 +446,6 @@ header{
                 // display: block;
                 margin: 0 1vh 0 0;
 
-
                 .icon{
                     height: 5vh;
                     width: 5vh;
@@ -454,7 +499,6 @@ header{
     }
 }
 
-
 /* Classes */
 .section-header{
     text-align: center;
@@ -479,53 +523,12 @@ header{
 }
 
 // fancy link (used in header )
-.link{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-
-    opacity: 0.7; 
-    margin: 0 2vw 0 2vw;
-    padding: 0;
-    display: block;
-    position: relative;
-
-    transition: opacity 0.5s;
-
-    &:hover{
-        opacity: 1;
-        text-decoration: none;
-
-        /* animation-duration: 0.5s;
-        animation-name: opacity-fade-in; */
-    }
-/* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
-    &::before{
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-
-        background-color:rgb(0, 0, 0);
-
-        visibility: hidden;
-        transform: scaleX(0);
-        transition: all 0.3s ease-in-out 0s;
-    }
-
-    &:hover::before{
-        visibility: visible;
-        transform: scaleX(1);
-    }
-}
 
 /* Testing */
 .break {
     flex-basis: 100%;
     height: 0;
-  }
-
+}
 
 /* For scroll fade animation*/
 .tag {
@@ -540,32 +543,148 @@ header{
 } 
 
 /* Media Queries */
-@media only screen and (max-width: 965px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #about-container{
+        
+        #about{
+            // margin: 10vh 0 auto auto;
+            width: 80vw;
+
+            #portrait-container{
+                float: left;
+            }
+
+            #bio-container{
+                width: 40vw;
+                // width: clamp(30vw, 40vw, 500px);
+
+                #bio-main{
+                    font: italic 1000 1.5rem/2rem lato !important;
+                }
+
+                #bio-secondary{
+                    font: bold 1.2rem/2rem roboto !important;
+                }
+            }
+        }
+    }
+}
+
+// For 
+@media only screen and (min-width: 481px) and (max-width: 769px) {
+    // header
     .nav-links{
         display: none;
     }
 
-    /*Name text resizing*/
-    
-
-    /*Name subHead resizing*/
-
-
     /*About section resizing*/
-    #portrait{
-        display: none;
+    #about-container{
+
+        height: 100%;
+
+        &::after{
+            display: none;
+        }
+
+        #about{
+            padding: 0;
+            margin: 0;
+        
+            #portrait-container{
+                display: none;
+
+                #portrait{
+                    display: none;
+                }
+            }
+
+            #bio-container{
+                width: 100vw !important;
+                background-color: #fff;
+
+                #bio-text{
+                    text-align: center;     
+                }
+            }            
+        }
     }
-    #portrait-container{
-        display: none;
+    #skill-chart-container{
+        margin: 0 auto;
+        width: clamp(80vw, 100%, 60vw);
+
+        #skill-chart{
+            // width: 70vw !important;
+        }
     }
-    #bio-container{
-        width: 100vw !important;
+
+    #project-container{
+
+        #card-container{
+            width: auto;
+
+            .card{
+                margin: 2vh 0;
+            }
+        }
     }
-    #bio-text{
-        text-align: center;     
+
+    #contact-container{
+        padding: 0;
+
+        .socials-container{
+            width: auto;
+        }
+    }
+
+
+    .section-header{
+        h1{
+            padding: 0 2vh;
+        }
     }
 }
 
+@media only screen and (max-width: 480px) {
+    // header
+    .nav-links{
+        display: none;
+    }
+
+    #about-container{
+        height: auto;
+
+        &::after{
+            display: none;
+        }
+        
+        #about{
+            margin: 0;
+            padding: 0;
+
+            #portrait-container{
+                display: none;
+            }
+
+            #bio-container{
+                background-color: #fff;
+                width: auto;
+
+                #bio-main{
+                    font: italic 1000 3.5vh/5vh lato !important;
+                }
+
+                #bio-secondary{
+                    font: bold 2.5vh/3.2vh roboto !important;
+                }
+            }
+        }
+
+        #skill-chart-container{
+            margin: 0 auto;
+            width: clamp(80vw, 100%, 60vw);
+        }
+    }
+}
 
 /* Animations */
 /* Expirementing with scroll prompt*/
@@ -591,7 +710,6 @@ header{
     100% {opacity:1;}
 }
 
-
 // Box shadow 
 .box-shadow:before {
     content:"";
@@ -603,49 +721,6 @@ header{
     box-shadow: 0px 0px 20px 10px #000000;
 }  
 
-
-/* fancy link anim */
-.btn {
-    width: 150px;
-    height: 50px;
-    min-width: 150px;
-    min-height: 50px;
-    background-color: #fff;
-    border: 1px solid #333;
-    /* font-family: 'Cinzel', serif;
-    font-size: 20px; */
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 0;
-    transition: 1s;
-    /* flex: 50%;
-    margin: 0 15%; */
-}
-
-.btn::before, .btn::after {
-    position: absolute;
-    background: #fff;
-    z-index: -1;
-    transition: 1s;
-    content: '';
-  }
-  
-  .btn::before {
-    /* height: 50px; */
-    height: 50px;
-    width: 130px;
-    /* background-color: red; */
-  }
-  
-  .btn::after {
-    /* width: 180px; */
-    width: 100%;
-    height: 30px;
-  }
   
   .noselect {
     -webkit-touch-callout: none;
