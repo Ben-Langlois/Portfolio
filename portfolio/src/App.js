@@ -23,20 +23,18 @@ var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V2
 
 /* TODO
    Important
-  - intro text animation(DONE)
-    - maybe have other sections have an animation on scroll over 9(DONE but could be better)
-  - find icons for socials (linkedin, email, github, codepen) (DONE)
-    - put icons as links under landing #intro-main (uhhhhh maybe/maybe not)
-    - have email button copy email to clipboard (DONE)
-      - make it tell user it copied
-    - have links use some animation on hover & click (ALMOST)
+  - Mobile media query
+  - Get photos for projects
+  - Rethink scroll animation
+  
+  - have email button copy email to clipboard (ALMOST)
+    - make it tell user it copied
   - figure out skill chart(ALMOST)
-  - figure out layout of projects
-    - have it so there are equal rows (when applicable) of projects
-  - Make about section all in one container (instead of portrait and bio)
+  - have links use some animation on hover & click (ALMOST)
 
    Not so important
   - rethink font (esp the libreville italics one, feel like subheaders could be cleaner)
+  - add BL or something to header
 */
 
 // components
@@ -145,7 +143,8 @@ class About extends React.Component {
               },
               font: {
                 weight: 'bold'
-              }
+              },
+                fontSize: '5vw'
             }
           },
           y: {
@@ -153,7 +152,8 @@ class About extends React.Component {
             ticks: {
               font: {
                 weight: 'bold'
-              }
+              },
+                fontSize: '5vw'
             }
           }
         }
@@ -181,19 +181,19 @@ class About extends React.Component {
             </div>
             <div id="bio-container">
               <div id="bio-text">
-                <p id='bio-main' style={{font: "italic 1000 4vh/5vh lato"}}>
-                  Hi! I'm <u style={{color: '#BB0A21'}}>Ben Langlois</u>. A GTA/Toronto
+                <p id='bio-main'>
+                  Hi! I'm <u>Ben Langlois</u>. A GTA/Toronto
                   based web developer looking for an
                   entry level position in Front end
                   Web Development!
                 </p>
-                <p  id='bio-secondary' style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
+                <p  id='bio-secondary'>
                   I attended Durham College for 2 years in
                   Oshawa, Ontario for computer programming.
                   Since graduating I've been learning what I
                   didnt experience in college.
                 </p>
-                <p id='bio-secondary' style={{margin: "3vh 0 0 0", font: "bold 1.3rem/2.5rem roboto"}}>
+                <p id='bio-secondary'>
                   I work mostly in React, JS, SCSS, MySQL,
                   and C++. While expirementing with Python,
                   C# and Arduino.

@@ -80,14 +80,14 @@ header{
         li{
             list-style: none;
             white-space: pre;
-            margin: 3vh 0;
+            margin: 2vh 0;
 
             .link{
                 text-decoration: none;
                 color: $white;
                 font-weight: 900;
                 
-                opacity: 0.7; 
+                // opacity: 0.7; 
                 margin: 0 2vw 0 2vw;
                 padding: 0;
                 display: block;
@@ -98,7 +98,7 @@ header{
                 &:hover{
                     opacity: 1;
                     text-decoration: none;
-            
+
                     /* animation-duration: 0.5s;
                     animation-name: opacity-fade-in; */
                 }
@@ -212,7 +212,7 @@ header{
 /* About */
 #about-container{
     margin: 0;
-    height: 87.5vh;
+    height: 90vh;
     width: 100%;
 
     -webkit-background-size: cover;        
@@ -244,7 +244,6 @@ header{
     #about{
         display: inline-block;
         margin: 10vh auto;
-        padding: 0 0 5vh 0;
         // background-color: #f5f5f5;
 
         position: relative;
@@ -252,12 +251,16 @@ header{
         #portrait-container{
             display: inline-block;
             animation: fadeIn linear 3s;
-            float: left;
+            // height: 100%;
 
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
             #portrait{
-                width: clamp(30vw, 40vw, 500px);
+                width: 40vw;
                 margin: 0;
-                height: 100%;
+                // height: 100%;
 
                 border: 10px;
                 border-radius: 20px;
@@ -270,19 +273,35 @@ header{
         #bio-container{
             display: inline-block;
             padding: 1vw; 
-            background-color: $secondary;
+            // background-color: $secondary;
             // width: clamp(30vw, 40vw, 500px);
             width: 40vw;
-            height:100%;
-            float: right;
 
             animation: fadeIn linear 1.5s;
             opacity: .8;
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
             #bio-text{
                 margin: 0; 
 
                 p{
                 vertical-align: middle;
+                }
+
+                #bio-main{
+                    font: italic 1000 2.5vw / 3.5vw lato;
+
+                    u{
+                        color: $accent;
+                    }
+                }
+
+                #bio-secondary{
+                    margin: 3vh 0 0 0;
+                    font: bold 1.6vw/2.6vw roboto;
                 }
             }
         }        
@@ -296,7 +315,7 @@ header{
     padding: 1vh;
     margin: 0 auto;
     // width: 50vw;
-    width: clamp(40vw, 100%, 60vw);
+    width: 65vw;
     background-color: #f5f5f5;
 
     canvas{
@@ -418,8 +437,7 @@ header{
     margin: 0 auto;
     
     .socials-container{    
-        margin: 0 auto;
-        width: 40vw;
+        margin: 2vh auto;
         text-align: center;
         
         .social-link-container{
@@ -522,14 +540,6 @@ header{
     }
 }
 
-// fancy link (used in header )
-
-/* Testing */
-.break {
-    flex-basis: 100%;
-    height: 0;
-}
-
 /* For scroll fade animation*/
 .tag {
     opacity: 0;
@@ -543,71 +553,37 @@ header{
 } 
 
 /* Media Queries */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    #about-container{
-        
-        #about{
-            // margin: 10vh 0 auto auto;
-            width: 80vw;
-
-            #portrait-container{
-                float: left;
-            }
-
-            #bio-container{
-                width: 40vw;
-                // width: clamp(30vw, 40vw, 500px);
-
-                #bio-main{
-                    font: italic 1000 1.5rem/2rem lato !important;
-                }
-
-                #bio-secondary{
-                    font: bold 1.2rem/2rem roboto !important;
-                }
-            }
-        }
-    }
-}
-
-// For 
-@media only screen and (min-width: 481px) and (max-width: 769px) {
+@media only screen and (max-width: 429px) { // Mobile
     // header
     .nav-links{
         display: none;
     }
 
+    #skill-chart-container{
+        margin: 0 auto;
+        width: clamp(80vw, 100%, 60vw);
+    }
+    
+}
+
+@media only screen and (min-width: 430px) and (max-width: 768px) { // Tablet
+    // header
+
+
     /*About section resizing*/
     #about-container{
 
-        height: 100%;
+        height: 60vh;
 
         &::after{
             display: none;
         }
 
         #about{
-            padding: 0;
-            margin: 0;
-        
-            #portrait-container{
-                display: none;
-
-                #portrait{
-                    display: none;
-                }
-            }
-
-            #bio-container{
-                width: 100vw !important;
-                background-color: #fff;
-
-                #bio-text{
-                    text-align: center;     
-                }
-            }            
+            padding: 0;               
         }
     }
+
     #skill-chart-container{
         margin: 0 auto;
         width: clamp(80vw, 100%, 60vw);
@@ -640,48 +616,6 @@ header{
     .section-header{
         h1{
             padding: 0 2vh;
-        }
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    // header
-    .nav-links{
-        display: none;
-    }
-
-    #about-container{
-        height: auto;
-
-        &::after{
-            display: none;
-        }
-        
-        #about{
-            margin: 0;
-            padding: 0;
-
-            #portrait-container{
-                display: none;
-            }
-
-            #bio-container{
-                background-color: #fff;
-                width: auto;
-
-                #bio-main{
-                    font: italic 1000 3.5vh/5vh lato !important;
-                }
-
-                #bio-secondary{
-                    font: bold 2.5vh/3.2vh roboto !important;
-                }
-            }
-        }
-
-        #skill-chart-container{
-            margin: 0 auto;
-            width: clamp(80vw, 100%, 60vw);
         }
     }
 }
@@ -720,7 +654,6 @@ header{
     // transform:scale(.9);
     box-shadow: 0px 0px 20px 10px #000000;
 }  
-
   
   .noselect {
     -webkit-touch-callout: none;
