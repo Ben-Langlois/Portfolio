@@ -88,7 +88,7 @@ header{
                 font-weight: 900;
                 
                 // opacity: 0.7; 
-                margin: 0 2vw 0 2vw;
+                margin: 0 2vw;
                 padding: 0;
                 display: block;
                 position: relative;
@@ -555,13 +555,60 @@ header{
 /* Media Queries */
 @media only screen and (max-width: 429px) { // Mobile
     // header
-    .nav-links{
-        display: none;
+    header{
+        .nav-links{
+            font-size: 5vw; 
+            margin: 0 auto;
+        
+            ul{
+
+            }
+            li{
+    
+                .link{
+                    margin: 0 3vw;
+                }
+            }
+        }
+    }
+
+    #about-container{
+        
+        #about{
+
+            #portrait-container{
+                position: static;
+                display: inline;
+
+                #portrait{
+                    width: 70vw;
+                    margin: auto;
+                }
+            }
+
+            #bio-container{
+                position: static;
+                display: inline;
+
+                #bio-text{
+                    width: 60vw;
+
+                    #bio-main{  
+                        font: italic 1000 4.5vw / 5vw lato;
+                    }
+
+                    #bio-secondary{
+                        font: bold 3vw/3.5vw roboto;
+                        margin: 2vh 0 0 0 ;
+                    }
+                }
+            }
+        }
     }
 
     #skill-chart-container{
         margin: 0 auto;
-        width: clamp(80vw, 100%, 60vw);
+        width: 100vw;
     }
     
 }

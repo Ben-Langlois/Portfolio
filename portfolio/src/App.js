@@ -24,6 +24,8 @@ var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V2
 /* TODO
    Important
   - Mobile media query
+    - Bio
+      - bio needs to be centered under portrait
   - Get photos for projects
   - Rethink scroll animation
   
