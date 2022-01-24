@@ -49,7 +49,7 @@ class Header extends React.Component {
       <header id='header'>
         <div className="nav-links">
           <ul>            
-            <li><a className="link" href="#about-container">About</a></li>
+            <li><a className="link" href="#top">About</a></li>
             <li><a className="link" href="#project-container">Projects</a></li>
             <li><a className="link" href="#contact-container">Contact</a></li>
           </ul>
@@ -225,7 +225,7 @@ class Projects extends React.Component {
       // Kinda wanna redesign the project boxes
       // maybe turn it into styled components
       <div id="project-container" class='tag'>
-        <div class="section-header">
+        <div class="section-header project-section">
           <h1><b>Some of my Projects</b></h1>
         </div>  
         <div id='card-container'>
@@ -233,9 +233,6 @@ class Projects extends React.Component {
           <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
           <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
           <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
-        </div>
-        <div class='socials-container'>
-          {/* Maybe move github and codepen link here*/}
         </div>
       </div>
     )

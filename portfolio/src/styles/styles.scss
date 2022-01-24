@@ -28,7 +28,6 @@ $landing: #111111;
 $secondary: #f5f5f5;
 $accent: #BB0A21;
 $dark: rgb(0, 0, 0);
-
 // #endregion
 
 /*All encompassing*/
@@ -243,7 +242,7 @@ header{
 
     #about{
         display: inline-block;
-        margin: 10vh auto;
+        margin: 5vh auto;
         // background-color: #f5f5f5;
 
         position: relative;
@@ -331,7 +330,6 @@ header{
 #project-container{
     margin: 0;
     padding: 3vh auto;
-    /* height: 90vh; */
     width: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -348,19 +346,12 @@ header{
         justify-content: space-evenly;
 
         margin: 0 auto;
-        width: clamp(40vw, 100%, 70vw);
-        // height: 100px;
-
-        // border-width: 10px;
-        // border-color: #111111;
-        // border: solid;
+        width: 85vw;
 
         .card{
-            // background: #6e6e6e;
             margin: 2vh;
 
             display: inline-block;
-            // height: 35vh;
             width: clamp(300px, 40%, 30vw);
 
             // &:hover{
@@ -524,19 +515,12 @@ header{
     h1{
         text-align: center;
         margin: 0 auto; 
-        padding: 0 2vh 3vh 2vh; 
+        padding: 0 2vh; 
         /* border-bottom: 2px solid rgb(42, 45, 52); */
         display: inline-flex;
         font-stretch: expanded;
-        font: bold 2.4em/2em lato; 
+        font: bold 2.4em/2em roboto; 
         font-weight: bold;   
-    }
-
-    // not in use anymore
-    h2{ 
-        @extend .section-header;
-        font-size: 2.3em/2em;
-        opacity: .8;
     }
 }
 
@@ -553,16 +537,20 @@ header{
 } 
 
 /* Media Queries */
-@media only screen and (max-width: 429px) { // Mobile
+@media only screen and (max-width: 426px) { // Mobile
+    .section-header{
+    
+        h1{
+            font: bold 7vw roboto; 
+        }
+    }
+    
     // header
     header{
         .nav-links{
             font-size: 5vw; 
             margin: 0 auto;
-        
-            ul{
 
-            }
             li{
     
                 .link{
@@ -573,7 +561,8 @@ header{
     }
 
     #about-container{
-        
+        height: auto;
+
         #about{
 
             #portrait-container{
@@ -591,18 +580,25 @@ header{
                 display: inline;
 
                 #bio-text{
-                    width: 60vw;
+                    width: 75vw;
 
                     #bio-main{  
-                        font: italic 1000 4.5vw / 5vw lato;
+                        font: italic 1000 4.6vw/5vw lato;
+                        // letter-spacing: 0.7vw;
+                        font-stretch: expanded;
                     }
 
                     #bio-secondary{
-                        font: bold 3vw/3.5vw roboto;
-                        margin: 2vh 0 0 0 ;
+                        font: bold 3.6vw/4vw roboto;
+                        // letter-spacing: 1.5;
+                        margin: 2vh 0 0 0;
                     }
                 }
             }
+        }
+
+        &::after{
+            display: none;
         }
     }
 
@@ -610,13 +606,47 @@ header{
         margin: 0 auto;
         width: 100vw;
     }
+
+    /* Projects */
+    #project-container{
+
+        #card-container{
+            width: auto;
+
+            .card{
+                width: 40vw;
+                margin: 1vh 0;
+            }
+        }
+    }
+
+    #contact-container{
+        padding: 0;
+
+        #socials-container{
+
+            #social-link-container{
+
+                .social-link{
+                    // display: block;
+                    margin: 0 1vh 0 0;
     
+                    .icon{
+                        height: 5vh;
+                        width: 5vh;
+            
+                        margin: 1vh;
+            
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }   
 }
 
-@media only screen and (min-width: 430px) and (max-width: 768px) { // Tablet
-    // header
-
-
+@media only screen and (min-width: 426px) and (max-width: 768px) { // Tablet
     /*About section resizing*/
     #about-container{
 
@@ -647,6 +677,7 @@ header{
 
             .card{
                 margin: 2vh 0;
+                width: 40vw;
             }
         }
     }
@@ -702,27 +733,27 @@ header{
     box-shadow: 0px 0px 20px 10px #000000;
 }  
   
-  .noselect {
-    -webkit-touch-callout: none;
-      -webkit-user-select: none;
-       -khtml-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none;
-  }
-  
-  .btn:hover::before {
-    width: 0px;
-    background: #fff;
-  }
-  
-  .btn:hover::after {
-    height: 0px;
-    background: #fff;
-  }
-  
-  .btn:hover {
-    background: #fff;
-  }
+.noselect {
+-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.btn:hover::before {
+width: 0px;
+background: #fff;
+}
+
+.btn:hover::after {
+height: 0px;
+background: #fff;
+}
+
+.btn:hover {
+background: #fff;
+}
 
 //#endregion
