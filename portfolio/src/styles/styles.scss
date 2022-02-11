@@ -4,6 +4,11 @@
     src: url(fonts/Roboto-Regular.ttf);
 }
 
+@font-face {
+    font-family: playfair;
+    src: url(fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
 /* Libre Baskerville */
 @font-face {
     font-family: libre-reg;
@@ -211,7 +216,7 @@ header{
 /* About */
 #about-container{
     margin: 0;
-    height: 90vh;
+    height: 92vh;
     width: 100%;
 
     -webkit-background-size: cover;        
@@ -277,7 +282,6 @@ header{
             width: 40vw;
 
             animation: fadeIn linear 1.5s;
-            opacity: .8;
 
             position: absolute;
             top: 50%;
@@ -291,7 +295,7 @@ header{
                 }
 
                 #bio-main{
-                    font: italic 1000 2.5vw / 3.5vw lato;
+                    font: 1000 2.5vw / 3.5vw playfair;
 
                     u{
                         color: $accent;
@@ -300,7 +304,7 @@ header{
 
                 #bio-secondary{
                     margin: 3vh 0 0 0;
-                    font: bold 1.6vw/2.6vw roboto;
+                    font: 500 1.6vw/2.6vw roboto;
                 }
             }
         }        
@@ -346,7 +350,7 @@ header{
         justify-content: space-evenly;
 
         margin: 0 auto;
-        width: 85vw;
+        width: 75vw;
 
         .card{
             margin: 2vh;
@@ -519,7 +523,7 @@ header{
         /* border-bottom: 2px solid rgb(42, 45, 52); */
         display: inline-flex;
         font-stretch: expanded;
-        font: bold 2.4em/2em roboto; 
+        font: bold 2.4em/2em playfair; 
         font-weight: bold;   
     }
 }
@@ -702,17 +706,17 @@ header{
 /* Expirementing with scroll prompt*/
 @keyframes shine{
     0% {
-        transform: scale(0.95);
+        // transform: scale(0.95);
         opacity: 0.5;
     }
       
     50% {
-        transform: scale(1);
+        // transform: scale(1);
         opacity: 1;
     }
       
     100% {
-        transform: scale(0.95);
+        // transform: scale(0.95);
         opacity: 0.5;
     }
 }

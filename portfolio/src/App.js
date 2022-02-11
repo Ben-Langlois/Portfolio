@@ -9,6 +9,7 @@ import './styles/styles.scss'
 
 // #region images
 import portrait from './images/portrait2.jpg'
+import portfolio from './images/projects/portfolio.png'
 // #endregion
 
 // #region CDNs
@@ -229,7 +230,7 @@ class Projects extends React.Component {
           <h1><b>Some of my Projects</b></h1>
         </div>  
         <div id='card-container'>
-          <div class='card'><img class='card-thumbnail' src="" alt=''></img></div>
+          <div class='card'><a href='https://github.com/Ben-Langlois/Portfolio'><img class='card-thumbnail' src={portfolio} alt="The portfolio you're looking at right now"></img></a></div>
           <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
           <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
           <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
