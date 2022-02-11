@@ -131,88 +131,6 @@ header{
     }
 }
 
-/* Landing */
-#landing-container{
-    position: relative;  
-    /* text-align: center; */
-    
-    margin: 0;
-    padding: 0;
-    // height: 100vh;
-    width: 100vw;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    // Once I implement the slideshow I'll probably need to get rid of this
-    // background-image:     linear-gradient(
-    //     rgba(0, 0, 0, 0.45),
-    //     rgba(0, 0, 0, 0.45)
-    //     ), url('../images/slideshow/CBS18481.JPG');
-
-    // &::after{
-    //     content: "Scroll For More";
-    //     /* background: linear-gradient(rgba(34, 38, 41) 0%, rgb(133, 145, 153) 33%, rgb(255, 255, 255) 100%); */
-    //     display: block;
-        
-    //     /* color: #383E43;  */
-    //     /* color: #4A5359; */
-    //     color: rgb(247, 244, 243);
-    //     text-align: center;
-    
-    //     font-size: 3vmin;
-    //     height: 10vh;
-    //     width: 100%;
-    //     position: absolute;
-    //     bottom: 0;
-    //     z-index: 1;
-    
-    //     /* Shine animation */
-    //     animation: shine 5s infinite;
-    // }
-
-    .content{
-        margin: 0 0 0 0; 
-        padding: 0; 
-        display: inline-block;
-        justify-content: center;
-        width: 100%;
-    
-        /* Name and greeting */
-        #intro-main{
-            // color: #F7F4F3;  
-            color: rgb(0, 0, 0);
-
-            font-size: 2.5em;
-        
-            /* might change this font */
-            font: 2.8em/2em libre-italic;
-        
-            padding: 10vh 0;
-            margin: 0 auto;
-    
-            justify-content: center;
-            display: flex; 
-    
-            h1{
-                animation: fadeIn linear 3s;
-            }
-        }  
-
-        .test{
-            height: 100%;
-            width: 50%;
-            background: rgb(255, 0, 0);
-
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            z-index: -1;
-        }
-    } 
-}      
-
 /* About */
 #about-container{
     margin: 0;
@@ -235,6 +153,8 @@ header{
         text-align: center;
     
         font-size: 3vmin;
+        font-weight: 500;
+
         height: 5vh;
         width: 100%;
         position: absolute;
@@ -304,7 +224,7 @@ header{
 
                 #bio-secondary{
                     margin: 3vh 0 0 0;
-                    font: 500 1.6vw/2.6vw roboto;
+                    font: 600 1.6vw/2.6vw roboto;
                 }
             }
         }        
@@ -354,6 +274,7 @@ header{
 
         .card{
             margin: 2vh;
+            border: #dddddd solid 2px;
 
             display: inline-block;
             width: clamp(300px, 40%, 30vw);
