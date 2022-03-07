@@ -30,8 +30,9 @@
 $white: #ffffff;
 $landing: #111111;
 
-$secondary: #f5f5f5;
 $accent: #BB0A21;
+$accent2: #020887;
+$accent3: #A8763E;
 $dark: rgb(0, 0, 0);
 // #endregion
 
@@ -197,7 +198,6 @@ header{
         #bio-container{
             display: inline-block;
             padding: 1vw; 
-            // background-color: $secondary;
             // width: clamp(30vw, 40vw, 500px);
             width: 40vw;
 
@@ -238,7 +238,7 @@ header{
     padding: 1vh;
     margin: 0 auto;
     // width: 50vw;
-    width: 65vw;
+    width: 60vw;
     background-color: #f5f5f5;
 
     canvas{
@@ -253,7 +253,7 @@ header{
 /* Projects */
 #project-container{
     margin: 0;
-    padding: 3vh auto;
+    // padding: 3vh auto;
     width: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -267,80 +267,57 @@ header{
         // flex
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-evenly;
+        justify-content: center;
 
-        margin: 0 auto;
-        width: 75vw;
+        margin: 3vh auto;
+        width: 60vw;
 
-        .card{
-            margin: 2vh;
-            border: #dddddd solid 2px;
 
-            display: inline-block;
-            width: clamp(300px, 40%, 30vw);
+        #card-link{
+            text-decoration: none;
+            color: #000000;
 
-            // &:hover{
-            //     // background-color: #016499;
-            //     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            //     transform: scale(1.1, 1.1);
-            // }
+            .card{
+                margin: 2vh;
+                width: 20rem;
+                transition: box-shadow 1s;
 
-            // trying to do hover animation
-            position: relative;
-
-            // background-color: rgb(255, 255, 255);
-            background-color: $accent;
-
-            .card-thumbnail{
-                display: block;
-                transform: translate(0, 0);
-                transition: all .15s ease;
-                position: relative;
-                z-index: 1;
-                height: 100%;
-                width: 100%;
+                .card-img-top{
+                    height: 20vh;
+                    object-fit: contain;
+                }
 
                 &:hover{
-                    transform: translate(6px, -6px);
+                    // background-color: #016499;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    // transform: scale(1.05, 1.05);
                 }
-            }
 
-            &:before{
-                content: '';
-                display: block;
-                background-color: $accent;
-                width: 8px;
-                height: 8px;
-                position: absolute;
-                transition: all .15s ease;
+                .btn{
+                    height: 4vh;
 
-                top: 0;
-                left: 0;
-                transform-origin: top left;
-                transform: rotate(-45deg) scale(0);
-            }
+                    &.portfolio{
+                        background-color: #4f4f4f;
+                        border: none;
+                    }
+                
+                
+                    &.github{
+                        height: 4vh;
+                        border: none;
+                        background-color: #4f4f4f;
 
-            &:after{
-                content: '';
-                display: block;
-                background-color: $accent;
-                width: 8px;
-                height: 8px;
-                position: absolute;
-                transition: all .15s ease;
 
-                right: 0;
-                bottom: 0;
-                transform-origin: bottom right;
-                transform: rotate(45deg) scale(0);
-            }
-
-            &:hover:before{
-                transform: rotate(-45deg) scale(1);   
-            }
-
-            &:hover:after{
-                transform: rotate(45deg) scale(1);
+                        .icon{
+                            height: 100%;
+                            width: 100%;
+                            padding: 0;
+                        
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                }
             }
         }
     }
@@ -449,17 +426,55 @@ header{
     }
 }
 
-/* For scroll fade animation*/
-.tag {
-    opacity: 0;
-    // transform: translate(0, 10vh);
-    transition: all 2.5s;
+
+.bg-accent1{
+    background-color: $accent !important;
 }
+.bg-accent2{
+    background-color: $accent2 !important;
+}
+.bg-accent3{
+    background-color: $accent3 !important;
+}
+
+/* For scroll fade animation*/
+// .tag {
+//     opacity: 0;
+//     // transform: translate(0, 10vh);
+//     transition: all 2.5s;
+// }
   
-.tag.visible {
-    opacity: 1;
-    // transform: translate(0, 0);
-} 
+// .tag.visible {
+//     opacity: 1;
+//     // transform: translate(0, 0);
+// } 
+
+// .btn{
+//     &.portfolio{
+//         background-color: #4f4f4f;
+//         border: none;
+//     }
+
+
+//     &.github{
+//         height: 4vh;
+//         // width: 3vh;
+
+//         .icon{
+//             height: 100%;
+//             width: 100%;
+
+//             // margin: 1vh;
+
+//             display: inline-block;
+//             vertical-align: middle;
+//         }
+//     }
+// }
+
+
+
+
 
 /* Media Queries */
 @media only screen and (max-width: 426px) { // Mobile
@@ -665,20 +680,6 @@ header{
         -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-}
-
-.btn:hover::before {
-width: 0px;
-background: #fff;
-}
-
-.btn:hover::after {
-height: 0px;
-background: #fff;
-}
-
-.btn:hover {
-background: #fff;
 }
 
 //#endregion

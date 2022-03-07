@@ -1,7 +1,8 @@
 // #region imports
 import * as React from "react"
 import $ from 'jquery'
-import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto'
+import 'bootstrap/dist/css/bootstrap.css'
 //import { render } from "react-dom"
 import './styles/styles.scss'
 // import * as chartJS from 'https://cdn.jsdelivr.net/npm/chart.js'
@@ -222,6 +223,11 @@ class About extends React.Component {
   - add projects duh yuh get me
 */
 class Projects extends React.Component {  
+  componentDidMount(){
+    $("#portfolio-link").prop('disabled', false);
+  }
+
+
   render(){
     return (
       // Kinda wanna redesign the project boxes
@@ -231,10 +237,37 @@ class Projects extends React.Component {
           <h1><b>Some of my Projects</b></h1>
         </div>  
         <div id='card-container'>
-          <div class='card'><a href='https://github.com/Ben-Langlois/Portfolio'><img class='card-thumbnail' src={portfolio} alt="The portfolio you're looking at right now"></img></a></div>
-          <div class='card'><a href='https://codepen.io/ben-langlois/full/wvqKwRL'><img class='card-thumbnail' src={labtimer} alt='Lab Timer'></img></a></div>
-          <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
-          <div class='card'><img class='card-thumbnail' src="https://res.cloudinary.com/axiol/image/upload/v1569710642/CodePen/twitchThumb_wr84mp.jpg" alt=''></img></div>
+
+          <a id="card-link" href="#portfolio-card">
+            <div class="card portfolio">
+              <img class="card-img-top" src={portfolio} alt="Portfolio Homepage"></img>
+              <div class="card-body">
+                <h5 class="card-title"><b>My Portfolio</b></h5>
+                <p class="card-text">The portfolio you're looking at right now. Made with React, Sass, and a bit of Bootstrap.</p>
+                <a id="portfolio-link" href="https://github.com/Ben-Langlois/Portfolio" class="btn btn-primary github">
+                  <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="5vh">
+                    <path d="M24.999,2.48c-12.75,0-23.087,10.338-23.087,23.09c0,10.199,6.613,18.854,15.791,21.907 c1.154,0.211,1.518-0.474,1.518-1.084c0-0.547,0.011-2.082,0-4.01c-6.422,1.398-7.753-3.038-7.753-3.038 c-1.048-2.671-2.562-3.377-2.562-3.377c-2.095-1.433,0.158-1.407,0.158-1.407c2.317,0.163,3.538,2.383,3.538,2.383 c2.059,3.522,5.403,2.505,6.717,1.916c0.21-1.491,0.808-2.51,1.468-3.087C15.66,35.188,10.27,33.211,10.27,24.361 c0-2.521,0.9-4.581,2.376-6.194c-0.239-0.584-1.031-2.932,0.226-6.112c0,0,1.939-0.62,6.349,2.369 c1.841-0.513,3.817-0.768,5.78-0.777c1.962,0.009,3.938,0.264,5.781,0.777c4.409-2.988,6.346-2.369,6.346-2.369 c1.258,3.18,0.466,5.528,0.229,6.112c1.478,1.613,2.373,3.673,2.373,6.194c0,8.872-5.397,10.823-10.543,11.392 c0.828,0.717,1.582,2.101,1.582,4.255c0,2.887,0,5.632,0,6.392c0,0.617,0.372,1.302,1.544,1.076 c9.167-3.059,15.776-11.708,15.776-21.905C48.089,12.818,37.75,2.48,24.999,2.48z" fill="#ffffff"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </a>
+
+          <a id="card-link" href="https://codepen.io/ben-langlois/pen/wvqKwRL?editors=0011">
+            <div class="card portfolio">
+              <img class="card-img-top" src={labtimer} alt="Portfolio Homepage"></img>
+              <div class="card-body">
+                <h5 class="card-title"><b>Lab Timer</b></h5>
+                <p class="card-text">Made with React, this timer tracks time and speed at intervals and generates a pace table.</p>
+                <a id="portfolio-link" href="#portfolio" class="btn btn-primary github" style={{opacity: '0'}}>
+                  <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="5vh">
+                    <path d="M24.999,2.48c-12.75,0-23.087,10.338-23.087,23.09c0,10.199,6.613,18.854,15.791,21.907 c1.154,0.211,1.518-0.474,1.518-1.084c0-0.547,0.011-2.082,0-4.01c-6.422,1.398-7.753-3.038-7.753-3.038 c-1.048-2.671-2.562-3.377-2.562-3.377c-2.095-1.433,0.158-1.407,0.158-1.407c2.317,0.163,3.538,2.383,3.538,2.383 c2.059,3.522,5.403,2.505,6.717,1.916c0.21-1.491,0.808-2.51,1.468-3.087C15.66,35.188,10.27,33.211,10.27,24.361 c0-2.521,0.9-4.581,2.376-6.194c-0.239-0.584-1.031-2.932,0.226-6.112c0,0,1.939-0.62,6.349,2.369 c1.841-0.513,3.817-0.768,5.78-0.777c1.962,0.009,3.938,0.264,5.781,0.777c4.409-2.988,6.346-2.369,6.346-2.369 c1.258,3.18,0.466,5.528,0.229,6.112c1.478,1.613,2.373,3.673,2.373,6.194c0,8.872-5.397,10.823-10.543,11.392 c0.828,0.717,1.582,2.101,1.582,4.255c0,2.887,0,5.632,0,6.392c0,0.617,0.372,1.302,1.544,1.076 c9.167-3.059,15.776-11.708,15.776-21.905C48.089,12.818,37.75,2.48,24.999,2.48z" fill="#ffffff"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </a>
+
         </div>
       </div>
     )
