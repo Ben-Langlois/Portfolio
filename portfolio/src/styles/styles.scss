@@ -74,7 +74,7 @@ header{
     background-color: $dark;
     /* NavBar */
     .nav-links{
-        font-size: 3vh; 
+        font-size: 2.5vh; 
         margin: 0 0 0 auto;
     
         ul{
@@ -85,7 +85,7 @@ header{
         li{
             list-style: none;
             white-space: pre;
-            margin: 2vh 0;
+            margin: 1.5vh 0;
 
             .link{
                 text-decoration: none;
@@ -279,12 +279,16 @@ header{
 
             .card{
                 margin: 2vh;
-                width: 20rem;
+                width: 20vw;
+                min-width: 200px;
+                min-height: 30vh;
+                max-height: 45vh;
                 transition: box-shadow 1s;
 
                 .card-img-top{
                     height: 20vh;
                     object-fit: contain;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
                 }
 
                 &:hover{
@@ -301,6 +305,10 @@ header{
                         border: none;
                     }
                 
+                    &.codepen{
+                        // opacity: 0;
+                        display: none;
+                    }
                 
                     &.github{
                         height: 4vh;
@@ -426,17 +434,6 @@ header{
     }
 }
 
-
-.bg-accent1{
-    background-color: $accent !important;
-}
-.bg-accent2{
-    background-color: $accent2 !important;
-}
-.bg-accent3{
-    background-color: $accent3 !important;
-}
-
 /* For scroll fade animation*/
 // .tag {
 //     opacity: 0;
@@ -554,7 +551,7 @@ header{
             width: auto;
 
             .card{
-                width: 40vw;
+                width: 20vw;
                 margin: 1vh 0;
             }
         }
@@ -634,6 +631,22 @@ header{
     .section-header{
         h1{
             padding: 0 2vh;
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1075px){
+    #project-container{
+
+        #card-container{
+            width: 100vw;
+            padding: 0;
+
+            .card{
+                margin: 2vh 0;
+                width: auto;
+                min-width: 150px;
+            }
         }
     }
 }
