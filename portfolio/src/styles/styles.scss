@@ -60,6 +60,9 @@ body{
     color: rgb(0, 0, 0);
 }
 
+
+
+
 /* Header */
 header{
     display: flex;
@@ -433,45 +436,6 @@ header{
         font-weight: bold;   
     }
 }
-
-/* For scroll fade animation*/
-// .tag {
-//     opacity: 0;
-//     // transform: translate(0, 10vh);
-//     transition: all 2.5s;
-// }
-  
-// .tag.visible {
-//     opacity: 1;
-//     // transform: translate(0, 0);
-// } 
-
-// .btn{
-//     &.portfolio{
-//         background-color: #4f4f4f;
-//         border: none;
-//     }
-
-
-//     &.github{
-//         height: 4vh;
-//         // width: 3vh;
-
-//         .icon{
-//             height: 100%;
-//             width: 100%;
-
-//             // margin: 1vh;
-
-//             display: inline-block;
-//             vertical-align: middle;
-//         }
-//     }
-// }
-
-
-
-
 
 /* Media Queries */
 @media only screen and (max-width: 426px) { // Mobile
