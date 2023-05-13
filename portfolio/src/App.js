@@ -76,9 +76,12 @@ class Landing extends React.Component {
             <h1>
               {/* Not in love with the font */}
               Hi! I'm<br/>Ben<br/>Langlois
-            </h1><br/>
+            </h1>
           </div>
         </div>
+        <div id='footer'>
+          sad
+        </div>        
       </div>
     )
   }
@@ -375,10 +378,10 @@ class Portfolio extends React.Component {
   render(){
     return(
       <>
-        {/* <Landing /> */}
-        <About />
+        <Landing />
+        {/* <About />
         <Projects />
-        <ContactMe />
+        <ContactMe /> */}
       </>
     )
   }

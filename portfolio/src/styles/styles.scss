@@ -62,6 +62,29 @@ body{
 
 
 
+// Updated 
+#landing-container{
+    display: grid;
+    grid-template-areas:  ". header ."
+                ". main ."
+                ". footer .";
+    grid-template-columns: 30vw 40vw 40vw;
+    grid-template-rows: 30vh 40vh 30vh;
+
+    header{
+        grid-area: header;
+    }
+
+    #landing{
+        grid-area: main;
+    }
+
+    #footer{
+        grid-area: footer;
+    }
+
+}
+
 
 /* Header */
 header{
