@@ -27,7 +27,7 @@
 // #endregion
 
 // #region Variables
-$white: #ffffff;
+$headerLink: #000000;
 $landing: #111111;
 
 $accent: #BB0A21;
@@ -73,6 +73,68 @@ body{
 
     header{
         grid-area: header;
+
+        /* NavBar */
+        .nav-links{
+            font-size: 2.5vh; 
+            margin: 0 0 0 auto;
+        
+            ul{
+                display: flex;
+                justify-content: space-evenly;
+                margin: 0;
+                padding: 0;
+
+                position: relative;
+                bottom: 0;
+
+                li{
+                    list-style: none;
+                    white-space: pre;
+                    margin: 1.5vh 0;
+
+                    .link{
+                        text-decoration: none;
+                        color: $headerLink;
+                        
+                        padding: 0;
+                        display: block;
+                        position: relative;
+                    
+                        transition: opacity 0.5s;
+                    
+                        &:hover{
+                            opacity: 1;
+                            text-decoration: none;
+
+                            /* animation-duration: 0.5s;
+                            animation-name: opacity-fade-in; */
+                        }
+                        /* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            bottom: 0;
+                            left: 0;
+                    
+                            background-color: $headerLink;
+                    
+                            visibility: hidden;
+                            transform: scaleX(0);
+                            transition: all 0.3s ease-in-out 0s;
+                        }
+                    
+                        &:hover::before{
+                            visibility: visible;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+           
+        }
     }
 
     #landing{
@@ -87,76 +149,76 @@ body{
 
 
 /* Header */
-header{
-    display: flex;
-    // margin: 0 5vw 0;
-    padding: 0 5vw 0; 
+// header{
+//     display: flex;
+//     // margin: 0 5vw 0;
+//     padding: 0 5vw 0; 
 
-    position: -webkit-sticky; /* for safari */
-    position: sticky;
-    top: 0;
-    z-index: 2;
+//     position: -webkit-sticky; /* for safari */
+//     position: sticky;
+//     top: 0;
+//     z-index: 2;
 
-    background-color: $dark;
-    /* NavBar */
-    .nav-links{
-        font-size: 2.5vh; 
-        margin: 0 0 0 auto;
+//     background-color: $dark;
+//     /* NavBar */
+//     .nav-links{
+//         font-size: 2.5vh; 
+//         margin: 0 0 0 auto;
     
-        ul{
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        li{
-            list-style: none;
-            white-space: pre;
-            margin: 1.5vh 0;
+//         ul{
+//             display: flex;
+//             margin: 0;
+//             padding: 0;
+//         }
+//         li{
+//             list-style: none;
+//             white-space: pre;
+//             margin: 1.5vh 0;
 
-            .link{
-                text-decoration: none;
-                color: $white;
-                font-weight: 900;
+//             .link{
+//                 text-decoration: none;
+//                 color: $white;
+//                 font-weight: 900;
                 
-                // opacity: 0.7; 
-                margin: 0 2vw;
-                padding: 0;
-                display: block;
-                position: relative;
+//                 // opacity: 0.7; 
+//                 margin: 0 2vw;
+//                 padding: 0;
+//                 display: block;
+//                 position: relative;
             
-                transition: opacity 0.5s;
+//                 transition: opacity 0.5s;
             
-                &:hover{
-                    opacity: 1;
-                    text-decoration: none;
+//                 &:hover{
+//                     opacity: 1;
+//                     text-decoration: none;
 
-                    /* animation-duration: 0.5s;
-                    animation-name: opacity-fade-in; */
-                }
-                /* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
-                &::before{
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    bottom: 0;
-                    left: 0;
+//                     /* animation-duration: 0.5s;
+//                     animation-name: opacity-fade-in; */
+//                 }
+//                 /* https://tobiasahlin.com/blog/css-trick-animating-link-underlines/*/
+//                 &::before{
+//                     content: "";
+//                     position: absolute;
+//                     width: 100%;
+//                     height: 2px;
+//                     bottom: 0;
+//                     left: 0;
             
-                    background-color: $white;
+//                     background-color: $white;
             
-                    visibility: hidden;
-                    transform: scaleX(0);
-                    transition: all 0.3s ease-in-out 0s;
-                }
+//                     visibility: hidden;
+//                     transform: scaleX(0);
+//                     transition: all 0.3s ease-in-out 0s;
+//                 }
             
-                &:hover::before{
-                    visibility: visible;
-                    transform: scaleX(1);
-                }
-            }
-        }
-    }
-}
+//                 &:hover::before{
+//                     visibility: visible;
+//                     transform: scaleX(1);
+//                 }
+//             }
+//         }
+//     }
+// }
 
 /* About */
 #about-container{
