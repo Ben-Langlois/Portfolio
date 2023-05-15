@@ -71,17 +71,27 @@ class Landing extends React.Component {
     return (
       <div id="landing-container">
         <Header />
-        <div id="landing" className="content"> {/**/}
+        <div id="about" className="content"> {/**/}
           <div id='intro-main'>
             <h1>
               {/* Not in love with the font */}
-              Hi! I'm<br/>Ben<br/>Langlois
+              Hi! I'm <u>Ben Langlois</u>.<br/>A GTA/Toronto
+              based web developer,<br/>looking for an
+              entry level position in Front end
+              Web Development!            
             </h1>
+            <h2>
+              I attended Durham College for 2 years in
+              Oshawa, Ontario for computer programming.
+              Since graduating I've been learning what I
+              didnt experience in college.
+              I work mostly in React, JS, SCSS, MySQL,
+              and C++ while expirementing with Python,
+              C# and Arduino.
+            </h2>
           </div>
         </div>
-        <div id='footer'>
-          sad
-        </div>        
+        <Projects />      
       </div>
     )
   }

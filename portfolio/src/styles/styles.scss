@@ -66,27 +66,27 @@ body{
 #landing-container{
     display: grid;
     grid-template-areas:  ". header ."
-                ". main ."
-                ". footer .";
+                ". about ."
+                ". projects .";
     grid-template-columns: 30vw 40vw 40vw;
-    grid-template-rows: 30vh 40vh 30vh;
+    grid-template-rows: 25vh 50vh 25vh 50vh;
 
     header{
         grid-area: header;
 
         /* NavBar */
         .nav-links{
-            font-size: 2.5vh; 
+            font-size: 2.7vh; 
             margin: 0 0 0 auto;
+            height: 100%;
         
             ul{
                 display: flex;
                 justify-content: space-evenly;
                 margin: 0;
                 padding: 0;
-
-                position: relative;
-                bottom: 0;
+                align-items: flex-end;
+                height: 100%;
 
                 li{
                     list-style: none;
@@ -137,12 +137,21 @@ body{
         }
     }
 
-    #landing{
-        grid-area: main;
+    #about{
+        grid-area: about;
+
+        #intro-main{
+            line-height: 5%;
+
+            h1{
+                font-size: auto !important;
+                margin-bottom: 1rem;
+            }
+        }
     }
 
-    #footer{
-        grid-area: footer;
+    #projects{
+        grid-area: projects;
     }
 
 }
@@ -222,101 +231,101 @@ body{
 
 /* About */
 #about-container{
-    margin: 0;
-    height: 92vh;
-    width: 100%;
+    // margin: 0;
+    // height: 92vh;
+    // width: 100%;
 
-    -webkit-background-size: cover;        
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
-    display: inline-flex;
+    // -webkit-background-size: cover;        
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    // position: relative;
+    // display: inline-flex;
     
-    &::after{
-        content: "Scroll For More";
-        display: block;
+    // &::after{
+    //     content: "Scroll For More";
+    //     display: block;
         
-        color: rgb(0, 0, 0);
-        opacity: 0.7;
-        text-align: center;
+    //     color: rgb(0, 0, 0);
+    //     opacity: 0.7;
+    //     text-align: center;
     
-        font-size: 3vmin;
-        font-weight: 500;
+    //     font-size: 3vmin;
+    //     font-weight: 500;
 
-        height: 5vh;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        z-index: 1;
+    //     height: 5vh;
+    //     width: 100%;
+    //     position: absolute;
+    //     bottom: 0;
+    //     z-index: 1;
     
-        /* Shine animation */
-        animation: shine 5s infinite;
-    }
+    //     /* Shine animation */
+    //     animation: shine 5s infinite;
+    // }
 
-    #about{
-        display: inline-block;
-        margin: 5vh auto;
-        // background-color: #f5f5f5;
+    // #about{
+    //     display: inline-block;
+    //     margin: 5vh auto;
+    //     // background-color: #f5f5f5;
 
-        position: relative;
+    //     position: relative;
 
-        #portrait-container{
-            display: inline-block;
-            animation: fadeIn linear 3s;
-            // height: 100%;
+    //     #portrait-container{
+    //         display: inline-block;
+    //         animation: fadeIn linear 3s;
+    //         // height: 100%;
 
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-            #portrait{
-                width: 40vw;
-                margin: 0;
-                // height: 100%;
+    //         position: absolute;
+    //         top: 50%;
+    //         right: 0;
+    //         transform: translateY(-50%);
+    //         #portrait{
+    //             width: 40vw;
+    //             margin: 0;
+    //             // height: 100%;
 
-                border: 10px;
-                border-radius: 20px;
-                // background-color: rgb(255, 255, 255);
-                // box-shadow: -5px 5px 10px;
+    //             border: 10px;
+    //             border-radius: 20px;
+    //             // background-color: rgb(255, 255, 255);
+    //             // box-shadow: -5px 5px 10px;
 
-            }
-        }
+    //         }
+    //     }
 
-        #bio-container{
-            display: inline-block;
-            padding: 1vw; 
-            // width: clamp(30vw, 40vw, 500px);
-            width: 40vw;
+    //     #bio-container{
+    //         display: inline-block;
+    //         padding: 1vw; 
+    //         // width: clamp(30vw, 40vw, 500px);
+    //         width: 40vw;
 
-            animation: fadeIn linear 1.5s;
+    //         animation: fadeIn linear 1.5s;
 
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            #bio-text{
-                margin: 0; 
+    //         position: absolute;
+    //         top: 50%;
+    //         left: 0;
+    //         transform: translateY(-50%);
+    //         #bio-text{
+    //             margin: 0; 
 
-                p{
-                vertical-align: middle;
-                }
+    //             p{
+    //             vertical-align: middle;
+    //             }
 
-                #bio-main{
-                    font: 1000 2.5vw / 3.5vw playfair;
+    //             #bio-main{
+    //                 font: 1000 2.5vw / 3.5vw playfair;
 
-                    u{
-                        color: $accent;
-                    }
-                }
+    //                 u{
+    //                     color: $accent;
+    //                 }
+    //             }
 
-                #bio-secondary{
-                    margin: 3vh 0 0 0;
-                    font: 600 1.6vw/2.6vw roboto;
-                }
-            }
-        }        
-    }
+    //             #bio-secondary{
+    //                 margin: 3vh 0 0 0;
+    //                 font: 600 1.6vw/2.6vw roboto;
+    //             }
+    //         }
+    //     }        
+    // }
 }
 #skill-chart-container{
     display: flex;
@@ -340,16 +349,16 @@ body{
 
 /* Projects */
 #project-container{
-    margin: 0;
-    // padding: 3vh auto;
+    // margin: 0;
+    // // padding: 3vh auto;
     width: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    // position: relative;
 
-    text-align: center;
+    // text-align: center;
 
     #card-container{
         // flex
@@ -358,7 +367,7 @@ body{
         justify-content: center;
 
         margin: 3vh auto;
-        width: 60vw;
+        // width: 60vw;
 
 
         #card-link{
