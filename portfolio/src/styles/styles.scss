@@ -68,7 +68,7 @@ body{
     grid-template-areas:  ". header ."
                 ". about ."
                 ". projects .";
-    grid-template-columns: 30vw 40vw 40vw;
+    grid-template-columns: 25vw 50vw 25vw;
     grid-template-rows: 25vh 50vh 25vh 50vh;
 
     header{
@@ -152,8 +152,76 @@ body{
 
     #projects{
         grid-area: projects;
-    }
 
+        width: 100%;
+        
+        #card-container{
+            // flex
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+    
+            margin: 3vh auto;
+            // width: 60vw;
+    
+    
+            #card-link{
+                text-decoration: none;
+                color: #000000;
+    
+                .card{
+                    margin: 2vh;
+                    width: 20vw;
+                    min-width: 200px;
+                    min-height: 30vh;
+                    max-height: 45vh;
+                    transition: box-shadow 1s;
+    
+                    .card-img-top{
+                        height: 20vh;
+                        object-fit: contain;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                    }
+    
+                    &:hover{
+                        // background-color: #016499;
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        // transform: scale(1.05, 1.05);
+                    }
+    
+                    .btn{
+                        height: 4vh;
+    
+                        &.portfolio{
+                            background-color: #4f4f4f;
+                            border: none;
+                        }
+                    
+                        &.codepen{
+                            // opacity: 0;
+                            display: none;
+                        }
+                    
+                        &.github{
+                            height: 4vh;
+                            border: none;
+                            background-color: #4f4f4f;
+    
+    
+                            .icon{
+                                height: 100%;
+                                width: 100%;
+                                padding: 0;
+                            
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -348,85 +416,6 @@ body{
 }
 
 /* Projects */
-#project-container{
-    // margin: 0;
-    // // padding: 3vh auto;
-    width: 100%;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
-    // position: relative;
-
-    // text-align: center;
-
-    #card-container{
-        // flex
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-
-        margin: 3vh auto;
-        // width: 60vw;
-
-
-        #card-link{
-            text-decoration: none;
-            color: #000000;
-
-            .card{
-                margin: 2vh;
-                width: 20vw;
-                min-width: 200px;
-                min-height: 30vh;
-                max-height: 45vh;
-                transition: box-shadow 1s;
-
-                .card-img-top{
-                    height: 20vh;
-                    object-fit: contain;
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-                }
-
-                &:hover{
-                    // background-color: #016499;
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                    // transform: scale(1.05, 1.05);
-                }
-
-                .btn{
-                    height: 4vh;
-
-                    &.portfolio{
-                        background-color: #4f4f4f;
-                        border: none;
-                    }
-                
-                    &.codepen{
-                        // opacity: 0;
-                        display: none;
-                    }
-                
-                    &.github{
-                        height: 4vh;
-                        border: none;
-                        background-color: #4f4f4f;
-
-
-                        .icon{
-                            height: 100%;
-                            width: 100%;
-                            padding: 0;
-                        
-                            display: inline-block;
-                            vertical-align: middle;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 
 #contact-container{
     padding: 3vh 0 5vh 0;
