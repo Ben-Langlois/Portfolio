@@ -139,15 +139,18 @@ body{
 
     #about{
         grid-area: about;
-
-        #intro-main{
-            line-height: 5%;
+        display: flex;
+        align-items: center;
+            
+        div{
+            height: auto;
 
             h1{
                 font-size: auto !important;
-                margin-bottom: 1rem;
-            }
+                margin-bottom: 1rem;       
+            }  
         }
+        
     }
 
     #projects{
@@ -155,6 +158,31 @@ body{
 
         width: 100%;
         
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: #050505;
+            overflow: hidden;
+          }
+          
+          .container:hover .content {
+            transform: translateY(0%);
+            opacity: 1;
+          }
+          
+          .content {
+            position: absolute;
+            width: 100%;
+            padding: 10px;
+            background-color: #030303;
+            transition: transform 0.3s, opacity 0.3s;
+            transform: translateY(100%);
+            opacity: 0;
+            bottom: -100px;
+          }
+
         #card-container{
             // flex
             display: flex;

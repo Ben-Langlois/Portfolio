@@ -60,7 +60,7 @@ class Landing extends React.Component {
       <div id="landing-container">
         <Header />
         <div id="about" className="content"> {/**/}
-          <div id='intro-main'>
+          <div>
             <h1>
               {/* Not in love with the font */}
               Hi! I'm <u>Ben Langlois</u>.<br/>A GTA/Toronto
@@ -77,11 +77,11 @@ class Landing extends React.Component {
               and C++ while expirementing with Python,
               C# and Arduino.
             </h2>
-          </div>
+          </div>  
         </div>
         <div id='projects'>
           <Project/>
-        </div>
+        </div>                                                                                              
       </div>
     )
   }
@@ -90,6 +90,14 @@ class Landing extends React.Component {
 const Project = () => {
   return (
     <>
+      <div class="container">
+        Hover over me
+        <div class="content">
+          Extra information goes here.
+        </div>
+      </div>
+
+
       <div class="section-header project-section" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
       </div>  
