@@ -90,20 +90,19 @@ class Landing extends React.Component {
 const Project = () => {
   return (
     <>
-      <div class="container">
-        Hover over me
-        <div class="content">
-          Extra information goes here.
-        </div>
-      </div>
-
-
       <div class="section-header project-section" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
       </div>  
       <div id='card-container'>
 
-        <a id="card-link" href="#portfolio-card">
+        <div class='card grow'>
+          <img src={portfolio} alt="Portfolio Homepage"></img>
+          <h1>asd</h1>
+          <p>asdasd</p>
+          <div></div>
+        </div>
+
+        {/* <a id="card-link" href="#portfolio-card">
           <div class="card portfolio">
             <img class="card-img-top" src={portfolio} alt="Portfolio Homepage"></img>
             <div class="card-body">
@@ -161,7 +160,7 @@ const Project = () => {
               </a>
             </div>
           </div>
-        </a>
+        </a> */}
       </div>
     </>
   )

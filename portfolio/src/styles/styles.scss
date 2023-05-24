@@ -159,29 +159,6 @@ body{
         width: 100%;
         
 
-        .container {
-            position: relative;
-            width: 200px;
-            height: 100px;
-            background-color: #050505;
-            overflow: hidden;
-          }
-          
-          .container:hover .content {
-            transform: translateY(0%);
-            opacity: 1;
-          }
-          
-          .content {
-            position: absolute;
-            width: 100%;
-            padding: 10px;
-            background-color: #030303;
-            transition: transform 0.3s, opacity 0.3s;
-            transform: translateY(100%);
-            opacity: 0;
-            bottom: -100px;
-          }
 
         #card-container{
             // flex
@@ -192,61 +169,100 @@ body{
             margin: 3vh auto;
             // width: 60vw;
     
-    
+                // new attempt
+                .card{
+                    display: grid;
+                    grid-template-areas: "img"
+                        "title"
+                        "desc"
+                        "socials";
+                    grid-template-columns: 20vw;
+                    grid-template-rows: 100px 20px 50px 20px;
+                    height: 150px;
+                    
+                    transition: height 4.5s;
+                    -webkit-transition: height 4.5s;
+                    overflow: hidden;
+                    transition: 1.5s;
+
+                    &:hover{
+                        height: auto;
+                    }
+
+                    img{
+                        grid-area: img;
+                    }
+                    h1{
+                        grid-area: title;
+                    }
+                    p{
+                        grid-area: desc;
+                    }
+                    div{
+                        grid-area: socials
+                    }
+                }
+
+                .grow {
+
+                  }
+
             #card-link{
                 text-decoration: none;
                 color: #000000;
     
-                .card{
-                    margin: 2vh;
-                    width: 20vw;
-                    min-width: 200px;
-                    min-height: 30vh;
-                    max-height: 45vh;
-                    transition: box-shadow 1s;
+
+                
+                // .card{
+                //     margin: 2vh;
+                //     width: 20vw;
+                //     min-width: 200px;
+                //     min-height: 30vh;
+                //     max-height: 45vh;
+                //     transition: box-shadow 1s;
     
-                    .card-img-top{
-                        height: 20vh;
-                        object-fit: contain;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-                    }
+                //     .card-img-top{
+                //         height: 20vh;
+                //         object-fit: contain;
+                //         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                //     }
     
-                    &:hover{
-                        // background-color: #016499;
-                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                        // transform: scale(1.05, 1.05);
-                    }
+                //     &:hover{
+                //         // background-color: #016499;
+                //         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                //         // transform: scale(1.05, 1.05);
+                //     }
     
-                    .btn{
-                        height: 4vh;
+                //     .btn{
+                //         height: 4vh;
     
-                        &.portfolio{
-                            background-color: #4f4f4f;
-                            border: none;
-                        }
+                //         &.portfolio{
+                //             background-color: #4f4f4f;
+                //             border: none;
+                //         }
                     
-                        &.codepen{
-                            // opacity: 0;
-                            display: none;
-                        }
+                //         &.codepen{
+                //             // opacity: 0;
+                //             display: none;
+                //         }
                     
-                        &.github{
-                            height: 4vh;
-                            border: none;
-                            background-color: #4f4f4f;
+                //         &.github{
+                //             height: 4vh;
+                //             border: none;
+                //             background-color: #4f4f4f;
     
     
-                            .icon{
-                                height: 100%;
-                                width: 100%;
-                                padding: 0;
+                //             .icon{
+                //                 height: 100%;
+                //                 width: 100%;
+                //                 padding: 0;
                             
-                                display: inline-block;
-                                vertical-align: middle;
-                            }
-                        }
-                    }
-                }
+                //                 display: inline-block;
+                //                 vertical-align: middle;
+                //             }
+                //         }
+                //     }
+                // }
             }
         }
     }
