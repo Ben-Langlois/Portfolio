@@ -177,26 +177,29 @@ body{
                         "desc"
                         "socials";
                     grid-template-columns: 20vw;
-                    grid-template-rows: 100px 20px 50px 20px;
-                    height: 150px;
-                    
-                    transition: height 4.5s;
-                    -webkit-transition: height 4.5s;
+                    grid-template-rows: 200px 50px 50px 50px;
+                    height: 250px;
+                    transition: height ease-in-out 0.5s;
+                    -webkit-transition: height ease-in-out 0.5s; 
+
                     overflow: hidden;
-                    transition: 1.5s;
 
                     &:hover{
-                        height: auto;
+                        height: 350px;
+
                     }
 
                     img{
                         grid-area: img;
+                        width: 100%;
                     }
                     h1{
                         grid-area: title;
+                        margin: 0 0 0 1rem;
                     }
                     p{
                         grid-area: desc;
+                        margin: 0 0 0 1rem ;
                     }
                     div{
                         grid-area: socials
