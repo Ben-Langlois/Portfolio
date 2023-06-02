@@ -87,6 +87,16 @@ class Landing extends React.Component {
   }
 }
 
+const projects = [
+  {
+    name: 'Portfolio',
+    desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
+    img: portfolio,
+    alt: 'Portfolio Homepage'
+
+  }
+]
+
 const Project = () => {
   return (
     <>
@@ -101,6 +111,19 @@ const Project = () => {
           <p>asdasd</p>
           <div></div>
         </div>
+
+      {
+        projects.map((curr) => {
+          return (
+            <div class='card grow'>
+              <img src={curr.img} alt={curr.alt}></img>
+              <h1>{curr.name}</h1>
+              <p>{curr.desc}</p>
+              <div></div>
+            </div>
+          )
+        })
+      }
 
         {/* <a id="card-link" href="#portfolio-card">
           <div class="card portfolio">
