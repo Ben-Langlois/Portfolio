@@ -177,8 +177,10 @@ body{
                         "desc"
                         "socials";
                     grid-template-columns: 20vw;
-                    grid-template-rows: 200px 50px 50px 50px;
+                    grid-template-rows: 200px 50px auto 50px;
                     height: 250px;
+                    margin: 1rem;
+
                     transition: height ease-in-out 0.5s;
                     -webkit-transition: height ease-in-out 0.5s; 
 
@@ -562,7 +564,7 @@ body{
         /* border-bottom: 2px solid rgb(42, 45, 52); */
         display: inline-flex;
         font-stretch: expanded;
-        font: bold 2.4em/2em playfair; 
+        font: bold 2.4em/2em ; 
         font-weight: bold;   
     }
 }
