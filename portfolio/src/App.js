@@ -97,7 +97,7 @@ const projects = [
   },
   {
     name: 'Lab Timer',
-    desc: 'ade with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis research for 6+ months.',
+    desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis research for 6+ months.',
     img: labtimer,
     alt: 'Labtimer Homepage',
     diff: 4

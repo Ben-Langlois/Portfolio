@@ -193,11 +193,13 @@ body{
 
                     img{
                         grid-area: img;
-                        width: 100%;
+                        // width: 100%;
+                        object-fit: cover;
+
                     }
                     h1{
                         grid-area: title;
-                        margin: 1rem;
+                        // margin: 1rem;
                         font-size: 2rem;
                     }
                     p{
