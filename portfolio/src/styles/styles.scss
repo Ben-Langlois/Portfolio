@@ -181,13 +181,13 @@ body{
                     height: 250px;
                     margin: 1rem;
 
-                    transition: height ease-in-out 0.5s;
-                    -webkit-transition: height ease-in-out 0.5s; 
+                    transition: scale ease-in-out 0.5s;
+                    -webkit-transition: scale ease-in-out 0.5s; 
 
                     overflow: hidden;
 
                     &:hover{
-                        height: 350px;
+                        scale: 1.5;
 
                     }
 
