@@ -190,13 +190,13 @@ body{
                     overflow: hidden;
 
 
-                    z-index:100;
+                    z-index:1;
 
                     &:hover{
                         // display: block;
                         // scale: 1.1;
                         height: 350px;
-                        // z-index: 2;
+                        z-index: 2;
                     }
 
                     img{
