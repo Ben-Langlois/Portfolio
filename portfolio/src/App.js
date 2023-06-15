@@ -129,12 +129,16 @@ const Project = () => {
       {
         projects.map((curr) => {
           return (
-            <div class='card grow'>
-              <img src={curr.img} alt={curr.alt}></img>
-              <h1>{curr.name}</h1>
-              <p>{curr.desc}</p>
-              <div></div>
-            </div>
+              <div class='card'>
+                <div id='main'>
+                  <img src={curr.img} alt={curr.alt}></img>
+                  <h1>{curr.name}</h1>
+                </div>
+                <div id='hover'>
+                  <p>{curr.desc}</p>
+                  <div></div>
+                </div>
+              </div>
           )
         })
       }

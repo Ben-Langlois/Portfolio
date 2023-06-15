@@ -171,57 +171,66 @@ body{
     
                 // new attempt
                 .card{
-                    display: grid;
-                    grid-template-areas: "img"
-                        "title"
-                        "desc"
-                        "socials";
-                    grid-template-columns: 20vw;
-                    grid-template-rows: 200px auto auto 50px;
-                    height: 250px;
-                    margin: 1rem;
+                    height: 300px;
+                    width: 25vw;
 
-                    // transition: scale ease-in-out 0.5s;
-                    // -webkit-transition: scale ease-in-out 0.5s; 
+                    #main{
+                        display: grid;
+                        grid-template-areas: 
+                            "img"
+                            "title";
+                        grid-template-columns: 25vw;
+                        grid-template-rows: 66% 33%;
+                        // margin: 0.5rem;
 
-                    transition: height ease-in-out 0.5s;
-                    -webkit-transition: height ease-in-out 0.5s; 
+                        // transition: scale ease-in-out 0.5s;
+                        // -webkit-transition: scale ease-in-out 0.5s; 
 
-                    overflow: hidden;
+                        overflow: hidden;
 
+                        img{
+                            grid-area: img;
+                            width: 100%;
+                            // object-fit: cover;
 
-                    z-index:1;
-
-                    &:hover{
-                        // display: block;
-                        // scale: 1.1;
-                        height: 350px;
-                        z-index: 2;
+                        }
+                        h1{
+                            grid-area: title;
+                            // margin: 1rem;
+                            font-size: 2rem;
+                        } 
+                        &:hover{
+                            display: none;
+                        }
                     }
 
-                    img{
-                        grid-area: img;
-                        // width: 100%;
-                        object-fit: cover;
 
-                    }
-                    h1{
-                        grid-area: title;
-                        // margin: 1rem;
-                        font-size: 2rem;
-                    }
-                    p{
-                        grid-area: desc;
-                        margin: 0.5rem;
-                    }
-                    div{
-                        grid-area: socials
-                    }
+                    #hover{
+                        display: none;
+                        height:100%;
+                        width: 100%;
+                        position: relative;
+                        top: 0;
+                        left: 0;
+
+                        p{
+                            margin: 0.5rem;
+                        }
+                        div{
+                        }
+
+                        &:hover{
+                            display: grid;
+                            grid-template-areas: 
+                                "desc"
+                                "socials";
+                            grid-template-columns: 100%;
+                            grid-template-rows: 66% 33%;                            
+                        }   
+                    }  
                 }
 
-                .grow {
 
-                  }
 
             #card-link{
                 text-decoration: none;
