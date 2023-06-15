@@ -199,9 +199,9 @@ body{
                             // margin: 1rem;
                             font-size: 2rem;
                         } 
-                        &:hover{
-                            display: none;
-                        }
+                        
+                    }&:hover{
+                        display: none;
                     }
 
 
@@ -219,15 +219,15 @@ body{
                         div{
                         }
 
-                        &:hover{
-                            display: grid;
-                            grid-template-areas: 
-                                "desc"
-                                "socials";
-                            grid-template-columns: 100%;
-                            grid-template-rows: 66% 33%;                            
-                        }   
-                    }  
+
+                    }&:hover{
+                        display: grid;
+                        grid-template-areas: 
+                            "desc"
+                            "socials";
+                        grid-template-columns: 100%;
+                        grid-template-rows: 66% 33%;                            
+                    }   
                 }
 
 
