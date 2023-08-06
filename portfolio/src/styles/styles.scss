@@ -157,14 +157,13 @@ body{
         grid-area: projects;
 
         width: 100%;
-        
-
 
         #card-container{
             // flex
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
+            gap: 5vh;
     
             margin: 3vh auto;
             // width: 60vw;
@@ -172,9 +171,8 @@ body{
                 // new attempt
                 .card{
                     height: 300px;
-                    width: 25vw;
+                    width: 22vw;
 
-                    // 1st child
                     #main{
                         display: grid;
                         grid-template-areas: 
@@ -201,11 +199,8 @@ body{
                             font-size: 2rem;
                         } 
                         
-                    }&:hover{
-                        display: none;
                     }
 
-                    // 2nd child
                     #hover{
                         display: none;
                         height:100%;
@@ -217,22 +212,22 @@ body{
                         p{
                             margin: 0.5rem;
                         }
-                        div{
-                        }
-
-
-                    }&:hover{
-                        // display: block;
+                    }
+                } // using & for some reason makes it all goofy
+                .card:hover{
+                    #main{
+                        // display: none;
+                    }
+                    #hover{
                         display: grid;
                         grid-template-areas: 
                             "desc"
                             "socials";
                         grid-template-columns: 100%;
-                        grid-template-rows: 66% 33%;                            
-                    }   
+                        grid-template-rows: 66% 33%;  
+                    }
                 }
 
-                // to reference the divs I want to display/not, use nth
 
 
 
