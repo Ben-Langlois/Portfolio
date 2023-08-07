@@ -168,125 +168,68 @@ body{
             margin: 3vh auto;
             // width: 60vw;
     
-                // new attempt
-                .card{
-                    height: 300px;
-                    width: 22vw;
+            // new attempt
+            .card{
+                height: 300px;
+                width: 22vw;
 
-                    #main{
-                        display: grid;
-                        grid-template-areas: 
-                            "img"
-                            "title";
-                        grid-template-columns: 25vw;
-                        grid-template-rows: 66% 33%;
-                        // margin: 0.5rem;
+                #main{
+                    display: grid;
+                    grid-template-areas: 
+                        "img"
+                        "title";
+                    grid-template-columns: 25vw;
+                    grid-template-rows: 66% 33%;
+                    // margin: 0.5rem;
 
-                        // transition: scale ease-in-out 0.5s;
-                        // -webkit-transition: scale ease-in-out 0.5s; 
+                    // transition: scale ease-in-out 0.5s;
+                    // -webkit-transition: scale ease-in-out 0.5s; 
 
-                        overflow: hidden;
+                    overflow: hidden;
 
-                        img{
-                            grid-area: img;
-                            width: 100%;
-                            // object-fit: cover;
-
-                        }
-                        h1{
-                            grid-area: title;
-                            // margin: 1rem;
-                            font-size: 2rem;
-                        } 
-                        
-                    }
-
-                    #hover{
-                        display: none;
-                        height:100%;
+                    img{
+                        grid-area: img;
                         width: 100%;
-                        position: relative;
-                        top: 0;
-                        left: 0;
+                        // object-fit: cover;
 
-                        p{
-                            margin: 0.5rem;
-                        }
                     }
-                } // using & for some reason makes it all goofy
-                .card:hover{
-                    #main{
-                        // display: none;
-                    }
-                    #hover{
-                        display: grid;
-                        grid-template-areas: 
-                            "desc"
-                            "socials";
-                        grid-template-columns: 100%;
-                        grid-template-rows: 66% 33%;  
-                    }
+                    h1{
+                        grid-area: title;
+                        // margin: 1rem;
+                        font-size: 2rem;
+                    } 
+                    
                 }
 
+                #hover{
+                    display: none;
+                    height:100%;
+                    width: 100%;
+                    position: relative;
+                    top: 0;
+                    left: 0;
 
+                    p{
+                        margin: 0.5rem;
+                    }
+                }
+            } // using & for some reason makes it all goofy
+            .card:hover{
+                    // background-color: #016499;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    transform: scale(1.05, 1.05);
 
-
-            #card-link{
-                text-decoration: none;
-                color: #000000;
-    
-
-                
-                // .card{
-                //     margin: 2vh;
-                //     width: 20vw;
-                //     min-width: 200px;
-                //     min-height: 30vh;
-                //     max-height: 45vh;
-                //     transition: box-shadow 1s;
-    
-                //     .card-img-top{
-                //         height: 20vh;
-                //         object-fit: contain;
-                //         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-                //     }
-    
-                //     &:hover{
-                //         // background-color: #016499;
-                //         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                //         // transform: scale(1.05, 1.05);
-                //     }
-    
-                //     .btn{
-                //         height: 4vh;
-    
-                //         &.portfolio{
-                //             background-color: #4f4f4f;
-                //             border: none;
-                //         }
-                    
-                //         &.codepen{
-                //             // opacity: 0;
-                //             display: none;
-                //         }
-                    
-                //         &.github{
-                //             height: 4vh;
-                //             border: none;
-                //             background-color: #4f4f4f;
-    
-    
-                //             .icon{
-                //                 height: 100%;
-                //                 width: 100%;
-                //                 padding: 0;
-                            
-                //                 display: inline-block;
-                //                 vertical-align: middle;
-                //             }
-                //         }
-                //     }
-                // }
+                #main{
+                    // display: none;
+                }
+                #hover{
+                    display: grid;
+                    grid-template-areas: 
+                        "desc"
+                        "socials";
+                    grid-template-columns: 100%;
+                    grid-template-rows: 66% 33%;  
+                }
             }
         }
     }
