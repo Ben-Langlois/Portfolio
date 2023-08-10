@@ -21,7 +21,7 @@ import noteapp from './images/projects/noteapp.png'
   // <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 // #endregion
 
-/* #region About
+/* #region Resources
   https://docs.google.com/document/d/1blbXL01EGNG-vNqbsa8cLGL3hwbVAnuaSLXAhNWucXA/edit 
 
 
@@ -64,6 +64,9 @@ const projectsObj = [
 // components
 /*Header
   - Contains logo, nav links
+
+  TODO
+    - re-css to account for responsiveness
 */
 const Header = () => {
   return (
@@ -117,8 +120,9 @@ const Landing = () => {
   - Contains projects, filterable through a slide bar type thing (divided by languages)
 
   TODO
-  - change margins/padding to account for smaller section
-  - add projects duh yuh get me
+    - finish styling card
+    - finish styling hover
+    - add filtering to array
 */
 const Project = () => {
   return (
