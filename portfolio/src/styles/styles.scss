@@ -68,8 +68,8 @@ body{
     grid-template-areas:  ". header ."
                 ". about ."
                 ". projects .";
-    grid-template-columns: 25vw 50vw 25vw;
-    grid-template-rows: 25vh 50vh 25vh 50vh;
+    grid-template-columns: auto clamp(600px, 50vw, 900px) auto;
+    grid-template-rows: 25vh 50vh auto;
 
     header{
         grid-area: header;
@@ -155,8 +155,8 @@ body{
 
     #projects{
         grid-area: projects;
-
         width: 100%;
+        margin-top: 15vh;
 
         #card-container{
             // flex
@@ -172,6 +172,8 @@ body{
             .card{
                 height: 300px;
                 width: 22vw;
+
+                transition: all 1s ease;
 
                 #main{
                     display: grid;
@@ -216,7 +218,7 @@ body{
             } // using & for some reason makes it all goofy
             .card:hover{
                     // background-color: #016499;
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
                     transform: scale(1.05, 1.05);
 
                 #main{
