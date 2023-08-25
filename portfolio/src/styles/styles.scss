@@ -174,6 +174,7 @@ body{
                 border-radius: 3%;
                 overflow: hidden;
                 transition: all 1s ease;
+                justify-items: center;
 
                 display: grid;
                 grid-template-areas: 
@@ -181,24 +182,29 @@ body{
                     "title"
                     "desc";
                 grid-template-columns: 25vw;
-                grid-template-rows: 66% 33% 0%;
+                grid-template-rows: 85% 20% 0%;
 
                 img{
                     width: 100%;
+                    height: 100%;
                     object-fit: cover;
                     transition: all 1s ease;
-                    // z-index: -1;
+                    z-index: 0;
                 }
 
                 h1{
                     grid-area: title;
                     // margin: 1rem;
                     font-size: 2rem;
+                    z-index: 1;
+                    justify-self: start;
                 } 
 
                 p{
                     grid-area: desc;
                     margin: 0.5rem;
+                    z-index: 1;
+                    width: 80%;
                 }
 
             } // using & for some reason makes it all goofy
@@ -215,6 +221,11 @@ body{
                     grid-template-columns: 25vw;
                     grid-template-rows:60% 10% auto;
 
+                    img{
+                        z-index: 0;
+                        filter: blur(1.5px); 
+                    }
+
                     h1{
                         z-index: 1;
                     }
@@ -222,10 +233,8 @@ body{
                     p{
                         z-index: 1;
                     }   
-                    img{
-                        z-index: 0;
-                        filter: blur(2px); 
-                    }
+
+
 
 
             }
