@@ -164,7 +164,6 @@ body{
             flex-flow: row wrap;
             justify-content: center;
             gap: 5vh;
-    
             margin: 3vh auto;
             // width: 60vw;
     
@@ -172,66 +171,63 @@ body{
             .card{
                 height: 300px;
                 width: 22vw;
-
+                border-radius: 3%;
+                overflow: hidden;
                 transition: all 1s ease;
 
-                #main{
-                    display: grid;
-                    grid-template-areas: 
-                        "img"
-                        "title";
-                    grid-template-columns: 25vw;
-                    grid-template-rows: 66% 33%;
-                    // margin: 0.5rem;
+                display: grid;
+                grid-template-areas: 
+                    "."
+                    "title"
+                    "desc";
+                grid-template-columns: 25vw;
+                grid-template-rows: 66% 33% 0%;
 
-                    // transition: scale ease-in-out 0.5s;
-                    // -webkit-transition: scale ease-in-out 0.5s; 
-
-                    overflow: hidden;
-
-                    img{
-                        grid-area: img;
-                        width: 100%;
-                        // object-fit: cover;
-
-                    }
-                    h1{
-                        grid-area: title;
-                        // margin: 1rem;
-                        font-size: 2rem;
-                    } 
-                    
-                }
-
-                #hover{
-                    display: none;
-                    height:100%;
+                img{
                     width: 100%;
-                    position: relative;
-                    top: 0;
-                    left: 0;
-
-                    p{
-                        margin: 0.5rem;
-                    }
+                    object-fit: cover;
+                    transition: all 1s ease;
+                    // z-index: -1;
                 }
+
+                h1{
+                    grid-area: title;
+                    // margin: 1rem;
+                    font-size: 2rem;
+                } 
+
+                p{
+                    grid-area: desc;
+                    margin: 0.5rem;
+                }
+
             } // using & for some reason makes it all goofy
             .card:hover{
                     // background-color: #016499;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
-                    transform: scale(1.05, 1.05);
+                    transform: scale(1.02, 1.02);
 
-                #main{
-                    // display: none;
-                }
-                #hover{
                     display: grid;
                     grid-template-areas: 
-                        "desc"
-                        "socials";
-                    grid-template-columns: 100%;
-                    grid-template-rows: 66% 33%;  
-                }
+                        "."
+                        "title"
+                        "desc";
+                    grid-template-columns: 25vw;
+                    grid-template-rows:60% 10% auto;
+
+                    h1{
+                        z-index: 1;
+                    }
+
+                    p{
+                        z-index: 1;
+                    }   
+                    img{
+                        z-index: 0;
+                        filter: blur(2px); 
+                    }
+
+
             }
         }
     }
