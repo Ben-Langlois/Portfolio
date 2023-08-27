@@ -68,12 +68,16 @@ body{
     grid-template-areas:  ". header ."
                 ". about ."
                 ". projects .";
-    grid-template-columns: auto clamp(600px, 50vw, 900px) auto;
+    grid-template-columns: auto;
     grid-template-rows: 25vh 50vh auto;
+
+    justify-content: center;
+
 
     header{
         grid-area: header;
-
+        justify-self: center;
+        width: clamp(600px, 50vw, 900px);
         /* NavBar */
         .nav-links{
             font-size: 2.7vh; 
@@ -141,7 +145,11 @@ body{
         grid-area: about;
         display: flex;
         align-items: center;
+        justify-self: center;
             
+        width: clamp(600px, 50vw, 900px);
+
+
         div{
             height: auto;
 
@@ -155,8 +163,9 @@ body{
 
     #projects{
         grid-area: projects;
-        width: 100%;
-        margin-top: 15vh;
+        width: clamp(600px, 60vw, 1100px);
+        margin: 15vh 0;
+
 
         #card-container{
             // flex
@@ -164,13 +173,14 @@ body{
             flex-flow: row wrap;
             justify-content: center;
             gap: 5vh;
-            margin: 3vh auto;
+            // margin: 3vh auto;
+            padding-top: 3vh;
             // width: 60vw;
     
             // new attempt
             .card{
                 height: 300px;
-                width: 22vw;
+                // width: 22vw;
                 border-radius: 3%;
                 overflow: hidden;
                 transition: all 1s ease;
@@ -194,7 +204,7 @@ body{
 
                 h1{
                     grid-area: title;
-                    // margin: 1rem;
+                    margin: 0 0 0 10%;
                     font-size: 2rem;
                     z-index: 1;
                     justify-self: start;
@@ -202,7 +212,7 @@ body{
 
                 p{
                     grid-area: desc;
-                    margin: 0.5rem;
+                    margin: 0.5rem 0;
                     z-index: 1;
                     width: 80%;
                 }
@@ -222,21 +232,8 @@ body{
                     grid-template-rows:60% 10% auto;
 
                     img{
-                        z-index: 0;
                         filter: blur(1.5px); 
                     }
-
-                    h1{
-                        z-index: 1;
-                    }
-
-                    p{
-                        z-index: 1;
-                    }   
-
-
-
-
             }
         }
     }
