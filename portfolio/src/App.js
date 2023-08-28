@@ -36,6 +36,7 @@ const projectsObj = [
     img: portfolio,
     alt: 'Portfolio Homepage',
     diff: 3
+
   },
   {
     name: 'Lab Timer',
@@ -129,6 +130,11 @@ const Project = () => {
     <>
       <div class="section-header project-section" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
+        <div id='filters'>
+          <h5 class='link'>Recent</h5>
+          <h5 class='link'>Difficulty</h5>
+          <h5 class='link'>A-Z</h5>
+        </div>
       </div>  
       <div id='card-container'>
 
