@@ -1,5 +1,6 @@
 // #region imports
 import * as React from "react"
+import { useState } from 'react';
 // import $ from 'jquery'
 import Chart from 'chart.js/auto'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -126,14 +127,17 @@ const Landing = () => {
     - add filtering to array
 */
 const Project = () => {
+
+  const [filter, setFilter] = useState(0);
+
   return (
     <>
       <div class="section-header project-section" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
-          <h5 class='link'>Recent</h5>
-          <h5 class='link'>Difficulty</h5>
-          <h5 class='link'>A-Z</h5>
+          <h5 class='link' onClick={() => setFilter(0)}>Recent</h5>
+          <h5 class='link' onClick={() => setFilter(1)}>Difficulty</h5>
+          <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5>
         </div>
       </div>  
       <div id='card-container'>
@@ -148,6 +152,8 @@ const Project = () => {
               </div>
           )
         })
+        
+
       }
       </div>
     </>
