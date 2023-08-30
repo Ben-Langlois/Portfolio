@@ -1,6 +1,6 @@
 // #region imports
 import * as React from "react"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // import $ from 'jquery'
 import Chart from 'chart.js/auto'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -128,8 +128,23 @@ const Landing = () => {
 */
 const Project = () => {
 
-  const [filter, setFilter] = useState(0);
+  const [filter, setFilter] = useState(0),
+        [cards, setCards] = useState([projectsObj]);
 
+  useEffect((filter) => {
+    switch(filter){
+      case 0:
+        // setCards(projectsObj.map());
+        break;
+      case 1: 
+        setCards([...projectsObj.sort((a, b) => a.diff > b.diff)]);
+        break;
+      default:
+        setCards([...projectsObj]);
+    }
+  });
+
+  // console.log(cards)
   return (
     <>
       <div class="section-header project-section" id='project-section'>
@@ -137,13 +152,13 @@ const Project = () => {
         <div id='filters'>
           <h5 class='link' onClick={() => setFilter(0)}>Recent</h5>
           <h5 class='link' onClick={() => setFilter(1)}>Difficulty</h5>
-          <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5>
+          {/* <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5> */}
         </div>
       </div>  
       <div id='card-container'>
 
       {
-        projectsObj.map((curr) => {
+        cards.map((curr) => {
           return (
               <div class='card'>
                 <img src={curr.img} alt={curr.alt}></img>
@@ -152,8 +167,6 @@ const Project = () => {
               </div>
           )
         })
-        
-
       }
       </div>
     </>
