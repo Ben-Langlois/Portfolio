@@ -1,12 +1,10 @@
 // #region imports
 import * as React from "react"
 import { useState, useEffect } from 'react';
-// import $ from 'jquery'
+import $ from 'jquery'
 import Chart from 'chart.js/auto'
 import 'bootstrap/dist/css/bootstrap.css'
-//import { render } from "react-dom"
 import './styles/styles.scss'
-// import * as chartJS from 'https://cdn.jsdelivr.net/npm/chart.js'
 // #endregion 
 
 // #region images
@@ -62,6 +60,15 @@ const projectsObj = [
   }
 ]
 //#endregion
+
+$('body').scroll(function() {
+  if ($(this).scrollTop() > 1){
+  $('#header').addClass('sticky');
+  }
+  else{
+  $('#header').removeClass('sticky');
+  }
+});
 
 // components
 /*Header
@@ -128,30 +135,26 @@ const Landing = () => {
 */
 const Project = () => {
 
-  const [filter, setFilter] = useState(0),
-        [cards, setCards] = useState([projectsObj]);
+  const [cards, setCards] = useState([...projectsObj]);
+  console.log(cards);
 
-  useEffect((filter) => {
-    switch(filter){
-      case 0:
-        // setCards(projectsObj.map());
-        break;
-      case 1: 
-        setCards([...projectsObj.sort((a, b) => a.diff > b.diff)]);
-        break;
-      default:
-        setCards([...projectsObj]);
+  const onFilterClick = (e) => {
+    let type = e.target.textContent.toLowerCase();
+
+    if(type == 'difficulty'){
+      setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
+    } else if(type == 'recent'){
+      console.log('recent');
     }
-  });
+  };
 
-  // console.log(cards)
   return (
     <>
       <div class="section-header project-section" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
-          <h5 class='link' onClick={() => setFilter(0)}>Recent</h5>
-          <h5 class='link' onClick={() => setFilter(1)}>Difficulty</h5>
+          <h5 class='link' onClick={onFilterClick}>Recent</h5>
+          <h5 class='link' onClick={onFilterClick}>Difficulty</h5>
           {/* <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5> */}
         </div>
       </div>  

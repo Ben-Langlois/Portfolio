@@ -78,6 +78,9 @@ body{
         grid-area: header;
         justify-self: center;
         width: clamp(600px, 50vw, 900px);
+        height: 15vh;
+        position: fixed;
+
         /* NavBar */
         .nav-links{
             font-size: 2.7vh; 
@@ -479,6 +482,15 @@ body{
         visibility: visible;
         transform: scaleX(1);
     }
+}
+.sticky {
+    font-size: 15px;
+    color: #000000;
+    border: 1px solid black;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    transition: all 0.4s ease;
 }
 /* Media Queries */
 @media only screen and (max-width: 426px) { // Mobile
