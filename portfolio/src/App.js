@@ -62,11 +62,11 @@ const projectsObj = [
 //#endregion
 
 $('body').scroll(function() {
-  if ($(this).scrollTop() > 1){
-  $('#header').addClass('sticky');
+  if ($('body').scrollTop() > 100){
+    $('#header').addClass('sticky');
   }
   else{
-  $('#header').removeClass('sticky');
+    $('#header').removeClass('sticky');
   }
 });
 
@@ -83,7 +83,7 @@ const Header = () => {
       <div className="nav-links">
         <ul>            
           <li><a className="link" href="#top">About</a></li>
-          <li><a className="link" href="#project-section">Projects</a></li>
+          <li><a className="link" href="#project-container">Projects</a></li>
           <li><a className="link" href="#contact-container">Contact</a></li>
         </ul>
       </div>    

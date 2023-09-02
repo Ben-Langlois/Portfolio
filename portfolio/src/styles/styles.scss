@@ -69,7 +69,7 @@ body{
                 ". about ."
                 ". projects .";
     grid-template-columns: auto;
-    grid-template-rows: 25vh 50vh auto;
+    grid-template-rows: 10vh 50vh auto;
 
     justify-content: center;
 
@@ -78,7 +78,7 @@ body{
         grid-area: header;
         justify-self: center;
         width: clamp(600px, 50vw, 900px);
-        height: 15vh;
+        height: 10vh;
         position: fixed;
 
         /* NavBar */
@@ -99,11 +99,8 @@ body{
                     list-style: none;
                     white-space: pre;
                     margin: 1.5vh 0;
-
-                   
                 }
             }
-           
         }
     }
 
@@ -484,13 +481,13 @@ body{
     }
 }
 .sticky {
-    font-size: 15px;
-    color: #000000;
+    // font-size: 15px;
+    // color: #000000;
     border: 1px solid black;
-    position: fixed;
-    height: 50px;
-    width: 100%;
-    transition: all 0.4s ease;
+    // position: fixed;
+    height: 7vh !important;
+    // width: 100%;
+    transition: all 0.4s ease-in-out 0.4s;
 }
 /* Media Queries */
 @media only screen and (max-width: 426px) { // Mobile
