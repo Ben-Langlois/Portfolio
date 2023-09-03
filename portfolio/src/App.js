@@ -61,9 +61,10 @@ const projectsObj = [
 ]
 //#endregion
 
-$('body').scroll(function() {
-  if ($('body').scrollTop() > 100){
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 1){
     $('#header').addClass('sticky');
+    // $('#landing-container').css('grid-template-rows', '15vh 50vh auto !important')
   }
   else{
     $('#header').removeClass('sticky');
