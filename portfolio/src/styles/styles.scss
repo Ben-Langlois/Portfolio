@@ -49,9 +49,6 @@ $dark: rgb(0, 0, 0);
 html, body {
     // overflow-x: hidden;
     scroll-behavior: smooth;
-}
-
-body{
     margin: 0;
     padding: 0;
     font-family: roboto;
@@ -59,8 +56,6 @@ body{
     // background: #FDFCFC;
     color: rgb(0, 0, 0);
 }
-
-
 
 // Updated 
 #landing-container{
@@ -70,8 +65,8 @@ body{
                 ". projects .";
     grid-template-columns: auto;
     grid-template-rows: 15vh 70vh auto;
-
     justify-content: center;
+    transition: all 0.4s ;
 
 
     header{
@@ -79,10 +74,10 @@ body{
         height: 15vh;
         position: fixed;
         width: 100%;
+        transition: all 0.4s ;
 
         /* NavBar */
-        .nav-links{
-            justify-content: center;
+        .nav-links{            
             font-size: 2.7vh; 
             margin: 0 auto;
             height: 100%;
@@ -90,11 +85,12 @@ body{
         
             ul{
                 display: flex;
-                justify-content: space-evenly;
                 margin: 0;
                 padding: 0;
                 align-items: flex-end;
                 height: 100%;
+                justify-content: flex-end;
+                gap: 5vw;
 
                 li{
                     list-style: none;
@@ -111,7 +107,7 @@ body{
         align-items: center;
         justify-self: center;
             
-        width: clamp(600px, 50vw, 900px);
+        width: clamp(600px, 50vw, 1000px);
 
 
         div{
@@ -220,217 +216,6 @@ body{
     }
 }
 
-
-/* Header */
-
-
-/* About */
-#about-container{
-    // margin: 0;
-    // height: 92vh;
-    // width: 100%;
-
-    // -webkit-background-size: cover;        
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
-    // position: relative;
-    // display: inline-flex;
-    
-    // &::after{
-    //     content: "Scroll For More";
-    //     display: block;
-        
-    //     color: rgb(0, 0, 0);
-    //     opacity: 0.7;
-    //     text-align: center;
-    
-    //     font-size: 3vmin;
-    //     font-weight: 500;
-
-    //     height: 5vh;
-    //     width: 100%;
-    //     position: absolute;
-    //     bottom: 0;
-    //     z-index: 1;
-    
-    //     /* Shine animation */
-    //     animation: shine 5s infinite;
-    // }
-
-    // #about{
-    //     display: inline-block;
-    //     margin: 5vh auto;
-    //     // background-color: #f5f5f5;
-
-    //     position: relative;
-
-    //     #portrait-container{
-    //         display: inline-block;
-    //         animation: fadeIn linear 3s;
-    //         // height: 100%;
-
-    //         position: absolute;
-    //         top: 50%;
-    //         right: 0;
-    //         transform: translateY(-50%);
-    //         #portrait{
-    //             width: 40vw;
-    //             margin: 0;
-    //             // height: 100%;
-
-    //             border: 10px;
-    //             border-radius: 20px;
-    //             // background-color: rgb(255, 255, 255);
-    //             // box-shadow: -5px 5px 10px;
-
-    //         }
-    //     }
-
-    //     #bio-container{
-    //         display: inline-block;
-    //         padding: 1vw; 
-    //         // width: clamp(30vw, 40vw, 500px);
-    //         width: 40vw;
-
-    //         animation: fadeIn linear 1.5s;
-
-    //         position: absolute;
-    //         top: 50%;
-    //         left: 0;
-    //         transform: translateY(-50%);
-    //         #bio-text{
-    //             margin: 0; 
-
-    //             p{
-    //             vertical-align: middle;
-    //             }
-
-    //             #bio-main{
-    //                 font: 1000 2.5vw / 3.5vw playfair;
-
-    //                 u{
-    //                     color: $accent;
-    //                 }
-    //             }
-
-    //             #bio-secondary{
-    //                 margin: 3vh 0 0 0;
-    //                 font: 600 1.6vw/2.6vw roboto;
-    //             }
-    //         }
-    //     }        
-    // }
-}
-#skill-chart-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 1vh;
-    margin: 0 auto;
-    // width: 50vw;
-    width: 60vw;
-    background-color: #f5f5f5;
-
-    canvas{
-        display: inline-block;
-        // margin: 0 auto;
-        // width: 50vw;
-        // height: 40vh;
-        // border-style: none none solid solid;
-    }
-}
-
-/* Projects */
-
-#contact-container{
-    padding: 3vh 0 5vh 0;
-    // display: inline-flex;
-    align-items: center;
-    margin: 0 auto;
-    
-    .socials-container{    
-        margin: 2vh auto;
-        text-align: center;
-        
-        .social-link-container{
-            display: inline-block;
-            // background-color: #0077B5;
-            color:#ffffff;
-            margin: 0 1vh;
-        
-            // font: 
-            font-weight: 700;
-            text-transform: uppercase;
-            
-            border-radius: 5px;
-            overflow: hidden;
-            text-align: center;
-
-            // shadow
-            // filter: drop-shadow(5px 5px 10px black);     
-            // box-shadow: 5px 10px;
-
-            transition: 0.2s ease-in-out;
-
-            .social-link{
-                // display: block;
-                margin: 0 1vh 0 0;
-
-                .icon{
-                    height: 5vh;
-                    width: 5vh;
-        
-                    margin: 1vh;
-        
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-            }
-
-            // ensuring that outer links dont mess up spacing with margins
-            &--left{
-                @extend .social-link-container;
-                margin: 0 2vw 0 0;
-            }
-            &--right{
-                @extend .social-link-container;
-                margin: 0 0 0 2vw;
-            }
-        
-            &:hover{
-                // background-color: #016499;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                transform: scale(1.1, 1.1);
-            }
-        
-        }
-        // link specific classes to determine link color
-        .linkedIn{
-            background-color: #0077B5 !important;
-            &:hover{
-                background-color: #016499 !important;
-            }
-        }
-
-        .github{
-            background-color: #4f4f4f !important;
-            &:hover{
-                background-color: #3d3d3d !important;
-            }
-        }
-        
-        .email{
-            cursor: pointer;        // to mimic an anchor and avoid setting href
-            background-color: #EA4335 !important;
-            &:hover{
-                background-color: #BB001B !important;
-            }
-        }
-    }
-}
-
 /* Classes */
 .section-header{
     text-align: center;
@@ -456,6 +241,7 @@ body{
     &:hover{
         opacity: 1;
         text-decoration: none;
+        color: #000000;
 
         /* animation-duration: 0.5s;
         animation-name: opacity-fade-in; */
@@ -479,17 +265,14 @@ body{
     &:hover::before{
         visibility: visible;
         transform: scaleX(1);
+        text-decoration: none;
     }
 }
 .sticky {
-    // font-size: 15px;
-    // color: #000000;
-    border: 1px solid black;
-    // position: fixed;
+    border-bottom: 1px solid black;
     height: 7vh !important;
-    // width: 100%;
-    transition: all 0.4s ease-in;
     background-color: rgb(255, 255, 255);
+    opacity: .9 !important;
 }
 /* Media Queries */
 @media only screen and (max-width: 426px) { // Mobile

@@ -64,10 +64,11 @@ const projectsObj = [
 $(window).scroll(function() {
   if ($(window).scrollTop() > 1){
     $('#header').addClass('sticky');
-    // $('#landing-container').css('grid-template-rows', '15vh 50vh auto !important')
+    $('#landing-container').css('grid-template-rows', '15vh 50vh auto');
   }
   else{
     $('#header').removeClass('sticky');
+    $('#landing-container').css('grid-template-rows', '15vh 70vh auto');
   }
 });
 
@@ -84,7 +85,7 @@ const Header = () => {
       <div className="nav-links">
         <ul>            
           <li><a className="link" href="#top">About</a></li>
-          <li><a className="link" href="#project-container">Projects</a></li>
+          <li><a className="link" href="#filters">Projects</a></li>
           <li><a className="link" href="#contact-container">Contact</a></li>
         </ul>
       </div>    
@@ -144,7 +145,7 @@ const Project = () => {
 
     if(type == 'difficulty'){
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
-    } else if(type == 'recent'){
+    } else if(type === 'recent'){
       console.log('recent');
     }
   };
