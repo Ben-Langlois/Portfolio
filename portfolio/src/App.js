@@ -138,10 +138,15 @@ const Landing = () => {
 const Project = () => {
 
   const [cards, setCards] = useState([...projectsObj]);
+  const [toggle, setToggle] = useState(false);
   console.log(cards);
 
   const onFilterClick = (e) => {
     let type = e.target.textContent.toLowerCase();
+    //if toggle == false
+      // set toggle to true
+      // sort normal
+    // else if toggle
 
     if(type == 'difficulty'){
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
