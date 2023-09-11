@@ -35,7 +35,7 @@ const projectsObj = [
     img: portfolio,
     alt: 'Portfolio Homepage',
     diff: 3,
-    date: Date('September 30, 2021') 
+    date: new Date('September 30, 2023 00:00:00') 
   },
   {
     name: 'Lab Timer',
@@ -43,7 +43,7 @@ const projectsObj = [
     img: labtimer,
     alt: 'Labtimer Homepage',
     diff: 4,
-    date: Date('October 13, 2021') 
+    date: new Date('Febreary 11, 2022 00:00:00') 
   },
   {
     name: 'Note App',
@@ -51,7 +51,7 @@ const projectsObj = [
     img: noteapp,
     alt: 'Note App Dashboard',
     diff: 1,
-    date: Date('September 14, 2021') 
+    date: new Date('December 15, 2021 00:00:00') 
   },
   {
     name: 'Weather App',
@@ -59,7 +59,7 @@ const projectsObj = [
     img: labtimer,
     alt: 'Weather App Dashboard',
     diff: 5,
-    date: Date('March 1, 2022') 
+    date: new Date('March 1, 2023 00:00:00') 
   }
 ]
 //#endregion
@@ -143,9 +143,12 @@ const Project = () => {
   const [cards, setCards] = useState([...projectsObj]);
   const [toggle, setToggle] = useState(false);
   console.log(cards);
+  let difficulty = $('#diffulty');
+  let recent = $('#recent');
 
   const onFilterClick = (e) => {
     let type = e.target.textContent.toLowerCase();
+
     //if toggle == false
       // set toggle to true
       // sort normal
@@ -153,12 +156,15 @@ const Project = () => {
       // sort reverse
       //
 
-
     if(type == 'difficulty'){
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
+      difficulty.hover();           // make button :active
+      recent.hover(false);          // remove effect from other button
     } else if(type === 'recent'){
       // console.log('recent');
-      setCards([...cards].sort((a, b) => (new Date(b.date) - new Date(a.date))));
+      setCards([...cards].sort((a, b) => (a.date < b.date) ? 1 : (a.date > b.date) ? -1 : 0));
+      recent.hover();               // make button :active
+      difficulty.hover(false);      // remove effect from other button
     }
   };
 
@@ -167,8 +173,8 @@ const Project = () => {
       <div class="section-header project-section" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
-          <h5 class='link' onClick={onFilterClick}>Recent</h5>
-          <h5 class='link' onClick={onFilterClick}>Difficulty</h5>
+          <h5 id='recent' class='link' onClick={onFilterClick}>Recent</h5>
+          <h5 id='difficulty' class='link' onClick={onFilterClick}>Difficulty</h5>
           {/* <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5> */}
         </div>
       </div>  
