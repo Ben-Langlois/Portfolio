@@ -34,29 +34,32 @@ const projectsObj = [
     desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
     img: portfolio,
     alt: 'Portfolio Homepage',
-    diff: 3
-
+    diff: 3,
+    date: Date('September 30, 2021') 
   },
   {
     name: 'Lab Timer',
     desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis research for 6+ months.',
     img: labtimer,
     alt: 'Labtimer Homepage',
-    diff: 4
+    diff: 4,
+    date: Date('October 13, 2021') 
   },
   {
     name: 'Note App',
     desc: 'A basic React app allowing creation and deletion of notes.',
     img: noteapp,
     alt: 'Note App Dashboard',
-    diff: 1
+    diff: 1,
+    date: Date('September 14, 2021') 
   },
   {
     name: 'Weather App',
     desc: 'A React app utilizing bootstrap and APIs to create a weather dashboard. Displays weekly and daily weather for inputted city.',
     img: labtimer,
     alt: 'Weather App Dashboard',
-    diff: 5
+    diff: 5,
+    date: Date('March 1, 2022') 
   }
 ]
 //#endregion
@@ -146,12 +149,16 @@ const Project = () => {
     //if toggle == false
       // set toggle to true
       // sort normal
-    // else if toggle
+    // else if toggle == true
+      // sort reverse
+      //
+
 
     if(type == 'difficulty'){
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
     } else if(type === 'recent'){
-      console.log('recent');
+      // console.log('recent');
+      setCards([...cards].sort((a, b) => (new Date(b.date) - new Date(a.date))));
     }
   };
 
