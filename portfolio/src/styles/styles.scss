@@ -267,6 +267,19 @@ html, body {
         transform: scaleX(1);
         text-decoration: none;
     }
+
+    // testing
+    &:enabled{
+        opacity: 1;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    &:enabled::before{
+        visibility: visible;
+        transform: scaleX(1);
+        text-decoration: none;  
+    }
 }
 .sticky {
     border-bottom: 1px solid black;

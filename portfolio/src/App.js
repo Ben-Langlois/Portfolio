@@ -141,14 +141,10 @@ const Landing = () => {
 const Project = () => {
 
   const [cards, setCards] = useState([...projectsObj]);
-  const [toggle, setToggle] = useState(false);
-  console.log(cards);
-  let difficulty = $('#diffulty');
-  let recent = $('#recent');
+  // const [toggle, setToggle] = useState(false);
 
   const onFilterClick = (e) => {
     let type = e.target.textContent.toLowerCase();
-
     //if toggle == false
       // set toggle to true
       // sort normal
@@ -158,13 +154,12 @@ const Project = () => {
 
     if(type == 'difficulty'){
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
-      difficulty.hover();           // make button :active
-      recent.hover(false);          // remove effect from other button
+
     } else if(type === 'recent'){
       // console.log('recent');
       setCards([...cards].sort((a, b) => (a.date < b.date) ? 1 : (a.date > b.date) ? -1 : 0));
-      recent.hover();               // make button :active
-      difficulty.hover(false);      // remove effect from other button
+      // recent.hover();               // make button :active
+      // difficulty.hover(false);      // remove effect from other button
     }
   };
 
