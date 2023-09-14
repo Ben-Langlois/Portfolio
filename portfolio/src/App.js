@@ -8,10 +8,14 @@ import './styles/styles.scss'
 // #endregion 
 
 // #region images
-import portrait from './images/portrait2.jpg'
+// import portrait from './images/portrait2.jpg'
 import portfolio from './images/projects/portfolio.png'
 import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
+
+// socials
+import codepen from './images/socials/1298732_codepen_icon.png'
+import github from './images/socials/iconmonstr-github-3.svg'
 // #endregion
 
 // #region CDNs
@@ -28,6 +32,27 @@ import noteapp from './images/projects/noteapp.png'
 
 // #region Variables
 var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V26.66c0-3.912-1.394-5.857-4.154-5.857 c-2.189,0-3.577,1.086-4.274,3.273c0,3.545,0,17.592,0,17.592h-8.431c0,0,0.115-25.288,0-28.097h6.656l0.514,5.619h0.175 c1.729-2.81,4.489-4.713,8.275-4.713c2.881,0,5.207,0.801,6.985,2.815c1.794,2.014,2.684,4.713,2.684,8.514V41.668z M9.615,2.333 c2.404,0,4.357,1.888,4.357,4.214c0,2.33-1.953,4.214-4.357,4.214c-2.403,0-4.351-1.885-4.351-4.214 C5.264,4.22,7.212,2.333,9.615,2.333z';
+
+
+/*
+
+
+  {
+    name: 'Portfolio',
+    desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
+    img: portfolio,
+    alt: 'Portfolio Homepage',
+    diff: 3,
+    date: new Date('September 30, 2023 00:00:00'),
+    links: [
+      {
+        url: ‘www.website.com’,
+        img: github.svg’
+      },
+      ...
+    ] 
+  }
+*/
 const projectsObj = [
   {
     name: 'Portfolio',
@@ -35,7 +60,13 @@ const projectsObj = [
     img: portfolio,
     alt: 'Portfolio Homepage',
     diff: 3,
-    date: new Date('September 30, 2023 00:00:00') 
+    date: new Date('September 30, 2023 00:00:00'),
+    links:[
+      {
+        url: 'https://github.com/Ben-Langlois/Portfolio',
+        img: github
+      }
+    ] 
   },
   {
     name: 'Lab Timer',
@@ -43,7 +74,13 @@ const projectsObj = [
     img: labtimer,
     alt: 'Labtimer Homepage',
     diff: 4,
-    date: new Date('Febreary 11, 2022 00:00:00') 
+    date: new Date('Febreary 11, 2022 00:00:00'),
+    links:[
+      {
+        url: 'https://codepen.io/ben-langlois/pen/wvqKwRL',
+        img: codepen
+      }
+    ] 
   },
   {
     name: 'Note App',
@@ -51,7 +88,13 @@ const projectsObj = [
     img: noteapp,
     alt: 'Note App Dashboard',
     diff: 1,
-    date: new Date('December 15, 2021 00:00:00') 
+    date: new Date('December 15, 2021 00:00:00'),
+    links:[
+      {
+        url: 'https://codepen.io/ben-langlois/pen/JjJrJqK',
+        img: codepen
+      }
+    ] 
   },
   {
     name: 'Weather App',
@@ -59,7 +102,13 @@ const projectsObj = [
     img: labtimer,
     alt: 'Weather App Dashboard',
     diff: 5,
-    date: new Date('March 1, 2023 00:00:00') 
+    date: new Date('March 1, 2023 00:00:00'),
+    links:[
+      {
+        url: 'https://github.com/Ben-Langlois/Weather-App',
+        img: github
+      }
+    ] 
   }
 ]
 //#endregion
@@ -152,14 +201,14 @@ const Project = () => {
       // sort reverse
       //
 
-    if(type == 'difficulty'){
+    if(type == 'difficulty'){   // if difficulty was clicked
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
-
-    } else if(type === 'recent'){
-      // console.log('recent');
+      $('#difficulty').addClass('enabled');         // give active filter the ::before underline
+      $('#recent').removeClass('enabled');          // remove underline from other filter
+    } else if(type === 'recent'){   // if recently was clicked
       setCards([...cards].sort((a, b) => (a.date < b.date) ? 1 : (a.date > b.date) ? -1 : 0));
-      // recent.hover();               // make button :active
-      // difficulty.hover(false);      // remove effect from other button
+      $('#recent').addClass('enabled');             
+      $('#difficulty').removeClass('enabled');      
     }
   };
 
@@ -177,150 +226,38 @@ const Project = () => {
 
       {
         cards.map((curr) => {
+          let links = curr.links;
+
           return (
-              <div class='card'>
-                <img src={curr.img} alt={curr.alt}></img>
+            <div class='card'>
+              <img
+                id='project'
+                src={curr.img} 
+                alt={curr.alt}/>
+              <div>
                 <h1>{curr.name}</h1>
-                <p>{curr.desc}</p>              
+                <div>
+                  {
+                    links.map((e) => {
+                      <a href={e.link}>
+                        <img 
+                          id='icon'
+                          src={e.img}
+                          alt='github'
+                        />                    
+                      </a>
+                    })
+                  }
+                </div>
               </div>
+              <p>{curr.desc}</p>              
+            </div>
           )
         })
       }
       </div>
     </>
   )
-}
-
-/*About
-  - Contains bio sections, education, skills, soft-skills, yadayada
-*/
-class About extends React.Component {
-
-  componentDidMount(){
-    // config for chart
-    const config = {
-      type: 'bar',
-      data: {
-        labels: [
-          'HTML5',
-          'CSS/SASS',
-          'Javacript',
-          'React',
-          'C++',
-          'Arduino'
-        ],
-        datasets: [{
-          data: [4, 3, 3, 2, 2, 1],
-          backgroundColor: [
-            'rgba(227, 79, 38, 1)',
-            'rgba(204, 102, 153, 1)',
-            'rgba(240, 219, 79, 1)',
-            '#61DBFB',
-            'rgba(4, 79, 136, 1)',
-            'rgba(0, 151, 156, 1)'
-          ]
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        plugins: {
-          tooltip: {
-            // enabled: false
-          },
-          legend: {    
-            display: false,
-            labels: {
-              fontColor: '#FFF'
-            }
-          }
-        },
-        scales: {
-          x: {
-            ticks: {
-              callback: function(value){
-                // names for levels are still up for debate
-                // throws 'expected '===' it dont matter c'est la vie
-                // eslint-disable-next-line
-                if(this.getLabelForValue(value) == 1){
-                  return 'Beginner';
-                  // eslint-disable-next-line
-                } else if (this.getLabelForValue(value) == 2){
-                  return 'Amateur';
-                  // eslint-disable-next-line
-                } else if (this.getLabelForValue(value) == 3){
-                  return 'Pro';
-                  // eslint-disable-next-line
-                } else if (this.getLabelForValue(value) == 4){
-                  return 'Expert';
-                }
-              },
-              font: {
-                weight: 'bold'
-              },
-                fontSize: '5vw'
-            }
-          },
-          y: {
-            // display: false,
-            ticks: {
-              font: {
-                weight: 'bold'
-              },
-                fontSize: '5vw'
-            }
-          }
-        }
-      }
-    };
-
-    // will throw no-used-vars mais c'est la vie thats why technology exists
-    // eslint-disable-next-line
-    const myChart = new Chart(
-      // $('.skillChart'),
-      document.getElementById("skill-chart").getContext('2d'),
-      config
-    );
-  }
-  
-  render() {
-    return (
-      <>
-        <Header />
-        {/* Make it one container and center */}
-        <div id="about-container">
-          <div id='about'>
-            <div id="portrait-container">
-                <img id="portrait" src={portrait} alt=" "></img>
-            </div>
-            <div id="bio-container">
-              <div id="bio-text">
-                <p id='bio-main'>
-                  Hi! I'm <u>Ben Langlois</u>. A GTA/Toronto
-                  based web developer looking for an
-                  entry level position in Front end
-                  Web Development!
-                </p>
-                <p  id='bio-secondary'>
-                  I attended Durham College for 2 years in
-                  Oshawa, Ontario for computer programming.
-                  Since graduating I've been learning what I
-                  didnt experience in college.
-                </p>
-                <p id='bio-secondary'>
-                  I work mostly in React, JS, SCSS, MySQL,
-                  and C++. While expirementing with Python,
-                  C# and Arduino.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="skill-chart-container" class='tag'>
-          <canvas id='skill-chart'></canvas>
-        </div>
-      </>
-    )
-  }
 }
 
 /*Contact

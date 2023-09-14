@@ -157,7 +157,7 @@ html, body {
             // new attempt
             .card{
                 height: 300px;
-                // width: 22vw;
+                width: 25vw;
                 border-radius: 3%;
                 overflow: hidden;
                 transition: all 1s ease;
@@ -168,10 +168,10 @@ html, body {
                     "."
                     "title"
                     "desc";
-                grid-template-columns: 25vw;
-                grid-template-rows: 85% 20% 0%;
+                // grid-template-columns: 4;
+                grid-template-rows: 80% 20% 0%;
 
-                img{
+                #project{
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -179,12 +179,33 @@ html, body {
                     z-index: 0;
                 }
 
-                h1{
+                div{
                     grid-area: title;
-                    margin: 0 0 0 10%;
-                    font-size: 2rem;
-                    z-index: 1;
-                    justify-self: start;
+                    display: flex;
+                    width: 100%;
+                
+                    h1{
+                        display: inline-flex;
+                        margin: 0 0 0 10%;
+                        font-size: 2rem;
+                        z-index: 1;
+                        justify-self: start;
+
+                        align-self: center;
+                    }
+
+                    div{
+                        display: flex;
+
+                        a{
+                            align-self: center;
+                            height: 80%;
+
+                            #icon{
+                                // height: 90%;
+                            }                            
+                        }
+                    }
                 } 
 
                 p{
@@ -208,7 +229,7 @@ html, body {
                     grid-template-columns: 25vw;
                     grid-template-rows:60% 10% auto;
 
-                    img{
+                    #project{
                         filter: blur(1.5px); 
                     }
             }
@@ -268,19 +289,15 @@ html, body {
         text-decoration: none;
     }
 
-    // testing
-    &:enabled{
-        opacity: 1;
-        text-decoration: none;
-        color: #000000;
-    }
-
-    &:enabled::before{
-        visibility: visible;
-        transform: scaleX(1);
-        text-decoration: none;  
-    }
 }
+
+.enabled::before{
+    visibility: visible;
+    transform: scaleX(1);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+
 .sticky {
     border-bottom: 1px solid black;
     height: 7vh !important;
