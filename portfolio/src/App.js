@@ -14,7 +14,7 @@ import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
 
 // socials
-import codepen from './images/socials/1298732_codepen_icon.png'
+import codepen from './images/socials/codepen-square-svgrepo-com.svg'
 import github from './images/socials/iconmonstr-github-3.svg'
 // #endregion
 
@@ -226,8 +226,9 @@ const Project = () => {
 
       {
         cards.map((curr) => {
-          let links = curr.links;
-
+          let links = [...curr.links];
+          console.log(links);
+          
           return (
             <div class='card'>
               <img
@@ -239,13 +240,14 @@ const Project = () => {
                 <div>
                   {
                     links.map((e) => {
-                      <a href={e.link}>
-                        <img 
-                          id='icon'
-                          src={e.img}
-                          alt='github'
-                        />                    
-                      </a>
+                      return(                      
+                        <a href={e.url}>
+                          <img 
+                            id='icon'
+                            src={e.img}
+                            alt={e.url}
+                          />                    
+                        </a>)
                     })
                   }
                 </div>
