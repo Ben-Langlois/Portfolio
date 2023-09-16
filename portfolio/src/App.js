@@ -235,9 +235,13 @@ const Project = () => {
                 id='project'
                 src={curr.img} 
                 alt={curr.alt}/>
-              <div>
+              <div id='title'>
                 <h1>{curr.name}</h1>
-                <div>
+              </div>
+
+              <p>{curr.desc}</p>              
+                      
+              <div id='link-container'>
                   {
                     links.map((e) => {
                       return(                      
@@ -250,9 +254,7 @@ const Project = () => {
                         </a>)
                     })
                   }
-                </div>
-              </div>
-              <p>{curr.desc}</p>              
+                </div>                      
             </div>
           )
         })

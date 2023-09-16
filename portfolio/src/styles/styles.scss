@@ -167,11 +167,12 @@ html, body {
                 grid-template-areas: 
                     "."
                     "title"
-                    "desc";
+                    "desc"
+                    "links";
                 // grid-template-columns: 4;
-                grid-template-rows: 80% 20% 0%;
+                grid-template-rows: 80% 20% 0% 0%;
 
-                #project{
+                img#project{
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -179,7 +180,7 @@ html, body {
                     z-index: 0;
                 }
 
-                div{
+                #title{
                     grid-area: title;
                     display: flex;
                     width: 100%;
@@ -193,30 +194,34 @@ html, body {
 
                         align-self: center;
                     }
-
-                    div{
-                        display: flex;
-
-                        a{
-                            align-self: center;
-                            justify-content: center;
-                            height: 80%;
-
-                            #icon{
-                                // height: 90%;
-                                width: 100%
-                                
-                            }                            
-                        }
-                    }
                 } 
 
                 p{
                     grid-area: desc;
-                    margin: 0.5rem 0;
+                    margin: 0.5rem 2rem;
                     z-index: 1;
-                    width: 80%;
-                }
+                    width: 100%;
+                    justify-self: center;
+                }                     
+                
+                div{
+                    grid-area: links;
+                    display: flex;
+
+
+                    a{
+                        align-self: center;
+                        justify-content: center;
+                        height: 80%;
+
+                        #icon{
+                            // height: 90%;
+                            width: 100%;
+                                              z-index: 1;
+  
+                        }                            
+                    }
+                } 
 
             } // using & for some reason makes it all goofy
             .card:hover{
@@ -230,7 +235,7 @@ html, body {
                         "title"
                         "desc";
                     grid-template-columns: 25vw;
-                    grid-template-rows:60% 10% auto;
+                    grid-template-rows:60% 10% auto 10%;
 
                     #project{
                         filter: blur(1.5px); 
