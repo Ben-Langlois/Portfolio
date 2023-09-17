@@ -204,9 +204,10 @@ html, body {
                     justify-self: center;
                 }                     
                 
-                div{
+                #link-container{
                     grid-area: links;
                     display: flex;
+                    z-index: 0 !important;
 
 
                     a{
@@ -217,7 +218,6 @@ html, body {
                         #icon{
                             // height: 90%;
                             width: 100%;
-                                              z-index: 1;
   
                         }                            
                     }
@@ -233,9 +233,10 @@ html, body {
                     grid-template-areas: 
                         "."
                         "title"
-                        "desc";
+                        "desc"
+                        "links";
                     grid-template-columns: 25vw;
-                    grid-template-rows:60% 10% auto 10%;
+                    grid-template-rows:50% 20% 20% 10%;
 
                     #project{
                         filter: blur(1.5px); 
