@@ -240,7 +240,7 @@ const Project = () => {
               </div>
 
               <div id='desc'>
-                <p>{curr.desc}</p>       
+                <div><p>{curr.desc}</p></div>      
                       
                 <div id='link-container'>
                   {
