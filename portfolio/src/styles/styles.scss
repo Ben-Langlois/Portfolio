@@ -153,83 +153,69 @@ html, body {
             // margin: 3vh auto;
             padding-top: 3vh;
             // width: 60vw;
-    
+
+            a{
+                text-decoration: none !important;
+                color: black;
+
             // new attempt
-            .card{
-                height: 300px;
-                width: 25vw;
-                border-radius: 3%;
-                overflow: hidden;
-                transition: all 1s ease;
-                justify-items: center;
-
-                display: grid;
-                grid-template-areas: 
-                    "."
-                    "title"
-                    "desc"
-                    "links";
-                // grid-template-columns: 4;
-                grid-template-rows: 80% 20% 0%;
-
-                img#project{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                .card{
+                    height: 300px;
+                    width: 25vw;
+                    overflow: hidden;
                     transition: all 1s ease;
-                    z-index: 0;
-                }
+                    justify-items: center;
+                    text-decoration: none !important;
+                    display: grid;
+                    grid-template-areas: 
+                        "."
+                        "title"
+                        "desc"
+                        "links";
+                    // grid-template-columns: 4;
+                    grid-template-rows: 85% 15% 0%;
 
-                #title{
-                    grid-area: title;
-                    display: flex;
-                    width: 100%;
-                
-                    h1{
-                        display: inline-flex;
-                        margin: 0 0 0 10%;
-                        font-size: 2rem;
-                        z-index: 1;
-                        justify-self: start;
-
-                        align-self: center;
-                    }
-                } 
-
-                #desc{
-                    grid-area: desc;
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-
-                    div{
-                        p{
-                            margin: 0.5rem 10%;
-                            z-index: 1;
-                            width: 100%;
-                        }                     
-                                                
-                    }
-
-                    #link-container{
+                    img#project{
                         width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 1s ease;
+                        z-index: 0;
+                    }
+
+                    #title{
+                        grid-area: title;
+                        display: flex;
+                        width: 100%;
+                    
+                        h1{
+                            display: inline-flex;
+                            margin: 0 0 0 10%;
+                            font-size: 2rem;
+                            z-index: 1;
+                            justify-self: start;
+
+                            align-self: center;
+                        }
 
                         a{
                             align-self: center;
-                            justify-content: center;
-                            height: 80%;
+                            margin-left: 3%;
 
                             #icon{
-                                // height: 90%;
-                                width: 100%;
-    
-                            }                            
+                                // height: 90%;    
+                            }                     
                         }
+                    } 
+
+                    p{
+                        grid-area: desc;
+                        justify-content: center;
+
+                        margin: 0.5rem 10%;
+                        z-index: 1;
                     }                     
                 }
-
-
-
             } // using & for some reason makes it all goofy
             .card:hover{
                     // background-color: #016499;
@@ -242,7 +228,7 @@ html, body {
                         "title"
                         "desc";
                     grid-template-columns: 25vw;
-                    grid-template-rows:50% 20% auto;
+                    grid-template-rows: 50% 15% auto;
 
                     #project{
                         filter: blur(1.5px); 

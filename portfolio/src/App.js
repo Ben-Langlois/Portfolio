@@ -40,11 +40,12 @@ var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V2
   {
     name: 'Portfolio',
     desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
+    url: 'https://ben-langlois.github.io/',
     img: portfolio,
     alt: 'Portfolio Homepage',
     diff: 3,
     date: new Date('September 30, 2023 00:00:00'),
-    links: [
+    links: [  // whatever links i wanna include next to title
       {
         url: ‘www.website.com’,
         img: github.svg’
@@ -57,6 +58,7 @@ const projectsObj = [
   {
     name: 'Portfolio',
     desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
+    url: 'https://ben-langlois.github.io/',
     img: portfolio,
     alt: 'Portfolio Homepage',
     diff: 3,
@@ -71,34 +73,30 @@ const projectsObj = [
   {
     name: 'Lab Timer',
     desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis research for 6+ months.',
+    url: 'https://codepen.io/ben-langlois/details/wvqKwRL',
     img: labtimer,
     alt: 'Labtimer Homepage',
     diff: 4,
     date: new Date('Febreary 11, 2022 00:00:00'),
     links:[
-      {
-        url: 'https://codepen.io/ben-langlois/pen/wvqKwRL',
-        img: codepen
-      }
     ] 
   },
   {
     name: 'Note App',
     desc: 'A basic React app allowing creation and deletion of notes.',
+    url: 'https://codepen.io/ben-langlois/details/JjJrJqK',
     img: noteapp,
     alt: 'Note App Dashboard',
     diff: 1,
     date: new Date('December 15, 2021 00:00:00'),
     links:[
-      {
-        url: 'https://codepen.io/ben-langlois/pen/JjJrJqK',
-        img: codepen
-      }
+
     ] 
   },
   {
     name: 'Weather App',
     desc: 'A React app utilizing bootstrap and APIs to create a weather dashboard. Displays weekly and daily weather for inputted city.',
+    url: '',
     img: labtimer,
     alt: 'Weather App Dashboard',
     diff: 5,
@@ -230,36 +228,31 @@ const Project = () => {
           console.log(links);
           
           return (
-            <div class='card'>
-              <img
-                id='project'
-                src={curr.img} 
-                alt={curr.alt}/>
-              <div id='title'>
-                <h1>{curr.name}</h1>
-              </div>
-
-              <div id='desc'>
-                <div><p>{curr.desc}</p></div>      
-                      
-                <div id='link-container'>
+            <a href={curr.url}>
+              <div class='card'>
+                <img
+                  id='project'
+                  src={curr.img} 
+                  alt={curr.alt}/>
+                <div id='title'>
+                  <h1>{curr.name}</h1>
                   {
                     links.map((e) => {
-                      return(                      
+                      return(                   
                         <a href={e.url}>
                           <img 
                             id='icon'
                             src={e.img}
                             alt={e.url}
-                          />                    
-                        </a>)
-                    })
+                          />                     
+                        </a> 
+                      )
+                    })                
                   }
-                </div>   
+                </div>
+                  <p>{curr.desc}</p>
               </div>
-
-                   
-            </div>
+            </a>
           )
         })
       }
