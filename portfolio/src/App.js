@@ -154,12 +154,14 @@ const Landing = () => {
         <div>
           <h1>
             {/* Not in love with the font */}
-            Hi! I'm <u>Ben Langlois</u>.<br/>A GTA/Toronto
-            based web developer,<br/>looking for an
-            entry level position in Front end
-            Web Development!            
+            Hi! I'm <u>Ben Langlois</u>
           </h1>
           <h2>
+            A GTA/Toronto based web developer, looking for an
+            entry level position in Front end
+            Web Development            
+          </h2>
+          <h3>
             I attended Durham College for 2 years in
             Oshawa, Ontario for computer programming.
             Since graduating I've been learning what I
@@ -167,7 +169,7 @@ const Landing = () => {
             I work mostly in React, JS, SCSS, MySQL,
             and C++ while expirementing with Python,
             C# and Arduino.
-          </h2>
+          </h3>
         </div>  
       </div>
       <div id='projects'>
@@ -186,18 +188,13 @@ const Landing = () => {
     - add filtering to array
 */
 const Project = () => {
-
-  const [cards, setCards] = useState([...projectsObj]);
+  // initial
+  const [cards, setCards] = useState([...projectsObj].sort((a, b) => (a.date < b.date) ? 1 : (a.date > b.date) ? -1 : 0));
   // const [toggle, setToggle] = useState(false);
 
   const onFilterClick = (e) => {
     let type = e.target.textContent.toLowerCase();
-    //if toggle == false
-      // set toggle to true
-      // sort normal
-    // else if toggle == true
-      // sort reverse
-      //
+
 
     if(type == 'difficulty'){   // if difficulty was clicked
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
@@ -215,7 +212,7 @@ const Project = () => {
       <div class="section-header project-section" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
-          <h5 id='recent' class='link' onClick={onFilterClick}>Recent</h5>
+          <h5 id='recent' class='link enabled' onClick={onFilterClick}>Recent</h5>
           <h5 id='difficulty' class='link' onClick={onFilterClick}>Difficulty</h5>
           {/* <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5> */}
         </div>

@@ -23,6 +23,8 @@
     src: url(fonts/LibreBaskerville-Bold.ttf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700;1,900&display=swap');
 // #endregion
 
@@ -62,11 +64,14 @@ html, body {
     display: grid;
     grid-template-areas:  "header header header"
                 ". about ."
-                ". projects .";
+                ". projects ."
+                ". contact .";
     grid-template-columns: auto;
     grid-template-rows: 15vh 70vh auto;
     justify-content: center;
     transition: all 0.4s ;
+
+    font-family: 'Inclusive Sans', sans-serif;
 
 
     header{
