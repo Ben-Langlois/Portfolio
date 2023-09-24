@@ -135,8 +135,8 @@ const Header = () => {
       <div className="nav-links">
         <ul>            
           <li><a className="link" href="#top">About</a></li>
-          <li><a className="link" href="#filters">Projects</a></li>
-          <li><a className="link" href="#contact-container">Contact</a></li>
+          <li><a className="link" href="#project-section">Projects</a></li>
+          <li><a className="link" href="#contact">Contact</a></li>
         </ul>
       </div>    
     </header> 
@@ -174,7 +174,8 @@ const Landing = () => {
       </div>
       <div id='projects'>
         <Project/>
-      </div>                                                                                              
+      </div>   
+      <Contact />                                                                                
     </div>
   )
 }
@@ -195,7 +196,6 @@ const Project = () => {
   const onFilterClick = (e) => {
     let type = e.target.textContent.toLowerCase();
 
-
     if(type == 'difficulty'){   // if difficulty was clicked
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
       $('#difficulty').addClass('enabled');         // give active filter the ::before underline
@@ -209,7 +209,7 @@ const Project = () => {
 
   return (
     <>
-      <div class="section-header project-section" id='project-section'>
+      <div class="section-header" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
           <h5 id='recent' class='link enabled' onClick={onFilterClick}>Recent</h5>
@@ -261,70 +261,30 @@ const Project = () => {
 /*Contact
   - has contact info, form, links to github linkedIn etc
 */
-class ContactMe extends React.Component {
-  constructor(props) {
-    super(props);
-    // Don't call this.setState() here!
-
-    this.toClipboard = this.toClipboard.bind(this);
-  }
-
-  // onHover() {
-
-  // }
-
-  toClipboard() {
-    navigator.clipboard.writeText('ben.langlois02@gmail.com');
-    
-    // var tooltip = document.getElementById("myTooltip");
-    // tooltip.innerHTML = "Copied: " + copyText.value;
-  }
-  
-  // outFunc() {
-  //   var tooltip = document.getElementById("myTooltip");
-  //   tooltip.innerHTML = "Copy to clipboard";
-  // }
-
-  render(){
-    return(
-      <div id='contact-container' class='tag'>
-        <div class='section-header'>
-          <h1><b>Some of my Links</b></h1>
-        </div>
-        <div class='socials-container'>
-          {/* Could add Instagram one later if i make a photography IG*/}
-          <a href='https://www.linkedin.com/in/benjaminlanglois/'>
-            <div class='social-link-container--left linkedIn'>
-              <span class='social-link'>
-                <svg class='icon' xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50">
-                  <path d={linkedin} fill="#ffffff"></path>
-                </svg>
-                LinkedIn
-              </span>
-            </div>
-          </a>
-          <a href='https://github.com/Ben-Langlois'>
-            <div class='social-link-container github'>
-              <span class='social-link'>
-                <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                  <path d="M24.999,2.48c-12.75,0-23.087,10.338-23.087,23.09c0,10.199,6.613,18.854,15.791,21.907 c1.154,0.211,1.518-0.474,1.518-1.084c0-0.547,0.011-2.082,0-4.01c-6.422,1.398-7.753-3.038-7.753-3.038 c-1.048-2.671-2.562-3.377-2.562-3.377c-2.095-1.433,0.158-1.407,0.158-1.407c2.317,0.163,3.538,2.383,3.538,2.383 c2.059,3.522,5.403,2.505,6.717,1.916c0.21-1.491,0.808-2.51,1.468-3.087C15.66,35.188,10.27,33.211,10.27,24.361 c0-2.521,0.9-4.581,2.376-6.194c-0.239-0.584-1.031-2.932,0.226-6.112c0,0,1.939-0.62,6.349,2.369 c1.841-0.513,3.817-0.768,5.78-0.777c1.962,0.009,3.938,0.264,5.781,0.777c4.409-2.988,6.346-2.369,6.346-2.369 c1.258,3.18,0.466,5.528,0.229,6.112c1.478,1.613,2.373,3.673,2.373,6.194c0,8.872-5.397,10.823-10.543,11.392 c0.828,0.717,1.582,2.101,1.582,4.255c0,2.887,0,5.632,0,6.392c0,0.617,0.372,1.302,1.544,1.076 c9.167-3.059,15.776-11.708,15.776-21.905C48.089,12.818,37.75,2.48,24.999,2.48z" fill="#ffffff"></path>
-                </svg>
-                GitHub
-              </span>
-            </div>
-          </a>
-          <div class='social-link-container--right email' onClick={this.toClipboard}>
-            <span class='social-link'>
-              <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" fill="#ffffff"></path>
-              </svg>
-              Email
-            </span>
-          </div>
-        </div>
+const Contact = () => { 
+  return(
+    <div id='contact'>
+      <div id='links'>
+        <h2>My Links</h2>
+        <a href='https://www.linkedin.com/in/benjaminlanglois/'><h4 class='link'>LinkedIn</h4></a><br/>
+        <a href='https://github.com/Ben-Langlois'><h4 class='link'>Github</h4></a><br/>
+        <a href='https://codepen.io/your-work/'><h4 class='link'>Codepen</h4><br/></a>
+        <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a><br/>
+        <h4 class='link'>Email</h4>
       </div>
-    );
-  }
+      <div id='form'>
+        <h2>Email Me</h2>
+        <form>
+          <input type="text" id="name" name="name" placeholder="Your Name" required/>
+          <input type="text" id="email" name="email" placeholder="Your Email" required/>
+          <input type="text" id="subject" name="subject" placeholder="Why you would like to get in touch with me"/>
+          <input type="file" id="file" name="file" placeholder="Attachments"/>
+          <textarea type="text" id="message" name="fname" placeholder="Your message" rows="7" required></textarea>
+          <input type="button" id='submit' name='submit' value="Send Email"/>
+        </form>
+      </div>
+    </div>     
+  )
 }
 
 // markup
@@ -333,9 +293,6 @@ class Portfolio extends React.Component {
     return(
       <>
         <Landing />
-        {/* <About />
-        <Projects />
-        <ContactMe /> */}
       </>
     )
   }

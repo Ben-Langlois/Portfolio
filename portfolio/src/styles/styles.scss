@@ -79,7 +79,8 @@ html, body {
         height: 15vh;
         position: fixed;
         width: 100%;
-        transition: all 0.4s ;
+        transition: all 0.4s;
+        z-index: 2;
 
         /* NavBar */
         .nav-links{            
@@ -129,7 +130,7 @@ html, body {
     #projects{
         grid-area: projects;
         width: clamp(600px, 60vw, 1100px);
-        margin: 15vh 0;
+        margin: 15vh 0 10vh 0;
 
         #project-section{
             h1{
@@ -176,7 +177,7 @@ html, body {
                         "."
                         "title"
                         "desc"
-                        "links";
+                        "contact";
                     // grid-template-columns: 4;
                     grid-template-rows: 85% 15% 0%;
 
@@ -205,11 +206,7 @@ html, body {
 
                         a{
                             align-self: center;
-                            margin-left: 3%;
-
-                            #icon{
-                                // height: 90%;    
-                            }                     
+                            margin-left: 3%;               
                         }
                     } 
 
@@ -240,6 +237,65 @@ html, body {
                     }
             }
         }
+    }
+
+    #contact{
+        display: flex;
+        grid-area: contact;
+        height: 60vh;
+        margin: 10vh 0;
+
+        #links{
+            width: 35%;
+            border-left: 2px solid black;
+
+            h2{
+                font-weight: bold;
+                margin-left: 15%;
+                justify-self: center;
+            
+            }
+
+            h4{
+                margin: 5% 0 5% 15%;
+                display: inline-flex;
+
+            }
+        }
+
+        #form{
+            width: 65%;
+
+            h2{
+                font-weight: bold;
+                margin-left: 10%;
+                justify-self: center;
+            }
+            
+            form{
+                // display: flex;
+                // height: auto;
+
+               input{
+                    margin: 2% 0% 3.5% 10%;                    
+                    width: 70%;
+                    height: 2rem;
+                    padding-left: 3%;
+                }
+
+                textarea{
+                    margin: 2% 0% 3.5% 10%;                    
+                    width: 70%;
+                    padding-left: 3%;
+                }
+
+                #submit{
+                    width: 20%;
+                }
+            }
+
+        }
+
     }
 }
 
@@ -296,7 +352,6 @@ html, body {
     }
 
 }
-
 .enabled::before{
     visibility: visible;
     transform: scaleX(1);
@@ -435,14 +490,6 @@ html, body {
         }
     }
 
-    #skill-chart-container{
-        margin: 0 auto;
-        width: clamp(80vw, 100%, 60vw);
-
-        #skill-chart{
-            // width: 70vw !important;
-        }
-    }
 
     #project-container{
 
