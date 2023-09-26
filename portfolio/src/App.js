@@ -276,7 +276,7 @@ const Contact = () => {
         <h2>Email Me</h2>
         <form>
           <input type="text" id="name" name="name" placeholder="Your Name" required/>
-          <input type="text" id="email" name="email" placeholder="Your Email" required/>
+          <input type="email" id="email" name="email" placeholder="Your Email" required/>
           <input type="text" id="subject" name="subject" placeholder="Why you would like to get in touch with me"/>
           <input type="file" id="file" name="file" placeholder="Attachments"/>
           <textarea type="text" id="message" name="fname" placeholder="Your message" rows="7" required></textarea>

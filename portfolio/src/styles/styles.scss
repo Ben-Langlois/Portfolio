@@ -131,6 +131,7 @@ html, body {
         grid-area: projects;
         width: clamp(600px, 60vw, 1100px);
         margin: 15vh 0 10vh 0;
+        justify-self: center;
 
         #project-section{
             h1{
@@ -291,6 +292,7 @@ html, body {
 
                 #submit{
                     width: 20%;
+                    padding: 0;
                 }
             }
 
@@ -366,160 +368,15 @@ html, body {
     opacity: .9 !important;
 }
 /* Media Queries */
-@media only screen and (max-width: 426px) { // Mobile
-    .section-header{
-    
-        h1{
-            font: bold 7vw roboto; 
-        }
-    }
-    
-    // header
-    header{
-        .nav-links{
-            font-size: 5vw; 
-            margin: 0 auto;
-
-            li{
-    
-                .link{
-                    margin: 0 3vw;
-                }
-            }
-        }
-    }
-
-    #about-container{
-        height: auto;
-
-        #about{
-
-            #portrait-container{
-                position: static;
-                display: inline;
-
-                #portrait{
-                    width: 70vw;
-                    margin: auto;
-                }
-            }
-
-            #bio-container{
-                position: static;
-                display: inline;
-
-                #bio-text{
-                    width: 75vw;
-
-                    #bio-main{  
-                        font: italic 1000 4.6vw/5vw lato;
-                        // letter-spacing: 0.7vw;
-                        font-stretch: expanded;
-                    }
-
-                    #bio-secondary{
-                        font: bold 3.6vw/4vw roboto;
-                        // letter-spacing: 1.5;
-                        margin: 2vh 0 0 0;
-                    }
-                }
-            }
-        }
-
-        &::after{
-            display: none;
-        }
-    }
-
-    #skill-chart-container{
-        margin: 0 auto;
-        width: 100vw;
-    }
-
-    /* Projects */
-    #project-container{
-
-        #card-container{
-            width: auto;
-
-            .card{
-                width: 20vw;
-                margin: 1vh 0;
-            }
-        }
-    }
-
-    #contact-container{
-        padding: 0;
-
-        #socials-container{
-
-            #social-link-container{
-
-                .social-link{
-                    // display: block;
-                    margin: 0 1vh 0 0;
-    
-                    .icon{
-                        height: 5vh;
-                        width: 5vh;
-            
-                        margin: 1vh;
-            
-                        display: inline-block;
-                        vertical-align: middle;
-                    }
-                }
-            }
-        }
-    }   
+@media only screen and (max-width: 576px) { // Mobile
+ 
 }
 
-@media only screen and (min-width: 426px) and (max-width: 768px) { // Tablet
-    /*About section resizing*/
-    #about-container{
-
-        height: 60vh;
-
-        &::after{
-            display: none;
-        }
-
-        #about{
-            padding: 0;               
-        }
-    }
-
-
-    #project-container{
-
-        #card-container{
-            width: auto;
-
-            .card{
-                margin: 2vh 0;
-                width: 40vw;
-            }
-        }
-    }
-
-    #contact-container{
-        padding: 0;
-
-        .socials-container{
-            width: auto;
-        }
-    }
-
-
-    .section-header{
-        h1{
-            padding: 0 2vh;
-        }
-    }
+@media only screen and (max-width: 768px) { // Tablet
+    
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1075px){
+@media only screen  and (max-width: 1075px){
     #project-container{
 
         #card-container{
