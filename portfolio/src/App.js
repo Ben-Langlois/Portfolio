@@ -157,9 +157,8 @@ const Landing = () => {
             Hi! I'm <u>Ben Langlois</u>
           </h1>
           <h2>
-            A GTA/Toronto based web developer, looking for an
-            entry level position in Front end
-            Web Development            
+            A GTA/Toronto based web developer, seeking a role 
+            in front-end development
           </h2>
           <h3>
             I attended Durham College for 2 years in
@@ -277,8 +276,6 @@ const Contact = () => {
         <form>
           <input type="text" id="name" name="name" placeholder="Your Name" required/>
           <input type="email" id="email" name="email" placeholder="Your Email" required/>
-          <input type="text" id="subject" name="subject" placeholder="Why you would like to get in touch with me"/>
-          <input type="file" id="file" name="file" placeholder="Attachments"/>
           <textarea type="text" id="message" name="fname" placeholder="Your message" rows="7" required></textarea>
           <input type="button" id='submit' name='submit' value="Send Email"/>
         </form>
