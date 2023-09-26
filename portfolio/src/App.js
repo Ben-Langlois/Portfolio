@@ -14,7 +14,7 @@ import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
 
 // socials
-import codepen from './images/socials/codepen-square-svgrepo-com.svg'
+// import codepen from './images/socials/codepen-square-svgrepo-com.svg'
 import github from './images/socials/iconmonstr-github-3.svg'
 // #endregion
 
