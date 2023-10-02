@@ -1,7 +1,8 @@
 // #region imports
 import * as React from "react"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import $ from 'jquery'
+import emailjs from '@emailjs/browser'
 import Chart from 'chart.js/auto'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/styles.scss'
@@ -257,6 +258,44 @@ const Project = () => {
   )
 }
 
+const ContactForm = () => {
+  const form = useRef();
+  const serviceID = 'service_qde5d59';
+  const templateID = 'template_ecglaf9';
+  const publicKey = 'v-FaY4XFFb4hfxHIi';
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    // input var
+    const name = $('#name');
+    const email = $('#email');
+    const message = $('#message');
+
+    // sending emails
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey)
+      .then((result) => {     // if successful
+          console.log(result.text);
+          console.log('message sent');
+      }, (error) => {         // if not   
+          console.log(error.text);
+      });
+  };
+  
+  return (
+    <div id='form' >
+      <h2>Email Me</h2>
+      <form ref={form} onSubmit={sendEmail}>
+        <input type="text" id="name" name="user_name" placeholder="Your Name" required/>
+        <input type="email" id="email" name="user_email" placeholder="Your Email" required/>
+        <textarea type="text" id="message" name="message" placeholder="Your message" rows="7" required></textarea>
+        <input type="submit" id='submit' name='submit' value="Send Email"/>
+      </form>
+    </div>
+  )
+}
+
+
 /*Contact
   - has contact info, form, links to github linkedIn etc
 */
@@ -271,15 +310,7 @@ const Contact = () => {
         <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a><br/>
         <h4 class='link'>Email</h4>
       </div>
-      <div id='form'>
-        <h2>Email Me</h2>
-        <form>
-          <input type="text" id="name" name="name" placeholder="Your Name" required/>
-          <input type="email" id="email" name="email" placeholder="Your Email" required/>
-          <textarea type="text" id="message" name="fname" placeholder="Your message" rows="7" required></textarea>
-          <input type="button" id='submit' name='submit' value="Send Email"/>
-        </form>
-      </div>
+      <ContactForm />
     </div>     
   )
 }
