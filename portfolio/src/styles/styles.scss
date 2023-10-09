@@ -114,7 +114,7 @@ html, body {
         justify-self: center;
             
         width: clamp(600px, 50vw, 1100px);
-
+        // height (min)
 
         div{
             height: auto;
@@ -129,7 +129,8 @@ html, body {
 
     #projects{
         grid-area: projects;
-        width: clamp(600px, 60vw, 1100px);
+        width: clamp(800px, 60vw, 1100px);
+        // height: ;
         margin: 15vh 0 10vh 0;
         justify-self: center;
 
@@ -179,7 +180,7 @@ html, body {
                     grid-template-rows: 85% 15% 0%;
 
                     img#project{
-                        width: 100%;
+                        width: clamp(350px, 25vw, 800px);       // clamp 
                         height: 100%;
                         object-fit: cover;
                         transition: all 1s ease;
@@ -210,6 +211,8 @@ html, body {
                         grid-area: desc;
                         margin: 0.5rem 10%;
                         font-size: 1.1rem;
+
+                        // overflow-y: scroll;
                     }                     
                 }
             } // using & for some reason makes it all goofy
@@ -241,7 +244,7 @@ html, body {
 
         #links{
             width: clamp(200px,30%, 500px);         
-            border-left: 2px solid black;
+            border-left: 1px solid black;
 
             h2{
                 font-weight: bold;
@@ -350,30 +353,45 @@ html, body {
     transition: all 0.3s ease-in-out 0s;
 }
 
-
 .sticky {
     border-bottom: 1px solid black;
     height: 7vh !important;
     background-color: rgb(255, 255, 255);
     opacity: .9 !important;
 }
+
+/* 
+    standard breakpoints
+    < 600px, 601px, 768px(tablet),  
+
+*/
+
 /* Media Queries */
-@media only screen and (max-width: 576px) { // Mobile
- 
-}
+@media (max-width: 600px) { // Mobile
+    #landing-container{
+        grid-template-rows: 25vh 50vh auto;
+        width: 100%;
 
-@media only screen  and (max-width: 1075px){
-    #project-container{
+        header{
+            .nav-links{
+                width: 100%;
 
-        #card-container{
-            width: 100vw;
-            padding: 0;
-
-            .card{
-                margin: 2vh 0;
-                width: auto;
-                min-width: 150px;
+                ul{
+                    justify-content: space-evenly;
+                }
             }
+        }
+
+        #about{
+            width: 80vw;
+        }
+
+        #projects{
+
+        }
+
+        #contact{
+
         }
     }
 }

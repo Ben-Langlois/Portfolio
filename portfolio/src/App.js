@@ -3,9 +3,10 @@ import * as React from "react"
 import { useState, useEffect, useRef } from 'react';
 import $ from 'jquery'
 import emailjs from '@emailjs/browser'
-import Chart from 'chart.js/auto'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/styles.scss'
+import {Helmet} from "react-helmet";
+
 // #endregion 
 
 // #region images
@@ -32,7 +33,6 @@ import github from './images/socials/iconmonstr-github-3.svg'
 */// #endregion
 
 // #region Variables
-var linkedin = 'M13.83,41.668H5.401V13.571h8.429V41.668z M44.737,41.668h-8.429V26.66c0-3.912-1.394-5.857-4.154-5.857 c-2.189,0-3.577,1.086-4.274,3.273c0,3.545,0,17.592,0,17.592h-8.431c0,0,0.115-25.288,0-28.097h6.656l0.514,5.619h0.175 c1.729-2.81,4.489-4.713,8.275-4.713c2.881,0,5.207,0.801,6.985,2.815c1.794,2.014,2.684,4.713,2.684,8.514V41.668z M9.615,2.333 c2.404,0,4.357,1.888,4.357,4.214c0,2.33-1.953,4.214-4.357,4.214c-2.403,0-4.351-1.885-4.351-4.214 C5.264,4.22,7.212,2.333,9.615,2.333z';
 
 
 /*
@@ -73,7 +73,7 @@ const projectsObj = [
   },
   {
     name: 'Lab Timer',
-    desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis research for 6+ months.',
+    desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis.',
     url: 'https://codepen.io/ben-langlois/details/wvqKwRL',
     img: labtimer,
     alt: 'Labtimer Homepage',
@@ -113,6 +113,7 @@ const projectsObj = [
 //#endregion
 
 $(window).scroll(function() {
+  if($(window).innerWidth >= 768){}     // will flesh out afte media queries work
   if ($(window).scrollTop() > 1){
     $('#header').addClass('sticky');
     $('#landing-container').css('grid-template-rows', '15vh 50vh auto');
@@ -149,34 +150,42 @@ const Header = () => {
 */  // eslint-disable-next-line
 const Landing = () => {
   return (
-    <div id="landing-container">
-      <Header />
-      <div id="about" className="content"> {/**/}
-        <div>
-          <h1>
-            {/* Not in love with the font */}
-            Hi! I'm <u>Ben Langlois</u>
-          </h1>
-          <h2>
-            A GTA/Toronto based web developer, seeking a role 
-            in front-end development
-          </h2>
-          <h3>
-            I attended Durham College for 2 years in
-            Oshawa, Ontario for computer programming.
-            Since graduating I've been learning what I
-            didnt experience in college.
-            I work mostly in React, JS, SCSS, MySQL,
-            and C++ while expirementing with Python,
-            C# and Arduino.
-          </h3>
-        </div>  
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta name='viewport' content='width= device-width, initial-scale=1.0'/>
+        <title>Ben langlois - Portfolio</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <div id="landing-container">
+        <Header />
+        <div id="about" className="content"> {/**/}
+          <div>
+            <h1>
+              {/* Not in love with the font */}
+              Hi! I'm <u>Ben Langlois</u>
+            </h1>
+            <h2>
+              A GTA/Toronto based web developer, seeking a role 
+              in front-end development
+            </h2>
+            <h3>
+              I attended Durham College for 2 years in
+              Oshawa, Ontario for computer programming.
+              Since graduating I've been learning what I
+              didnt experience in college.
+              I work mostly in React, JS, SCSS, MySQL,
+              and C++ while expirementing with Python,
+              C# and Arduino.
+            </h3>
+          </div>  
+        </div>
+        <div id='projects'>
+          <Project/>
+        </div>   
+        <Contact />                                                                                
       </div>
-      <div id='projects'>
-        <Project/>
-      </div>   
-      <Contact />                                                                                
-    </div>
+    </>
   )
 }
 
@@ -196,7 +205,7 @@ const Project = () => {
   const onFilterClick = (e) => {
     let type = e.target.textContent.toLowerCase();
 
-    if(type == 'difficulty'){   // if difficulty was clicked
+    if(type === 'difficulty'){   // if difficulty was clicked
       setCards([...cards].sort((a, b) => (a.diff < b.diff) ? 1 : (a.diff > b.diff) ? -1 : 0));
       $('#difficulty').addClass('enabled');         // give active filter the ::before underline
       $('#recent').removeClass('enabled');          // remove underline from other filter
@@ -268,15 +277,20 @@ const ContactForm = () => {
     e.preventDefault();
 
     // input var
-    const name = $('#name');
-    const email = $('#email');
-    const message = $('#message');
+    // const name = $('#name');
+    // const email = $('#email');
+    // const message = $('#message');
 
     // sending emails
     emailjs.sendForm(serviceID, templateID, form.current, publicKey)
       .then((result) => {     // if successful
           console.log(result.text);
           console.log('message sent');
+
+          $('#submit::after').css({
+            'content': 'Sent!',
+            'color': 'green'
+          })
       }, (error) => {         // if not   
           console.log(error.text);
       });
