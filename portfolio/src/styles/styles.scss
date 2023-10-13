@@ -175,12 +175,11 @@ html, body {
                     grid-template-areas: 
                         "."
                         "title"
-                        "desc"
-                        "contact";
+                        "desc";
                     grid-template-rows: 85% 15% 0%;
 
                     img#project{
-                        width: clamp(350px, 25vw, 800px);       // clamp 
+                        width: 100%;       // clamp 
                         height: 100%;
                         object-fit: cover;
                         transition: all 1s ease;
@@ -220,7 +219,6 @@ html, body {
                     // background-color: #016499;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
                     transform: scale(1.02, 1.02);
-
                     display: grid;
                     grid-template-areas: 
                         "."
@@ -242,7 +240,7 @@ html, body {
         margin: 10vh 0 15vh 0;
         justify-content: space-evenly;
 
-        #links{
+        #link-container{
             width: clamp(200px,30%, 500px);         
             border-left: 1px solid black;
 
@@ -252,10 +250,15 @@ html, body {
                 justify-self: center;
             }
 
-            h4{
-                margin: 5% 0 5% 15%;
-                display: inline-flex;
+            #links{
+                text-decoration: none;
+
+                h4{
+                    margin: 5% 0 5% 15%;
+                    display: inline-flex;
+                }
             }
+
         }
 
         #form{
@@ -264,7 +267,6 @@ html, body {
             h2{
                 font-weight: bold;
                 justify-self: center;
-                display: inline-block;
             }
             
             form{
@@ -299,6 +301,7 @@ html, body {
     text-align: center;
 
     h1{
+        display: inline-block;
         text-align: center;
         margin: 0 auto; 
         padding: 0 2vh; 
@@ -368,11 +371,21 @@ html, body {
 
 /* Media Queries */
 @media (max-width: 600px) { // Mobile
+    .sticky{
+        height: 15vh !important;
+    }
     #landing-container{
-        grid-template-rows: 25vh 50vh auto;
-        width: 100%;
+        grid-template-rows: 15vh 85vh auto;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            "header"
+            "about"
+            "projects"
+            "contact";
 
         header{
+            height: 15vh;
+
             .nav-links{
                 width: 100%;
 
@@ -383,19 +396,150 @@ html, body {
         }
 
         #about{
-            width: 80vw;
+            width: 80%;
+
+            div{
+                height: auto;
+    
+                h1, h2, h3{
+                    font-size: auto !important;
+                    margin-bottom: 1rem;       
+                }  
+            }
         }
 
         #projects{
+            width: 100%;
+    
+            #card-container{  
+                
+                a{
+                    display: grid;
+                // new attempt
+                    .card{
+                        height: auto;      // clamp (container is based on ind cards)
+                        width: 90%;
+                        justify-self: center;
+                        grid-template-rows: 50% 15% auto;
+                            
+                        #project{
+                            width: 100%;      
+                            // height: 100%;
 
+                        }
+    
+                        #title{
+
+                            h1{
+
+                            }
+    
+                            a{
+                                height: 100%;
+
+                                img{
+                                    height: 70%;
+                                    align-self: center;                                    
+                                }
+                            }
+                        } 
+    
+                        p{
+
+                        }                     
+                    }
+                } // using & for some reason makes it all goofy
+                .card:hover{
+                        // background-color: #016499;
+                        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+                        transform: scale(1.02, 1.02);
+    
+                        display: grid;
+                        grid-template-areas: 
+                            "."
+                            "title"
+                            "desc";
+                        grid-template-rows: 50% 15% auto;
+    
+                        #project{
+                            filter: blur(1.5px); 
+                        }
+                }
+            }
         }
 
         #contact{
+            display: grid;
+            height: auto;
+            margin: 5vh 0 10vh 0;
 
+            #link-container{
+                justify-self: center;
+                border: none;
+                margin: 0 0 1rem 0;
+                width: 80%;
+
+                h2{
+                    margin: 0 0 2vh 0;
+                    padding-bottom: 1vh;
+                    border-bottom: solid black 1px;
+                }
+    
+                #links{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    justify-content: center;
+
+                    a{
+                        // width: 30%;
+
+                        h4{
+                            display: inline-flex;
+                            margin: 0;
+                            padding: 0.5rem;
+                        }                        
+                    }
+
+                }
+
+            }
+    
+            #form{
+                width: 80%;
+                justify-self: center;
+
+    
+                h2{
+                    margin: 0 0 2vh 0;
+                    padding-bottom: 1vh;
+                    border-bottom: solid black 1px;
+                }
+                
+                form{
+                    // clamp width atleast try got dangit
+    
+                   input{
+
+                    }
+    
+                    textarea{
+
+                    }
+    
+                    #submit{
+
+                    }
+                }
+    
+            }
         }
     }
 }
 
+@media (max-width: 768px){ // tablet
+    
+}
 /* Animations */
 /* Expirementing with scroll prompt*/
 @keyframes shine{

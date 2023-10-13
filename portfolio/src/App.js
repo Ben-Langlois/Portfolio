@@ -137,7 +137,7 @@ const Header = () => {
       <div className="nav-links">
         <ul>            
           <li><a className="link" href="#top">About</a></li>
-          <li><a className="link" href="#project-section">Projects</a></li>
+          <li><a className="link" href="#projects">Projects</a></li>
           <li><a className="link" href="#contact">Contact</a></li>
         </ul>
       </div>    
@@ -159,7 +159,7 @@ const Landing = () => {
       </Helmet>
       <div id="landing-container">
         <Header />
-        <div id="about" className="content"> {/**/}
+        <div id="about"> {/**/}
           <div>
             <h1>
               {/* Not in love with the font */}
@@ -193,8 +193,6 @@ const Landing = () => {
   - Contains projects, filterable through a slide bar type thing (divided by languages)
 
   TODO
-    - finish styling card
-    - finish styling hover
     - add filtering to array
 */
 const Project = () => {
@@ -297,7 +295,7 @@ const ContactForm = () => {
   };
   
   return (
-    <div id='form' >
+    <div id='form'>
       <h2>Email Me</h2>
       <form ref={form} onSubmit={sendEmail}>
         <input type="text" id="name" name="user_name" placeholder="Your Name" required/>
@@ -309,20 +307,22 @@ const ContactForm = () => {
   )
 }
 
-
 /*Contact
   - has contact info, form, links to github linkedIn etc
 */
 const Contact = () => { 
   return(
     <div id='contact'>
-      <div id='links'>
+      <div id='link-container'>
         <h2>My Links</h2>
-        <a href='https://www.linkedin.com/in/benjaminlanglois/'><h4 class='link'>LinkedIn</h4></a><br/>
-        <a href='https://github.com/Ben-Langlois'><h4 class='link'>Github</h4></a><br/>
-        <a href='https://codepen.io/your-work/'><h4 class='link'>Codepen</h4><br/></a>
-        <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a><br/>
-        <h4 class='link'>Email</h4>
+        <div id="links">
+          <a href='https://www.linkedin.com/in/benjaminlanglois/'><h4 class='link'>LinkedIn</h4></a>
+          <a href='https://github.com/Ben-Langlois'><h4 class='link'>Github</h4></a>
+          <a href='https://codepen.io/ben-langlois'><h4 class='link'>Codepen</h4></a>
+          <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a>
+          <a href='#'><h4 class='link'>Email</h4></a>
+        </div>
+
       </div>
       <ContactForm />
     </div>     
