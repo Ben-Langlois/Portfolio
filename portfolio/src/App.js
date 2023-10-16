@@ -219,8 +219,8 @@ const Project = () => {
       <div class="section-header" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
-          <h5 id='recent' class='link enabled' onClick={onFilterClick}>Recent</h5>
-          <h5 id='difficulty' class='link' onClick={onFilterClick}>Difficulty</h5>
+          <h4 id='recent' class='link enabled' onClick={onFilterClick}>Recent</h4>
+          <h4 id='difficulty' class='link' onClick={onFilterClick}>Difficulty</h4>
           {/* <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5> */}
         </div>
       </div>  

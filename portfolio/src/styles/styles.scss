@@ -120,7 +120,6 @@ html, body {
             height: auto;
 
             h1{
-                font-size: auto !important;
                 margin-bottom: 1rem;       
             }  
         }
@@ -129,9 +128,9 @@ html, body {
 
     #projects{
         grid-area: projects;
-        width: clamp(800px, 60vw, 1100px);
+        width: clamp(800px, 60vw, 1300px);
         // height: ;
-        margin: 15vh 0 10vh 0;
+        padding: 15vh 0 10vh 0;
         justify-self: center;
 
         #project-section{
@@ -142,11 +141,11 @@ html, body {
             #filters{
                 display: flex;
                 justify-content: space-evenly;
-                h5{
+                h4{
                     margin: 0;
                     display: inline-block;
                 }
-                h5:hover{
+                h4:hover{
                     cursor: pointer;
                 }
             }
@@ -277,6 +276,10 @@ html, body {
             
             form{
                 // clamp width atleast try got dangit
+                height: 100%;
+                display: flex;
+                flex-flow: column;
+
 
                input{
                     margin: 2% 0 3.5% 0;                    
@@ -289,6 +292,8 @@ html, body {
                     margin: 2% 0 3.5% 0;                    
                     width: 100%;
                     padding-left: 3%;
+                    flex: 1 1 auto;
+
                 }
 
                 #submit{
@@ -377,9 +382,6 @@ html, body {
 
 /* Media Queries */
 @media (max-width: 600px) { // Mobile
-    .sticky{
-        height: 15vh !important;
-    }
     #landing-container{
         grid-template-rows: 15vh 85vh auto;
         grid-template-columns: 100%;
@@ -397,6 +399,7 @@ html, body {
 
                 ul{
                     justify-content: space-evenly;
+                    font-size: 1.6rem !important;
                 }
             }
         }
@@ -406,11 +409,18 @@ html, body {
 
             div{
                 height: auto;
-    
-                h1, h2, h3{
-                    font-size: auto !important;
-                    margin-bottom: 1rem;       
-                }  
+
+                h1{     
+                    font-size: 2rem !important;
+                }
+
+                h2{
+                    font-size: 1.8rem !important;
+                }
+
+                h3{
+                    font-size: 1.6rem !important;
+                }
             }
         }
 
@@ -458,7 +468,7 @@ html, body {
                 justify-self: center;
                 border: none;
                 margin: 0 0 1rem 0;
-                width: 80%;
+                width: 80% !important;
 
                 h2{
                     margin: 0 0 2vh 0;
@@ -487,7 +497,7 @@ html, body {
             }
     
             #form{
-                width: 80%;
+                width: 80% !important;
                 justify-self: center;
 
     
@@ -518,20 +528,158 @@ html, body {
     }
 }
 
-@media (max-width: 768px){ // tablet
+
+@media (max-width:960px){ // tablets
+    #landing-container{
+
+        header{
+
+        }
+
+        #about{
+
+            div{
+
+                h1{     
+                    font-size: 2.7rem;
+                }
+
+                h2{
+                    font-size: 2.5rem;
+                }
+
+                h3{
+                    font-size: 2.3rem;
+                }
+            }
+        }
+
+        #projects{
+            #card-container{
+
+                a{
+                    .card{
+                        height: auto;
+
+                        #title{
+
+                            h1{
+
+                            }
     
+                            a{
+             
+                            }
+                        } 
+    
+                        p{
+                            font-size: 1.4rem;
+                        }    
+                    }
+                }
+            }
+        }
+
+        #contact{
+            display: grid;
+            height: auto;
+            margin: 5vh 0 10vh 0;
+
+            #link-container{
+                justify-self: center;
+                border: none;
+                margin: 0 0 1rem 0;
+                width: 100%;
+
+                h2{
+                    margin: 0 0 2vh 0;
+                    padding-bottom: 1vh;
+                    border-bottom: solid black 1px;
+                }
+    
+                #links{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    justify-content: center;
+
+                    a{
+                        // width: 30%;
+
+                        h4{
+                            display: inline-flex;
+                            margin: 0;
+                            padding: 0.5rem;
+                        }                        
+                    }
+
+                }
+
+            }
+    
+            #form{
+                width: 100%;
+                justify-self: center;
+
+    
+                h2{
+                    margin: 0 0 2vh 0;
+                    padding-bottom: 1vh;
+                    border-bottom: solid black 1px;
+                }
+                
+                form{
+                    font-size: 1.2rem;
+                    
+                   input{
+
+                    }
+    
+                    textarea{
+
+                    }
+    
+                    #submit{
+
+                    }
+                }
+    
+            }
+        }
+    }
 }
 
 @media (hover: none){ // Touchscreens
+    .sticky{        // mostly to account for most modern phones/tablets having a notch
+        height: 10vh !important;
+    }
+
     #landing-container{
+        // font-size: 1.6rem !important;
+
+
+        header{
+            height: 15vh;
+
+            .nav-links{
+                ul{
+                    font-size: 1.9rem;
+                }
+            }
+        }
+
+        #about{
+            width: 80%;
+        }
 
         #projects{
+            width: 100%;
 
             #card-container{
 
                 a{
                     .card{
-                        grid-template-rows: 50% 15% auto;
+                        grid-template-rows: 40% 15% auto;
                         height: auto;
                     }                    
                 }
@@ -539,10 +687,8 @@ html, body {
             }
         }
     }
-    .card{
-        grid-template-rows: 50% 15% auto;
-        
-    }
+
+
 }
 
 /* Animations */
