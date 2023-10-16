@@ -119,6 +119,10 @@ html, body {
         div{
             height: auto;
 
+            a{
+                // text-decoration: none;
+                color: black;
+            }
             h1{
                 margin-bottom: 1rem;       
             }  
@@ -165,7 +169,7 @@ html, body {
             // new attempt
                 .card{
                     height: clamp(250px, 30vh, 600px);      // clamp (container is based on ind cards)
-                    width: clamp(350px, 25vw, 800px);       // clamp 
+                    width: clamp(350px, 25vw, 600px);       // clamp 
                     overflow: hidden;
                     transition: all 1s ease;
                     justify-items: center;
@@ -180,7 +184,7 @@ html, body {
                     img#project{
                         width: 100%;       // clamp 
                         height: 100%;
-                        object-fit: cover;
+                        object-fit: fill;
                         transition: all 1s ease;
                         z-index: 0;
                     }
@@ -268,6 +272,8 @@ html, body {
 
         #form{
             width: clamp(300px, 40%, 700px);      // clamp,
+            display: flex;
+            flex-flow: column;
 
             h2{
                 font-weight: bold;
@@ -279,6 +285,7 @@ html, body {
                 height: 100%;
                 display: flex;
                 flex-flow: column;
+                flex: 1 1 auto;
 
 
                input{
@@ -381,7 +388,7 @@ html, body {
 */
 
 /* Media Queries */
-@media (max-width: 600px) { // Mobile
+@media (max-width: 600px){ // Mobile
     #landing-container{
         grid-template-rows: 15vh 85vh auto;
         grid-template-columns: 100%;
@@ -669,7 +676,7 @@ html, body {
         }
 
         #about{
-            width: 80%;
+            width: 90%;
         }
 
         #projects{

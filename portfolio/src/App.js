@@ -14,6 +14,7 @@ import {Helmet} from "react-helmet";
 import portfolio from './images/projects/portfolio.png'
 import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
+import weatherapp from './images/projects/weatherapp.png'
 
 // socials
 // import codepen from './images/socials/codepen-square-svgrepo-com.svg'
@@ -36,8 +37,7 @@ import github from './images/socials/iconmonstr-github-3.svg'
 
 
 /*
-
-
+  Example of project object
   {
     name: 'Portfolio',
     desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
@@ -62,7 +62,7 @@ const projectsObj = [
     url: 'https://ben-langlois.github.io/',
     img: portfolio,
     alt: 'Portfolio Homepage',
-    diff: 3,
+    diff: 4,
     date: new Date('September 30, 2023 00:00:00'),
     links:[
       {
@@ -77,7 +77,7 @@ const projectsObj = [
     url: 'https://codepen.io/ben-langlois/details/wvqKwRL',
     img: labtimer,
     alt: 'Labtimer Homepage',
-    diff: 4,
+    diff: 3,
     date: new Date('Febreary 11, 2022 00:00:00'),
     links:[
     ] 
@@ -97,8 +97,8 @@ const projectsObj = [
   {
     name: 'Weather App',
     desc: 'A React app utilizing bootstrap and APIs to create a weather dashboard. Displays weekly and daily weather for inputted city.',
-    url: '',
-    img: labtimer,
+    url: '#',
+    img: weatherapp,
     alt: 'Weather App Dashboard',
     diff: 5,
     date: new Date('March 1, 2023 00:00:00'),
@@ -163,20 +163,22 @@ const Landing = () => {
           <div>
             <h1>
               {/* Not in love with the font */}
-              Hi! I'm <u>Ben Langlois</u>
+              Hi! I'm <a href='https://www.linkedin.com/in/benjaminlanglois/'>Ben Langlois</a>
             </h1>
             <h2>
-              A GTA/Toronto based web developer, seeking a role 
+              I'm a Toronto/GTA based web developer, seeking a role 
               in front-end development
             </h2>
             <h3>
               I attended Durham College for 2 years in
               Oshawa, Ontario for computer programming.
-              Since graduating I've been learning what I
-              didnt experience in college.
-              I work mostly in React, JS, SCSS, MySQL,
-              and C++ while expirementing with Python,
-              C# and Arduino.
+              Since graduating I've been teaching myself
+              front-end technologies like React, JS, HTML,
+              SCSS, JQuery as well as any APIs I find useful
+              in my projects
+            </h3>
+            <h3>
+              Comments? Concerns? Suggestions? <a href='#contact'>Send me an email!</a>
             </h3>
           </div>  
         </div>
@@ -213,6 +215,7 @@ const Project = () => {
       $('#difficulty').removeClass('enabled');      
     }
   };
+
 
   return (
     <>
