@@ -15,10 +15,12 @@ import portfolio from './images/projects/portfolio.png'
 import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
 import weatherapp from './images/projects/weatherapp.png'
+import portrait from './images/portrait.jpg'
 
 // socials
 // import codepen from './images/socials/codepen-square-svgrepo-com.svg'
 import github from './images/socials/iconmonstr-github-3.svg'
+import linkedin from './images/socials/iconmonstr-linkedin-3.svg'
 // #endregion
 
 // #region CDNs
@@ -160,7 +162,10 @@ const Landing = () => {
       <div id="landing-container">
         <Header />
         <div id="about"> {/**/}
-          <div>
+          <div id='portrait-container'>
+            <img id='portrait' src={portrait} alt='pic of Ben'/>
+          </div>
+          <div id='about-text'>
             <h1>
               {/* Not in love with the font */}
               Hi! I'm <a href='https://www.linkedin.com/in/benjaminlanglois/'>Ben Langlois</a>
@@ -169,17 +174,25 @@ const Landing = () => {
               I'm a Toronto/GTA based web developer, seeking a role 
               in front-end development
             </h2>
-            <h3>
+            {/* <h3>
               I attended Durham College for 2 years in
               Oshawa, Ontario for computer programming.
               Since graduating I've been teaching myself
               front-end technologies like React, JS, HTML,
               SCSS, JQuery as well as any APIs I find useful
               in my projects
-            </h3>
+            </h3> */}
             <h3>
               Comments? Concerns? Suggestions? <a href='#contact'>Send me an email!</a>
             </h3>
+            <div id='links'>
+              <a href='https://www.linkedin.com/in/benjaminlanglois/'>
+                <img src={linkedin}/><h4 className="link">LinkedIn</h4>
+              </a>
+              <a href='https://github.com/Ben-Langlois'>
+                <img src={github}/><h4 className="link">Github</h4>
+              </a>
+            </div>
           </div>  
         </div>
         <div id='projects'>

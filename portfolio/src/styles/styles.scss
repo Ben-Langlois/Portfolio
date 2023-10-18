@@ -112,20 +112,52 @@ html, body {
         display: flex;
         align-items: center;
         justify-self: center;
-            
-        width: clamp(600px, 50vw, 1100px);
+        flex-direction: row;
+        width: clamp(600px, 60vw, 1300px);
         // height (min)
 
-        div{
+        #portrait-container{
+            height: 35vh;
+            border-radius: 10%;
+
+            #portrait{
+                height: 100%;
+                border-radius: 3%;
+            }
+        }
+
+        #about-text{
             height: auto;
+            margin-left: 3rem;
 
             a{
                 // text-decoration: none;
                 color: black;
+
+                &:hover{
+                    color: rgb(0, 85, 206);
+                }
             }
-            h1{
+            h1, h2, h3{
                 margin-bottom: 1rem;       
             }  
+
+            #links{
+                display: flex;
+                flex-flow: row;
+                gap: 3vw;
+
+                a{
+                    display: inline-flex;
+                    align-items: center;
+                    margin: 0;
+                    text-decoration: none;
+                
+                    h4{
+                        margin: 0 0 0 1rem;
+                    }
+                }
+            }
         }
         
     }
@@ -340,7 +372,7 @@ html, body {
     &:hover{
         opacity: 1;
         text-decoration: none;
-        color: #000000;
+        color: rgb(0, 85, 206);
 
         /* animation-duration: 0.5s;
         animation-name: opacity-fade-in; */
@@ -354,7 +386,7 @@ html, body {
         bottom: 0;
         left: 0;
 
-        background-color: $headerLink;
+        background-color: rgb(0, 85, 206);
 
         visibility: hidden;
         transform: scaleX(0);
@@ -365,6 +397,8 @@ html, body {
         visibility: visible;
         transform: scaleX(1);
         text-decoration: none;
+        // background-color: $headerLink;
+
     }
 
 }
@@ -390,7 +424,6 @@ html, body {
 /* Media Queries */
 @media (max-width: 600px){ // Mobile
     #landing-container{
-        grid-template-rows: 15vh 85vh auto;
         grid-template-columns: 100%;
         grid-template-areas: 
             "header"
@@ -412,9 +445,15 @@ html, body {
         }
 
         #about{
-            width: 80%;
+            width: 100%;
+            align-content: space-around;
+            flex-wrap: wrap;
 
-            div{
+            #portrait-container{
+                margin-bottom: 2rem;
+            }
+
+            #about-text{
                 height: auto;
 
                 h1{     
@@ -428,6 +467,15 @@ html, body {
                 h3{
                     font-size: 1.6rem !important;
                 }
+
+                #links{
+                    a{
+                        h4{
+                            font-size: 1.6rem !important;
+                        }
+                    }
+                }
+
             }
         }
 
@@ -535,17 +583,17 @@ html, body {
     }
 }
 
-
 @media (max-width:960px){ // tablets
     #landing-container{
 
-        header{
-
-        }
-
         #about{
 
-            div{
+            #portrait-container{
+                margin-bottom: 2rem;
+            }
+
+
+            #about-text{
 
                 h1{     
                     font-size: 2.7rem;
@@ -558,10 +606,28 @@ html, body {
                 h3{
                     font-size: 2.3rem;
                 }
+
+                #links{
+
+                    a{
+
+                        h4{
+                            font-size: 2rem;
+                        }
+                    }
+                }
             }
         }
 
         #projects{
+            .section-header{
+                #filters{
+                    h4{
+                        font-size: 2rem;
+                    }
+                }
+            }
+
             #card-container{
 
                 a{
@@ -663,7 +729,7 @@ html, body {
 
     #landing-container{
         // font-size: 1.6rem !important;
-
+        grid-template-rows: 15vh auto !important;
 
         header{
             height: 15vh;
@@ -676,11 +742,13 @@ html, body {
         }
 
         #about{
-            width: 90%;
+            // width: 90%;
+            flex-direction: column;
+
         }
 
         #projects{
-            width: 100%;
+            // width: 100%;
 
             #card-container{
 
