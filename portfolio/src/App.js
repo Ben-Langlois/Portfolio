@@ -16,6 +16,7 @@ import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
 import weatherapp from './images/projects/weatherapp.png'
 import portrait from './images/portrait.jpg'
+import anotherPortrait from './images/IMG_4212.jpg'
 
 // socials
 // import codepen from './images/socials/codepen-square-svgrepo-com.svg'
@@ -129,16 +130,13 @@ $(window).scroll(function() {
 // components
 /*Header
   - Contains logo, nav links
-
-  TODO
-    - re-css to account for responsiveness
 */
 const Header = () => {
   return (
     <header id='header'>
       <div className="nav-links">
         <ul>            
-          <li><a className="link" href="#top">About</a></li>
+          <li><a className="link" href="#about">About</a></li>
           <li><a className="link" href="#projects">Projects</a></li>
           <li><a className="link" href="#contact">Contact</a></li>
         </ul>
@@ -148,67 +146,86 @@ const Header = () => {
 }
 
 /*Landing section
-  - Contains initial content, "Hi my name...", scroll prompt 
+  - Top of the page
+  - Contains initial content, "Hi my name...", some links, picture
 */  // eslint-disable-next-line
 const Landing = () => {
   return (
-    <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <meta name='viewport' content='width= device-width, initial-scale=1.0'/>
-        <title>Ben langlois - Portfolio</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
-      <div id="landing-container">
-        <Header />
-        <div id="about"> {/**/}
-          <div id='portrait-container'>
-            <img id='portrait' src={portrait} alt='pic of Ben'/>
-          </div>
-          <div id='about-text'>
-            <h1>
-              {/* Not in love with the font */}
-              Hi! I'm <a href='https://www.linkedin.com/in/benjaminlanglois/'>Ben Langlois</a>
-            </h1>
-            <h2>
-              I'm a Toronto/GTA based web developer, seeking a role 
-              in front-end development
-            </h2>
-            {/* <h3>
-              I attended Durham College for 2 years in
-              Oshawa, Ontario for computer programming.
-              Since graduating I've been teaching myself
-              front-end technologies like React, JS, HTML,
-              SCSS, JQuery as well as any APIs I find useful
-              in my projects
-            </h3> */}
-            <h3>
-              Comments? Concerns? Suggestions? <a href='#contact'>Send me an email!</a>
-            </h3>
-            <div id='links'>
-              <a href='https://www.linkedin.com/in/benjaminlanglois/'>
-                <img src={linkedin}/><h4 className="link">LinkedIn</h4>
-              </a>
-              <a href='https://github.com/Ben-Langlois'>
-                <img src={github}/><h4 className="link">Github</h4>
-              </a>
-            </div>
-          </div>  
-        </div>
-        <div id='projects'>
-          <Project/>
-        </div>   
-        <Contact />                                                                                
+    <div id="landing"> {/**/}
+      <div id='portrait-container'>
+        <img id='portrait' src={portrait} alt='pic of Ben'/>
       </div>
-    </>
+      <div id='about-text'>
+        <h1>
+          {/* Not in love with the font */}
+          Hi I'm <a href='https://www.linkedin.com/in/benjaminlanglois/' className="link">Ben Langlois</a>
+        </h1>
+        <h2>
+          I'm a Toronto/GTA based web developer, seeking a role 
+          in front-end development
+        </h2>
+        {/* <h3>
+          I attended Durham College for 2 years in
+          Oshawa, Ontario for computer programming.
+          Since graduating I've been teaching myself
+          front-end technologies like React, JS, HTML,
+          SCSS, JQuery as well as any APIs I find useful
+          in my projects
+        </h3> */}
+        <h3>
+          Comments? Questions? Suggestions? <a href='#contact' className="link">Send me an email</a>
+        </h3>
+        <div id='links'>
+          <a href='https://www.linkedin.com/in/benjaminlanglois/'>
+            <img src={linkedin} alt='linkedin logo'/><h4 className="link">LinkedIn</h4>
+          </a>
+          <a href='https://github.com/Ben-Langlois'>
+            <img src={github} alt='github logo'/><h4 className="link">Github</h4>
+          </a>
+        </div>
+      </div>  
+    </div>
+  )
+}
+
+
+/*About section
+
+*/
+const About = () => {
+  return (
+    <div id='about'>
+      <div id='bio'>
+        <h4>A bit about me</h4>
+        <p>
+        I'm a 23-year-old self-taught developer from Stouffville, 
+        ON looking to start a career in web development. Since I was 
+        about 10 I've surrounded myself with video games, film and music. 
+        Besides being a hermit, I've found happiness in travel, hiking, 
+        fitness, reading, and music.
+        </p>
+        <h4>Programming</h4>
+        <p>
+          My first brush with programming was in grade 10 when I took a 
+          computer science course. Before I had any idea what I was doing, 
+          I found its complications fascinating. I dove head-first down the 
+          rabbit hole attending <a href='https://durhamcollege.ca/programs/computer-programming-two-year'>
+          Durham College</a> in 2018. Since graduating in 2020 I've dialled 
+          in on web development, teaching myself front-end technologies and
+          building my <a href='#projects'>portfolio and other projects</a>. If I've learned 
+          anything by teaching myself these tools, it's that I can learn 
+          how to use any tool.
+        </p>
+      </div>
+      <div id='pic-container'>
+        <img src={anotherPortrait} alt='another picture of Ben'/>
+      </div>
+    </div>
   )
 }
 
 /*Projects
   - Contains projects, filterable through a slide bar type thing (divided by languages)
-
-  TODO
-    - add filtering to array
 */
 const Project = () => {
   // initial
@@ -231,7 +248,7 @@ const Project = () => {
 
 
   return (
-    <>
+    <div id='projects'>
       <div class="section-header" id='project-section'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
@@ -277,7 +294,28 @@ const Project = () => {
         })
       }
       </div>
-    </>
+    </div>
+  )
+}
+
+/*Contact
+  - has contact info, form, links to github linkedIn etc
+*/
+const Contact = () => { 
+  return(
+    <div id='contact'>
+      <div id='link-container'>
+        <h2>My Links</h2>
+        <div id="links">
+          <a href='https://www.linkedin.com/in/benjaminlanglois/'><h4 class='link'>LinkedIn</h4></a>
+          <a href='https://github.com/Ben-Langlois'><h4 class='link'>Github</h4></a>
+          <a href='https://codepen.io/ben-langlois'><h4 class='link'>Codepen</h4></a>
+          <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a>
+          <a href='#'><h4 class='link'>Email</h4></a>
+        </div>
+      </div>
+      <ContactForm />
+    </div>     
   )
 }
 
@@ -323,34 +361,25 @@ const ContactForm = () => {
   )
 }
 
-/*Contact
-  - has contact info, form, links to github linkedIn etc
-*/
-const Contact = () => { 
-  return(
-    <div id='contact'>
-      <div id='link-container'>
-        <h2>My Links</h2>
-        <div id="links">
-          <a href='https://www.linkedin.com/in/benjaminlanglois/'><h4 class='link'>LinkedIn</h4></a>
-          <a href='https://github.com/Ben-Langlois'><h4 class='link'>Github</h4></a>
-          <a href='https://codepen.io/ben-langlois'><h4 class='link'>Codepen</h4></a>
-          <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a>
-          <a href='#'><h4 class='link'>Email</h4></a>
-        </div>
-
-      </div>
-      <ContactForm />
-    </div>     
-  )
-}
-
 // markup
 class Portfolio extends React.Component {
   render(){
     return(
       <>
-        <Landing />
+        <Helmet>
+          <meta charSet="utf-8" />
+          <meta name='viewport' content='width= device-width, initial-scale=1.0'/>
+          <title>Ben langlois - Portfolio</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
+        {/* <Landing /> */}
+        <div id="landing-container">
+          <Header />
+          <Landing />
+          <About />
+          <Project/>
+          <Contact />                                                                                
+        </div>
       </>
     )
   }

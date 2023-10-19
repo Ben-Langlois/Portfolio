@@ -63,6 +63,7 @@ html, body {
 #landing-container{
     display: grid;
     grid-template-areas:  "header header header"
+                ". landing ."
                 ". about ."
                 ". projects ."
                 ". contact .";
@@ -107,8 +108,8 @@ html, body {
         }
     }
 
-    #about{
-        grid-area: about;
+    #landing{
+        grid-area: landing;
         display: flex;
         align-items: center;
         justify-self: center;
@@ -133,6 +134,7 @@ html, body {
             a{
                 // text-decoration: none;
                 color: black;
+                font-weight: bold;
 
                 &:hover{
                     color: rgb(0, 85, 206);
@@ -160,6 +162,38 @@ html, body {
             }
         }
         
+    }
+
+    #about{
+        grid-area: about;
+        display: flex;
+        width: clamp(600px, 60vw, 1300px);
+        // border: solid black 1px;
+        // border-radius: 3%;
+        margin: 15vh 0 10vh 0;
+        padding-top: 10vh;
+
+        #bio{
+            // display: flex;
+            // align-items: center;
+
+            h4{
+                display: inline-block;
+                text-decoration: underline;
+            }
+            p{
+                margin-bottom: 2rem;
+            }
+        }
+
+        #pic-container{
+            height: 55vh;
+
+            img{
+                height: 100%;
+                border-radius: 3%;
+            }
+        }
     }
 
     #projects{
@@ -362,9 +396,8 @@ html, body {
 .link{
     text-decoration: none;
     color: $headerLink;
-    
+    display: inline;
     padding: 0;
-    display: block;
     position: relative;
 
     transition: opacity 0.5s;
@@ -427,6 +460,7 @@ html, body {
         grid-template-columns: 100%;
         grid-template-areas: 
             "header"
+            "landing"
             "about"
             "projects"
             "contact";
@@ -444,7 +478,7 @@ html, body {
             }
         }
 
-        #about{
+        #landing{
             width: 100%;
             align-content: space-around;
             flex-wrap: wrap;
@@ -586,7 +620,7 @@ html, body {
 @media (max-width:960px){ // tablets
     #landing-container{
 
-        #about{
+        #landing{
 
             #portrait-container{
                 margin-bottom: 2rem;
@@ -741,7 +775,7 @@ html, body {
             }
         }
 
-        #about{
+        #landing{
             // width: 90%;
             flex-direction: column;
 
