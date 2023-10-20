@@ -158,7 +158,7 @@ const Landing = () => {
       <div id='about-text'>
         <h1>
           {/* Not in love with the font */}
-          Hi I'm <a href='https://www.linkedin.com/in/benjaminlanglois/' className="link">Ben Langlois</a>
+          Hi I'm Ben Langlois
         </h1>
         <h2>
           I'm a Toronto/GTA based web developer, seeking a role 
@@ -196,7 +196,7 @@ const About = () => {
   return (
     <div id='about'>
       <div id='bio'>
-        <h4>A bit about me</h4>
+        <h3>A bit about me</h3>
         <p>
         I'm a 23-year-old self-taught developer from Stouffville, 
         ON looking to start a career in web development. Since I was 
@@ -204,18 +204,27 @@ const About = () => {
         Besides being a hermit, I've found happiness in travel, hiking, 
         fitness, reading, and music.
         </p>
-        <h4>Programming</h4>
+        <h3>Programming</h3>
         <p>
           My first brush with programming was in grade 10 when I took a 
           computer science course. Before I had any idea what I was doing, 
           I found its complications fascinating. I dove head-first down the 
-          rabbit hole attending <a href='https://durhamcollege.ca/programs/computer-programming-two-year'>
+          rabbit hole attending <a href='https://durhamcollege.ca/programs/computer-programming-two-year' className="link">
           Durham College</a> in 2018. Since graduating in 2020 I've dialled 
           in on web development, teaching myself front-end technologies and
-          building my <a href='#projects'>portfolio and other projects</a>. If I've learned 
+          building my <a href='#projects' className="link">portfolio and other projects</a>. If I've learned 
           anything by teaching myself these tools, it's that I can learn 
           how to use any tool.
         </p>
+        <div id='skills'>
+          <h5 class='main'>React</h5>
+          <h5 class='main'>JavaScript</h5>
+          <h5 class='main'>SASS</h5>
+          <h5 class='main'>JQuery</h5>
+          <h5 class='main'>Git</h5>
+          <h5>C++</h5>
+          <h5>Arduino</h5>
+        </div>
       </div>
       <div id='pic-container'>
         <img src={anotherPortrait} alt='another picture of Ben'/>

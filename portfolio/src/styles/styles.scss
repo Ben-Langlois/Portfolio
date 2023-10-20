@@ -167,27 +167,54 @@ html, body {
     #about{
         grid-area: about;
         display: flex;
+        flex-direction: row;
         width: clamp(600px, 60vw, 1300px);
-        // border: solid black 1px;
-        // border-radius: 3%;
-        margin: 15vh 0 10vh 0;
-        padding-top: 10vh;
+        align-items: center;
+        justify-self: center;
+        margin: 15vh 0 0 0;
 
         #bio{
             // display: flex;
-            // align-items: center;
+            align-items: center;
+            height: auto;
+            min-width: 550px;
 
-            h4{
+            h3{
                 display: inline-block;
-                text-decoration: underline;
+                // text-decoration: underline;
+                font-weight: bold;
             }
             p{
+                font-size: 1.1rem;
                 margin-bottom: 2rem;
+
+                a{
+                    font-weight: bold;
+                }
+            }
+
+            #skills{
+                display: flex;
+                justify-content: flex-start;
+                gap: 2%;
+                flex-wrap: wrap;
+
+                h5{
+                    padding: 0 0.5rem;
+
+                    &.main{
+                        // background-color: rgb(0, 85, 206);
+                        border: solid rgb(0, 85, 206) 1px;
+                        border-radius: 1rem;
+                        // color: white;
+                    }
+                }
             }
         }
 
         #pic-container{
-            height: 55vh;
+            height: 50vh;
+            margin-left: 1rem;
 
             img{
                 height: 100%;
@@ -479,7 +506,7 @@ html, body {
         }
 
         #landing{
-            width: 100%;
+            width: 90%;
             align-content: space-around;
             flex-wrap: wrap;
 
@@ -628,6 +655,7 @@ html, body {
 
 
             #about-text{
+                margin: 0;
 
                 h1{     
                     font-size: 2.7rem;
@@ -650,6 +678,19 @@ html, body {
                         }
                     }
                 }
+            }
+        }
+
+        #about{
+            flex-direction: column;
+            width: 90%;
+
+            #bio{
+                min-width: 0;
+            }
+
+            #pic-container{
+                display: none;
             }
         }
 
