@@ -1,41 +1,11 @@
 /* #region Fonts */
-@font-face {
-    font-family: roboto;
-    src: url(fonts/Roboto-Regular.ttf);
-}
-
-@font-face {
-    font-family: playfair;
-    src: url(fonts/PlayfairDisplay-VariableFont_wght.ttf);
-}
-
-/* Libre Baskerville */
-@font-face {
-    font-family: libre-reg;
-    src: url(fonts/LibreBaskerville-Regular.ttf);
-}
-@font-face {
-    font-family: libre-italic;
-    src: url(fonts/LibreBaskerville-Italic.ttf);
-}
-@font-face {
-    font-family: libre-bold;
-    src: url(fonts/LibreBaskerville-Bold.ttf);
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap');
 // #endregion
 
 // #region Variables
 $headerLink: #000000;
-$landing: #111111;
-
-$accent: #BB0A21;
-$accent2: #020887;
-$accent3: #A8763E;
-$dark: rgb(0, 0, 0);
 // #endregion
 
 /*All encompassing*/
@@ -53,7 +23,7 @@ html, body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    font-family: roboto;
+    // font-family: roboto;
     // background-color: #131529;
     // background: #FDFCFC;
     color: rgb(0, 0, 0);
@@ -73,6 +43,7 @@ html, body {
     transition: all 0.4s ;
 
     font-family: 'Inclusive Sans', sans-serif;
+    // font-family: 'Outfit', sans-serif;
 
 
     header{
@@ -171,7 +142,7 @@ html, body {
         width: clamp(600px, 60vw, 1300px);
         align-items: center;
         justify-self: center;
-        margin: 15vh 0 0 0;
+        padding: 15vh 0 0 0;
 
         #bio{
             // display: flex;
@@ -227,7 +198,7 @@ html, body {
         grid-area: projects;
         width: clamp(800px, 60vw, 1300px);
         // height: ;
-        padding: 15vh 0 10vh 0;
+        padding: 15vh 0 0 0;
         justify-self: center;
 
         #project-section{
@@ -251,54 +222,59 @@ html, body {
         #card-container{
             display: flex;
             flex-flow: row wrap;
-            justify-content: center;
-            gap: 5vh;
+            justify-content: space-around;
+            gap: 5vh 0;
             padding-top: 3vh;
 
             a{
                 text-decoration: none !important;
                 color: black;
 
-            // new attempt
                 .card{
-                    height: clamp(250px, 30vh, 600px);      // clamp (container is based on ind cards)
                     width: clamp(350px, 25vw, 600px);       // clamp 
                     overflow: hidden;
-                    transition: all 1s ease;
+                    transition: all 0.7s ease;
                     justify-items: center;
                     text-decoration: none !important;
-                    display: grid;
-                    grid-template-areas: 
-                        "."
-                        "title"
-                        "desc";
-                    grid-template-rows: 85% 15% 0%;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 3%;
 
-                    img#project{
-                        width: 100%;       // clamp 
-                        height: 100%;
-                        object-fit: fill;
-                        transition: all 1s ease;
-                        z-index: 0;
+                    #img-container{
+                        grid-area: img;
+                        height: 25vh;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+                        img{
+                            width: 100%;       // clamp 
+                            height: 100%;
+                            object-fit: contain;
+                            transition: all 1s ease;
+                            z-index: 0;
+                        }                        
                     }
 
                     #title{
                         grid-area: title;
                         display: flex;
                         width: 100%;
+                        padding: 0.5rem 0;
                     
                         h1{
                             display: inline-flex;
                             margin: 0 0 0 10%;
                             font-size: 2rem;
                             justify-self: start;
-
                             align-self: center;
                         }
 
                         a{
                             align-self: center;
-                            margin-left: 3%;               
+                            margin-left: 3%;    
+                            
+                            // &:hover{ // dont really like lol
+                            //     transform: scale(1.5);
+                            // }
                         }
                     } 
 
@@ -306,26 +282,12 @@ html, body {
                         grid-area: desc;
                         margin: 0.5rem 10%;
                         font-size: 1.1rem;
-
-                        // overflow-y: scroll;
                     }                     
                 }
             } // using & for some reason makes it all goofy
             .card:hover{
-                    // height: auto;        // gotta figure out
-                    // z-index: 2;
                     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
-                    transform: scale(1.02, 1.02);
-                    display: grid;
-                    grid-template-areas: 
-                        "."
-                        "title"
-                        "desc";
-                    grid-template-rows: 50% 15% auto;
-
-                    #project{
-                        filter: blur(1.5px); 
-                    }
+                    transform: scale(1.01);
             }
         }
     }
@@ -334,7 +296,7 @@ html, body {
         display: flex;
         grid-area: contact;
         height: 60vh;
-        margin: 10vh 0 15vh 0;
+        margin: 15vh 0 15vh 0;
         justify-content: space-evenly;
 
         #link-container{
@@ -467,7 +429,6 @@ html, body {
     transform: scaleX(1);
     transition: all 0.3s ease-in-out 0s;
 }
-
 .sticky {
     border-bottom: 1px solid black;
     height: 7vh !important;
@@ -478,7 +439,6 @@ html, body {
 /* 
     standard breakpoints
     < 600px, 601px, 768px(tablet),  
-
 */
 
 /* Media Queries */
@@ -695,6 +655,8 @@ html, body {
         }
 
         #projects{
+            width: 100%;
+
             .section-header{
                 #filters{
                     h4{
@@ -708,17 +670,6 @@ html, body {
                 a{
                     .card{
                         height: auto;
-
-                        #title{
-
-                            h1{
-
-                            }
-    
-                            a{
-             
-                            }
-                        } 
     
                         p{
                             font-size: 1.4rem;
@@ -842,24 +793,6 @@ html, body {
 }
 
 /* Animations */
-/* Expirementing with scroll prompt*/
-@keyframes shine{
-    0% {
-        // transform: scale(0.95);
-        opacity: 0.5;
-    }
-      
-    50% {
-        // transform: scale(1);
-        opacity: 1;
-    }
-      
-    100% {
-        // transform: scale(0.95);
-        opacity: 0.5;
-    }
-}
-
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
@@ -875,14 +808,4 @@ html, body {
     // transform:scale(.9);
     box-shadow: 0px 0px 20px 10px #000000;
 }  
-  
-.noselect {
--webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-}
-
 //#endregion

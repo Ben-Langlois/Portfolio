@@ -32,13 +32,9 @@ import linkedin from './images/socials/iconmonstr-linkedin-3.svg'
 
 /* #region Resources
   https://docs.google.com/document/d/1blbXL01EGNG-vNqbsa8cLGL3hwbVAnuaSLXAhNWucXA/edit 
-
-
 */// #endregion
 
 // #region Variables
-
-
 /*
   Example of project object
   {
@@ -116,7 +112,6 @@ const projectsObj = [
 //#endregion
 
 $(window).scroll(function() {
-  if($(window).innerWidth >= 768){}     // will flesh out afte media queries work
   if ($(window).scrollTop() > 1){
     $('#header').addClass('sticky');
     $('#landing-container').css('grid-template-rows', '15vh 50vh auto');
@@ -188,7 +183,6 @@ const Landing = () => {
   )
 }
 
-
 /*About section
 
 */
@@ -198,11 +192,11 @@ const About = () => {
       <div id='bio'>
         <h3>A bit about me</h3>
         <p>
-        I'm a 23-year-old self-taught developer from Stouffville, 
-        ON looking to start a career in web development. Since I was 
-        about 10 I've surrounded myself with video games, film and music. 
-        Besides being a hermit, I've found happiness in travel, hiking, 
-        fitness, reading, and music.
+          I'm a 23-year-old self-taught developer from Stouffville, 
+          ON looking to start a career in web development. Since I was 
+          about 10 I've surrounded myself with video games, film and music. 
+          Besides being a hermit, I've found happiness in travel, hiking, 
+          fitness, reading, and music.
         </p>
         <h3>Programming</h3>
         <p>
@@ -255,7 +249,6 @@ const Project = () => {
     }
   };
 
-
   return (
     <div id='projects'>
       <div class="section-header" id='project-section'>
@@ -263,7 +256,6 @@ const Project = () => {
         <div id='filters'>
           <h4 id='recent' class='link enabled' onClick={onFilterClick}>Recent</h4>
           <h4 id='difficulty' class='link' onClick={onFilterClick}>Difficulty</h4>
-          {/* <h5 class='link' onClick={() => setFilter(2)}>A-Z</h5> */}
         </div>
       </div>  
       <div id='card-container'>
@@ -271,15 +263,15 @@ const Project = () => {
       {
         cards.map((curr) => {
           let links = [...curr.links];
-          console.log(links);
-          
+
           return (
             <a href={curr.url}>
               <div class='card'>
-                <img
-                  id='project'
-                  src={curr.img} 
-                  alt={curr.alt}/>
+                <div id='img-container'>
+                  <img
+                    src={curr.img} 
+                    alt={curr.alt}/>
+                </div>
                 <div id='title'>
                   <h1>{curr.name}</h1>
                   {
@@ -296,7 +288,7 @@ const Project = () => {
                     })                
                   }
                 </div>
-                  <p>{curr.desc}</p>
+                <p>{curr.desc}</p>
               </div>
             </a>
           )
@@ -381,7 +373,6 @@ class Portfolio extends React.Component {
           <title>Ben langlois - Portfolio</title>
           <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
-        {/* <Landing /> */}
         <div id="landing-container">
           <Header />
           <Landing />
