@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Ben-langlois.github.io/Portfolio/static/css/main.0c6093b7.css",
+    "main.js": "/Ben-langlois.github.io/Portfolio/static/js/main.2308345e.js",
+    "static/js/787.b9ec5bb0.chunk.js": "/Ben-langlois.github.io/Portfolio/static/js/787.b9ec5bb0.chunk.js",
+    "static/media/IMG_4212.jpg": "/Ben-langlois.github.io/Portfolio/static/media/IMG_4212.efd0ec2b1c755d531f58.jpg",
+    "static/media/portrait.jpg": "/Ben-langlois.github.io/Portfolio/static/media/portrait.e30e1b888366badd4cc3.jpg",
+    "static/media/weatherapp.png": "/Ben-langlois.github.io/Portfolio/static/media/weatherapp.eb83c0d0122938c1845d.png",
+    "static/media/portfolio.png": "/Ben-langlois.github.io/Portfolio/static/media/portfolio.0a1e8e5febb28aeee23d.png",
+    "static/media/favicon.ico": "/Ben-langlois.github.io/Portfolio/static/media/favicon.4e49f1be92e60f50a108.ico",
+    "static/media/noteapp.png": "/Ben-langlois.github.io/Portfolio/static/media/noteapp.636f2e17ed9c1814c30c.png",
+    "static/media/labtimer.png": "/Ben-langlois.github.io/Portfolio/static/media/labtimer.d7728879f1762ac5baa2.png",
+    "static/media/iconmonstr-github-3.svg": "/Ben-langlois.github.io/Portfolio/static/media/iconmonstr-github-3.197212f02efa31cf1fd6ce8f39191593.svg",
+    "index.html": "/Ben-langlois.github.io/Portfolio/index.html",
+    "static/media/iconmonstr-linkedin-3.svg": "/Ben-langlois.github.io/Portfolio/static/media/iconmonstr-linkedin-3.27a3f479ca1bbb0ceef19e395081fb94.svg",
+    "main.0c6093b7.css.map": "/Ben-langlois.github.io/Portfolio/static/css/main.0c6093b7.css.map",
+    "main.2308345e.js.map": "/Ben-langlois.github.io/Portfolio/static/js/main.2308345e.js.map",
+    "787.b9ec5bb0.chunk.js.map": "/Ben-langlois.github.io/Portfolio/static/js/787.b9ec5bb0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c6093b7.css",
+    "static/js/main.2308345e.js"
+  ]
+}
