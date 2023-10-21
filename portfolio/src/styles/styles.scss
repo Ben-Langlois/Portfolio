@@ -325,7 +325,7 @@ html, body {
 
         }
 
-        #form{
+        #form-area{
             width: clamp(300px, 40%, 700px);      // clamp,
             display: flex;
             flex-flow: column;
@@ -358,14 +358,26 @@ html, body {
 
                 }
 
-                #submit{
-                    width: 35%;
-                    padding: 0;
+                #submit-area{
+                    display: flex;
+
+                    #submit{
+                        width: 35%;
+                        padding: 0;
+                        margin: 0;
+                    }       
+                    
+                    #status{
+                        align-self: center;
+                        margin: 0 0 0 1rem;
+
+                        visibility: 0;
+                        // animation-name: fadeOut;
+                        // animation-duration: 1s;
+                    }
                 }
             }
-
         }
-
     }
 }
 
@@ -796,6 +808,11 @@ html, body {
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+}
+
+@keyframes fadeout {
+    0% {opacity:1;}
+    100% {opacity:0;}
 }
 
 // Box shadow 

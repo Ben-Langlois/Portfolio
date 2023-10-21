@@ -319,7 +319,6 @@ const Contact = () => {
     </div>     
   )
 }
-
 const ContactForm = () => {
   const form = useRef();
   const serviceID = 'service_qde5d59';
@@ -340,23 +339,33 @@ const ContactForm = () => {
           console.log(result.text);
           console.log('message sent');
 
-          $('#submit::after').css({
-            'content': 'Sent!',
-            'color': 'green'
-          })
+          $('#status').text('Message Sent')// display success message
+          .css({      
+            'color': 'green',
+            'visibility': '1'              // for when I make it fadeOut
+          });
       }, (error) => {         // if not   
           console.log(error.text);
+
+          $('#status').text('Something went wrong')// display error message
+          .css({      
+            'color': 'red',
+            'visibility': '1'              // for when I make it fadeOut
+          });
       });
   };
   
   return (
-    <div id='form'>
+    <div id='form-area'>
       <h2>Email Me</h2>
       <form ref={form} onSubmit={sendEmail}>
         <input type="text" id="name" name="user_name" placeholder="Your Name" required/>
         <input type="email" id="email" name="user_email" placeholder="Your Email" required/>
         <textarea type="text" id="message" name="message" placeholder="Your message" rows="7" required></textarea>
-        <input type="submit" id='submit' name='submit' value="Send Email"/>
+        <div id='submit-area'>
+          <input type="submit" id='submit' name='submit' value="Send Email"/>
+          <p id='status'></p>
+        </div>
       </form>
     </div>
   )
