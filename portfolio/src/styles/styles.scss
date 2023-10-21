@@ -40,7 +40,7 @@ html, body {
     grid-template-columns: auto;
     grid-template-rows: 15vh 70vh auto;
     justify-content: center;
-    transition: all 0.4s ;
+    transition: all 0.4s;
 
     font-family: 'Inclusive Sans', sans-serif;
     // font-family: 'Outfit', sans-serif;
@@ -143,6 +143,7 @@ html, body {
         align-items: center;
         justify-self: center;
         padding: 15vh 0 0 0;
+        transition: all 0.4s;
 
         #bio{
             // display: flex;
@@ -400,7 +401,6 @@ html, body {
     display: inline;
     padding: 0;
     position: relative;
-
     transition: opacity 0.5s;
 
     &:hover{
@@ -642,6 +642,7 @@ html, body {
                 }
 
                 #links{
+                    justify-content: space-evenly;
 
                     a{
 
@@ -700,7 +701,7 @@ html, body {
                 justify-self: center;
                 border: none;
                 margin: 0 0 1rem 0;
-                width: 100%;
+                width: 90% !important;
 
                 h2{
                     margin: 0 0 2vh 0;
@@ -728,8 +729,8 @@ html, body {
 
             }
     
-            #form{
-                width: 100%;
+            #form-area{
+                width: 90%;
                 justify-self: center;
 
     

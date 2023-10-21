@@ -17,6 +17,7 @@ import noteapp from './images/projects/noteapp.png'
 import weatherapp from './images/projects/weatherapp.png'
 import portrait from './images/portrait.jpg'
 import anotherPortrait from './images/IMG_4212.jpg'
+import icon from './images/favicon.ico'
 
 // socials
 // import codepen from './images/socials/codepen-square-svgrepo-com.svg'
@@ -114,11 +115,17 @@ const projectsObj = [
 $(window).scroll(function() {
   if ($(window).scrollTop() > 1){
     $('#header').addClass('sticky');
-    $('#landing-container').css('grid-template-rows', '15vh 50vh auto');
+    // $('#landing-container').css('grid-template-rows', '15vh 50vh auto');
+    $('#about').css(
+      'padding-top', '10vh' 
+    );
   }
   else{
     $('#header').removeClass('sticky');
-    $('#landing-container').css('grid-template-rows', '15vh 70vh auto');
+    // $('#landing-container').css('grid-template-rows', '15vh 70vh auto');
+    $('#about').css(
+      'padding-top', '15vh' 
+    );
   }
 });
 
@@ -312,7 +319,7 @@ const Contact = () => {
           <a href='https://github.com/Ben-Langlois'><h4 class='link'>Github</h4></a>
           <a href='https://codepen.io/ben-langlois'><h4 class='link'>Codepen</h4></a>
           <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a>
-          <a href='#'><h4 class='link'>Email</h4></a>
+          {/* <a href='#'><h4 class='link'>Email</h4></a> */}
         </div>
       </div>
       <ContactForm />
@@ -381,6 +388,7 @@ class Portfolio extends React.Component {
           <meta name='viewport' content='width= device-width, initial-scale=1.0'/>
           <title>Ben langlois - Portfolio</title>
           <link rel="canonical" href="http://mysite.com/example" />
+          <link rel="icon" type="image/x-icon" href={icon} />
         </Helmet>
         <div id="landing-container">
           <Header />
