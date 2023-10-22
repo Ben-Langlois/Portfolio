@@ -6,7 +6,6 @@ import emailjs from '@emailjs/browser'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/styles.scss'
 import {Helmet} from "react-helmet";
-
 // #endregion 
 
 // #region images
