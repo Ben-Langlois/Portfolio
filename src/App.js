@@ -58,7 +58,7 @@ const projectsObj = [
   {
     name: 'Portfolio',
     desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
-    url: 'https://ben-langlois.github.io/',
+    url: 'https://ben-langlois.github.io/Portfolio',
     img: portfolio,
     alt: 'Portfolio Homepage',
     diff: 4,
