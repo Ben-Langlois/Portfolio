@@ -94,7 +94,7 @@ html, body {
 
             #portrait{
                 height: 100%;
-                border-radius: 3%;
+                border-radius: 0.25rem;
             }
         }
 
@@ -164,23 +164,9 @@ html, body {
                     font-weight: bold;
                 }
             }
-
-            #skills{
-                display: flex;
-                justify-content: flex-start;
-                gap: 2%;
-                flex-wrap: wrap;
-
-                h5{
-                    padding: 0 0.5rem;
-
-                    &.main{
-                        // background-color: rgb(0, 85, 206);
-                        border: solid rgb(0, 85, 206) 1px;
-                        border-radius: 1rem;
-                        // color: white;
-                    }
-                }
+            .skills{
+                margin: 0;
+                gap: 0.5rem 3%;
             }
         }
 
@@ -190,7 +176,7 @@ html, body {
 
             img{
                 height: 100%;
-                border-radius: 3%;
+                border-radius: 0.25rem;
             }
         }
     }
@@ -202,7 +188,7 @@ html, body {
         padding: 15vh 0 0 0;
         justify-self: center;
 
-        #project-section{
+        #project-header{
             h1{
                 margin-bottom: 2vh;
             }
@@ -239,10 +225,8 @@ html, body {
                     text-decoration: none !important;
                     display: flex;
                     flex-direction: column;
-                    border-radius: 3%;
 
                     #img-container{
-                        grid-area: img;
                         height: 25vh;
                         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 
@@ -256,7 +240,6 @@ html, body {
                     }
 
                     #title{
-                        grid-area: title;
                         display: flex;
                         width: 100%;
                         padding: 0.5rem 0;
@@ -265,25 +248,43 @@ html, body {
                             display: inline-flex;
                             margin: 0 0 0 10%;
                             font-size: 2rem;
-                            justify-self: start;
                             align-self: center;
                         }
 
-                        a{
-                            align-self: center;
-                            margin-left: 3%;    
-                            
-                            // &:hover{ // dont really like lol
-                            //     transform: scale(1.5);
-                            // }
-                        }
+
                     } 
 
                     p{
-                        grid-area: desc;
                         margin: 0.5rem 10%;
                         font-size: 1.1rem;
-                    }                     
+                    }     
+                    
+                    #links{
+
+
+                        div{
+                            font-size: 1.5rem;
+                            display: flex;
+                            flex-direction: row;   
+                            margin: 0.5rem 10% 1rem;
+                            font-size: 1.1rem;
+
+
+                            img{ 
+                                width: 10%;
+                            }
+
+                            a{
+                                align-self: center;
+                                margin-left: 3%;    
+
+                                h4{
+                                    margin: 0;
+                                }
+                            }     
+                        }
+                   
+                    }
                 }
             } // using & for some reason makes it all goofy
             .card:hover{
@@ -447,7 +448,25 @@ html, body {
     background-color: rgb(255, 255, 255);
     opacity: .9 !important;
 }
+.skills{
+    display: flex;
+    gap: 0.3rem;
+    align-self: center;
+    margin-left: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    h5{
+        padding: 0 0.5rem;
+        margin: 0;
 
+        &.main{
+            // background-color: rgb(0, 85, 206);
+            border: solid rgb(0, 85, 206) 1px;
+            border-radius: 1rem;
+            // color: white;
+        }
+    }
+}
 /* 
     standard breakpoints
     < 600px, 601px, 768px(tablet),  
@@ -673,7 +692,7 @@ html, body {
             .section-header{
                 #filters{
                     h4{
-                        font-size: 2rem;
+                        font-size: 1.4rem;
                     }
                 }
             }
@@ -693,15 +712,17 @@ html, body {
         }
 
         #contact{
-            display: grid;
             height: auto;
-            margin: 5vh 0 10vh 0;
+            margin: 5vh auto 10vh;
+            width: 90%;
+            flex-direction: column;
+            display: flex;
 
             #link-container{
                 justify-self: center;
                 border: none;
                 margin: 0 0 1rem 0;
-                width: 90% !important;
+                width: 100% !important;
 
                 h2{
                     margin: 0 0 2vh 0;
@@ -712,7 +733,7 @@ html, body {
                 #links{
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 1rem;
+                    gap: 0.5rem 1rem;
                     justify-content: center;
 
                     a{
@@ -722,6 +743,7 @@ html, body {
                             display: inline-flex;
                             margin: 0;
                             padding: 0.5rem;
+                            font-size: 1.4rem;
                         }                        
                     }
 
@@ -730,7 +752,7 @@ html, body {
             }
     
             #form-area{
-                width: 90%;
+                width: 100%;
                 justify-self: center;
 
     
@@ -771,7 +793,7 @@ html, body {
         grid-template-rows: 15vh auto !important;
 
         header{
-            height: 15vh;
+            height: 10vh;
 
             .nav-links{
                 ul{

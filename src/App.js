@@ -45,11 +45,18 @@ import linkedin from './images/socials/iconmonstr-linkedin-3.svg'
     alt: 'Portfolio Homepage',
     diff: 3,
     date: new Date('September 30, 2023 00:00:00'),
-    links: [  // whatever links i wanna include next to title
+    links:[
       {
-        url: ‘www.website.com’,
-        img: github.svg’
+        type: 'Github',
+        url: 'https://github.com/Ben-Langlois/Weather-App',
+        img: github
       },
+      ...
+    ],
+    tags:[
+      'React',
+      'SCSS',
+      'Git'
       ...
     ] 
   }
@@ -65,9 +72,15 @@ const projectsObj = [
     date: new Date('September 30, 2023 00:00:00'),
     links:[
       {
+        type: 'Github Repo',
         url: 'https://github.com/Ben-Langlois/Portfolio',
         img: github
       }
+    ],
+    tags:[
+      'React',
+      'SCSS',
+      'Git'
     ] 
   },
   {
@@ -79,7 +92,11 @@ const projectsObj = [
     diff: 3,
     date: new Date('Febreary 11, 2022 00:00:00'),
     links:[
-    ] 
+    ],
+    tags:[
+      'React',
+      'SCSS'
+    ]  
   },
   {
     name: 'Note App',
@@ -90,7 +107,10 @@ const projectsObj = [
     diff: 1,
     date: new Date('December 15, 2021 00:00:00'),
     links:[
-
+    ],
+    tags:[
+      'React',
+      'SCSS'
     ] 
   },
   {
@@ -103,10 +123,16 @@ const projectsObj = [
     date: new Date('March 1, 2023 00:00:00'),
     links:[
       {
+        type: 'Github Repo',
         url: 'https://github.com/Ben-Langlois/Weather-App',
         img: github
       }
-    ] 
+    ],
+    tags:[
+      'React',
+      'SCSS',
+      'Git'
+    ]  
   }
 ]
 //#endregion
@@ -190,7 +216,6 @@ const Landing = () => {
 }
 
 /*About section
-
 */
 const About = () => {
   return (
@@ -216,7 +241,7 @@ const About = () => {
           anything by teaching myself these tools, it's that I can learn 
           how to use any tool.
         </p>
-        <div id='skills'>
+        <div class='skills'>
           <h5 class='main'>React</h5>
           <h5 class='main'>JavaScript</h5>
           <h5 class='main'>SASS</h5>
@@ -257,7 +282,7 @@ const Project = () => {
 
   return (
     <div id='projects'>
-      <div class="section-header" id='project-section'>
+      <div class="section-header" id='project-header'>
         <h1><b>Some of my Projects</b></h1>
         <div id='filters'>
           <h4 id='recent' class='link enabled' onClick={onFilterClick}>Recent</h4>
@@ -280,21 +305,29 @@ const Project = () => {
                 </div>
                 <div id='title'>
                   <h1>{curr.name}</h1>
+                  <div class='skills'>
                   {
-                    links.map((e) => {
+                    curr.tags.map((e) => {
                       return(                   
-                        <a href={e.url}>
-                          <img 
-                            id='icon'
-                            src={e.img}
-                            alt={e.url}
-                          />                     
-                        </a> 
+                          <h5 class='main'>{e}</h5>
                       )
                     })                
                   }
+                  </div>
                 </div>
                 <p>{curr.desc}</p>
+                <div id='links'>
+                  {
+                    curr.links.map((e) => {
+                      return(
+                        <div>
+                          <img src={e.img} alt='Icon'/>
+                          <a href={e.url} class='link'><h4>{e.type}</h4></a> 
+                        </div>                        
+                      )
+                    })
+                  }
+                </div>
               </div>
             </a>
           )
