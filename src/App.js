@@ -162,7 +162,7 @@ const Header = () => {
   return (
     <header id='header'>
       <div className="nav-links">
-        <a href='#top'><h1>
+        <a id='name' href='#top'><h1>
           Ben Langlois
         </h1></a>
         <ul>            

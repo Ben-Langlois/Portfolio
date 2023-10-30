@@ -62,12 +62,13 @@ html, body {
             display: flex; 
             font-size: 1.6rem;
             margin: 0 auto;
-            width: clamp(700px, 60vw, 1300px);  
+            width: clamp(700px, 70vw, 1300px);  
+            height: 8vh;
             background-color: rgb(255, 255, 255);
             border-radius: 0.25rem;
             transition: all 0.5s;
 
-            a {
+            #name{
                 display: flex;
                 text-decoration: none;
                 color: #000000;
@@ -98,6 +99,9 @@ html, body {
                     list-style: none;
                     white-space: pre;
                     margin: 1.5vh 0;
+
+                    display: flex;
+                    align-items: center;
                 }
             }
         }
