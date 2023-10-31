@@ -159,17 +159,33 @@ $(window).scroll(function() {
   - Contains logo, nav links
 */
 const Header = () => {
+  let menu = $('.menu-container');
+
+  const toggleMenu = () => {
+    document.getElementById("menu-container").classList.toggle("change");
+    document.getElementById("dropdown-menu").classList.toggle("show");    
+  }
   return (
     <header id='header'>
       <div className="nav-links">
         <a id='name' href='#top'><h1>
           Ben Langlois
         </h1></a>
-        <ul>            
+        <ul id='links'>            
           <li><a className="link" href="#about">About</a></li>
           <li><a className="link" href="#projects">Projects</a></li>
           <li><a className="link" href="#contact">Contact</a></li>
         </ul>
+        <div id="menu-container" class="menu-container" onClick={toggleMenu}>
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <div id='dropdown-menu'class="dropdown-content" onClick={toggleMenu}> {/* why must it be on the parent AND the children */}
+            <a onClick={toggleMenu} href="#about">About</a>
+            <a onClick={toggleMenu} href="#projects">Projects</a>
+            <a onClick={toggleMenu} href="#contact">Contact</a>
+          </div>
+        </div>
       </div>    
     </header> 
   ) 
