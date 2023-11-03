@@ -14,6 +14,8 @@ import portfolio from './images/projects/portfolio.png'
 import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
 import weatherapp from './images/projects/weatherapp.png'
+import photography from './images/projects/photography.png'
+
 import portrait from './images/portrait.jpg'
 import anotherPortrait from './images/IMG_4212.jpg'
 import icon from './images/favicon.ico'
@@ -133,6 +135,27 @@ const projectsObj = [
       'SCSS',
       'Git'
     ]  
+  },
+  {
+    name: 'Photography Portfolio',
+    desc: 'A simple react app that I wrote in 3 days to act as a portfolio for photos I take on trips, hikes, walks etc.',
+    url: 'https://ben-langlois.github.io/Photography-Portfolio/',
+    img: photography,
+    alt: 'Photography Portfolio landing page',
+    diff: '2',
+    date: new Date('November 2, 2023 00:00:00'),
+    links:[
+      {
+        type: 'Github Repo',
+        url: 'https://github.com/Ben-Langlois/Photography-Portfolio',
+        img: github
+      }
+    ],
+    tags: [
+      'React',
+      'SCSS',
+      'Git'
+    ]
   }
 ]
 //#endregion
