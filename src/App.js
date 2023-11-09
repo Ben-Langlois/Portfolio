@@ -117,8 +117,8 @@ const projectsObj = [
   },
   {
     name: 'Weather App',
-    desc: 'A React app utilizing bootstrap and APIs to create a weather dashboard. Displays weekly and daily weather for inputted city. Currently working on hosting.',
-    url: 'https://ben-langlois.github.io/Weather-App/',
+    desc: 'A React app utilizing bootstrap and APIs to create a weather dashboard. Displays weekly and daily weather for inputted city.',
+    url: 'https://bens-weatherapp.live/',
     img: weatherapp,
     alt: 'Weather App Dashboard',
     diff: 5,
