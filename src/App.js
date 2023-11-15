@@ -15,6 +15,7 @@ import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
 import weatherapp from './images/projects/weatherapp.png'
 import photography from './images/projects/photography.png'
+import tempconvert from './images/projects/tempconvert.png'
 
 import portrait from './images/portrait.jpg'
 import anotherPortrait from './images/IMG_4212.jpg'
@@ -106,7 +107,7 @@ const projectsObj = [
     url: 'https://codepen.io/ben-langlois/details/JjJrJqK',
     img: noteapp,
     alt: 'Note App Dashboard',
-    diff: 1,
+    diff: 3,
     date: new Date('December 15, 2021 00:00:00'),
     links:[
     ],
@@ -142,7 +143,7 @@ const projectsObj = [
     url: 'https://ben-langlois.github.io/Photography-Portfolio/',
     img: photography,
     alt: 'Photography Portfolio landing page',
-    diff: '2',
+    diff: 2,
     date: new Date('November 2, 2023 00:00:00'),
     links:[
       {
@@ -155,6 +156,23 @@ const projectsObj = [
       'React',
       'SCSS',
       'Git'
+    ]
+  },
+  {
+    name: 'Temp Converter',
+    desc: "A simple Temperature Converter made with React, Tailwind, and JQuery. The goal of this was to write zero CSS, only using Tailwind considering it's the main reason I made this. ",
+    url: 'https://codepen.io/ben-langlois/details/jOdwMRz',
+    img: tempconvert,
+    alt: 'Temperature Codepen page',
+    diff: 2,
+    date: new Date('November 15, 2023 00:00:00'),
+    links:[
+    ],
+    tags: [
+      'React',
+      'SCSS',
+      'Tailwind',
+      'JQuery'
     ]
   }
 ]
