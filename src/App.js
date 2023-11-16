@@ -350,11 +350,8 @@ const Project = () => {
         </div>
       </div>  
       <div id='card-container'>
-
       {
         cards.map((curr) => {
-          let links = [...curr.links];
-
           return (
             <a href={curr.url}>
               <div class='card'>
@@ -365,14 +362,14 @@ const Project = () => {
                 </div>
                 <div id='title'>
                   <h1>{curr.name}</h1>
-
+                  <h3>{curr.date.getMonth()}, {curr.date.getFullYear()}</h3>
                 </div>
                 <p>{curr.desc}</p>
                 <div class='skills'>
                 {
                   curr.tags.map((e) => {
                     return(                   
-                        <h5 class='main'>{e}</h5>
+                      <h5 class='main'>{e}</h5>
                     )
                   })                
                 }
