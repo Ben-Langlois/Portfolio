@@ -365,17 +365,18 @@ const Project = () => {
                 </div>
                 <div id='title'>
                   <h1>{curr.name}</h1>
-                  <div class='skills'>
-                  {
-                    curr.tags.map((e) => {
-                      return(                   
-                          <h5 class='main'>{e}</h5>
-                      )
-                    })                
-                  }
-                  </div>
+
                 </div>
                 <p>{curr.desc}</p>
+                <div class='skills'>
+                {
+                  curr.tags.map((e) => {
+                    return(                   
+                        <h5 class='main'>{e}</h5>
+                    )
+                  })                
+                }
+                </div>                
                 <div id='links'>
                   {
                     curr.links.map((e) => {
