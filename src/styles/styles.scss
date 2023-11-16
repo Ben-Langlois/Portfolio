@@ -313,7 +313,6 @@ html, body {
                     }
 
                     #title{
-                        display: flex;
                         width: 100%;
                         padding: 0.5rem 0;
                     
@@ -321,10 +320,15 @@ html, body {
                             display: inline-flex;
                             margin: 0 0 0 10%;
                             font-size: 2rem;
+                            font-weight: bold;
                             align-self: center;
                         }
 
-
+                        h5{
+                            display: flex;
+                            margin: auto 0 auto 10%;
+                            align-self: center;
+                        }
                     } 
 
                     p{
@@ -534,7 +538,7 @@ html, body {
     gap: 0.3rem;
     // align-self: center;
     // margin-left: 10%;
-    margin: 1rem 0 1rem 10%;
+    margin: 1rem 10%;
     flex-wrap: wrap;
     flex: 1 1 auto;
 

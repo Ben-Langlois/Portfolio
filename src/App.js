@@ -176,6 +176,8 @@ const projectsObj = [
     ]
   }
 ]
+
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 //#endregion
 
 $(window).scroll(function() {
@@ -362,7 +364,7 @@ const Project = () => {
                 </div>
                 <div id='title'>
                   <h1>{curr.name}</h1>
-                  <h3>{curr.date.getMonth()}, {curr.date.getFullYear()}</h3>
+                  <h5>{months[curr.date.getMonth()]} {curr.date.getFullYear()}</h5>
                 </div>
                 <p>{curr.desc}</p>
                 <div class='skills'>
