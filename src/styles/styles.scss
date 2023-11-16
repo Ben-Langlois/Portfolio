@@ -256,7 +256,7 @@ html, body {
 
     #projects{
         grid-area: projects;
-        width: clamp(800px, 60vw, 1300px);
+        width: clamp(800px, 65vw, 1300px);
         // height: ;
         padding: 15vh 0 0 0;
         justify-self: center;
@@ -291,7 +291,7 @@ html, body {
                 color: black;
 
                 .card{
-                    width: clamp(350px, 25vw, 600px);       // clamp 
+                    width: clamp(350px, 20vw, 600px);       // clamp 
                     overflow: hidden;
                     transition: all 0.7s ease;
                     justify-items: center;
