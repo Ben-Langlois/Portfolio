@@ -20,7 +20,7 @@ html, body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    color: rgb(0, 0, 0);
+    color: #1F1F1F;
 }
 
 // Updated 
@@ -46,8 +46,8 @@ html, body {
         width: 100%;
         transition: all 0.4s;
         z-index: 2;
-        border: none;
         align-items: end;
+        background-color: rgb(255, 255, 255);
 
         /* NavBar */
         .nav-links{           
@@ -55,8 +55,8 @@ html, body {
             font-size: 1.6rem;
             margin: 0 auto;
             width: clamp(700px, 70vw, 1300px);  
-            height: 8vh;
-            background-color: rgb(255, 255, 255);
+            height: 100%;
+            // background-color: rgb(255, 255, 255);
             border-radius: 0.25rem;
             transition: all 0.5s;
 
@@ -66,7 +66,6 @@ html, body {
                 color: #000000;
                 font-family: 'Pacifico', sans-serif;
                 
-
                 h1{
                     margin: auto 0 auto 1rem;
                     font-style: italic;
@@ -86,7 +85,6 @@ html, body {
                 margin: 0 1rem 0 auto;
                 padding: 0;
                 height: 100%;
-                justify-content: flex-end;
                 gap: 5vw;
 
                 li{
@@ -113,7 +111,7 @@ html, body {
                 
                 .dropdown-content {
                     display: block;
-                    opacity: 0;
+                    visibility: hidden;
                     position: absolute;
                     background-color: rgb(255, 255, 255);
                     min-width: 160px;
@@ -132,7 +130,7 @@ html, body {
                     }
                     a:hover {background-color: #ddd;}
                 }
-                .show {opacity: 1;}
+                .show {visibility: visible;}
             }
             .change{
                 .bar1 {
@@ -521,6 +519,7 @@ html, body {
 }
 .sticky {
     height: 10vh !important;
+    border-bottom: 1px solid black;
     // align-items: end;
 
     .nav-links{
@@ -529,8 +528,7 @@ html, body {
         // height: 70% !important;
         // background-color: rgb(255, 255, 255);
         // opacity: .95 !important;       
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.125), 
-            0 2px 10px 0 rgba(0, 0, 0, 0.125);
+        // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.125), 0 2px 10px 0 rgba(0, 0, 0, 0.125);
     }
 }
 .skills{
