@@ -25,6 +25,7 @@ import icon from './images/favicon.ico'
 // import codepen from './images/socials/codepen-square-svgrepo-com.svg'
 import github from './images/socials/iconmonstr-github-3.svg'
 import linkedin from './images/socials/iconmonstr-linkedin-3.svg'
+import figma from './images/socials/figma-svgrepo-com.svg'
 // #endregion
 
 // #region CDNs
@@ -150,6 +151,10 @@ const projectsObj = [
         type: 'Github Repo',
         url: 'https://github.com/Ben-Langlois/Photography-Portfolio',
         img: github
+      },
+      {
+        url: 'https://www.figma.com/file/mF38zCQ63QuACqqpWy2Y8A/Mock-Fintech-App?type=design&node-id=0-1&mode=design&t=GgtNjnYsOoa8bkfQ-0',
+        img: figma
       }
     ],
     tags: [
@@ -380,10 +385,7 @@ const Project = () => {
                   {
                     curr.links.map((e) => {
                       return(
-                        <div>
-                          <img src={e.img} alt='Icon'/>
-                          <a href={e.url} class='link'><h4>{e.type}</h4></a> 
-                        </div>                        
+                        <a href={e.url}><img src={e.img} alt='Icon'/></a>
                       )
                     })
                   }

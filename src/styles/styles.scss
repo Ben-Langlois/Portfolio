@@ -335,36 +335,28 @@ html, body {
                     }     
                     
                     #links{
+                        font-size: 1.5rem;
+                        display: flex;
+                        flex-direction: row;   
+                        margin: 0.5rem 10% 1rem;
+                        font-size: 1.1rem;
+                        gap: 2rem;
 
 
-                        div{
-                            font-size: 1.5rem;
-                            display: flex;
-                            flex-direction: row;   
-                            margin: 0.5rem 10% 1rem;
-                            font-size: 1.1rem;
 
-
+                        a{
+                            align-self: center;
+                            
                             img{ 
-                                width: 10%;
-                            }
-
-                            a{
-                                align-self: center;
-                                margin-left: 3%;    
-
-                                h4{
-                                    margin: 0;
-                                }
-                            }     
-                        }
-                   
+                                width: 3rem;
+                            } 
+                        }                       
                     }
                 }
             } // using & for some reason makes it all goofy
             .card:hover{
-                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
-                    transform: scale(1.01);
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+                transform: scale(1.01);
             }
         }
     }
