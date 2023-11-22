@@ -428,32 +428,52 @@ const ContactForm = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    let valid = true;
+    $('input#name, input#email, textarea#message').css('border-color', 'rgb(118, 118, 118)');         // upon input after unsuccessfull submit, this will resest style
 
-    // input var
-    // const name = $('#name');
-    // const email = $('#email');
-    // const message = $('#message');
+    // Input validation
+    // seperate if statements so they can all be checked
+    if(!$('input#name').val()){ // if input is empty
+      $('input#name').css('border', '1px solid red');       // 'highlight' input
+      valid = false;                                        // flag as invalid
+    } 
+    if(!$('input#email').val()){
+      $('input#email').css('border', '1px solid red');
+      valid = false;
+    }
+    if(!$('textarea#message').val()){
+      $('textarea#message').css('border', '1px solid red');
+      valid = false;
+    }
 
-    // sending emails
-    emailjs.sendForm(serviceID, templateID, form.current, publicKey)
-      .then((result) => {     // if successful
+    // if form is valid
+    if(valid){
+      $('input#name, input#email, textarea#message').css('border-color', 'rgb(118, 118, 118)');    // reset borders of input
+
+      // sending email
+      emailjs.sendForm(serviceID, templateID, form.current, publicKey)
+        .then((result) => {                         // if successful
           console.log(result.text);
           console.log('message sent');
 
-          $('#status').text('Message Sent')// display success message
+          $('#status').text('Message Sent')         // display success message
           .css({      
             'color': 'green',
-            'visibility': '1'              // for when I make it fadeOut
+            'visibility': '1'                       // for when I make it fadeOut
           });
-      }, (error) => {         // if not   
+          $('#submit').prop('disabled', true);      // disable submit button
+        }, (error) => {                             // if not   
           console.log(error.text);
 
-          $('#status').text('Something went wrong')// display error message
+          $('#status').text('Something went wrong') // display error message
           .css({      
             'color': 'red',
-            'visibility': '1'              // for when I make it fadeOut
+            'visibility': '1'                       // for when I make it fadeOut
           });
-      });
+      });      
+    } else { // if not valid
+      $('#status').text('Please fill out fields').css('color', 'red'); // display error message
+    }
   };
   
   return (
@@ -464,7 +484,7 @@ const ContactForm = () => {
         <input type="email" id="email" name="user_email" placeholder="Your Email" required/>
         <textarea type="text" id="message" name="message" placeholder="Your message" rows="7" required></textarea>
         <div id='submit-area'>
-          <input type="submit" id='submit' name='submit' value="Send Email"/>
+          <input type='button' id='submit' name='submit' value="Send Email" onClick={sendEmail} />
           <p id='status'></p>
         </div>
       </form>
