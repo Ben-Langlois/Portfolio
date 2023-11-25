@@ -153,7 +153,7 @@ const projectsObj = [
         img: github
       },
       {
-        url: 'https://www.figma.com/file/mF38zCQ63QuACqqpWy2Y8A/Mock-Fintech-App?type=design&node-id=0-1&mode=design&t=GgtNjnYsOoa8bkfQ-0',
+        url: 'https://www.figma.com/file/74FSyfk17nOk1pf2AJmi6T/Photography-Portfolio?type=design&node-id=0%3A1&mode=design&t=Wx2aUG470hkasW5l-1',
         img: figma
       }
     ],
