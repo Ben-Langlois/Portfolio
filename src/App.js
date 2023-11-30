@@ -187,14 +187,14 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 
 $(window).scroll(function() {
   if ($(window).scrollTop() > 1){
-    $('#header').addClass('sticky');
+    $('header').addClass('sticky');
     // $('#landing-container').css('grid-template-rows', '15vh 50vh auto');
     $('#about').css(
       'padding-top', '10vh' 
     );
   }
   else{
-    $('#header').removeClass('sticky');
+    $('header').removeClass('sticky');
     // $('#landing-container').css('grid-template-rows', '15vh 70vh auto');
     $('#about').css(
       'padding-top', '15vh' 
@@ -214,28 +214,42 @@ const Header = () => {
     document.getElementById("dropdown-menu").classList.toggle("show");    
   }
   return (
-    <header id='header'>
-      <div className="nav-links">
-        <a id='name' href='#top'><h1>
-          Ben Langlois
-        </h1></a>
-        <ul id='links'>            
-          <li><a className="link" href="#about">About</a></li>
-          <li><a className="link" href="#projects">Projects</a></li>
-          <li><a className="link" href="#contact">Contact</a></li>
-        </ul>
-        <div id="menu-container" class="menu-container" onClick={toggleMenu}>
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-          <div id='dropdown-menu'class="dropdown-content" onClick={toggleMenu}> {/* why must it be on the parent AND the children */}
-            <a onClick={toggleMenu} href="#about">About</a>
-            <a onClick={toggleMenu} href="#projects">Projects</a>
-            <a onClick={toggleMenu} href="#contact">Contact</a>
-          </div>
-        </div>
-      </div>    
-    </header> 
+    // <header id='header'>
+    //   <div className="nav-links">
+    //     <a id='name' href='#top'><h1>
+    //       Ben Langlois
+    //     </h1></a>
+    //     <ul id='links'>            
+    //       <li><a className="link" href="#about">About</a></li>
+    //       <li><a className="link" href="#projects">Projects</a></li>
+    //       <li><a className="link" href="#contact">Contact</a></li>
+    //     </ul>
+    //     <div id="menu-container" class="menu-container" onClick={toggleMenu}>
+    //       <div class="bar1"></div>
+    //       <div class="bar2"></div>
+    //       <div class="bar3"></div>
+    //       <div id='dropdown-menu'class="dropdown-content" onClick={toggleMenu}> {/* why must it be on the parent AND the children */}
+    //         <a onClick={toggleMenu} href="#about">About</a>
+    //         <a onClick={toggleMenu} href="#projects">Projects</a>
+    //         <a onClick={toggleMenu} href="#contact">Contact</a>
+    //       </div>
+    //     </div>
+    //   </div>    
+    // </header> 
+
+    <header>
+      <div id='nav-links'>
+        <a className="link" href="#about"><h4>About</h4></a>
+        <a className="link" href="#projects"><h4>Projects</h4></a>
+        <a className="link" href="#contact"><h4>Contact</h4></a>
+      </div>
+      <a href='#top'><h1>Ben Langlois</h1></a>
+      <div id='socials'>
+        <a href='https://www.linkedin.com/in/benjaminlanglois/'><img src={linkedin} alt='linkedin logo'/></a>
+        <a href='https://github.com/Ben-Langlois'><img src={github} alt='github logo'/></a>
+      </div>
+    </header>
+
   ) 
 }
 
