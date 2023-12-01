@@ -78,13 +78,59 @@ html, body {
 
         #socials{
             text-align: right;
-            // display: flex;
-            gap: 5rem;
+            display: flex;
+            margin: 0 0 0 auto;
+            gap: 1rem;
 
             img{
                 width: 2rem;
             }
         }
+
+        #menu-container {
+            display: none;
+            transition: all 0.4s; 
+
+            .bar1, .bar2, .bar3 {
+                width: 35px;
+                height: 5px;
+                background-color: #333;
+                margin: 6px 0;
+                transition: 0.4s; 
+            }              
+            
+            .dropdown-content {
+                display: block;
+                visibility: hidden;
+                position: absolute;
+                background-color: rgb(255, 255, 255);
+                min-width: 160px;
+                // overflow: auto;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.125), 
+                    0 2px 10px 0 rgba(0, 0, 0, 0.125);
+                right: 1rem;
+                top: 10vh;
+                transition: opacity 0.3s ease-out;
+
+                a{
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+                a:hover {background-color: #ddd;}
+            }
+            .show {visibility: visible;}
+        }
+        .change{
+            .bar1 {
+                    transform: translate(0, 11px) rotate(-45deg);
+                } 
+            .bar2 {opacity: 0;}
+            .bar3 {
+                transform: translate(0, -11px) rotate(45deg);
+            }
+        } 
 
 
         /* NavBar */
@@ -189,7 +235,6 @@ html, body {
         justify-self: center;
         flex-direction: row;
         width: clamp(600px, 60vw, 1300px);
-        // height (min)
 
         #portrait-container{
             height: 35vh;
@@ -745,6 +790,7 @@ html, body {
 
 @media (max-width:960px){ // tablets
     #landing-container{
+        font-size: 1.6rem !important;
 
         #landing{
             flex-direction: column;
@@ -881,32 +927,24 @@ html, body {
 }
 
 @media (hover: none){ // Touchscreens
-    .sticky{        // mostly to account for most modern phones/tablets having a notch
-        height: 10vh !important;
-    }
+    // .sticky{        // mostly to account for most modern phones/tablets having a notch
+    //     height: 10vh !important;
+    // }
 
     #landing-container{
         // font-size: 1.6rem !important;
         grid-template-rows: 15vh auto !important;
 
-        header{
-            height: 10vh;
+    //     header{
+    //         height: 10vh;
 
-            .nav-links{
-                ul{
-                    font-size: 1.9rem;
-                }
-            }
-        }
-
-        #landing{
-            // width: 90%;
-            flex-direction: column;
-
-        }
+    //         .nav-links{
+    //             ul{
+    //                 font-size: 1.9rem;
+    //             }
+    //         }
+    //     }
     }
-
-
 }
 
 /* Animations */

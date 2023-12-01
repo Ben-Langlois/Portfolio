@@ -224,16 +224,16 @@ const Header = () => {
     //       <li><a className="link" href="#projects">Projects</a></li>
     //       <li><a className="link" href="#contact">Contact</a></li>
     //     </ul>
-    //     <div id="menu-container" class="menu-container" onClick={toggleMenu}>
-    //       <div class="bar1"></div>
-    //       <div class="bar2"></div>
-    //       <div class="bar3"></div>
-    //       <div id='dropdown-menu'class="dropdown-content" onClick={toggleMenu}> {/* why must it be on the parent AND the children */}
-    //         <a onClick={toggleMenu} href="#about">About</a>
-    //         <a onClick={toggleMenu} href="#projects">Projects</a>
-    //         <a onClick={toggleMenu} href="#contact">Contact</a>
-    //       </div>
-    //     </div>
+        // <div id="menu-container" class="menu-container" onClick={toggleMenu}>
+        //   <div class="bar1"></div>
+        //   <div class="bar2"></div>
+        //   <div class="bar3"></div>
+        //   <div id='dropdown-menu'class="dropdown-content" onClick={toggleMenu}> {/* why must it be on the parent AND the children */}
+        //     <a onClick={toggleMenu} href="#about">About</a>
+        //     <a onClick={toggleMenu} href="#projects">Projects</a>
+        //     <a onClick={toggleMenu} href="#contact">Contact</a>
+        //   </div>
+        // </div>
     //   </div>    
     // </header> 
 
@@ -248,6 +248,16 @@ const Header = () => {
         <a href='https://www.linkedin.com/in/benjaminlanglois/'><img src={linkedin} alt='linkedin logo'/></a>
         <a href='https://github.com/Ben-Langlois'><img src={github} alt='github logo'/></a>
       </div>
+      <div id="menu-container" class="menu-container" onClick={toggleMenu}>
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <div id='dropdown-menu'class="dropdown-content" onClick={toggleMenu}> {/* why must it be on the parent AND the children */}
+            <a onClick={toggleMenu} href="#about">About</a>
+            <a onClick={toggleMenu} href="#projects">Projects</a>
+            <a onClick={toggleMenu} href="#contact">Contact</a>
+          </div>
+        </div>
     </header>
 
   ) 
