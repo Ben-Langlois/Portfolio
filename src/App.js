@@ -237,13 +237,14 @@ const Header = () => {
     //   </div>    
     // </header> 
 
-    <header>
+    <header>      
+      <a href='#top'><h1>Ben Langlois</h1></a>
       <div id='nav-links'>
         <a className="link" href="#about"><h4>About</h4></a>
         <a className="link" href="#projects"><h4>Projects</h4></a>
         <a className="link" href="#contact"><h4>Contact</h4></a>
       </div>
-      <a href='#top'><h1>Ben Langlois</h1></a>
+
       <div id='socials'>
         <a href='https://www.linkedin.com/in/benjaminlanglois/'><img src={linkedin} alt='linkedin logo'/></a>
         <a href='https://github.com/Ben-Langlois'><img src={github} alt='github logo'/></a>
