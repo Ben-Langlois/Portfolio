@@ -248,34 +248,16 @@ html, body {
         display: flex;
         align-items: center;
         justify-self: center;
-        flex-direction: row;
         width: clamp(600px, 60vw, 1300px);
 
-        #portrait-container{
-            height: 35vh;
-            border-radius: 10%;
-
-            #portrait{
-                height: 100%;
-                border-radius: 0.25rem;
-            }
+        #portrait{
+            height: 50vh;
+            border-radius: 1rem;
         }
 
         #about-text{
             height: auto;
-            margin-left: 3rem;
-            min-width: 500px;
-
-            a{
-                // text-decoration: none;
-                color: black;
-                font-weight: bold;
-
-                &:hover{
-                    color: rgb(0, 85, 206);
-                }
-            }
-
+            
             h1{
                 font-weight: bold;
             }
@@ -283,25 +265,7 @@ html, body {
             h1, h2, h3{
                 margin-bottom: 1rem;       
             }  
-
-            #links{
-                display: flex;
-                flex-flow: row;
-                gap: 3vw;
-
-                a{
-                    display: inline-flex;
-                    align-items: center;
-                    margin: 0;
-                    text-decoration: none;
-                
-                    h4{
-                        margin: 0 0 0 1rem;
-                    }
-                }
-            }
         }
-        
     }
 
     #about{

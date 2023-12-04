@@ -260,7 +260,6 @@ const Header = () => {
           </div>
         </div>
     </header>
-
   ) 
 }
 
@@ -271,9 +270,6 @@ const Header = () => {
 const Landing = () => {
   return (
     <div id="landing"> {/**/}
-      <div id='portrait-container'>
-        <img id='portrait' src={portrait} alt='pic of Ben'/>
-      </div>
       <div id='about-text'>
         <h1>
           {/* Not in love with the font */}
@@ -283,26 +279,8 @@ const Landing = () => {
           I'm a Toronto/GTA based web developer, seeking a role 
           in front-end development
         </h2>
-        {/* <h3>
-          I attended Durham College for 2 years in
-          Oshawa, Ontario for computer programming.
-          Since graduating I've been teaching myself
-          front-end technologies like React, JS, HTML,
-          SCSS, JQuery as well as any APIs I find useful
-          in my projects
-        </h3> */}
-        <h3>
-          Comments? Questions? Suggestions? <a href='#contact' className="link">Send me an email</a>
-        </h3>
-        <div id='links'>
-          <a href='https://www.linkedin.com/in/benjaminlanglois/'>
-            <img src={linkedin} alt='linkedin logo'/><h4 className="link">LinkedIn</h4>
-          </a>
-          <a href='https://github.com/Ben-Langlois'>
-            <img src={github} alt='github logo'/><h4 className="link">Github</h4>
-          </a>
-        </div>
       </div>  
+        <img id='portrait' src={portrait} alt='pic of Ben'/>
     </div>
   )
 }
