@@ -108,7 +108,7 @@ const projectsObj = [
     url: 'https://codepen.io/ben-langlois/details/JjJrJqK',
     img: noteapp,
     alt: 'Note App Dashboard',
-    diff: 3,
+    diff: 2,
     date: new Date('December 15, 2021 00:00:00'),
     links:[
     ],
@@ -144,7 +144,7 @@ const projectsObj = [
     url: 'https://ben-langlois.github.io/Photography-Portfolio/',
     img: photography,
     alt: 'Photography Portfolio landing page',
-    diff: 2,
+    diff: 3,
     date: new Date('November 2, 2023 00:00:00'),
     links:[
       {
@@ -243,8 +243,7 @@ const Header = () => {
         <a className="link" href="#about"><h4>About</h4></a>
         <a className="link" href="#projects"><h4>Projects</h4></a>
         <a className="link" href="#contact"><h4>Contact</h4></a>
-      </div>
-
+      </div>s
       <div id='socials'>
         <a href='https://www.linkedin.com/in/benjaminlanglois/'><img src={linkedin} alt='linkedin logo'/></a>
         <a href='https://github.com/Ben-Langlois'><img src={github} alt='github logo'/></a>
