@@ -269,18 +269,21 @@ const Header = () => {
 */  // eslint-disable-next-line
 const Landing = () => {
   return (
-    <div id="landing"> {/**/}
+    <div id="landing">
+      <img id='portrait' src={portrait} alt='pic of Ben'/>
       <div id='about-text'>
         <h1>
           {/* Not in love with the font */}
           Hi I'm Ben Langlois
         </h1>
         <h2>
-          I'm a Toronto/GTA based web developer, seeking a role 
-          in front-end development
+          I'm a Toronto based Front-end developer, currently 
+          seeking a junior role at your company
+          {/* I'm a Toronto/GTA based web developer, seeking a role 
+          in front-end development */}
         </h2>
+        <h2 id='cta'><a href='#contact' className="link">Let's get in touch</a></h2>
       </div>  
-        <img id='portrait' src={portrait} alt='pic of Ben'/>
     </div>
   )
 }
@@ -296,7 +299,7 @@ const About = () => {
           I'm a 23-year-old self-taught developer from Stouffville, 
           ON looking to start a career in web development. Since I was 
           about 10 I've surrounded myself with video games, film and music. 
-          Besides being a hermit, I've found happiness in travel, hiking, 
+          Besides my interests involving technology, I really enjoy travelling, hiking, 
           fitness, reading, and music.
         </p>
         <h3>Programming</h3>

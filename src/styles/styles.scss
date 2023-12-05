@@ -251,20 +251,36 @@ html, body {
         width: clamp(600px, 60vw, 1300px);
 
         #portrait{
-            height: 50vh;
+            height: 45vh;
             border-radius: 1rem;
         }
 
         #about-text{
-            height: auto;
-            
+            // height: auto;
+            margin-left: 2rem;
+
             h1{
                 font-weight: bold;
+                font-size: 3rem;
             }
 
-            h1, h2, h3{
+            h1, h2{
                 margin-bottom: 1rem;       
             }  
+
+            #cta{
+                // padding: 0.5rem;
+                // display: inline-flex;
+                // border: 1px solid red;
+                // border-radius: 0.5rem;
+                font-weight: bold;
+
+                a{
+                    color: black !important;
+                    text-decoration: none; 
+                }
+
+            }
         }
     }
 
@@ -779,13 +795,13 @@ html, body {
         #landing{
             flex-direction: column;
             
-            #portrait-container{
+            #portrait{
                 margin-bottom: 2rem;
             }
 
 
             #about-text{
-                margin: 0;
+                margin: 0 1rem;
 
                 h1{     
                     font-size: 2.7rem;
