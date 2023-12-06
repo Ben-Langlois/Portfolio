@@ -25,21 +25,24 @@ html, body {
 
 // Updated 
 #landing-container{
-    display: grid;
-    grid-template-areas:  "header"
-                "landing"
-                "about"
-                "projects"
-                "contact";
-    grid-template-columns: auto;
-    grid-template-rows: 15vh 70vh auto;
-    justify-content: center;
+    // display: flex;
+    // flex-direction: column;
+    // grid-template-areas:  "header"       // grid
+    //             "landing"
+    //             "about"
+    //             "projects"
+    //             "contact";
+    // grid-template-columns: auto;
+    // grid-template-rows: 15vh 70vh auto;
+    // justify-content: center;
     transition: all 0.5s;
     font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
 
 
     header{
-        grid-area: header;
+        // grid-area: header;
         height: 15vh;
         width: 100%;        
         // display: grid;
@@ -146,118 +149,28 @@ html, body {
                 transform: translate(0, -11px) rotate(45deg);
             }
         } 
-
-
-        /* NavBar */
-        // .nav-links{           
-        //     display: flex; 
-        //     font-size: 1.6rem;
-        //     margin: 0 auto;
-        //     width: clamp(700px, 70vw, 1300px);  
-        //     height: 100%;
-        //     // background-color: rgb(255, 255, 255);
-        //     border-radius: 0.25rem;
-        //     transition: all 0.5s;
-
-        //     #name{
-        //         display: flex;
-        //         text-decoration: none;
-        //         color: #000000;
-        //         font-family: 'Pacifico', sans-serif;
-                
-        //         h1{
-        //             margin: auto 0 auto 1rem;
-        //             font-style: italic;
-        //             font-weight: bold;
-        //             transition: all 0.5s;
-        //         }           
-            
-        //         h1:hover{
-        //             scale: 1.05;
-        //         }
-        //     }
-
-
-        //     #links{
-        //         display: inline-flex;
-        //         // float: right;
-        //         margin: 0 1rem 0 auto;
-        //         padding: 0;
-        //         height: 100%;
-        //         gap: 5vw;
-
-        //         li{
-        //             list-style: none;
-        //             white-space: pre;
-        //             margin: 1.5vh 0;
-
-        //             display: flex;
-        //             align-items: center;
-        //         }
-        //     }
-
-        //     #menu-container {
-        //         display: none;
-        //         transition: all 0.4s; 
-
-        //         .bar1, .bar2, .bar3 {
-        //             width: 35px;
-        //             height: 5px;
-        //             background-color: #333;
-        //             margin: 6px 0;
-        //             transition: 0.4s; 
-        //         }              
-                
-        //         .dropdown-content {
-        //             display: block;
-        //             visibility: hidden;
-        //             position: absolute;
-        //             background-color: rgb(255, 255, 255);
-        //             min-width: 160px;
-        //             // overflow: auto;
-        //             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.125), 
-        //                 0 2px 10px 0 rgba(0, 0, 0, 0.125);
-        //             right: 1rem;
-        //             top: 10vh;
-        //             transition: opacity 0.3s ease-out;
-
-        //             a{
-        //                 color: black;
-        //                 padding: 12px 16px;
-        //                 text-decoration: none;
-        //                 display: block;
-        //             }
-        //             a:hover {background-color: #ddd;}
-        //         }
-        //         .show {visibility: visible;}
-        //     }
-        //     .change{
-        //         .bar1 {
-        //                 transform: translate(0, 11px) rotate(-45deg);
-        //             } 
-        //         .bar2 {opacity: 0;}
-        //         .bar3 {
-        //             transform: translate(0, -11px) rotate(45deg);
-        //         }
-        //     } 
-        //}
     }
 
     #landing{
-        grid-area: landing;
+        // grid-area: landing;
         display: flex;
         align-items: center;
-        justify-self: center;
-        width: clamp(600px, 60vw, 1300px);
+        // justify-self: center;
+        width: clamp(600px, 65vw, 1300px);
+        height: 100vh;
+        margin: 0 auto;
+
 
         #portrait{
-            height: 45vh;
+            // height: 45vh;
+            width: clamp(350px, 25vw, 500px);
             border-radius: 1rem;
         }
 
         #about-text{
             // height: auto;
             margin-left: 2rem;
+            width: 40vw;
 
             h1{
                 font-weight: bold;
@@ -285,13 +198,14 @@ html, body {
     }
 
     #about{
-        grid-area: about;
+        // grid-area: about;
         display: flex;
         // flex-direction: row;
         width: clamp(850px, 60vw, 1300px);
         align-items: center;
         justify-self: center;
         padding: 15vh 0 0 0;
+        margin: 0 auto;
         transition: all 0.4s;
 
         #bio{
@@ -327,10 +241,11 @@ html, body {
     }
 
     #projects{
-        grid-area: projects;
+        // grid-area: projects;
         width: clamp(800px, 65vw, 1300px);
         padding: 15vh 0 0 0;
         justify-self: center;
+        margin: 0 auto;
 
         #project-header{
             h1{
@@ -431,10 +346,10 @@ html, body {
 
     #contact{
         display: flex;
-        grid-area: contact;
+        // grid-area: contact;
         height: 60vh;
-        margin: 15vh 0 15vh 0;
-        justify-content: space-evenly;
+        margin: 15vh auto 15vh ;
+        justify-content: center;
 
         #link-container{
             width: clamp(200px,30%, 500px);         
