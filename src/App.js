@@ -165,7 +165,7 @@ const projectsObj = [
   },
   {
     name: 'Temp Converter',
-    desc: "A simple Temperature Converter made with React, Tailwind, and JQuery. The goal of this was to write zero CSS, only using Tailwind considering it's the main reason I made this. ",
+    desc: "A simple Temperature Converter made with React, Tailwind, and JQuery. The goal of this was to write zero CSS, really just an excuse to try out Tailwind.",
     url: 'https://codepen.io/ben-langlois/details/jOdwMRz',
     img: tempconvert,
     alt: 'Temperature Codepen page',
@@ -207,8 +207,6 @@ $(window).scroll(function() {
   - Contains logo, nav links
 */
 const Header = () => {
-  let menu = $('.menu-container');
-
   const toggleMenu = () => {
     document.getElementById("menu-container").classList.toggle("change");
     document.getElementById("dropdown-menu").classList.toggle("show");    
@@ -243,7 +241,7 @@ const Header = () => {
         <a className="link" href="#about"><h4>About</h4></a>
         <a className="link" href="#projects"><h4>Projects</h4></a>
         <a className="link" href="#contact"><h4>Contact</h4></a>
-      </div>s
+      </div>
       <div id='socials'>
         <a href='https://www.linkedin.com/in/benjaminlanglois/'><img src={linkedin} alt='linkedin logo'/></a>
         <a href='https://github.com/Ben-Langlois'><img src={github} alt='github logo'/></a>
@@ -293,7 +291,7 @@ const About = () => {
   return (
     <div id='about'>
       <div id='bio'>
-        <h3>A bit about me</h3>
+        <h3>A Bit About Me</h3>
         <p>
           I'm a 23-year-old self-taught developer from Stouffville, 
           ON looking to start a career in web development. Since I was 
@@ -301,14 +299,13 @@ const About = () => {
           Besides my interests involving technology, I really enjoy travelling, hiking, 
           fitness, reading, and music.
         </p>
-        <h3>Programming</h3>
+        <h3>Programming and I</h3>
         <p>
           My first brush with programming was in grade 10 when I took a 
           computer science course. Before I had any idea what I was doing, 
-          I found its complications fascinating. I dove head-first down the 
-          rabbit hole attending <a href='https://durhamcollege.ca/programs/computer-programming-two-year' className="link">
-          Durham College</a> in 2018. Since graduating in 2020 I've dialled 
-          in on web development, teaching myself front-end technologies and
+          I found its complications fascinating. Later I attended <a href='https://durhamcollege.ca/programs/computer-programming-two-year' className="link">
+          Durham College</a> in 2018 studying OOP languages, database development, and web dev technologies like Javascript and CSS. 
+          Since graduating in 2020 I've dialled in on web development, teaching myself front-end technologies and
           building my <a href='#projects' className="link">portfolio and other projects</a>. If I've learned 
           anything by teaching myself these tools, it's that I can learn 
           how to use any tool.
@@ -319,13 +316,12 @@ const About = () => {
           <h5 class='main'>SASS</h5>
           <h5 class='main'>JQuery</h5>
           <h5 class='main'>Git</h5>
+          <h5 class='main'>Tailwind</h5>
           <h5>C++</h5>
           <h5>Arduino</h5>
         </div>
       </div>
-      <div id='pic-container'>
-        <img src={anotherPortrait} alt='another picture of Ben'/>
-      </div>
+      <img src={anotherPortrait} alt='another picture of Ben'/>
     </div>
   )
 }
@@ -367,11 +363,9 @@ const Project = () => {
           return (
             <a href={curr.url}>
               <div class='card'>
-                <div id='img-container'>
-                  <img
-                    src={curr.img} 
-                    alt={curr.alt}/>
-                </div>
+                <img
+                  src={curr.img} 
+                  alt={curr.alt}/>
                 <div id='title'>
                   <h1>{curr.name}</h1>
                   <h5>{months[curr.date.getMonth()]} {curr.date.getFullYear()}</h5>

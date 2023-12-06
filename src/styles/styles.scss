@@ -26,11 +26,11 @@ html, body {
 // Updated 
 #landing-container{
     display: grid;
-    grid-template-areas:  "header header header"
-                ". landing ."
-                ". about ."
-                ". projects ."
-                ". contact .";
+    grid-template-areas:  "header"
+                "landing"
+                "about"
+                "projects"
+                "contact";
     grid-template-columns: auto;
     grid-template-rows: 15vh 70vh auto;
     justify-content: center;
@@ -287,8 +287,8 @@ html, body {
     #about{
         grid-area: about;
         display: flex;
-        flex-direction: row;
-        width: clamp(800px, 60vw, 1300px);
+        // flex-direction: row;
+        width: clamp(850px, 60vw, 1300px);
         align-items: center;
         justify-self: center;
         padding: 15vh 0 0 0;
@@ -298,7 +298,7 @@ html, body {
             // display: flex;
             align-items: center;
             height: auto;
-            min-width: 550px;
+            // min-width: 550px;
 
             h3{
                 display: inline-block;
@@ -319,21 +319,16 @@ html, body {
             }
         }
 
-        #pic-container{
-            height: 50vh;
+        img{
+            height: 60vh;
             margin-left: 1rem;
-
-            img{
-                height: 100%;
-                border-radius: 0.25rem;
-            }
+            border-radius: 1rem;
         }
     }
 
     #projects{
         grid-area: projects;
         width: clamp(800px, 65vw, 1300px);
-        // height: ;
         padding: 15vh 0 0 0;
         justify-self: center;
 
@@ -375,18 +370,15 @@ html, body {
                     display: flex;
                     flex-direction: column;
 
-                    #img-container{
-                        height: 25vh;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 
-                        img{
-                            width: 100%;       // clamp 
-                            height: 100%;
-                            object-fit: contain;
-                            transition: all 1s ease;
-                            z-index: 0;
-                        }                        
-                    }
+                    img{
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                        width: 100%;       // clamp 
+                        // height: 25vh;
+                        object-fit: contain;
+                        transition: all 1s ease;
+                        z-index: 0;
+                    }                        
 
                     #title{
                         width: 100%;
@@ -419,8 +411,6 @@ html, body {
                         margin: 0.5rem 10% 1rem;
                         font-size: 1.1rem;
                         gap: 2rem;
-
-
 
                         a{
                             align-self: center;
@@ -766,13 +756,11 @@ html, body {
                     }
 
                 }
-
             }
     
             #form{
                 width: 80% !important;
                 justify-self: center;
-
     
                 h2{
                     margin: 0 0 2vh 0;
@@ -799,7 +787,6 @@ html, body {
             #portrait{
                 margin-bottom: 2rem;
             }
-
 
             #about-text{
                 margin: 0 1rem;
@@ -837,7 +824,7 @@ html, body {
                 min-width: 0;
             }
 
-            #pic-container{
+            img{
                 display: none;
             }
         }
