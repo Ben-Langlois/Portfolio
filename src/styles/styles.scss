@@ -4,6 +4,7 @@
 
 // #region Variables
 $headerLink: #000000;
+$text: #000814;
 // #endregion
 
 /*All encompassing*/
@@ -20,7 +21,7 @@ html, body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    color: #1F1F1F;
+    color: $text !important;
 }
 
 // Updated 
@@ -37,7 +38,7 @@ html, body {
     // justify-content: center;
     transition: all 0.5s;
     font-family: 'Quicksand', sans-serif;
-    display: flex;
+    display: grid;
     flex-direction: column;
 
 
@@ -77,7 +78,7 @@ html, body {
             // text-align: center;
 
             h1{
-                color: #000000;
+                color: $text;
                 font-family: 'Pacifico', sans-serif; 
                 font-style: italic;
                 font-weight: bold;
@@ -112,7 +113,7 @@ html, body {
             .bar1, .bar2, .bar3 {
                 width: 35px;
                 height: 5px;
-                background-color: #333;
+                background-color: $text;
                 margin: 6px 0;
                 transition: 0.4s; 
             }              
@@ -131,7 +132,7 @@ html, body {
                 transition: opacity 0.3s ease-out;
 
                 a{
-                    color: black;
+                    color: $text;
                     padding: 12px 16px;
                     text-decoration: none;
                     display: block;
@@ -155,10 +156,12 @@ html, body {
         // grid-area: landing;
         display: flex;
         align-items: center;
-        // justify-self: center;
-        width: clamp(600px, 65vw, 1300px);
+        justify-content: center;
+        // width: clamp(600px, 65vw, 1300px);
+        // width: 100vw;
         height: 100vh;
         margin: 0 auto;
+        transition: all 0.5s;
 
 
         #portrait{
@@ -189,7 +192,7 @@ html, body {
                 font-weight: bold;
 
                 a{
-                    color: black !important;
+                    color: $text !important;
                     text-decoration: none; 
                 }
 
@@ -242,7 +245,7 @@ html, body {
 
     #projects{
         // grid-area: projects;
-        width: clamp(800px, 65vw, 1300px);
+        width: clamp(960px, 65vw, 1300px);
         padding: 15vh 0 0 0;
         justify-self: center;
         margin: 0 auto;
@@ -266,18 +269,19 @@ html, body {
         }
 
         #card-container{
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-around;
-            gap: 5vh 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            // flex-flow: row wrap;
+            // justify-content: space-around;
+            gap: 5vh;
             padding-top: 3vh;
 
             a{
                 text-decoration: none !important;
-                color: black;
+                color: $text;
 
                 .card{
-                    width: clamp(350px, 20vw, 600px);       // clamp 
+                    // width: clamp(350px, 20vw, 600px);       // clamp 
                     overflow: hidden;
                     transition: all 0.7s ease;
                     justify-items: center;
@@ -301,7 +305,7 @@ html, body {
                     
                         h1{
                             display: inline-flex;
-                            margin: 0 0 0 10%;
+                            margin: 0 10%;
                             font-size: 2rem;
                             font-weight: bold;
                             align-self: center;
@@ -457,7 +461,7 @@ html, body {
     &:hover{
         opacity: 1;
         text-decoration: none;
-        color: rgb(0, 85, 206);
+        color: $text;
 
         /* animation-duration: 0.5s;
         animation-name: opacity-fade-in; */
@@ -471,7 +475,7 @@ html, body {
         bottom: 0;
         left: 0;
 
-        background-color: rgb(0, 85, 206);
+        background-color: $text;
 
         visibility: hidden;
         transform: scaleX(0);
@@ -504,7 +508,7 @@ html, body {
     // margin-left: 10%;
     margin: 1rem 10%;
     flex-wrap: wrap;
-    flex: 1 1 auto;
+    // flex: 1 1 auto;
 
     h5{
         padding: 0 0.5rem;
@@ -529,13 +533,13 @@ html, body {
 /* Media Queries */
 @media (max-width: 600px){ // Mobile
     #landing-container{
-        grid-template-columns: 100%;
-        grid-template-areas: 
-            "header"
-            "landing"
-            "about"
-            "projects"
-            "contact";
+        // grid-template-columns: 100%;
+        // grid-template-areas: 
+        //     "header"
+        //     "landing"
+        //     "about"
+        //     "projects"
+        //     "contact";
 
         header{
             height: 15vh;
@@ -567,18 +571,22 @@ html, body {
         // }
         #landing{
             width: 90%;
-            align-content: space-around;
-            flex-wrap: wrap;
+            height: 100vh !important;
+            // align-content: space-around;
+            // flex-wrap: wrap;
             flex-direction: column;
 
-            #portrait-container{
+            #portrait{
                 margin-bottom: 2rem;
+                margin: 15vh 0 2rem 0;
+                width: 30vh;
             }
 
             #about-text{
-                height: auto;
-                min-width: auto;
+                width: 90%;
 
+                // height: auto;
+                // min-width: auto;
                 // h1{     
                 //     font-size: 2rem !important;
                 // }
@@ -606,7 +614,9 @@ html, body {
             width: 100%;
     
             #card-container{  
-                
+                grid-template-columns: 1fr !important;
+                gap: 1rem 0;
+
                 a{
                     display: grid;
                 // new attempt
@@ -615,23 +625,20 @@ html, body {
                         width: 90%;
                         justify-self: center;
                         grid-template-rows: 50% 15% auto;
-                            
-                        #project{
-                            width: 100%;      
-                            // height: 100%;
-                        }
-    
+
+                        // img{
+                        //     display: none;
+                        // }     
+
                         #title{
-
-                            a{
-                                height: 100%;
-
-                                img{
-                                    height: 70%;
-                                    align-self: center;                                    
-                                }
+                            h1{
+                                font-size: 1.7rem;
                             }
-                        }                     
+                        }
+
+                        .skills{
+                            margin: 0 10%;
+                        }
                     }
                 }
             }
@@ -690,14 +697,14 @@ html, body {
 @media (max-width:960px){ // tablets
     #landing-container{
         font-size: 1.6rem !important;
-        grid-template-rows: 15vh auto !important;
+        // grid-template-rows: 15vh auto !important;
 
         header{
             padding: 0 5%;
         }
 
         #landing{
-            flex-direction: column;
+            // flex-direction: column;
             
             #portrait{
                 margin-bottom: 2rem;
@@ -756,13 +763,19 @@ html, body {
             }
 
             #card-container{
-
+                grid-template-columns: repeat(2, 1fr);
+                padding: 3vh 2rem 0;
                 a{
                     .card{
                         height: auto;
     
-                        p{
-                            font-size: 1.4rem;
+                        // p{
+                        //     // font-size: 1.4rem;
+                        //     display: none;
+                        // }    
+                    
+                        img{
+                            display: none;
                         }    
                     }
                 }

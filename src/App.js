@@ -87,21 +87,21 @@ const projectsObj = [
       'Git'
     ] 
   },
-  {
-    name: 'Lab Timer',
-    desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis.',
-    url: 'https://codepen.io/ben-langlois/details/wvqKwRL',
-    img: labtimer,
-    alt: 'Labtimer Homepage',
-    diff: 3,
-    date: new Date('Febreary 11, 2022 00:00:00'),
-    links:[
-    ],
-    tags:[
-      'React',
-      'SCSS'
-    ]  
-  },
+  // {
+  //   name: 'Lab Timer',
+  //   desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis.',
+  //   url: 'https://codepen.io/ben-langlois/details/wvqKwRL',
+  //   img: labtimer,
+  //   alt: 'Labtimer Homepage',
+  //   diff: 3,
+  //   date: new Date('Febreary 11, 2022 00:00:00'),
+  //   links:[
+  //   ],
+  //   tags:[
+  //     'React',
+  //     'SCSS'
+  //   ]  
+  // },
   {
     name: 'Note App',
     desc: 'A basic React app allowing creation and deletion of notes.',
@@ -192,12 +192,18 @@ $(window).scroll(function() {
     $('#about').css(
       'padding-top', '10vh' 
     );
+    $('#landing').css(
+      'height', '75vh'
+    );
   }
   else{
     $('header').removeClass('sticky');
     // $('#landing-container').css('grid-template-rows', '15vh 70vh auto');
     $('#about').css(
       'padding-top', '15vh' 
+    );
+    $('#landing').css(
+      'height', '100vh'
     );
   }
 });
@@ -271,7 +277,7 @@ const Landing = () => {
       <div id='about-text'>
         <h1>
           {/* Not in love with the font */}
-          Hi I'm Ben Langlois
+          Hi I'm<br/>Ben Langlois
         </h1>
         <h2>
           I'm a Toronto based Front-end developer, currently 
