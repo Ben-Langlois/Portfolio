@@ -8,13 +8,12 @@ import './styles/styles.scss'
 import {Helmet} from "react-helmet";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons'
-
+import resume from './resume.pdf'
 // #endregion 
 
 // #region images
 // import portrait from './images/portrait2.jpg'
 import portfolio from './images/projects/portfolio.png'
-import labtimer from './images/projects/labtimer.png'
 import noteapp from './images/projects/noteapp.png'
 import weatherapp from './images/projects/weatherapp.png'
 import photography from './images/projects/photography.png'
@@ -420,7 +419,7 @@ const Contact = () => {
           <a href='https://www.linkedin.com/in/benjaminlanglois/'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>LinkedIn</h4></a>
           <a href='https://github.com/Ben-Langlois'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>Github</h4></a>
           <a href='https://codepen.io/ben-langlois'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>Codepen</h4></a>
-          <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>My Resume</h4></a>
+          <a href={resume}><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>My Resume</h4></a>
           {/* <a href='#'><h4 class='link'>Email</h4></a> */}
         </div>
       </div>
