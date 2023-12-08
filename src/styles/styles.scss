@@ -356,7 +356,7 @@ html, body {
         justify-content: center;
 
         #link-container{
-            width: clamp(200px,30%, 500px);         
+            width: clamp(200px, 30vw, 500px);         
             border-left: 1px solid black;
 
             h2{
@@ -370,10 +370,15 @@ html, body {
 
                 a{
                     display: block;
+                    margin-left: 15%;
 
                     h4{
-                        margin: 5% 0 5% 15%;
+                        margin: 5% 0 5% 1rem;
                         display: inline-flex;
+                    }
+
+                    svg{
+                        color: $text;
                     }
                 }
 
@@ -382,7 +387,7 @@ html, body {
         }
 
         #form-area{
-            width: clamp(300px, 40%, 700px);      // clamp,
+            width: clamp(300px, 40vw, 700px);      // clamp,
             display: flex;
             flex-flow: column;
 
@@ -700,7 +705,7 @@ html, body {
         // grid-template-rows: 15vh auto !important;
 
         header{
-            padding: 0 5%;
+            padding: 0 2rem;
         }
 
         #landing{
@@ -802,13 +807,14 @@ html, body {
                 }
     
                 #links{
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 0.5rem 1rem;
-                    justify-content: center;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    // gap: 0.5rem 1rem;
+                    // justify-content: center;
 
                     a{
                         // width: 30%;
+                        margin: 0;
 
                         h4{
                             display: inline-flex;

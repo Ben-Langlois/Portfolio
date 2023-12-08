@@ -6,6 +6,9 @@ import emailjs from '@emailjs/browser'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/styles.scss'
 import {Helmet} from "react-helmet";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons'
+
 // #endregion 
 
 // #region images
@@ -414,10 +417,10 @@ const Contact = () => {
       <div id='link-container'>
         <h2>My Links</h2>
         <div id="links">
-          <a href='https://www.linkedin.com/in/benjaminlanglois/'><h4 class='link'>LinkedIn</h4></a>
-          <a href='https://github.com/Ben-Langlois'><h4 class='link'>Github</h4></a>
-          <a href='https://codepen.io/ben-langlois'><h4 class='link'>Codepen</h4></a>
-          <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><h4 class='link'>My Resume</h4></a>
+          <a href='https://www.linkedin.com/in/benjaminlanglois/'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>LinkedIn</h4></a>
+          <a href='https://github.com/Ben-Langlois'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>Github</h4></a>
+          <a href='https://codepen.io/ben-langlois'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>Codepen</h4></a>
+          <a href='https://docs.google.com/document/d/1bAq0VLqmZs8bxvqMgSMDWUI_VaFw25q8-ZHP8PEewIg/edit#heading=h.y7d3xdxnr44m'><FontAwesomeIcon icon={faArrowTrendUp} /><h4 class='link'>My Resume</h4></a>
           {/* <a href='#'><h4 class='link'>Email</h4></a> */}
         </div>
       </div>
