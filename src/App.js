@@ -9,16 +9,10 @@ import {Helmet} from "react-helmet";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons'
 import resume from './resume.pdf'
+import { projectsObj } from "./projects";
 // #endregion 
 
 // #region images
-// import portrait from './images/portrait2.jpg'
-import portfolio from './images/projects/portfolio.png'
-import noteapp from './images/projects/noteapp.png'
-import weatherapp from './images/projects/weatherapp.png'
-import photography from './images/projects/photography.png'
-import tempconvert from './images/projects/tempconvert.png'
-
 import portrait from './images/portrait.jpg'
 import anotherPortrait from './images/IMG_4212.jpg'
 import icon from './images/favicon.ico'
@@ -30,160 +24,11 @@ import linkedin from './images/socials/iconmonstr-linkedin-3.svg'
 import figma from './images/socials/figma-svgrepo-com.svg'
 // #endregion
 
-// #region CDNs
-//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin referrerpolicy="no-referrer" />
-  // <script crossOrigin src="https://cdn.jsdelivr.net/npm/britecharts@2/dist/bundled/britecharts.min.js"/>
-  // <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-// #endregion
-
 /* #region Resources
   https://docs.google.com/document/d/1blbXL01EGNG-vNqbsa8cLGL3hwbVAnuaSLXAhNWucXA/edit 
 */// #endregion
 
 // #region Variables
-/*
-  Example of project object
-  {
-    name: 'Portfolio',
-    desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
-    url: 'https://ben-langlois.github.io/',
-    img: portfolio,
-    alt: 'Portfolio Homepage',
-    diff: 3,
-    date: new Date('September 30, 2023 00:00:00'),
-    links:[
-      {
-        type: 'Github',
-        url: 'https://github.com/Ben-Langlois/Weather-App',
-        img: github
-      },
-      ...
-    ],
-    tags:[
-      'React',
-      'SCSS',
-      'Git'
-      ...
-    ] 
-  }
-*/
-const projectsObj = [
-  {
-    name: 'Portfolio',
-    desc: 'The page you are looking at right now. Made with React, SASS, and a tad of bootstrap. Constantly developing',
-    url: 'https://ben-langlois.github.io/Portfolio',
-    img: portfolio,
-    alt: 'Portfolio Homepage',
-    diff: 4,
-    date: new Date('September 30, 2023 00:00:00'),
-    links:[
-      {
-        type: 'Github Repo',
-        url: 'https://github.com/Ben-Langlois/Portfolio',
-        img: github
-      }
-    ],
-    tags:[
-      'React',
-      'SCSS',
-      'Git'
-    ] 
-  },
-  // {
-  //   name: 'Lab Timer',
-  //   desc: 'Made with React, this timer tracks time and speed at intervals and generates a pace table. Used in a PhD Students thesis.',
-  //   url: 'https://codepen.io/ben-langlois/details/wvqKwRL',
-  //   img: labtimer,
-  //   alt: 'Labtimer Homepage',
-  //   diff: 3,
-  //   date: new Date('Febreary 11, 2022 00:00:00'),
-  //   links:[
-  //   ],
-  //   tags:[
-  //     'React',
-  //     'SCSS'
-  //   ]  
-  // },
-  {
-    name: 'Note App',
-    desc: 'A basic React app allowing creation and deletion of notes.',
-    url: 'https://codepen.io/ben-langlois/details/JjJrJqK',
-    img: noteapp,
-    alt: 'Note App Dashboard',
-    diff: 2,
-    date: new Date('December 15, 2021 00:00:00'),
-    links:[
-    ],
-    tags:[
-      'React',
-      'SCSS'
-    ] 
-  },
-  {
-    name: 'Weather App',
-    desc: 'A React app utilizing bootstrap and APIs to create a weather dashboard. Displays weekly and daily weather for inputted city.',
-    url: 'https://bens-weatherapp.live/',
-    img: weatherapp,
-    alt: 'Weather App Dashboard',
-    diff: 5,
-    date: new Date('March 1, 2023 00:00:00'),
-    links:[
-      {
-        type: 'Github Repo',
-        url: 'https://github.com/Ben-Langlois/Weather-App',
-        img: github
-      }
-    ],
-    tags:[
-      'React',
-      'SCSS',
-      'Git'
-    ]  
-  },
-  {
-    name: 'Photography Portfolio',
-    desc: 'A simple react app that I wrote in 3 days to act as a portfolio for photos I take on trips, hikes, walks etc.',
-    url: 'https://ben-langlois.github.io/Photography-Portfolio/',
-    img: photography,
-    alt: 'Photography Portfolio landing page',
-    diff: 3,
-    date: new Date('November 2, 2023 00:00:00'),
-    links:[
-      {
-        type: 'Github Repo',
-        url: 'https://github.com/Ben-Langlois/Photography-Portfolio',
-        img: github
-      },
-      {
-        url: 'https://www.figma.com/file/74FSyfk17nOk1pf2AJmi6T/Photography-Portfolio?type=design&node-id=0%3A1&mode=design&t=Wx2aUG470hkasW5l-1',
-        img: figma
-      }
-    ],
-    tags: [
-      'React',
-      'SCSS',
-      'Git'
-    ]
-  },
-  {
-    name: 'Temp Converter',
-    desc: "A simple Temperature Converter made with React, Tailwind, and JQuery. The goal of this was to write zero CSS, really just an excuse to try out Tailwind.",
-    url: 'https://codepen.io/ben-langlois/details/jOdwMRz',
-    img: tempconvert,
-    alt: 'Temperature Codepen page',
-    diff: 2,
-    date: new Date('November 15, 2023 00:00:00'),
-    links:[
-    ],
-    tags: [
-      'React',
-      'SCSS',
-      'Tailwind',
-      'JQuery'
-    ]
-  }
-]
-
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 //#endregion
 
@@ -220,29 +65,6 @@ const Header = () => {
     document.getElementById("dropdown-menu").classList.toggle("show");    
   }
   return (
-    // <header id='header'>
-    //   <div className="nav-links">
-    //     <a id='name' href='#top'><h1>
-    //       Ben Langlois
-    //     </h1></a>
-    //     <ul id='links'>            
-    //       <li><a className="link" href="#about">About</a></li>
-    //       <li><a className="link" href="#projects">Projects</a></li>
-    //       <li><a className="link" href="#contact">Contact</a></li>
-    //     </ul>
-        // <div id="menu-container" class="menu-container" onClick={toggleMenu}>
-        //   <div class="bar1"></div>
-        //   <div class="bar2"></div>
-        //   <div class="bar3"></div>
-        //   <div id='dropdown-menu'class="dropdown-content" onClick={toggleMenu}> {/* why must it be on the parent AND the children */}
-        //     <a onClick={toggleMenu} href="#about">About</a>
-        //     <a onClick={toggleMenu} href="#projects">Projects</a>
-        //     <a onClick={toggleMenu} href="#contact">Contact</a>
-        //   </div>
-        // </div>
-    //   </div>    
-    // </header> 
-
     <header>      
       <a href='#top'><h1>Ben Langlois</h1></a>
       <div id='nav-links'>
@@ -278,14 +100,11 @@ const Landing = () => {
       <img id='portrait' src={portrait} alt='pic of Ben'/>
       <div id='about-text'>
         <h1>
-          {/* Not in love with the font */}
           Hi I'm<br/>Ben Langlois
         </h1>
         <h2>
           I'm a Toronto based Front-end developer, currently 
           seeking a junior role at your company
-          {/* I'm a Toronto/GTA based web developer, seeking a role 
-          in front-end development */}
         </h2>
         <h2 id='cta'><a href='#contact' className="link">Let's get in touch</a></h2>
       </div>  
@@ -299,24 +118,20 @@ const About = () => {
   return (
     <div id='about'>
       <div id='bio'>
-        <h3>A Bit About Me</h3>
-        <p>
-          I'm a 23-year-old self-taught developer from Stouffville, 
-          ON looking to start a career in web development. Since I was 
-          about 10 I've surrounded myself with video games, film and music. 
-          Besides my interests involving technology, I really enjoy travelling, hiking, 
-          fitness, reading, and music.
-        </p>
         <h3>Programming and I</h3>
         <p>
-          My first brush with programming was in grade 10 when I took a 
-          computer science course. Before I had any idea what I was doing, 
-          I found its complications fascinating. Later I attended <a href='https://durhamcollege.ca/programs/computer-programming-two-year' className="link">
+          I attended <a href='https://durhamcollege.ca/programs/computer-programming-two-year' className="link">
           Durham College</a> in 2018 studying OOP languages, database development, and web dev technologies like Javascript and CSS. 
           Since graduating in 2020 I've dialled in on web development, teaching myself front-end technologies and
           building my <a href='#projects' className="link">portfolio and other projects</a>. If I've learned 
-          anything by teaching myself these tools, it's that I can learn 
-          how to use any tool.
+          anything the past 3 years learning these tools, it's that I can learn how to use any tool.
+        </p>
+        <h3>A Bit About Me</h3>
+        <p>
+          I'm a 23-year-old self-taught developer from Stouffville, 
+          ON looking to start a career in web development. 
+          I'm really interested in most things involving technology as well as 
+          anything travelling, hiking, reading, or fitness related.
         </p>
         <div class='skills'>
           <h5 class='main'>React</h5>
