@@ -44,9 +44,9 @@ const projectsObj = [
         url: 'https://ben-langlois.github.io/Portfolio',
         img: portfolio,
         alt: 'Portfolio Homepage',
-        diff: 4,
+        diff: 3,
         date: new Date('September 30, 2023 00:00:00'),
-        progress: false,
+        progress: true,
         links:[
         {
             type: 'Github Repo',
@@ -100,7 +100,7 @@ const projectsObj = [
     },
     {
         name: 'Photography Portfolio',
-        desc: 'A simple react app that I wrote in 3 days to act as a portfolio for photos I take on trips, hikes, walks etc.',
+        desc: 'Photography portfolio for photos I take on trips, hikes, walks etc.',
         url: 'https://ben-langlois.github.io/Photography-Portfolio/',
         img: photography,
         alt: 'Photography Portfolio landing page',
@@ -126,7 +126,7 @@ const projectsObj = [
     },
     {
       name: 'Temp Converter',
-      desc: "A simple Temperature Converter made with React, Tailwind, and JQuery. The goal of this was to write zero CSS, really just an excuse to try out Tailwind.",
+      desc: "A Temperature Converter made with React, Tailwind, and JQuery. The goal of this was to write zero CSS, really just an excuse to try out Tailwind.",
       url: 'https://codepen.io/ben-langlois/details/jOdwMRz',
       img: tempconvert,
       alt: 'Temperature Codepen page',
@@ -144,11 +144,11 @@ const projectsObj = [
     },
     {
       name: 'A Cube',
-      desc: "An interactive, 3d sandbox made which renders and allows interaction with different 3d shapes the 3.js library",
+      desc: "An interactive sandbox allows rendering and interaction with different 3d shapes the Three.js library.",
       url: 'https://codepen.io/ben-langlois/pen/zYegMzB?editors=0010',
       img: cube,
       alt: 'Cube Codepen page',
-      diff: 2,
+      diff: 3.5,
       date: new Date('January 1, 2024 00:00:00'),
       progress: true,
       links:[
