@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.dbb51cba.css",
-    "main.js": "/Portfolio/static/js/main.8a18e48f.js",
+    "main.js": "/Portfolio/static/js/main.12e5ecc9.js",
     "static/js/787.a1fbcab3.chunk.js": "/Portfolio/static/js/787.a1fbcab3.chunk.js",
     "static/media/photography.png": "/Portfolio/static/media/photography.c825587ca4fca379eef1.png",
     "static/media/IMG_4212.jpg": "/Portfolio/static/media/IMG_4212.efd0ec2b1c755d531f58.jpg",
     "static/media/portrait.jpg": "/Portfolio/static/media/portrait.e30e1b888366badd4cc3.jpg",
-    "static/media/portfolio.png": "/Portfolio/static/media/portfolio.a0013d89ecdf21f356fc.png",
+    "static/media/portfolio.png": "/Portfolio/static/media/portfolio.745d9a9bd2e92fc52150.png",
     "static/media/noteapp.png": "/Portfolio/static/media/noteapp.dc66ad91ac64eb75645b.png",
     "static/media/weatherapp.png": "/Portfolio/static/media/weatherapp.eb83c0d0122938c1845d.png",
     "static/media/resume.pdf": "/Portfolio/static/media/resume.b115faff634b36d5dfbe.pdf",
@@ -16,11 +16,11 @@
     "index.html": "/Portfolio/index.html",
     "static/media/iconmonstr-linkedin-3.svg": "/Portfolio/static/media/iconmonstr-linkedin-3.27a3f479ca1bbb0ceef19e395081fb94.svg",
     "main.dbb51cba.css.map": "/Portfolio/static/css/main.dbb51cba.css.map",
-    "main.8a18e48f.js.map": "/Portfolio/static/js/main.8a18e48f.js.map",
+    "main.12e5ecc9.js.map": "/Portfolio/static/js/main.12e5ecc9.js.map",
     "787.a1fbcab3.chunk.js.map": "/Portfolio/static/js/787.a1fbcab3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dbb51cba.css",
-    "static/js/main.8a18e48f.js"
+    "static/js/main.12e5ecc9.js"
   ]
 }
