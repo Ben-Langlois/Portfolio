@@ -331,6 +331,8 @@ class Portfolio extends React.Component {
         <Helmet>
           <meta charSet="utf-8" />
           <meta name='viewport' content='width= device-width, initial-scale=1.0'/>
+          <meta property="og:title" content="Ben's Portfolio" />
+          <meta property="og:description" content="A Web Developer seeking a role at your company! Check out my projects" />
           <title>Ben langlois - Portfolio</title>
           <link rel="canonical" href="http://mysite.com/example" />
           <link rel="icon" type="image/x-icon" href={icon} />

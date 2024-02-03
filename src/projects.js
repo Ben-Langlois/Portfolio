@@ -1,10 +1,10 @@
 // Images
-import portfolio from './images/projects/portfolio.png'
-import noteapp from './images/projects/noteapp.png'
-import weatherapp from './images/projects/weatherapp.png'
-import photography from './images/projects/photography.png'
-import tempconvert from './images/projects/tempconvert.png'
-import cube from './images/projects/cube.png'
+import portfolio from './images/projects/portfolio.jpg'
+import noteapp from './images/projects/noteapp.jpg'
+import weatherapp from './images/projects/weatherapp.jpg'
+import photography from './images/projects/photography.jpg'
+import tempconvert from './images/projects/tempconvert.jpg'
+import cube from './images/projects/cube.jpg'
 
 import github from './images/socials/iconmonstr-github-3.svg'
 import figma from './images/socials/figma-svgrepo-com.svg'
