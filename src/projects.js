@@ -143,14 +143,14 @@ const projectsObj = [
       ]
     },
     {
-      name: 'A Cube',
-      desc: "An interactive sandbox allows rendering and interaction with different 3d shapes the Three.js library.",
+      name: '3D Sandbox',
+      desc: "An interactive sandbox that allows rendering and interaction with different 3d shapes using the Three.js library.",
       url: 'https://codepen.io/ben-langlois/pen/zYegMzB?editors=0010',
       img: cube,
-      alt: 'Cube Codepen page',
+      alt: '3D Sandbox Codepen page',
       diff: 3.5,
-      date: new Date('January 1, 2024 00:00:00'),
-      progress: true,
+      date: new Date('February 11, 2024 00:00:00'),
+      progress: false,
       links:[
       ],
       tags: [
