@@ -1,6 +1,6 @@
 // #region imports
 import * as React from "react"
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import $ from 'jquery'
 import emailjs from '@emailjs/browser'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -21,7 +21,6 @@ import icon from './images/favicon.ico'
 // import codepen from './images/socials/codepen-square-svgrepo-com.svg'
 import github from './images/socials/iconmonstr-github-3.svg'
 import linkedin from './images/socials/iconmonstr-linkedin-3.svg'
-import figma from './images/socials/figma-svgrepo-com.svg'
 // #endregion
 
 /* #region Resources
@@ -144,7 +143,7 @@ const About = () => {
           <h5>Arduino</h5>
         </div>
       </div>
-      <img src={anotherPortrait} alt='another picture of Ben'/>
+      <img src={anotherPortrait} alt='Ben'/>
     </div>
   )
 }

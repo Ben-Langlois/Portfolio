@@ -46,7 +46,7 @@ const projectsObj = [
         alt: 'Portfolio Homepage',
         diff: 3,
         date: new Date('September 30, 2023 00:00:00'),
-        progress: true,
+        progress: false,
         links:[
         {
             type: 'Github Repo',
