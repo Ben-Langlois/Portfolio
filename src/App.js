@@ -170,15 +170,6 @@ const Project = () => {
     }
   };
 
-  // to determine if project is in progress
-  const inProgress = (curr) => {
-    if(!curr.progress){ // if false
-      return months[curr.date.getMonth()] + ' ' + curr.date.getFullYear();    // returns formatted date
-    }
-
-    return 'In Progress'; 
-  };
-
   return (
     <div id='projects'>
       <div class="section-header" id='project-header'>
@@ -199,7 +190,7 @@ const Project = () => {
                   alt={curr.alt}/>
                 <div id='title'>
                   <h1>{curr.name}</h1>
-                  <h5>{inProgress(curr)}</h5>
+                  <h5>{curr.date}</h5>
                 </div>
                 <p>{curr.desc}</p>
                 <div class='skills'>

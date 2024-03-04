@@ -19,8 +19,7 @@ import figma from './images/socials/figma-svgrepo-com.svg'
     img: portfolio,
     alt: 'Portfolio Homepage',
     diff: 3,
-    date: new Date('September 30, 2023 00:00:00'),
-    progress: false,
+    date: 'Sep 2023',
     links:[
       {
         type: 'Github',
@@ -45,8 +44,7 @@ const projectsObj = [
         img: portfolio,
         alt: 'Portfolio Homepage',
         diff: 3,
-        date: new Date('September 30, 2023 00:00:00'),
-        progress: false,
+        date: 'Sep 2023',
         links:[
         {
             type: 'Github Repo',
@@ -67,8 +65,7 @@ const projectsObj = [
         img: noteapp,
         alt: 'Note App Dashboard',
         diff: 1,
-        date: new Date('December 15, 2021 00:00:00'),
-        progress: false,
+        date: 'Dec 2021',
         links:[
         ],
         tags:[
@@ -83,8 +80,7 @@ const projectsObj = [
         img: weatherapp,
         alt: 'Weather App Dashboard',
         diff: 5,
-        date: new Date('March 1, 2023 00:00:00'),
-        progress: false,
+        date: 'Doing it again! But better!',
         links:[
         {
             type: 'Github Repo',
@@ -105,8 +101,7 @@ const projectsObj = [
         img: photography,
         alt: 'Photography Portfolio landing page',
         diff: 2,
-        date: new Date('November 2, 2023 00:00:00'),
-        progress: false,
+        date: 'Nov 2023',
         links:[
         {
             type: 'Github Repo',
@@ -131,8 +126,7 @@ const projectsObj = [
       img: tempconvert,
       alt: 'Temperature Codepen page',
       diff: 2,
-      date: new Date('November 15, 2023 00:00:00'),
-      progress: false,
+      date: 'Nov 2023',
       links:[
       ],
       tags: [
@@ -149,8 +143,7 @@ const projectsObj = [
       img: cube,
       alt: '3D Sandbox Codepen page',
       diff: 3.5,
-      date: new Date('February 11, 2024 00:00:00'),
-      progress: false,
+      date: 'Feb 2024',
       links:[
       ],
       tags: [
