@@ -27,10 +27,6 @@ import linkedin from './images/socials/iconmonstr-linkedin-3.svg'
   https://docs.google.com/document/d/1blbXL01EGNG-vNqbsa8cLGL3hwbVAnuaSLXAhNWucXA/edit 
 */// #endregion
 
-// #region Variables
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-//#endregion
-
 $(window).scroll(function() {
   if ($(window).scrollTop() > 1){
     $('header').addClass('sticky');
