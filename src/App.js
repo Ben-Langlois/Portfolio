@@ -241,6 +241,7 @@ const Contact = () => {
     </div>     
   )
 }
+
 const ContactForm = () => {
   const form = useRef();
   const serviceID = 'service_qde5d59';

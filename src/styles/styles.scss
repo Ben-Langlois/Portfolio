@@ -30,7 +30,6 @@ html, body {
     display: grid;
     flex-direction: column;
 
-
     header{
         height: 15vh;
         width: 100%;        
@@ -140,7 +139,6 @@ html, body {
         height: 100vh;
         margin: 0 auto;
         transition: all 0.5s;
-
 
         #portrait{
             width: clamp(350px, 25vw, 500px);
@@ -299,7 +297,7 @@ html, body {
                         }                       
                     }
                 }
-            } // using & for some reason makes it all goofy
+            } 
             .card:hover{
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
                 transform: scale(1.01);
@@ -340,9 +338,7 @@ html, body {
                         color: $text;
                     }
                 }
-
             }
-
         }
 
         #form-area{
@@ -362,7 +358,6 @@ html, body {
                 flex-flow: column;
                 flex: 1 1 auto;
 
-
                input{
                     margin: 2% 0 3.5% 0;                    
                     width: 100%;
@@ -375,7 +370,6 @@ html, body {
                     width: 100%;
                     padding-left: 3%;
                     flex: 1 1 auto;
-
                 }
 
                 #submit-area{
@@ -451,9 +445,7 @@ html, body {
         transform: scaleX(1);
         text-decoration: none;
         // background-color: $headerLink;
-
     }
-
 }
 .enabled::before{
     visibility: visible;
@@ -599,14 +591,12 @@ html, body {
                     justify-content: center;
 
                     a{
-
                         h4{
                             display: inline-flex;
                             margin: 0;
                             padding: 0.5rem;
                         }                        
                     }
-
                 }
             }
     
@@ -730,9 +720,7 @@ html, body {
                             font-size: 1.4rem;
                         }                        
                     }
-
                 }
-
             }
     
             #form-area{
