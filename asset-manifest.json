@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.dbb51cba.css",
-    "main.js": "/Portfolio/static/js/main.d26a774b.js",
+    "main.js": "/Portfolio/static/js/main.23933dec.js",
     "static/js/787.a1fbcab3.chunk.js": "/Portfolio/static/js/787.a1fbcab3.chunk.js",
     "static/media/photography.jpg": "/Portfolio/static/media/photography.c825587ca4fca379eef1.jpg",
     "static/media/IMG_4212.jpg": "/Portfolio/static/media/IMG_4212.efd0ec2b1c755d531f58.jpg",
@@ -9,18 +9,18 @@
     "static/media/portfolio.jpg": "/Portfolio/static/media/portfolio.745d9a9bd2e92fc52150.jpg",
     "static/media/noteapp.jpg": "/Portfolio/static/media/noteapp.dc66ad91ac64eb75645b.jpg",
     "static/media/weatherapp.jpg": "/Portfolio/static/media/weatherapp.eb83c0d0122938c1845d.jpg",
-    "static/media/resume.pdf": "/Portfolio/static/media/resume.b115faff634b36d5dfbe.pdf",
+    "static/media/resume.pdf": "/Portfolio/static/media/resume.3773f5be00f7bf7b6c9a.pdf",
     "static/media/favicon.ico": "/Portfolio/static/media/favicon.4e49f1be92e60f50a108.ico",
     "static/media/iconmonstr-github-3.svg": "/Portfolio/static/media/iconmonstr-github-3.197212f02efa31cf1fd6ce8f39191593.svg",
     "static/media/figma-svgrepo-com.svg": "/Portfolio/static/media/figma-svgrepo-com.f577500fbb0169a31432949661d68597.svg",
     "index.html": "/Portfolio/index.html",
     "static/media/iconmonstr-linkedin-3.svg": "/Portfolio/static/media/iconmonstr-linkedin-3.27a3f479ca1bbb0ceef19e395081fb94.svg",
     "main.dbb51cba.css.map": "/Portfolio/static/css/main.dbb51cba.css.map",
-    "main.d26a774b.js.map": "/Portfolio/static/js/main.d26a774b.js.map",
+    "main.23933dec.js.map": "/Portfolio/static/js/main.23933dec.js.map",
     "787.a1fbcab3.chunk.js.map": "/Portfolio/static/js/787.a1fbcab3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dbb51cba.css",
-    "static/js/main.d26a774b.js"
+    "static/js/main.23933dec.js"
   ]
 }
